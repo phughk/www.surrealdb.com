@@ -170,6 +170,7 @@ Router.map(function() {
 			this.route('authenticating-users');
 			this.route('deploying-surrealdb');
 			this.route('strict-mode');
+			this.route('scaling');
 		});
 
 	});
