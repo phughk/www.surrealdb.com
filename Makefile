@@ -35,7 +35,7 @@ tests:
 .PHONY: serve
 serve:
 	@echo "Serve..."
-	FASTBOOT_DISABLED=true ember serve
+	FASTBOOT_DISABLED=true npx ember serve
 
 .PHONY: build
 build:
