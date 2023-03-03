@@ -1,0 +1,23 @@
+global:
+  user: "hugh"
+  ssh_port: 22
+  deploy_dir: "/tidb-deploy"
+  data_dir: "/tidb-data"
+  arch: "amd64"
+monitored:
+  node_exporter_port: 9100
+  blackbox_exporter_port: 9115
+pd_servers:
+  - host: concise-tortoise
+    ssh_port: 22
+  - host: special-yeti
+    ssh_port: 22
+  - host: related-ringtail
+    ssh_port: 22
+tikv_servers:
+  - host: concise-tortoise
+    ssh_port: 22
+  - host: special-yeti
+    ssh_port: 22
+  - host: related-ringtail
+    ssh_port: 22

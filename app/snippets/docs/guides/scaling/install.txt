@@ -1,0 +1,2 @@
+curl -sSf https://install.surrealdb.com | sh
+surreal start -u root -p root tikv://127.0.0.1:2379

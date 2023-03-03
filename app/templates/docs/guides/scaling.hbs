@@ -9,5 +9,70 @@
 	<p>
 		SurrealDB can be scaled by using a TiKV cluster as an underlying KV store.
 	</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec purus nec turpis cursus placerat. Fusce eros lectus, ullamcorper sed vestibulum eu, rutrum ac massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec pulvinar at urna at maximus.</p>
+
+	<h3>Why Cluster</h3>
+	<p>
+		Deploying SurrealDB as a cluster brings many benefits.
+		Clustering, in its simplest form, means running copies of SurrealDB that hold the same data - you can think of
+		this as replication.
+		By running SurrealDB in a cluster, you are gaining fault tolerance in case your servers and network fail; you
+		can seamlessly scale reads and writes to fit the needs of your application.
+	</p>
+
+	<h3>Architecture</h3>
+	<p>
+		Our design for SurrealDB v1.0 is to rely on TiKV key-value store replication to scale out reads and writes.
+		Using TiKV means we have an industry-proven way of scaling that provides the guarantees we need.
+		Below you can see a diagram illustrating how this fits together.
+	</p>
+	<!-- diagram -->
+
+	<p>
+		This guide will show you how to set up SurrealDB for your production environment.
+		We will use three replicas to guarantee fault tolerance on a single node failure.
+		The hostnames used in this example are concise-tortoise, special-yeti, and related-ringtail.
+		The hostnames in the configuration reflect this.
+	</p>
+
+	<h3>Setting up a TiKV cluster</h3>
+	<p>
+
+		As a first step, we must set up TiKV to run in a clustered mode.
+		The TiKV team have already described how [here](https://tikv.org/docs/5.1/deploy/install/production/).
+		The topology.yaml I used is available here.
+	</p>
+	<codes vertical>
+		<Code @name="docs/guides/scaling/scaling.txt" />
+	</codes>
+
+
+	<h3>Setting up SurrealDB replicas</h3>
+	<p>
+		Now that we have a TiKV cluster, we can point SurrealDB instances to it.
+		We will set up three instances for this guide, each pointing to the TiKV cluster.
+		The SurrealDB instances will reside on the same nodes as the TiKV replicas, so they will always point locally.
+		If you want a different configuration, you could use static addresses or
+		<a href="https://www.pingcap.com/blog/best-practices-for-tidb-load-balancing/">proxying</a>.
+	</p>
+
+	<p>
+		Because we rely on a remote TiKV setup, we must create a custom build of SurrealDB. Assuming these are fresh
+		VMs, I have provided rustup install as well.
+	</p>
+
+	<codes vertical>
+		<Code @name="docs/guides/scaling/install.txt"/>
+	</codes>
+
+	<h3>Takeaways</h3>
+	<p>
+		While we have tied TiKV to 3 nodes in our topology alongside our SurrealDB cluster in this guide, it is advisable to have these services running on different nodes.
+		We would separate our services this way because when a single computer fails (say, network disruption on config issue), the other services aren't affected. We only share the same machine for replicas for the convenience of explanation.
+	</p>
+
+	<p>
+		Under the above architecture, users can scale out their TiKV cluster, their TiKV PD, cluster and their SurrealDB replica pool.
+	</p>
+
+
 </Layout::Text>
