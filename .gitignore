@@ -46,7 +46,8 @@ Temporary Items
 /npm-debug.log*
 /testem.log
 /yarn-error.log
-.idea/
+/.idea/
+/.vscode/
 
 # ember-try
 /.node_modules.ember-try/
