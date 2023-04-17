@@ -1,31 +1,33 @@
 // Create a record with a random ID
-person := db.Create("person", map[string]interface{});
-			
+db.Create("person", map[string]interface{}{})
+
 // Create a record with a specific ID w/ a map
-	await db.create("person:tobie", map[string]interface{}{
+db.Create("person:tobie", map[string]interface{}{
 	"name": "Tobie",
 	"settings": map[string]bool{
-		"active": true,
+		"active":    true,
 		"marketing": true,
 	},
-});
+})
 
 // Create a record with a specific ID w/ a struct
 type Person struct {
-	Name string
-	Settings struct {
-		Active bool
-		Marketing bool
-	}
+	Name     string
+	Surname  string
+	Settings settings
 }
 
-await db.create("person:tobie", Person{
-	Name: "Tobie",
-	Settings: struct {
-		Active    bool
-		Marketing bool
-	}{
+type settings struct {
+	Active    bool
+	Marketing bool
+}
+
+data := Person{
+	Name: "Hugh",
+	Settings: settings{
 		Active:    true,
 		Marketing: true,
 	},
-});
+}
+
+db.Create("person:hugh", data)
