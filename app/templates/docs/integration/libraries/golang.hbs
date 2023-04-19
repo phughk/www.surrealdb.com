@@ -214,7 +214,7 @@
 <Layout::Group {{waypoint "connect"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.New(url string, options ...SurrealDBOption) (*DB, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.New(url, options...)" /></h3>
 		<p>Connects to a local or remote database endpoint.</p>
 		<Layout::Table>
 			<table>
@@ -268,7 +268,7 @@
 <Layout::Group {{waypoint "use"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Use(ns, database string) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Use(namespace, database)" /></h3>
 		<p>Switch to a specific namespace and database.</p>
 		<Layout::Table>
 			<table>
@@ -310,7 +310,7 @@
 <Layout::Group {{waypoint "signup"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Signup(vars interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Signup(vars)" /></h3>
 		<p>Signs up to a specific authentication scope.</p>
 		<Layout::Table>
 			<table>
@@ -343,7 +343,7 @@
 <Layout::Group {{waypoint "signin"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Signin(vars interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Signin(vars)" /></h3>
 		<p>Signs in to a specific authentication scope.</p>
 		<Layout::Table>
 			<table>
@@ -376,7 +376,7 @@
 <Layout::Group {{waypoint "invalidate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Invalidate() (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Invalidate()" /></h3>
 		<p>
 			Invalidates the authentication for the current connection.
 			Invalidates close the authenticated connection.
@@ -391,7 +391,7 @@
 <Layout::Group {{waypoint "authenticate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Authenticate(token string) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Authenticate(token)" /></h3>
 		<p>Authenticates the current connection with a JWT token.</p>
 		<Layout::Table>
 			<table>
@@ -424,7 +424,7 @@
 <Layout::Group {{waypoint "let"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Let(key string, val interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Let(key, val)" /></h3>
 		<p>Assigns a value as a parameter for this connection.</p>
 		<Layout::Table>
 			<table>
@@ -466,7 +466,7 @@
 <Layout::Group {{waypoint "query"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Query(sql string, vars interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Query(sql, vars)" /></h3>
 		<p>Runs a set of SurrealQL statements against the database.</p>
 		<Layout::Table>
 			<table>
@@ -508,7 +508,7 @@
 <Layout::Group {{waypoint "select"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Select(what string) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Select(what)" /></h3>
 		<p>Selects all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -545,7 +545,7 @@
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.Create(thing, data) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Create(thing, data)" /></h3>
 		<p>Creates a record in the database.</p>
 		<Layout::Table>
 			<table>
@@ -591,7 +591,7 @@
 <Layout::Group {{waypoint "update"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Update(what string, data interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Update(what, data)" /></h3>
 		<p>Updates all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function replaces the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -638,7 +638,7 @@
 <Layout::Group {{waypoint "change"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Change(what string, data interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Change(what, data)" /></h3>
 		<p>Modifies all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function merges the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -685,7 +685,7 @@
 <Layout::Group {{waypoint "modify"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Modify(what string, data interface{}) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Modify(what, data)" /></h3>
 		<p>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function patches the current document / record data with the specified <Link @link="https://jsonpatch.com">JSON Patch</Link> data.</blockquote>
 		<Layout::Table>
@@ -732,7 +732,7 @@
 <Layout::Group {{waypoint "delete"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Delete(what string) (interface{}, error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Delete(what)" /></h3>
 		<p>Deletes all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -769,7 +769,7 @@
 <Layout::Group {{waypoint "smartmarshal"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal[I any](inputfunc interface{}, data I) (output interface{}, err error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal(inputFunc, data)" /></h3>
 		<p>
 			SmartUnmarshal can be used with all DB methods with generics and type safety.
 			This handles errors and can use any struct tag with `BaseModel` type.
@@ -791,7 +791,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>inputfunc</code>
+							<code>inputFunc</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -821,7 +821,7 @@
 <Layout::Group {{waypoint "smartunmarshal"}}>
 
 	<Layout::Text text-l text-f>
-		<h4><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal[I any](response interface{}, dslError error) (data I, err error)" /></h4>
+		<h4><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal(response, dslError)" /></h4>
 		<p>
 			SmartUnmarshal uses generics to return the desired type.
 			It is designed to be used with the DSL query as the first parameter.
@@ -868,7 +868,7 @@
 <Layout::Group {{waypoint "unmarshal"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, v interface{} error" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, target)" /></h3>
 		<p>
 			Unmarshal loads a SurrealDB response into a struct.
 		</p>
@@ -887,16 +887,16 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							Respond from other queries.
+							The response from other queries.
 						</td>
 					</tr>
 										<tr>
 						<td>
-							<code>v</code>
+							<code>target</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							struct.
+							The target struct to unmarshal the data into.
 						</td>
 					</tr>
 				</tbody>
@@ -913,7 +913,7 @@
 <Layout::Group {{waypoint "unmarshalraw"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.UnmarshalRaw(rawData, v interface{}) (ok bool, err error)" /></h3>
+		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.UnmarshalRaw(rawData, target)" /></h3>
 		<p>
 			UnmarshalRaw loads a raw SurrealQL response returned by Query into a struct. Queries that return with results will
 			return ok = true, and queries that return with no results will return ok = false.
@@ -929,7 +929,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>rawdata</code>
+							<code>rawData</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -938,11 +938,11 @@
 					</tr>
 										<tr>
 						<td>
-							<code>v</code>
+							<code>target</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							is a struct.
+							The target struct that will be unmarshalled to.
 						</td>
 					</tr>
 				</tbody>
