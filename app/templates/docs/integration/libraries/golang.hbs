@@ -59,7 +59,7 @@
 			<tr>
 				<td>
 					<a href="#connect">
-						<Ascua::Prism::Inline @language="go" @code="surrealdb.New(url string, options ...SurrealDBOption)" />
+						<Ascua::Prism::Inline @language="go" @code="surrealdb.New(url, options...)" />
 					</a>
 					<l faint r>static</l>
 				</td>
@@ -68,7 +68,7 @@
 			<tr>
 				<td>
 					<a href="#use">
-						<Ascua::Prism::Inline @language="go" @code="db.Use(ns, database string) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Use(namespace, database)" />
 					</a>
 				</td>
 				<td>Switch to a specific namespace and database.</td>
@@ -76,7 +76,7 @@
 			<tr>
 				<td>
 					<a href="#signin">
-						<Ascua::Prism::Inline @language="go" @code="db.Signin(vars interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Signin(vars)" />
 					</a>
 				</td>
 				<td>Signs this connection in to a specific authentication scope.</td>
@@ -84,7 +84,7 @@
 			<tr>
 				<td>
 					<a href="#signup">
-						<Ascua::Prism::Inline @language="go" @code="db.Signup(vars interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Signup(vars)" />
 					</a>
 				</td>
 				<td>Signs this connection up to a specific authentication scope.</td>
@@ -92,7 +92,7 @@
 			<tr>
 				<td>
 					<a href="#invalidate">
-						<Ascua::Prism::Inline @language="go" @code="db.Invalidate() (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Invalidate()" />
 					</a>
 				</td>
 				<td>Invalidates the authentication for the current connection.</td>
@@ -100,7 +100,7 @@
 			<tr>
 				<td>
 					<a href="#authenticate">
-						<Ascua::Prism::Inline @language="go" @code="db.Authenticate(token string) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Authenticate(token)" />
 					</a>
 				</td>
 				<td>Authenticates the current connection with a JWT token.</td>
@@ -108,7 +108,7 @@
 			<tr>
 				<td>
 					<a href="#let">
-						<Ascua::Prism::Inline @language="go" @code="db.Let(key string, val interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Let(key, val)" />
 					</a>
 				</td>
 				<td>Assigns a value as a parameter for this connection.</td>
@@ -116,7 +116,7 @@
 			<tr>
 				<td>
 					<a href="#create">
-						<Ascua::Prism::Inline @language="go" @code="db.Create(thing string, data interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Create(thing, data)" />
 					</a>
 				</td>
 				<td>Creates a record in the database.</td>
@@ -124,7 +124,7 @@
 			<tr>
 				<td>
 					<a href="#select">
-						<Ascua::Prism::Inline @language="go" @code="db.Select(what string) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Select(what)" />
 					</a>
 				</td>
 				<td>Selects all records in a table, or a specific record.</td>
@@ -132,7 +132,7 @@
 			<tr>
 				<td>
 					<a href="#update">
-						<Ascua::Prism::Inline @language="go" @code="db.Update(what string, data interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Update(what, data)" />
 					</a>
 				</td>
 				<td>Updates all records in a table, or a specific record.</td>
@@ -140,7 +140,7 @@
 			<tr>
 				<td>
 					<a href="#change">
-						<Ascua::Prism::Inline @language="go" @code="db.Change(what string, data interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Change(what, data)" />
 					</a>
 				</td>
 				<td>Modifies all records in a table, or a specific record.</td>
@@ -148,7 +148,7 @@
 			<tr>
 				<td>
 					<a href="#delete">
-						<Ascua::Prism::Inline @language="go" @code="db.Delete(what string) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Delete(what)" />
 					</a>
 				</td>
 				<td>Deletes all records, or a specific record.</td>
@@ -156,7 +156,7 @@
 			<tr>
 				<td>
 					<a href="#query">
-						<Ascua::Prism::Inline @language="go" @code="db.Query(sql string, vars interface{}) (interface{}, error)" />
+						<Ascua::Prism::Inline @language="go" @code="db.Query(sql, vars)" />
 					</a>
 				</td>
 				<td>Runs a set of SurrealQL statements against the database.</td>
@@ -172,32 +172,36 @@
 			<tr>
 				<td>
 					<a href="#smartmarshal">
-						<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal[I any](inputfunc interface{}, data I) (output interface{}, err error)" />
+						<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal(inputfunc, data)" />
 					</a>
+					<l faint r>static</l>
 				</td>
 				<td>SmartUnmarshal can be used with all DB methods with generics and type safety.</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#smartunmarshal">
-						<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal[I any](respond interface{}, wrapperError error) (data I, err error)" />
+						<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal(respond, wrapperError)" />
 					</a>
+					<l faint r>static</l>
 				</td>
 				<td>SmartUnmarshal is used to map structs to known types via generics conveniently. Its signature is designed to be convenient to use with the other driver methods and intended to be used that way.</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#unmarshal">
-						<Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, v interface{}) error" />
+						<Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, v)" />
 					</a>
+					<l faint r>static</l>
 				</td>
 				<td>Unmarshal loads a SurrealDB response into a struct. It is perfectly fine to use this function however it requires casting types.</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#unmarshalraw">
-						<Ascua::Prism::Inline @language="go" @code="surrealdb.UnmarshalRaw(rawData, v interface{}) (ok bool, err error)" />
+						<Ascua::Prism::Inline @language="go" @code="surrealdb.UnmarshalRaw(rawData, v)" />
 					</a>
+					<l faint r>static</l>
 				</td>
 				<td>UnmarshalRaw loads a raw SurrealQL response returned by Query into a struct. This is not the same as a query result. The value of this function will include additional information such as execution time and status - details that tend to be omitted from the SurrealQL query the user would be interested in.</td>
 			</tr>
