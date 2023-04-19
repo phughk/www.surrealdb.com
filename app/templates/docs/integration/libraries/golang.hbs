@@ -186,26 +186,6 @@
 		</tr>
 		<tr>
 			<td>
-				<a href="#smartmarshal">
-					<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal(inputfunc, data)" />
-				</a>
-				<l faint r>static</l>
-			</td>
-			<td>SmartUnmarshal can be used with all DB methods with generics and type safety.</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#smartunmarshal">
-					<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal(respond, wrapperError)" />
-				</a>
-				<l faint r>static</l>
-			</td>
-			<td>SmartUnmarshal is used to map structs to known types via generics conveniently. Its signature is
-				designed to be convenient to use with the other driver methods and intended to be used that way.
-			</td>
-		</tr>
-		<tr>
-			<td>
 				<a href="#unmarshal">
 					<Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, v)" />
 				</a>
@@ -829,106 +809,6 @@
 		<Code @name="docs-integration-libraries-golang-delete-func.surql">
 			DELETE * FROM $thing;
 		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "smartmarshal"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>
-			<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal(inputFunc, data)" />
-		</h3>
-		<p>
-			SmartMarshal is used to map structs to known types via generics conveniently.
-			The main purpose of using this function is to utilise generics.
-			Its signature is designed to be convenient to use alongside other driver methods, as evident in the example.
-		</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>inputFunc</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The database call in it's entirety.
-						The multiple return values get unpacked as input to SmartMarshal.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>data</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Struct that will be populated.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/golang/smartmarshal.go" />
-
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "smartunmarshal"}}>
-
-	<Layout::Text text-l text-f>
-		<h4>
-			<Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal(response, dslError)" />
-		</h4>
-		<p>
-			SmartUnmarshal is used to map structs to known types via generics conveniently.
-			The main purpose of using this function is to utilise generics.
-			Its signature is designed to be convenient to use alongside other driver methods, as evident in the example.
-		</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>response</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The result of the DSL query, such as <code>db.Execute</code> or <code>db.Select</code>.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>dslError</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The error from the DSL query.
-						It is expected to be unpacked as the return of the DSL should be exactly 2 values.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/golang/smartunmarshal.go" />
-
 	</Layout::Text>
 
 </Layout::Group>
