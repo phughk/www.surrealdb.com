@@ -63,7 +63,15 @@
 					</a>
 					<l faint r>static</l>
 				</td>
-				<td>Connects to a local or remote database endpoint.</td>
+				<td>Connects to a remote database endpoint.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#close">
+						<Ascua::Prism::Inline @language="go" @code="db.Close()" />
+					</a>
+				</td>
+				<td>Closes the persistent connection to the database.</td>
 			</tr>
 			<tr>
 				<td>
@@ -75,19 +83,19 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#signin">
-						<Ascua::Prism::Inline @language="go" @code="db.Signin(vars)" />
-					</a>
-				</td>
-				<td>Signs this connection in to a specific authentication scope.</td>
-			</tr>
-			<tr>
-				<td>
 					<a href="#signup">
 						<Ascua::Prism::Inline @language="go" @code="db.Signup(vars)" />
 					</a>
 				</td>
-				<td>Signs this connection up to a specific authentication scope.</td>
+				<td>Signs up to a specific authentication scope.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#signin">
+						<Ascua::Prism::Inline @language="go" @code="db.Signin(vars)" />
+					</a>
+				</td>
+				<td>Signs in to a specific authentication scope.</td>
 			</tr>
 			<tr>
 				<td>
@@ -112,6 +120,14 @@
 					</a>
 				</td>
 				<td>Assigns a value as a parameter for this connection.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#query">
+						<Ascua::Prism::Inline @language="go" @code="db.Query(sql, vars)" />
+					</a>
+				</td>
+				<td>Runs a set of SurrealQL statements against the database.</td>
 			</tr>
 			<tr>
 				<td>
@@ -147,27 +163,19 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#modify">
+						<Ascua::Prism::Inline @language="go" @code="db.Modify(what, data)" />
+					</a>
+				</td>
+				<td>Applies a JSON Patch to the selected records.</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#delete">
 						<Ascua::Prism::Inline @language="go" @code="db.Delete(what)" />
 					</a>
 				</td>
 				<td>Deletes all records, or a specific record.</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#query">
-						<Ascua::Prism::Inline @language="go" @code="db.Query(sql, vars)" />
-					</a>
-				</td>
-				<td>Runs a set of SurrealQL statements against the database.</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#close">
-						<Ascua::Prism::Inline @language="go" @code="db.Close()" />
-					</a>
-				</td>
-				<td>Closes the persistent connection to the database.</td>
 			</tr>
 			<tr>
 				<td>
@@ -215,7 +223,7 @@
 
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.New(url, options...)" /></h3>
-		<p>Connects to a local or remote database endpoint.</p>
+		<p>Connects to a remote database endpoint.</p>
 		<Layout::Table>
 			<table>
 				<thead>
@@ -231,7 +239,12 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The url of the database endpoint to connect to.
+							The URL of the database endpoint to connect to.
+							Examples may include
+							<code>http://hostname:8000</code>
+							or
+							<code>ws://hostname:8000/rpc</code>
+							.
 						</td>
 					</tr>
 					<tr>
@@ -505,43 +518,6 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "select"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="go" @code="db.Select(what)" /></h3>
-		<p>Selects all records in a table, or a specific record, from the database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Arguments</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<code>thing</code>
-							<l yellow r>Required</l>
-						</td>
-						<td>
-							The table name or a record ID to select.
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/golang/select.go"/>
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-golang-select-func.surql">
-			SELECT * FROM $thing;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
@@ -581,6 +557,43 @@
 		<p>This function will run the following query in the database:</p>
 		<Code @name="docs-integration-libraries-golang-create-func.surql">
 			CREATE $thing CONTENT $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "select"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="go" @code="db.Select(what)" /></h3>
+		<p>Selects all records in a table, or a specific record, from the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The table name or a record ID to select.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/golang/select.go"/>
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-golang-select-func.surql">
+			SELECT * FROM $thing;
 		</Code>
 	</Layout::Text>
 
