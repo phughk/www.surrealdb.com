@@ -784,14 +784,9 @@
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartMarshal(inputFunc, data)" /></h3>
 		<p>
-			SmartUnmarshal can be used with all DB methods with generics and type safety.
-			This handles errors and can use any struct tag with `BaseModel` type.
-			Warning: "ID" field is case sensitive and expect string.
-			Upon failure, the following will happen
-			1. If there are some ID on struct it will fill the table with the ID
-			2. If there are struct tags of the type `Basemodel`, it will use those values instead
-			3. If everything above fails or the IDs do not exist, SmartUnmarshal will use the struct name as the table name.
-
+			SmartMarshal is used to map structs to known types via generics conveniently.
+			The main purpose of using this function is to utilise generics.
+			Its signature is designed to be convenient to use alongside other driver methods, as evident in the example.
 		</p>
 		<Layout::Table>
 			<table>
@@ -808,16 +803,17 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The Function that will be executed.
+							The database call in it's entirety.
+							The multiple return values get unpacked as input to SmartMarshal.
 						</td>
 					</tr>
-										<tr>
+					<tr>
 						<td>
 							<code>data</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							Struct that will used with function.
+							Struct that will be populated.
 						</td>
 					</tr>
 				</tbody>
@@ -836,8 +832,9 @@
 	<Layout::Text text-l text-f>
 		<h4><Ascua::Prism::Inline @language="go" @code="surrealdb.SmartUnmarshal(response, dslError)" /></h4>
 		<p>
-			SmartUnmarshal uses generics to return the desired type.
-			It is designed to be used with the DSL query as the first parameter.
+			SmartUnmarshal is used to map structs to known types via generics conveniently.
+			The main purpose of using this function is to utilise generics.
+			Its signature is designed to be convenient to use alongside other driver methods, as evident in the example.
 		</p>
 		<Layout::Table>
 			<table>
@@ -854,7 +851,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The result of the DSL query, such as Execute or Select.
+							The result of the DSL query, such as <code>db.Execute</code> or <code>db.Select</code>.
 						</td>
 					</tr>
 										<tr>
@@ -884,6 +881,7 @@
 		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.Unmarshal(data, target)" /></h3>
 		<p>
 			Unmarshal loads a SurrealDB response into a struct.
+			This function does not use generics.
 		</p>
 		<Layout::Table>
 			<table>
@@ -928,8 +926,8 @@
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="go" @code="surrealdb.UnmarshalRaw(rawData, target)" /></h3>
 		<p>
-			UnmarshalRaw loads a raw SurrealQL response returned by Query into a struct. Queries that return with results will
-			return ok = true, and queries that return with no results will return ok = false.
+			UnmarshalRaw loads a raw SurrealQL response returned by Query into a struct.
+			The raw response includes metadata that was not part of the intended query, such as duration of query.
 		</p>
 		<Layout::Table>
 			<table>
