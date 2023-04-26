@@ -657,7 +657,7 @@
 				SELECT * FROM "true" ~ true;
 			</Code>
 			<Code @name="docs-surrealql-operators-match-result-2.txt">
-				true
+				false
 			</Code>
 			<Code @name="docs-surrealql-operators-match-input-3.surql">
 				SELECT * FROM ["test", "thing"] ~ "test";
@@ -707,13 +707,13 @@
 				SELECT * FROM ["true", "test", "text"] ?~ true;
 			</Code>
 			<Code @name="docs-surrealql-operators-anymatch-result-1.txt">
-				true
+				false
 			</Code>
 			<Code @name="docs-surrealql-operators-anymatch-input-2.surql">
 				SELECT * FROM [1, 2, 3] ?~ "2";
 			</Code>
 			<Code @name="docs-surrealql-operators-anymatch-result-2.txt">
-				true
+				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -732,7 +732,7 @@
 				SELECT * FROM ["TRUE", true, "true", "TrUe"] *~ true;
 			</Code>
 			<Code @name="docs-surrealql-operators-allmatch-result-1.txt">
-				true
+				false
 			</Code>
 			<Code @name="docs-surrealql-operators-allmatch-input-2.surql">
 				SELECT * FROM ["TEST", "test", "text"] *~ "test";
