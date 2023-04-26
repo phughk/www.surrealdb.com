@@ -1,9 +1,7 @@
 -- An ACL should be defined for any kind of resource (any record)
-DEFINE FIELD resource ON TABLE acl TYPE record()
-  ASSERT $value != NONE;
+DEFINE FIELD resource ON TABLE acl TYPE record;
 -- An ACL should be defined for a user
-DEFINE FIELD user ON TABLE acl TYPE record(user)
-  ASSERT $value != NONE;
+DEFINE FIELD user ON TABLE acl TYPE record<user>;
 
 -- A user can have multiple permissions on an ACL
 DEFINE FIELD permissions ON TABLE acl TYPE array
