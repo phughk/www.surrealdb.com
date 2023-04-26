@@ -151,6 +151,7 @@ Router.map(function () {
 			this.route('transactions');
 
 			this.route('datamodel', function () {
+				this.route('overview');
 				this.route('ids');
 				this.route('simple');
 				this.route('numbers');
