@@ -49,7 +49,7 @@
 		<h3><code>meta::id</code></h3>
 		<p>The <code>meta::id</code> function extracts and returns the table id from a SurrealDB Record ID.</p>
 		<Code @name="docs-surrealql-functions-meta-id.surql" text="API Definition">
-			meta::id() -> value
+			meta::id(record) -> value
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -72,7 +72,7 @@
 		<h3><code>meta::tb</code></h3>
 		<p>The <code>meta::tb</code> function extracts and returns the table name from a SurrelDB Record ID.</p>
 		<Code @name="docs-surrealql-functions-meta-tb.surql" text="API Definition">
-			meta::tb() -> string
+			meta::tb(record) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
