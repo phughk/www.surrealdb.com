@@ -49,6 +49,8 @@ export default {
 					return Prism.highlight(code, Prism.languages.toml, 'toml');
 				case 'yaml':
 					return Prism.highlight(code, Prism.languages.yaml, 'yaml');
+				case 'groovy':
+					return Prism.highlight(code, Prism.languages.groovy, 'groovy');
 				default:
 					return code;
 				}

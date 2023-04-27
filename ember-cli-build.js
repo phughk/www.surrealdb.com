@@ -21,6 +21,7 @@ module.exports = function (defaults) {
 				'toml',
 				'sql',
 				'yaml',
+				'groovy',
 			],
 			copyToClipboard: true,
 		},
