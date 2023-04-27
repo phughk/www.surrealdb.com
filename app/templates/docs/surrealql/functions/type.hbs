@@ -129,7 +129,7 @@
 		<h3>type::bool</h3>
 		<p>The <code>type::bool</code> function converts a value into a bool, if the value is truthy.</p>
 		<Code @name="docs-surrealql-functions-type-bool.surql" text="API Definition">
-			type::bool(value) -> boolean
+			type::bool(any) -> boolean
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -153,7 +153,7 @@
 		<h3>type::datetime</h3>
 		<p>The <code>type::datetime</code> function converts a value into a datetime.</p>
 		<Code @name="docs-surrealql-functions-type-datetime.surql" text="API Definition">
-			type::datetime(value) -> datetime
+			type::datetime(any) -> datetime
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -177,7 +177,7 @@
 		<h3>type::decimal</h3>
 		<p>The <code>type::decimal</code> function converts a value into a decimal.</p>
 		<Code @name="docs-surrealql-functions-type-decimal.surql" text="API Definition">
-			type::decimal(value) -> decimal
+			type::decimal(any) -> decimal
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -201,7 +201,7 @@
 		<h3>type::duration</h3>
 		<p>The <code>type::duration</code> function converts a value into a duration.</p>
 		<Code @name="docs-surrealql-functions-type-duration.surql" text="API Definition">
-			type::duration(value) -> duration
+			type::duration(any) -> duration
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -225,7 +225,7 @@
 		<h3>type::float</h3>
 		<p>The <code>type::float</code> function converts a value into a float.</p>
 		<Code @name="docs-surrealql-functions-type-float.surql" text="API Definition">
-			type::float(value) -> float
+			type::float(any) -> float
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -249,7 +249,7 @@
 		<h3>type::int</h3>
 		<p>The <code>type::int</code> function converts a value into an integer.</p>
 		<Code @name="docs-surrealql-functions-type-int.surql" text="API Definition">
-			type::int(value) -> int
+			type::int(any) -> int
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -273,7 +273,7 @@
 		<h3>type::number</h3>
 		<p>The <code>type::number</code> function converts a value into a number.</p>
 		<Code @name="docs-surrealql-functions-type-number.surql" text="API Definition">
-			type::number(value) -> number
+			type::number(any) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -297,7 +297,7 @@
 		<h3>type::point</h3>
 		<p>The <code>type::point</code> function converts a value into a geometry point.</p>
 		<Code @name="docs-surrealql-functions-type-point-1.surql" text="API Definition">
-			type::point(value) -> point
+			type::point(any) -> point
 		</Code>
 		<p>This function also accepts two arguments (longitude and latitude values).</p>
 		<Code @name="docs-surrealql-functions-type-point-2.surql" text="API Definition">
@@ -344,7 +344,7 @@
 		<h3>type::regex</h3>
 		<p>The <code>type::regex</code> function converts a value into a regex.</p>
 		<Code @name="docs-surrealql-functions-array-regex.surql" text="API Definition">
-			type::regex(value) -> regex
+			type::regex(any) -> regex
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -367,7 +367,7 @@
 		<h3>type::string</h3>
 		<p>The <code>type::string</code> function converts a value into a string.</p>
 		<Code @name="docs-surrealql-functions-array-string.surql" text="API Definition">
-			type::string(value) -> string
+			type::string(any) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -391,7 +391,7 @@
 		<h3>type::table</h3>
 		<p>The <code>type::table</code> function converts a value into a table definition.</p>
 		<Code @name="docs-surrealql-functions-array-table.surql" text="API Definition">
-			type::table(value) -> table
+			type::table(any) -> table
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -412,7 +412,7 @@
 		<h3>type::thing</h3>
 		<p>The <code>type::thing</code> function converts a value into a record pointer definition.</p>
 		<Code @name="docs-surrealql-functions-array-thing.surql" text="API Definition">
-			type::thing(value, value) -> thing
+			type::thing(any, any) -> thing
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
