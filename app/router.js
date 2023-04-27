@@ -204,6 +204,7 @@ Router.map(function () {
 				this.route('array');
 				this.route('count');
 				this.route('crypto');
+				this.route('duration');
 				this.route('geo');
 				this.route('http');
 				this.route('validation');

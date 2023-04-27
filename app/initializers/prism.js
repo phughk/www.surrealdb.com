@@ -16,7 +16,7 @@ export default {
 					lookbehind: true
 				},
 				'variable': /[$][\w.]+/,
-				'function': /\b(?:fn|function|count|(?:(array|crypto|fn|geo|http|is|math|meta|parse|rand|session|sleep|string|time|type)::[\w]+)(::[\w]+)?)(?=\s*\()/i,
+				'function': /\b(?:fn|function|count|(?:(array|crypto|duration|fn|geo|http|is|math|meta|parse|rand|session|sleep|string|time|type)::[\w]+)(::[\w]+)?)(?=\s*\()/i,
 				'range': /\b[\w\d]+[:]([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)\.\.([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)/i,
 				'record': /\b[\w\d]+[:](([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)|(?=\{|\[))?/i,
 				'cast': /[<](bool|int|float|string|number|decimal|datetime|duration|future)[>]/,
