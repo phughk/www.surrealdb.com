@@ -21,9 +21,411 @@
 			</tr>
 		</thead>
 		<tbody>
-
+			<tr>
+				<td>
+					<a href="#array">
+						<code>is::array()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>array</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#set">
+						<code>is::set()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>set</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#bool">
+						<code>is::bool()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>bool</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#datetime">
+						<code>is::datetime()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>datetime</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#decimal">
+						<code>is::decimal()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>decimal</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#duration">
+						<code>is::duration()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>duration</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#float">
+						<code>is::float()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>float</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#int">
+						<code>is::int()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>int</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#number">
+						<code>is::number()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>number</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#object">
+						<code>is::object()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>object</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#string">
+						<code>is::string()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>string</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#record">
+						<code>is::record()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>record</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#geometry">
+						<code>is::geometry()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>geometry</code></td>
+			</tr>
 		</tbody>
 	</table>
 </Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "array"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::array</code></h3>
+		<p>The <code>is::array</code> function checks if the passed value is of type <code>array</code>.</p>
+		<Code @name="docs-surrealql-functions-is-array.surql" text="API Definition">
+			is::array(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-array-input.surql">
+				SELECT * FROM is::array(['a', 'b', 'c']);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-array-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "set"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::set</code></h3>
+		<p>The <code>is::set</code> function checks if the passed value is of type <code>set</code>.</p>
+		<Code @name="docs-surrealql-functions-is-set.surql" text="API Definition">
+			is::set(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-set-input.surql">
+				SELECT * FROM is::set(['a', 'b', 'c']);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-set-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "bool"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::bool</code></h3>
+		<p>The <code>is::bool</code> function checks if the passed value is of type <code>bool</code>.</p>
+		<Code @name="docs-surrealql-functions-is-bool.surql" text="API Definition">
+			is::bool(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-bool-input.surql">
+				SELECT * FROM is::bool(true);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-bool-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "datetime"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::datetime</code></h3>
+		<p>The <code>is::datetime</code> function checks if the passed value is of type <code>datetime</code>.</p>
+		<Code @name="docs-surrealql-functions-is-datetime.surql" text="API Definition">
+			is::datetime(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-datetime-input.surql">
+				SELECT * FROM is::datetime(time::now());
+			</Code>
+			<Code @name="docs-surrealql-functions-is-datetime-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "decimal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::decimal</code></h3>
+		<p>The <code>is::decimal</code> function checks if the passed value is of type <code>decimal</code>.</p>
+		<Code @name="docs-surrealql-functions-is-decimal.surql" text="API Definition">
+			is::decimal(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-decimal-input.surql">
+				SELECT * FROM is::decimal({{ "<" }}decimal> 13.5719384719384719385639856394139476937756394756);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-decimal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "duration"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::duration</code></h3>
+		<p>The <code>is::duration</code> function checks if the passed value is of type <code>duration</code>.</p>
+		<Code @name="docs-surrealql-functions-is-duration.surql" text="API Definition">
+			is::duration(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-duration-input.surql">
+				SELECT * FROM is::duration({{ "<" }}datetime> '1970-01-01T00:00:00');
+			</Code>
+			<Code @name="docs-surrealql-functions-is-duration-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "float"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::float</code></h3>
+		<p>The <code>is::float</code> function checks if the passed value is of type <code>float</code>.</p>
+		<Code @name="docs-surrealql-functions-is-float.surql" text="API Definition">
+			is::float(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-float-input.surql">
+				SELECT * FROM is::float({{ "<" }}float> 41.5);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-float-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "int"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::int</code></h3>
+		<p>The <code>is::int</code> function checks if the passed value is of type <code>int</code>.</p>
+		<Code @name="docs-surrealql-functions-is-int.surql" text="API Definition">
+			is::int(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-int-input.surql">
+				SELECT * FROM is::int({{ "<" }}int> 123);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-int-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "number"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::number</code></h3>
+		<p>The <code>is::number</code> function checks if the passed value is of type <code>number</code>.</p>
+		<Code @name="docs-surrealql-functions-is-number.surql" text="API Definition">
+			is::number(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-number-input.surql">
+				SELECT * FROM is::number(123);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-number-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "object"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::object</code></h3>
+		<p>The <code>is::object</code> function checks if the passed value is of type <code>object</code>.</p>
+		<Code @name="docs-surrealql-functions-is-object.surql" text="API Definition">
+			is::object(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-object-input.surql">
+				SELECT * FROM is::object({ hello: 'world' });
+			</Code>
+			<Code @name="docs-surrealql-functions-is-object-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "string"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::string</code></h3>
+		<p>The <code>is::string</code> function checks if the passed value is of type <code>string</code>.</p>
+		<Code @name="docs-surrealql-functions-is-string.surql" text="API Definition">
+			is::string(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-string-input.surql">
+				SELECT * FROM is::string("abc");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-string-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "record"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::record</code></h3>
+		<p>The <code>is::record</code> function checks if the passed value is of type <code>record</code>.</p>
+		<Code @name="docs-surrealql-functions-is-record.surql" text="API Definition">
+			is::record(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-record-input.surql">
+				SELECT * FROM is::record(user:tobie);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-record-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "geometry"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>is::geometry</code></h3>
+		<p>The <code>is::geometry</code> function checks if the passed value is of type <code>geometry</code>.</p>
+		<Code @name="docs-surrealql-functions-is-geometry.surql" text="API Definition">
+			is::geometry(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-geometry-input.surql">
+				SELECT * FROM is::geometry((-0.118092, 51.509865));
+			</Code>
+			<Code @name="docs-surrealql-functions-is-geometry-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
 
 <Layout::Gap large />
