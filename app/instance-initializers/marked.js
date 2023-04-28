@@ -25,6 +25,10 @@ export default {
 				switch (lang) {
 				case 'go':
 					return Prism.highlight(code, Prism.languages.go, 'go');
+				case 'groovy':
+					return Prism.highlight(code, Prism.languages.groovy, 'groovy');
+				case 'java':
+					return Prism.highlight(code, Prism.languages.java, 'java');
 				case 'javascript':
 					return Prism.highlight(code, Prism.languages.javascript, 'javascript');
 				case 'js':
@@ -49,8 +53,6 @@ export default {
 					return Prism.highlight(code, Prism.languages.toml, 'toml');
 				case 'yaml':
 					return Prism.highlight(code, Prism.languages.yaml, 'yaml');
-				case 'groovy':
-					return Prism.highlight(code, Prism.languages.groovy, 'groovy');
 				default:
 					return code;
 				}
