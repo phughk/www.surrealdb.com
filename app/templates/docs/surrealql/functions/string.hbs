@@ -268,15 +268,6 @@
 				"this is a test"
 			</Code>
 		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-concat-error-input.surql">
-				SELECT * FROM string::concat(1, 2, 3, 4, 5);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-concat-error-result.txt">
-				"12345"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -289,7 +280,7 @@
 		<h3><code>string::endsWith</code></h3>
 		<p>The <code>string::endsWith</code> function checks whether a string ends with another string.</p>
 		<Code @name="docs-surrealql-functions-string-endsWith.surql" text="API Definition">
-			string::endsWith(string, string) -> boolean
+			string::endsWith(string, string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -297,15 +288,6 @@
 				SELECT * FROM string::endsWith('some test', 'test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-endsWith-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-endsWith-error-input.surql">
-				SELECT * FROM string::endsWith(12345, '345');
-			</Code>
-			<Code @name="docs-surrealql-functions-string-endsWith-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -332,15 +314,6 @@
 				"a, list, of, items"
 			</Code>
 		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-join-error-input.surql">
-				SELECT * FROM string::join(', ', 1, 2, 3, 4, 5);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-join-error-result.txt">
-				"1, 2, 3, 4, 5"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -362,15 +335,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-len-result.txt">
 				14
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-len-error-input.surql">
-				SELECT * FROM string::len(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-len-error-result.txt">
-				5
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -396,15 +360,6 @@
 				"this is a test"
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-lowercase-error-input.surql">
-				SELECT * FROM string::lowercase(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-lowercase-error-result.txt">
-				"12345"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -426,15 +381,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-repeat-result.txt">
 				"testtesttest"
-			</Code>
-		</codes>
-		<p>If the first argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-repeat-error-input.surql">
-				SELECT * FROM string::repeat(123, 3);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-repeat-error-result.txt">
-				"123123123"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -460,15 +406,6 @@
 				"this is awesome"
 			</Code>
 		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-replace-error-input.surql">
-				SELECT * FROM string::replace(12345, '12', '54');
-			</Code>
-			<Code @name="docs-surrealql-functions-string-replace-error-result.txt">
-				"54345"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -490,15 +427,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-reverse-result.txt">
 				"tset a si siht"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-reverse-error-input.surql">
-				SELECT * FROM string::reverse(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-reverse-error-result.txt">
-				"54321"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -524,15 +452,6 @@
 				"test"
 			</Code>
 		</codes>
-		<p>If the first argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slice-error-input.surql">
-				SELECT * FROM string::slice(12345.00, 0, 5);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-slice-error-result.txt">
-				"12345"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -554,15 +473,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-slug-result.txt">
 				"surrealdb-has-launched-database-awesome"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slug-error-input.surql">
-				SELECT * FROM string::slug(12345.00);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-slug-error-result.txt">
-				"12345-00"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -588,15 +498,6 @@
 				["this", "is", "a", "list"]
 			</Code>
 		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-split-error-input.surql">
-				SELECT * FROM string::split(12345.00, '.');
-			</Code>
-			<Code @name="docs-surrealql-functions-string-split-error-result.txt">
-				["12345", "00"]
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -609,7 +510,7 @@
 		<h3><code>string::startsWith</code></h3>
 		<p>The <code>string::startsWith</code> function checks whether a string starts with another string.</p>
 		<Code @name="docs-surrealql-functions-string-startsWith.surql" text="API Definition">
-			string::startsWith(string, string) -> boolean
+			string::startsWith(string, string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -617,15 +518,6 @@
 				SELECT * FROM string::startsWith('some test', 'some');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-startsWith-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-startsWith-error-input.surql">
-				SELECT * FROM string::startsWith(12345, '123');
-			</Code>
-			<Code @name="docs-surrealql-functions-string-startsWith-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -652,15 +544,6 @@
 				"this is a test"
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-trim-error-input.surql">
-				SELECT * FROM string::trim(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-trim-error-result.txt">
-				["12345"]
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -682,15 +565,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-uppercase-result.txt">
 				"THIS IS A TEST"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-uppercase-error-input.surql">
-				SELECT * FROM string::uppercase(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-uppercase-error-result.txt">
-				"12345"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -716,15 +590,6 @@
 				["this", "is", "a", "test"]
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-words-error-input.surql">
-				SELECT * FROM string::words(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-string-words-error-result.txt">
-				["12345"]
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -737,7 +602,7 @@
 		<h3>string::is_alphanum</h3>
 		<p>The <code>string::is_alphanum</code> function checks whether a value has only alphanumeric characters.</p>
 		<Code @name="docs-surrealql-functions-is-alphanum.surql" text="API Definition">
-			string::is_alphanum(string) -> boolean
+			string::is_alphanum(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -745,15 +610,6 @@
 				SELECT * FROM string::is_alphanum("ABC123");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-alphanum-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-alphanum-error-input.surql">
-				SELECT * FROM string::is_alphanum(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-alphanum-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -769,7 +625,7 @@
 		<h3>string::is_alpha</h3>
 		<p>The <code>string::is_alpha</code> function checks whether a value has only alpha characters.</p>
 		<Code @name="docs-surrealql-functions-is-alpha.surql" text="API Definition">
-			string::is_alpha(string) -> boolean
+			string::is_alpha(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -778,15 +634,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-alpha-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-alpha-error-input.surql">
-				SELECT * FROM string::is_alpha(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-alpha-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -801,7 +648,7 @@
 		<h3>string::is_ascii</h3>
 		<p>The <code>string::is_ascii</code> function checks whether a value has only ascii characters.</p>
 		<Code @name="docs-surrealql-functions-is-ascii.surql" text="API Definition">
-			string::is_ascii(string) -> boolean
+			string::is_ascii(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -809,15 +656,6 @@
 				SELECT * FROM string::is_ascii("ABC123");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-ascii-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-ascii-error-input.surql">
-				SELECT * FROM string::is_ascii(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-ascii-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -833,7 +671,7 @@
 		<h3>string::is_format</h3>
 		<p>The <code>string::is_format</code> function checks whether a value matches a specified format.</p>
 		<Code @name="docs-surrealql-functions-is-format.surql" text="API Definition">
-			string::is_format(string, string) -> boolean
+			string::is_format(string, string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -842,15 +680,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-format-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If either of the two arguments are not strings, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-format-error-input.surql">
-				SELECT * FROM string::is_format(12345, 67890);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-format-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -869,7 +698,7 @@
 		<h3>string::is_domain</h3>
 		<p>The <code>string::is_domain</code> function checks whether a value is a domain.</p>
 		<Code @name="docs-surrealql-functions-is-domain.surql" text="API Definition">
-			string::is_domain(string) -> boolean
+			string::is_domain(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -878,15 +707,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-domain-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-domain-error-input.surql">
-				SELECT * FROM string::is_domain(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-domain-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -901,7 +721,7 @@
 		<h3>string::is_email</h3>
 		<p>The <code>string::is_email</code> function checks whether a value is an email.</p>
 		<Code @name="docs-surrealql-functions-is-email.surql" text="API Definition">
-			string::is_email(string) -> boolean
+			string::is_email(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -910,15 +730,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-email-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-email-error-input.surql">
-				SELECT * FROM string::is_email(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-email-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -933,7 +744,7 @@
 		<h3>string::is_hexadecimal</h3>
 		<p>The <code>string::is_hexadecimal</code> function checks whether a value is hexadecimal.</p>
 		<Code @name="docs-surrealql-functions-is-hexadecimal.surql" text="API Definition">
-			string::is_hexadecimal(string) -> boolean
+			string::is_hexadecimal(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -941,15 +752,6 @@
 				SELECT * FROM string::is_hexadecimal("ff009e");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-hexadecimal-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-hexadecimal-error-input.surql">
-				SELECT * FROM string::is_hexadecimal(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-hexadecimal-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -965,7 +767,7 @@
 		<h3>string::is_latitude</h3>
 		<p>The <code>string::is_latitude</code> function checks whether a value is a latitude value.</p>
 		<Code @name="docs-surrealql-functions-is-latitude.surql" text="API Definition">
-			string::is_latitude(string) -> boolean
+			string::is_latitude(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -974,15 +776,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-latitude-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-latitude-error-input.surql">
-				SELECT * FROM string::is_latitude(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-latitude-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -997,7 +790,7 @@
 		<h3>string::is_longitude</h3>
 		<p>The <code>string::is_longitude</code> function checks whether a value is a longitude value.</p>
 		<Code @name="docs-surrealql-functions-is-longitude.surql" text="API Definition">
-			string::is_longitude(string) -> boolean
+			string::is_longitude(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -1005,15 +798,6 @@
 				SELECT * FROM string::is_longitude("51.509865");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-longitude-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-longitude-error-input.surql">
-				SELECT * FROM string::is_longitude(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-longitude-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -1029,7 +813,7 @@
 		<h3>string::is_numeric</h3>
 		<p>The <code>string::is_numeric</code> function checks whether a value has only numeric characters.</p>
 		<Code @name="docs-surrealql-functions-is-numeric.surql" text="API Definition">
-			string::is_numeric(string) -> boolean
+			string::is_numeric(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -1037,15 +821,6 @@
 				SELECT * FROM string::is_numeric("1484091748");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-numeric-result.txt">
-				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-numeric-error-input.surql">
-				SELECT * FROM string::is_numeric(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-numeric-error-result.txt">
 				true
 			</Code>
 		</codes>
@@ -1061,7 +836,7 @@
 		<h3>string::is_semver</h3>
 		<p>The <code>string::is_semver</code> function checks whether a value matches a semver version.</p>
 		<Code @name="docs-surrealql-functions-is-semver.surql" text="API Definition">
-			string::is_semver(string) -> boolean
+			string::is_semver(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -1070,15 +845,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-semver-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-semver-error-input.surql">
-				SELECT * FROM string::is_semver(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-semver-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1093,7 +859,7 @@
 		<h3>string::is_url</h3>
 		<p>The <code>string::is_url</code> function checks whether a value is a valid URL.</p>
 		<Code @name="docs-surrealql-functions-is-url.surql" text="API Definition">
-			string::is_url(string) -> boolean
+			string::is_url(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -1102,15 +868,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-url-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-url-error-input.surql">
-				SELECT * FROM string::is_url(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-url-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1125,7 +882,7 @@
 		<h3>string::is_uuid</h3>
 		<p>The <code>string::is_uuid</code> function checks whether a value is a UUID.</p>
 		<Code @name="docs-surrealql-functions-is-uuid.surql" text="API Definition">
-			string::is_uuid(string) -> boolean
+			string::is_uuid(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -1134,15 +891,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-is-uuid-result.txt">
 				true
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-is-uuid-error-input.surql">
-				SELECT * FROM string::is_uuid(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-is-uuid-error-result.txt">
-				false
 			</Code>
 		</codes>
 	</Layout::Text>

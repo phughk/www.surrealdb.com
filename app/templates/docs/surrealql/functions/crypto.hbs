@@ -140,15 +140,6 @@
 				"4768b3fc7ac751e03a614e2349abf3bf"
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the value is hashed:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-crypto-md5-error-input.surql">
-				SELECT * FROM crypto::md5(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-crypto-md5-error-result.txt">
-				"827ccb0eea8a706c4c34a16891f84e7b"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -170,15 +161,6 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-crypto-sha1-result.txt">
 				"c6be709a1b6429472e0c5745b411f1693c4717be"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the value is hashed:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-crypto-sha1-error-input.surql">
-				SELECT * FROM crypto::sha1(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-crypto-sha1-error-result.txt">
-				"8cb2237d0679ca88db6464eac60da96345513964"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -204,15 +186,6 @@
 				"33fe1859daba927ea5674813adc1cf34b9e2795f2b7e91602fae19c0d0c493af"
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the value is hashed:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-crypto-sha256-error-input.surql">
-				SELECT * FROM crypto::sha256(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-crypto-sha256-error-result.txt">
-				"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -236,15 +209,6 @@
 				"39f0160c946c4c53702112d6ef3eea7957ea8e1c78787a482a89f8b0a8860a20ecd543432e4a187d9fdcd1c415cf61008e51a7e8bf2f22ac77e458789c9cdccc"
 			</Code>
 		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the value is hashed:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-crypto-sha512-error-input.surql">
-				SELECT * FROM crypto::sha512(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-crypto-sha512-error-result.txt">
-				"3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79"
-			</Code>
-		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -257,7 +221,7 @@
 		<h3>crypto::argon2::compare</h3>
 		<p>The <code>crypto::argon2::compare</code> function compares a hashed-and-salted argon2 password value with an unhashed password value.</p>
 		<Code @name="docs-surrealql-functions-crypto-argon2-compare.surql" text="API Definition">
-			crypto::argon2::compare(any, any) -> boolean
+			crypto::argon2::compare(string, any) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -305,7 +269,7 @@
 		<h3>crypto::bcrypt::compare</h3>
 		<p>The <code>crypto::bcrypt::compare</code> function compares a hashed-and-salted bcrypt password value with an unhashed password value.</p>
 		<Code @name="docs-surrealql-functions-crypto-bcrypt-compare.surql" text="API Definition">
-			crypto::bcrypt::compare(any, any) -> boolean
+			crypto::bcrypt::compare(string, any) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -353,7 +317,7 @@
 		<h3>crypto::pbkdf2::compare</h3>
 		<p>The <code>crypto::pbkdf2::compare</code> function compares a hashed-and-salted pbkdf2 password value with an unhashed password value.</p>
 		<Code @name="docs-surrealql-functions-crypto-pbkdf2-compare.surql" text="API Definition">
-			crypto::pbkdf2::compare(any, any) -> boolean
+			crypto::pbkdf2::compare(string, any) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -401,7 +365,7 @@
 		<h3>crypto::scrypt::compare</h3>
 		<p>The <code>crypto::scrypt::compare</code> function compares a hashed-and-salted scrypt password value with an unhashed password value.</p>
 		<Code @name="docs-surrealql-functions-crypto-scrypt-compare.surql" text="API Definition">
-			crypto::scrypt::compare(any, any) -> boolean
+			crypto::scrypt::compare(string, any) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
