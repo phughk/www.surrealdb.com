@@ -157,6 +157,7 @@ Router.map(function () {
 				this.route('numbers');
 				this.route('strings');
 				this.route('datetimes');
+				this.route('formatters');
 				this.route('uuids');
 				this.route('objects');
 				this.route('arrays');
