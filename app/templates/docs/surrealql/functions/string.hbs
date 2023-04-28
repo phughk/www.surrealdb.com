@@ -167,11 +167,11 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#is-datetime">
-						<code>string::is_datetime()</code>
+					<a href="#is-format">
+						<code>string::is_format()</code>
 					</a>
 				</td>
-				<td>Checks whether a value matches a datetime format</td>
+				<td>Checks whether a value matches a format format</td>
 			</tr>
 			<tr>
 				<td>
@@ -827,29 +827,29 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "is-datetime"}}>
+<Layout::Group {{waypoint "is-format"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_datetime</h3>
-		<p>The <code>string::is_datetime</code> function checks whether a value matches a datetime format.</p>
-		<Code @name="docs-surrealql-functions-is-datetime.surql" text="API Definition">
-			string::is_datetime(string, string) -> boolean
+		<h3>string::is_format</h3>
+		<p>The <code>string::is_format</code> function checks whether a value matches a specified format.</p>
+		<Code @name="docs-surrealql-functions-is-format.surql" text="API Definition">
+			string::is_format(string, string) -> boolean
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-is-datetime-input.surql">
-				SELECT * FROM string::is_datetime("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
+			<Code @name="docs-surrealql-functions-is-format-input.surql">
+				SELECT * FROM string::is_format("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
 			</Code>
-			<Code @name="docs-surrealql-functions-is-datetime-result.txt">
+			<Code @name="docs-surrealql-functions-is-format-result.txt">
 				true
 			</Code>
 		</codes>
 		<p>If either of the two arguments are not strings, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-is-datetime-error-input.surql">
-				SELECT * FROM string::is_datetime(12345, 67890);
+			<Code @name="docs-surrealql-functions-is-format-error-input.surql">
+				SELECT * FROM string::is_format(12345, 67890);
 			</Code>
-			<Code @name="docs-surrealql-functions-is-datetime-error-result.txt">
+			<Code @name="docs-surrealql-functions-is-format-error-result.txt">
 				null
 			</Code>
 		</codes>
