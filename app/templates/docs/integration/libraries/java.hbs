@@ -27,22 +27,27 @@
 	<p>
 		You can add the driver to your project like you would any standard dependency.
 	</p>
-	<table>
-		<tr>
-			<td>GroupID</td>
-			<td>com.surrealdb</td>
-		</tr>
-		<tr>
-			<td>Artifact</td>
-			<td>surrealdb-driver</td>
-		</tr>
-		<tr>
-			<td>Version</td>
-			<td>0.1.0</td>
-		</tr>
-	</table>
-	<p>To include the driver in your maven project it is sufficient to add the following dependency to your dependency block.</p>
+	<Layout::Table>
+		<table>
+			<tr>
+				<td>GroupID</td>
+				<td>com.surrealdb</td>
+			</tr>
+			<tr>
+				<td>Artifact</td>
+				<td>surrealdb-driver</td>
+			</tr>
+			<tr>
+				<td>Version</td>
+				<td>0.1.0</td>
+			</tr>
+		</table>
+	</Layout::Table>
+
+	<p>To include the driver in your maven project it is sufficient to add the following dependency to your dependency
+		block.</p>
 	<Code @name="docs/integration/libraries/java/maven.xml" />
+
 	<p>To include the driver in your gradle project, add the following</p>
 	<Code @name="docs/integration/libraries/java/gradle.groovy" />
 </Layout::Text>
@@ -50,30 +55,109 @@
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Connect to SurrealDB</h3>
-	<p>Open <code>src/main.rs</code> and replace everything in there with the following code to try out some basic
-		operations using the SurrealDB driver.</p>
-	<Code @name="docs/integration/libraries/rust/basic.rust" />
-
-	<p>To run the example above, you will need to add the following additional dependencies:</p>
-	<Code @name="docs-integration-libraries-rust-dependencies.bash">
-		cargo add serde --features derive
-		cargo add tokio --features macros,rt-multi-thread
-	</Code>
-
-	<p>Then make sure your SurrealDB server is running on <code>127.0.0.1:8000</code> and run your app from the command
-		line with:</p>
-	<Code @name="docs-integration-libraries-rust-basic-run.bash">
-		cargo run
-	</Code>
+	<h3>Library methods</h3>
+	<p>The Java library comes with a number of built-in functions.</p>
 </Layout::Text>
+
+
+<Layout::Gap tiny />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+		<tr>
+			<th w-40>Function</th>
+			<th w-60>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<a href="#conninit">
+					<Ascua::Prism::Inline @language="java" @code="new SurrealWebSocketConnection(host, port, tls)" />
+				</a>
+				<l faint r>static</l>
+			</td>
+			<td>
+				Creates a new connection instance.
+				The connection will upgrade the protocol to WebSockets, providing better performance and functionality.
+				This class is used to connect to the database but is not the driver.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#connect">
+					<Ascua::Prism::Inline @language="java" @code="SurrealWebSocketConnection.connect(timeout)" />
+				</a>
+			</td>
+			<td>
+				Initiates the connection to the database.
+				This is necessary before the driver can be used.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#init">
+					<Ascua::Prism::Inline @language="java" @code="new SyncSurrealDriver(conn)" />
+				</a>
+				<l faint r>static</l>
+			</td>
+			<td>
+				Creates an instance of the driver to interact with the database remotely.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#signin">
+					<Ascua::Prism::Inline @language="java" @code="driver.signIn(user, pass)" />
+				</a>
+			</td>
+			<td>
+				Sign in to the database.
+				This is a necessary step before using the database.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#use">
+					<Ascua::Prism::Inline @language="java" @code="driver.use(namespace, database)" />
+				</a>
+			</td>
+			<td>
+				Use the namespace and database for the context of the driver session.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#create">
+					<Ascua::Prism::Inline @language="java" @code="driver.create(thing, data)" />
+				</a>
+			</td>
+			<td>
+				Create entries under the thing space (table, record).
+			</td>
+		</tr>
+
+		</tbody>
+	</table>
+</Layout::Table>
+
+
+
+
+<Layout::Text>
+	<p>EDITING STOPPPED HERE</p>
+</Layout::Text>
+
+
+
+
+
+
+
 
 <Layout::Gap mini />
 
-<Layout::Text text-l text-f>
-	<h3>Library methods</h3>
-	<p>The Rust library comes with a number of built-in functions.</p>
-</Layout::Text>
 
 <Layout::Gap tiny />
 
