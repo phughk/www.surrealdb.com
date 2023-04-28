@@ -10,6 +10,8 @@ module.exports = function (defaults) {
 			languages: [
 				'bash',
 				'c',
+				'groovy',
+				'java',
 				'javascript',
 				'json',
 				'go',
@@ -21,7 +23,6 @@ module.exports = function (defaults) {
 				'toml',
 				'sql',
 				'yaml',
-				'groovy',
 			],
 			copyToClipboard: true,
 		},
