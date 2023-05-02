@@ -19,24 +19,20 @@
 	</p>
 </Layout::Hero>
 
-<section>
+<Layout::Gap small />
 
-	<Layout::Gap small />
+<Layout::Blocks main-c as |block|>
+	<h2><img inline src="/static/img/text.svg" alt="SurrealDB" /> roadmap</h2>
+</Layout::Blocks>
 
-	<Layout::Blocks main-c as |block|>
-		<h2><img inline src="/static/img/text.svg" alt="SurrealDB" /> roadmap</h2>
-	</Layout::Blocks>
+<Layout::Gap mini />
 
-	<Layout::Gap mini />
-
-	<Layout::Timeline>
-		{{#each this.model as |item|}}
-			<Layout::Timeline::Item @item={{item}} />
-			<clear></clear>
-		{{/each}}
-		<img src="/static/img/assets/icon/halficon.png" alt="SurrealDB" />
-	</Layout::Timeline>
-
-</section>
+<Layout::Timeline>
+	{{#each this.model as |item|}}
+		<Layout::Timeline::Item @item={{item}} />
+		<clear></clear>
+	{{/each}}
+	<img src="/static/img/assets/icon/halficon.png" alt="SurrealDB" />
+</Layout::Timeline>
 
 <Layout::Github />

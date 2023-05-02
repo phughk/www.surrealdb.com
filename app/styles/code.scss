@@ -63,7 +63,7 @@ pre[class*="language-"] {
 	word-spacing:normal;
 	background-color:var(--coder-color);
 	font-family:var(--system-font-mono);
-	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+	box-shadow:0px 5px 20px rgba(0, 0, 0, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 pre[class*="language-"],

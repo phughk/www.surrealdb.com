@@ -12,11 +12,12 @@
 	<meta name="og:url" property="og:url" content="https://surrealdb.com{{route-url}}">
 	<meta name="og:image" property="og:image" content={{or @image "https://surrealdb.com/static/img/preview/main.jpg"}}>
 	{{!-- Social Network meta tags --}}
-	<meta name="twitter:site" content="@surrealdb">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content={{@title}}>
-	<meta name="twitter:description" content={{@description}}>
-	<meta name="twitter:image" content={{or @image "https://surrealdb.com/static/img/preview/main.jpg"}}>
-	<meta name="twitter:image:src" content={{or @image "https://surrealdb.com/static/img/preview/main.jpg"}}>
-	<meta name="twitter:image:alt" content={{@description}}>
+	<meta name="twitter:site" property="twitter:site" content="@surrealdb">
+	<meta name="twitter:card" property="twitter:card" content="summary_large_image">
+	<meta name="twitter:domain" property="twitter:domain" content="surrealdb.com">
+	<meta name="twitter:title" property="twitter:title" content={{@title}}>
+	<meta name="twitter:description" property="twitter:description" content={{@description}}>
+	<meta name="twitter:image" property="twitter:image" content={{or @image "https://surrealdb.com/static/img/preview/main.jpg"}}>
+	<meta name="twitter:image:src" property="twitter:image:src" content={{or @image "https://surrealdb.com/static/img/preview/main.jpg"}}>
+	<meta name="twitter:image:alt" property="twitter:image:alt" content={{@description}}>
 {{/in-element}}

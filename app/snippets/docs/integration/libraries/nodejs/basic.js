@@ -23,7 +23,7 @@ async function main() {
 				last: 'Morgan Hitchcock',
 			},
 			marketing: true,
-			identifier: Math.random().toString(36).substr(2, 10),
+			identifier: Math.random().toString(36).slice(2, 12),
 		});
 
 		// Update a person record with a specific id
