@@ -55,6 +55,14 @@
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
+	<h3>Connect</h3>
+	<p>Below is a snippet of code that demonstrates how you can connect to SurrealDB.</p>
+	<Code @name="docs/integration/libraries/java/basic.java"/>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
 	<h3>Library methods</h3>
 	<p>The Java library comes with a number of built-in functions.</p>
 </Layout::Text>
@@ -252,6 +260,45 @@
 			<Ascua::Prism::Inline @language="java" @code="new SurrealWebSocketConnection(host, port, tls)" />
 		</h3>
 		<p>Initiates a connection instance that can be used to make a connection to a SurrealDB instance.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>host</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The database endpoint to connect to.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>port</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The database port to connect to.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>tls</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						Whether to use TLS or not.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -265,6 +312,27 @@
 			<Ascua::Prism::Inline @language="java" @code="SurrealWebSocketConnection.connect(timeout)" />
 		</h3>
 		<p>Connects to the SurrealDB instance within the timeout of seconds.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>timeout</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The time to wait to connect before erroring, in seconds.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -279,8 +347,29 @@
 		</h3>
 		<p>
 			Creates an instance of the synchronous driver.
-			There is an asynchronous counterpart - <Code>AsyncSurrealDriver</Code> that fills the same functionality.
+			There is an asynchronous counterpart - AsyncSurrealDriver that fills the same functionality.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>conn</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The connection to the database.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -297,6 +386,36 @@
 			Sign in to the database.
 			This is a necessary step before using the database.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>user</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The user used for authentication.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>pass</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The password used for authentication.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -308,11 +427,68 @@
 	<Layout::Text text-l text-f>
 		<h3>
 			<Ascua::Prism::Inline @language="java"
-								  @code="driver.signUp(namespace, database, scope, email, password, marketing, tags)" />
+								  @code="driver.signUp(namespace, database, scope, email, password)" />
 		</h3>
 		<p>
 			Signs up a user to a specific authentication scope.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>namespace</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The namespace to sign up for.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>database</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The database to sign up for.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>scope</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The scope to sign up for.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>email</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The email for sign up.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>password</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The password used for authentication.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -328,6 +504,27 @@
 		<p>
 			Authenticates the current connection with a JWT token.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>token</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The JWT authentication token.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -358,6 +555,36 @@
 		<p>
 			Switch to a specific namespace and database.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>namespace</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The namespace to use throughout the database session.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>database</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The database to use throughout the database session.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -373,6 +600,36 @@
 		<p>
 			Set a variable that can be used throughout the database session.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>key</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The key of the variable being used within queries.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>value</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The value of the variable being used within queries.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -388,6 +645,45 @@
 		<p>
 			Runs a set of SurrealQL statements against the database.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>query</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The database endpoint to connect to.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>args</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The arguments passed to the query in place of named parameters.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>rowType</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The class of the return type of the response.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -403,6 +699,36 @@
 		<p>
 			Selects all records in a table, or a specific record.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The thing we are selecting, table or specific rows.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>rowType</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The class of the expected result.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -418,6 +744,36 @@
 		<p>
 			Creates a record in the database.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The thing being created - table or specific records.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>data</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The data being used for creation.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -433,6 +789,36 @@
 		<p>
 			Updates all records in a table, or a specific record.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						What is being updated - table or specific records.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>data</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The data being replaced in the record.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -448,6 +834,45 @@
 		<p>
 			Change all records in a table, or a specific record.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						What is being changed - table or records.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>data</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						What data is used to apply the change.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>rowType</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The returned type of the query.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -463,6 +888,36 @@
 		<p>
 			Patch all records in a table, or a specific record.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						What is being patched - table or records.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>patches</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						The list of patches to apply.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
@@ -478,6 +933,27 @@
 		<p>
 			Deletes all records, or a specific record.
 		</p>
+		<Layout::Table>
+			<table>
+				<thead>
+				<tr>
+					<th w-40>Arguments</th>
+					<th w-60>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<code>thing</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>
+						What is being deleted - table or selected records.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
 	</Layout::Text>
 
 </Layout::Group>
