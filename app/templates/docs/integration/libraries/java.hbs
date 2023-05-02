@@ -119,12 +119,73 @@
 		</tr>
 		<tr>
 			<td>
+				<a href="#signup">
+					<Ascua::Prism::Inline @language="java"
+										  @code="driver.signUp(namespace, database, scope, email, password, marketing, tags)" />
+				</a>
+			</td>
+			<td>
+				Signs up a user to a specific authentication scope.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#authenticate">
+					<Ascua::Prism::Inline @language="java" @code="driver.authenticate(token)" />
+				</a>
+			</td>
+			<td>
+				Authenticates the current connection with a JWT token.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#invalidate">
+					<Ascua::Prism::Inline @language="java" @code="driver.invalidate()" />
+				</a>
+			</td>
+			<td>
+				Invalidates the authentication for the current connection.
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<a href="#use">
 					<Ascua::Prism::Inline @language="java" @code="driver.use(namespace, database)" />
 				</a>
 			</td>
 			<td>
-				Use the namespace and database for the context of the driver session.
+				Switch to a specific namespace and database.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#let">
+					<Ascua::Prism::Inline @language="java" @code="driver.let(key, value)" />
+				</a>
+			</td>
+			<td>
+				Set a variable that can be used throughout the database session.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#query">
+					<Ascua::Prism::Inline @language="java" @code="driver.query(query, args, rowType)" />
+				</a>
+			</td>
+			<td>
+				Runs a set of SurrealQL statements against the database.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#select">
+					<Ascua::Prism::Inline @language="java" @code="driver.select(thing, rowType)" />
+				</a>
+			</td>
+			<td>
+				Selects all records in a table, or a specific record.
 			</td>
 		</tr>
 		<tr>
@@ -134,190 +195,63 @@
 				</a>
 			</td>
 			<td>
-				Create entries under the thing space (table, record).
+				Creates a record in the database.
 			</td>
-		</tr>
-
-		</tbody>
-	</table>
-</Layout::Table>
-
-
-
-
-<Layout::Text>
-	<p>EDITING STOPPPED HERE</p>
-</Layout::Text>
-
-
-
-
-
-
-
-
-<Layout::Gap mini />
-
-
-<Layout::Gap tiny />
-
-<Layout::Table filled>
-	<table>
-		<thead>
-		<tr>
-			<th w-40>Function</th>
-			<th w-60>Description</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>
-				<a href="#init">
-					<Ascua::Prism::Inline @language="rust" @code="Surreal::init()" />
-				</a>
-				<l faint r>static</l>
-			</td>
-			<td>Initialises a static database engine</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#connect">
-					<Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" />
-				</a>
-			</td>
-			<td>Connects to a specific database endpoint, saving the connection on the static client</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#new">
-					<Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" />
-				</a>
-			</td>
-			<td>Connects to a local or remote database endpoint</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#use">
-					<Ascua::Prism::Inline @language="rust" @code="db.use_ns(namespace).use_db(database)" />
-				</a>
-			</td>
-			<td>Switch to a specific namespace and database</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#signup">
-					<Ascua::Prism::Inline @language="rust" @code="db.signup(credentials)" />
-				</a>
-			</td>
-			<td>Signs up a user to a specific authentication scope</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#signin">
-					<Ascua::Prism::Inline @language="rust" @code="db.signin(credentials)" />
-				</a>
-			</td>
-			<td>Signs this connection in to a specific authentication scope</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#invalidate">
-					<Ascua::Prism::Inline @language="rust" @code="db.invalidate()" />
-				</a>
-			</td>
-			<td>Invalidates the authentication for the current connection</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#authenticate">
-					<Ascua::Prism::Inline @language="rust" @code="db.authenticate(token)" />
-				</a>
-			</td>
-			<td>Authenticates the current connection with a JWT token</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#set">
-					<Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" />
-				</a>
-			</td>
-			<td>Assigns a value as a parameter for this connection</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#query">
-					<Ascua::Prism::Inline @language="rust" @code="db.query(sql)" />
-				</a>
-			</td>
-			<td>Runs a set of SurrealQL statements against the database</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#select">
-					<Ascua::Prism::Inline @language="rust" @code="db.select(resource)" />
-				</a>
-			</td>
-			<td>Selects all records in a table, or a specific record</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#create">
-					<Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" />
-				</a>
-			</td>
-			<td>Creates a record in the database</td>
 		</tr>
 		<tr>
 			<td>
 				<a href="#update">
-					<Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" />
+					<Ascua::Prism::Inline @language="java" @code="driver.update(thing, data)" />
 				</a>
 			</td>
-			<td>Updates all records in a table, or a specific record</td>
+			<td>
+				Updates all records in a table, or a specific record.
+			</td>
 		</tr>
 		<tr>
 			<td>
-				<a href="#merge">
-					<Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" />
+				<a href="#change">
+					<Ascua::Prism::Inline @language="java" @code="driver.change(thing, data, rowType)" />
 				</a>
 			</td>
-			<td>Modifies all records in a table, or a specific record</td>
+			<td>
+				Change all records in a table, or a specific record.
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<a href="#patch">
-					<Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" />
+					<Ascua::Prism::Inline @language="java" @code="driver.patch(thing, patches)" />
 				</a>
 			</td>
-			<td>Applies
-				<Link @link="https://jsonpatch.com">
-				JSON Patch</Link> changes to all records in a table, or a specific record
+			<td>
+				Patch all records in a table, or a specific record.
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<a href="#delete">
-					<Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" />
+					<Ascua::Prism::Inline @language="java" @code="driver.delete(thing)" />
 				</a>
 			</td>
-			<td>Deletes all records, or a specific record</td>
+			<td>
+				Deletes all records, or a specific record.
+			</td>
 		</tr>
+
 		</tbody>
 	</table>
 </Layout::Table>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "init"}}>
+<Layout::Group {{waypoint "conninit"}}>
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="Surreal::init()" />
+			<Ascua::Prism::Inline @language="java" @code="new SurrealWebSocketConnection(host, port, tls)" />
 		</h3>
-		<p>The <code>DB</code> static singleton ensures that a single database instance is available across very large
-			or complicated applications. With the singleton, only one connection to the database is instantiated, and
-			the database connection does not have to be shared across components or controllers.</p>
-		<Code @name="docs/integration/libraries/rust/init.rust" />
+		<p>Initiates a connection instance that can be used to make a connection to a SurrealDB instance.</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -328,147 +262,25 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" />
+			<Ascua::Prism::Inline @language="java" @code="SurrealWebSocketConnection.connect(timeout)" />
 		</h3>
-		<p>Connects to a local or remote database endpoint.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>endpoint</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The database endpoint to connect to.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/connect.rust" />
+		<p>Connects to the SurrealDB instance within the timeout of seconds.</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "new"}}>
+<Layout::Group {{waypoint "init"}}>
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" />
+			<Ascua::Prism::Inline @language="java" @code="new SyncSurrealDriver(conn)" />
 		</h3>
-		<p>Connects to a local or remote database endpoint.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>endpoint</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The database endpoint to connect to.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/new.rust" />
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "use"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.use_ns(ns).use_db(db)" />
-		</h3>
-		<p>Switch to a specific namespace and database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>ns</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Switches to a specific namespace.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>db</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Switches to a specific database.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs-integration-libraries-rust-use.rust">
-			db.use_ns("test").use_db("test").await?;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "signup"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.signup(credentials)" />
-		</h3>
-		<p>Signs up to a specific authentication scope.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>credentials</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Variables used in a signup query.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/signup.rust" />
+		<p>
+			Creates an instance of the synchronous driver.
+			There is an asynchronous counterpart - <Code>AsyncSurrealDriver</Code> that fills the same functionality.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -479,45 +291,28 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.signin(credentials)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.signIn(user, pass)" />
 		</h3>
-		<p>Signs in to a specific authentication scope.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>credentials</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Variables used in a signin query.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/signin.rust" />
+		<p>
+			Sign in to the database.
+			This is a necessary step before using the database.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "invalidate"}}>
+<Layout::Group {{waypoint "signup"}}>
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.invalidate()" />
+			<Ascua::Prism::Inline @language="java"
+								  @code="driver.signUp(namespace, database, scope, email, password, marketing, tags)" />
 		</h3>
-		<p>Invalidates the authentication for the current connection.</p>
-		<Code @name="docs/integration/libraries/rust/invalidate.rust" />
+		<p>
+			Signs up a user to a specific authentication scope.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -528,75 +323,56 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.authenticate(token)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.authenticate(token)" />
 		</h3>
-		<p>Authenticates the current connection with a JWT token.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>token</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The JWT authentication token.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/authenticate.rust" />
+		<p>
+			Authenticates the current connection with a JWT token.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "set"}}>
+<Layout::Group {{waypoint "invalidate"}}>
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.invalidate()" />
 		</h3>
-		<p>Assigns a value as a parameter for this connection.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>key</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Specifies the name of the variable.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>val</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Assigns the value to the variable name.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/let.rust" />
+		<p>
+			Invalidates the authentication for the current connection.
+		</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "use"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="java" @code="driver.use(namespace, database)" />
+		</h3>
+		<p>
+			Switch to a specific namespace and database.
+		</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "let"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="java" @code="driver.let(key, value)" />
+		</h3>
+		<p>
+			Set a variable that can be used throughout the database session.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -607,40 +383,11 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.query(sql).bind(vars)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.query(query, args, rowType)" />
 		</h3>
-		<p>Runs a set of SurrealQL statements against the database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>sql</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						Specifies the SurrealQL statements.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>vars</code>
-						<l faint r>Optional</l>
-					</td>
-					<td>
-						Assigns variables which can be used in the query.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/query.rust" />
+		<p>
+			Runs a set of SurrealQL statements against the database.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -651,35 +398,11 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.select(resource)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.select(thing, rowType)" />
 		</h3>
-		<p>Selects all records in a table, or a specific record, from the database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or a record ID to select.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/select.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-select-func.surql">
-			SELECT * FROM $resource;
-		</Code>
+		<p>
+			Selects all records in a table, or a specific record.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -690,44 +413,11 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.create(thing, data)" />
 		</h3>
-		<p>Creates a record in the database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or the specific record ID to create.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>data</code>
-						<l faint r>Optional</l>
-					</td>
-					<td>
-						The document / record data to insert.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/create.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-create-func.surql">
-			CREATE $resource CONTENT $data;
-		</Code>
+		<p>
+			Creates a record in the database.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -738,47 +428,11 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.update(thing, data)" />
 		</h3>
-		<p>Updates all records in a table, or a specific record, in the database.</p>
-		<blockquote yellow text="Note">This function replaces the current document / record data with the specified
-			data.
-		</blockquote>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or the specific record ID to update.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>data</code>
-						<l faint r>Optional</l>
-					</td>
-					<td>
-						The document / record data to insert.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/update.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-update-func.surql">
-			UPDATE $resource CONTENT $data;
-		</Code>
+		<p>
+			Updates all records in a table, or a specific record.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -789,104 +443,26 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.change(thing, data, rowType)" />
 		</h3>
-		<p>Modifies all records in a table, or a specific record, in the database.</p>
-		<blockquote yellow text="Note">This function merges the current document / record data with the specified
-			data.
-		</blockquote>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or the specific record ID to change
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>data</code>
-						<l faint r>Optional</l>
-					</td>
-					<td>
-						The document / record data to insert.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/merge.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-change-func.surql">
-			UPDATE $resource MERGE $data;
-		</Code>
+		<p>
+			Change all records in a table, or a specific record.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "modify"}}>
+<Layout::Group {{waypoint "patch"}}>
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.patch(thing, patches)" />
 		</h3>
-		<p>Applies
-			<Link @link="https://jsonpatch.com">
-			JSON Patch</Link> changes to all records, or a specific record, in the database.
+		<p>
+			Patch all records in a table, or a specific record.
 		</p>
-		<blockquote yellow text="Note">This function patches the current document / record data with the specified
-			<Link @link="https://jsonpatch.com">
-			JSON Patch</Link> data.
-		</blockquote>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or the specific record ID to modify.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<code>data</code>
-						<l faint r>Optional</l>
-					</td>
-					<td>
-						The
-						<Link @link="https://jsonpatch.com">
-						JSON Patch</Link> data with which to modify the records.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/patch.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-modify-func.surql">
-			UPDATE $resource PATCH $data;
-		</Code>
 	</Layout::Text>
 
 </Layout::Group>
@@ -897,50 +473,13 @@
 
 	<Layout::Text text-l text-f>
 		<h3>
-			<Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" />
+			<Ascua::Prism::Inline @language="java" @code="driver.delete(thing)" />
 		</h3>
-		<p>Deletes all records in a table, or a specific record, from the database.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-				<tr>
-					<th w-40>Arguments</th>
-					<th w-60>Description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>
-						<code>resource</code>
-						<l yellow r>Required</l>
-					</td>
-					<td>
-						The table name or a record ID to select.
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs/integration/libraries/rust/delete.rust" />
-		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-delete-func.surql">
-			DELETE FROM $resource RETURN BEFORE;
-		</Code>
+		<p>
+			Deletes all records, or a specific record.
+		</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap large />
-
-<Layout::Text text-l text-f>
-	<h2>
-		<Devicon @size="50" @type="java" />
-		Java driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
-	<p>This library has not been released yet. We hope to release this soon.</p>
-	<p>To contribute to this documentation,
-		<Link @link={{github}}>
-		edit this file on GitHub</Link>.
-	</p>
-</Layout::Text>
-
-<Layout::Gap small />
