@@ -31,6 +31,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#contains">
+						<code>string::contains()</code>
+					</a>
+				</td>
+				<td>Check wether a string contains another string</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#endsWith">
 						<code>string::endsWith()</code>
 					</a>
@@ -266,6 +274,29 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-string-concat-result.txt">
 				"this is a test"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>string::contains</code></h3>
+		<p>The <code>string::contains</code> function checks wether a string contains another string.</p>
+		<Code @name="docs-surrealql-functions-string-contains.surql" text="API Definition">
+			string::contains(string, string) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-string-contains-input.surql">
+				SELECT * FROM string::contains('abcdefg', 'cde');
+			</Code>
+			<Code @name="docs-surrealql-functions-string-contains-result.txt">
+				true
 			</Code>
 		</codes>
 	</Layout::Text>
