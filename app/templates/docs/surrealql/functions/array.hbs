@@ -128,6 +128,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#join">
+						<code>array::join()</code>
+					</a>
+				</td>
+				<td>Joins string-like values in an array together with a delimiter</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#len">
 						<code>array::len()</code>
 					</a>
@@ -527,6 +535,29 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-intersect-result.txt">
 				[3,4]
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "join"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::join</h3>
+		<p>The <code>array::join</code> function joins string-like values in an array together with a delimiter.</p>
+		<Code @name="docs-surrealql-functions-array-join.surql" text="API Definition">
+			array::join(array, string) -> string
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-join-input.surql">
+				SELECT * FROM array::join(["Hello", "World!"], ", ");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-join-result.txt">
+				"Hello, World!"
 			</Code>
 		</codes>
 	</Layout::Text>
