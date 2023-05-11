@@ -35,6 +35,9 @@
 	<p>Using the insert statement, it is possible to copy records easily between tables. The records being copied will have the same id in the new table, but the record id will signify the new table name.</p>
 	<Code @name="docs/surrealql/statements/insert/copy.surql" />
 
+	<p>Furthermore, it is possible to perform a bulk insert in a single query. The <code>@what</code> part of the syntax can be either a single object or an array of objects.</p>
+	<Code @name="docs/surrealql/statements/insert/batch.surql"/>
+
 </Layout::Text>
 
 <Layout::Gap large />
