@@ -10,6 +10,9 @@ SELECT addresses[WHERE active = true] FROM customer;
 -- Select a remote field from connected out graph edges
 SELECT ->like->friend.name AS friends FROM person:tobie;
 
+-- Select a record that matches a graph pattern
+SELECT * FROM person WHERE ->(reaction WHERE type='celebrate')->post;
+
 -- Use mathematical calculations in a select expression
 SELECT ( ( celsius * 2 ) + 30 ) AS fahrenheit FROM temperatue;
 
