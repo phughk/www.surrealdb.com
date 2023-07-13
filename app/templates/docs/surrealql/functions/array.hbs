@@ -8,7 +8,6 @@
 <Layout::Text text-l text-f>
     <h2>Array functions</h2>
 	<p>These functions can be used when working with, and manipulating arrays of data.</p>
-	<blockquote green text="Note">Array functions also accept a <code>set</code> as an alternative to the array type.</blockquote>
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -56,6 +55,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#boolean">
+					<code>array::boolean_and() </code>, <code> array::boolean_or()</code>, <code>array::boolean_xor()</code> , and <code>array::boolean_not() </code>
+					</a>
+				</td>
+				<td> Perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#combine">
 						<code>array::combine()</code>
 					</a>
@@ -69,6 +76,14 @@
 					</a>
 				</td>
 				<td>Returns the complement of two arrays</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#clump">
+						<code>array::clump()</code>
+					</a>
+				</td>
+                <td>Returns the original array split into sub-arrays of <code>size</code>. Similar to <code>slice::chunks</code></td>
 			</tr>
             <tr>
 				<td>
@@ -93,6 +108,22 @@
 					</a>
 				</td>
 				<td>Returns the unique items in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#find_index">
+						<code>array::find_Index()</code>
+					</a>
+				</td>
+				<td>Returns the index of the first occurrence of <code>value</code> in the array or <code>null</code> if <code>array</code> does not contain <code>value</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#filter_Index">
+						<code>array::filter_Index()</code>
+					</a>
+				</td>
+				<td>find the indexes of all occurrences of all matching <code>values</code></td>
 			</tr>
 			<tr>
 				<td>
@@ -128,14 +159,6 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#join">
-						<code>array::join()</code>
-					</a>
-				</td>
-				<td>Joins string-like values in an array together with a delimiter</td>
-			</tr>
-			<tr>
-				<td>
 					<a href="#len">
 						<code>array::len()</code>
 					</a>
@@ -144,11 +167,27 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#logical">
+						<code>array::logical_and() </code>, <code> array::logical_or()</code>, <code>array::logical_xor()</code> , and <code>array::logical_not() </code>
+					</a>
+				</td>
+				<td>Similar to their boolean versions but they return the element that represents the resulting truthiness similar to the above. Note that the functions prioritize the elements on the left hand. Note that in the event that neither element can represent the truthiness of the output, the resulting element is a boolean value of the truthiness.</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#max">
 						<code>array::max()</code>
 					</a>
 				</td>
 				<td>Returns the maximum item in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#matches">
+						<code>array::matches()</code>
+					</a>
+				</td>
+				<td>Returns an array of boolenas</td>
 			</tr>
 			<tr>
 				<td>
@@ -200,14 +239,6 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#slice">
-						<code>array::slice()</code>
-					</a>
-				</td>
-				<td>Slice an array from and to a certain index</td>
-			</tr>
-			<tr>
-				<td>
 					<a href="#sort">
 						<code>array::sort()</code>
 					</a>
@@ -232,6 +263,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#transpose">
+						<code>array::transpose()</code>
+					</a>
+				</td>
+				<td>Used to perform 2d array transposition but it's behavior in cases of arrays of differing sizes can be best described as taking in multiple arrays and 'layering' them on top of each other.</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#union">
 						<code>array::union()</code>
 					</a>
@@ -250,7 +289,7 @@
 		<h3>array::add</h3>
 		<p>The <code>array::add</code> function adds an item to an array only if it doesn't exist.</p>
 		<Code @name="docs-surrealql-functions-array-add.surql" text="API Definition">
-			array::add(array, any) -> array
+			array::add(array, value) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -259,6 +298,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-add-result.txt">
 				["one", "two", "three"]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-add-error-input.surql">
+				SELECT * FROM array::add(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-add-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -281,6 +329,15 @@
 				SELECT * FROM array::all([1, 2, 3, NONE, 'SurrealDB', 5]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-all-result.txt">
+				false
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then a <Link @link="docs.surrealql.datamodel.simple"><code>FALSE</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-all-error-input.surql">
+				SELECT * FROM array::all(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-all-error-result.txt">
 				false
 			</Code>
 		</codes>
@@ -307,6 +364,15 @@
 				true
 			</Code>
 		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>FALSE</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-any-error-input.surql">
+				SELECT * FROM array::any(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-any-error-result.txt">
+				false
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -319,7 +385,7 @@
 		<h3>array::append</h3>
 		<p>The <code>array::append</code> function appends a value to the end of an array.</p>
 		<Code @name="docs-surrealql-functions-array-append.surql" text="API Definition">
-			array::append(array, any) -> array
+			array::append(array, value) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -328,6 +394,47 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-append-result.txt">
 				[1,2,3,4,5]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-append-error-input.surql">
+				SELECT * FROM array::append(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-append-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "boolean"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::boolean_and, array::boolean_or , array::boolean_xor , and array::boolean_not</h3>
+		<p>The <code>array::boolean_*</code> perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</p>
+		<Code @name="docs-surrealql-functions-array-boolean.surql" text="API Definition">
+			array::boolean_and(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean-input.surql">
+				SELECT * FROM array::boolean_and(["true", "false", 1, 1], ["true", "true", 0, "true"]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean-result.txt">
+				["true", "false", 0, 1]
+			</Code>
+		</codes>
+		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean-error-input.surql">
+				SELECT * FROM array::boolean_and([true, true], [false])
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean-error-result.txt">
+				"[false, false]",
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -353,6 +460,15 @@
 				[ [1,2], [1,3], [2,2], [2,3] ]
 			</Code>
 		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-combine-error-input.surql">
+				SELECT * FROM array::combine(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-combine-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -374,6 +490,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-complement-result.txt">
 				[1,2]
+			</Code>
+		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-complement-error-input.surql">
+				SELECT * FROM array::complement(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-complement-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -399,6 +524,47 @@
 				[1,2,3,4,3,4,5,6]
 			</Code>
 		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-concat-error-input.surql">
+				SELECT * FROM array::concat(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-concat-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "clump"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::clump</h3>
+		<p>The <code>array::clump</code> function returns the original array split into sub-arrays of <code>size</code>. Similar to <code>slice::chunks</code></p>
+		<Code @name="docs-surrealql-functions-array-clump.surql" text="API Definition">
+			array::clump(array, value) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-clump-input.surql">
+                SELECT * FROM array::clump("[0, 1, 2, 3]", 2,);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-clump-result.txt">
+				[[0, 1], [2, 3]]
+			</Code>
+		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-clump-error-input.surql">
+				SELECT * FROM array::clump(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-clump-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -420,6 +586,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-difference-result.txt">
 				[1,2,5,6]
+			</Code>
+		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-difference-error-input.surql">
+				SELECT * FROM array::difference(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-difference-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -445,6 +620,15 @@
 				[1,2,3,4]
 			</Code>
 		</codes>
+		<p>If the argument does not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-distinct-error-input.surql">
+				SELECT * FROM array::distinct("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-distinct-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -466,6 +650,79 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-flatten-result.txt">
 				[1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8]]
+			</Code>
+		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-flatten-error-input.surql">
+				SELECT * FROM array::flatten(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-flatten-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "find_index"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::find_index</h3>
+		<p>The <code>array::find_index</code> Returns the index of the first occurrence of <code>value</code> in the array or <code>null</code> if <code>array</code> does not contain <code>value</code></p>
+		<Code @name="docs-surrealql-functions-array-flatten.surql" text="API Definition">
+			array::flatten(array, index) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-find_index-input.surql">
+				SELECT * FROM array::find_index([5, 6, 7], 7);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-find_index-result.txt">
+				"2"
+			</Code>
+		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-find_index-error-input.surql">
+				SELECT * FROM array::find_index([0, 1, 2], 3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-find_index-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "filter_Index"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::filter_Index</h3>
+		<p>The <code>array::filter_Index</code> finds the indexes of all occurrences of all matching <code>values</code></p>
+		<Code @name="docs-surrealql-functions-array-filter_index.surql" text="API Definition">
+			array::filter_Index(array, index) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-filter_Index-input.surql">
+				SELECT * FROM array::filter_index([0, 1, 2], 1);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-filter_Index-result.txt">
+				"1"
+			</Code>
+		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-find_index-error-input.surql">
+				SELECT * FROM array::filter_index(["nothing here"], 0);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-find_index-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -491,6 +748,15 @@
 				[1,2,3,4,5,6,7,8,9]
 			</Code>
 		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-group-error-input.surql">
+				SELECT * FROM array::group(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-group-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -503,7 +769,7 @@
 		<h3>array::insert</h3>
 		<p>The <code>array::insert</code> function inserts a value into an array at a specific position.</p>
 		<Code @name="docs-surrealql-functions-array-insert.surql" text="API Definition">
-			array::insert(array, any, number) -> array
+			array::insert(array, value, number) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -512,6 +778,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-insert-result.txt">
 				[1,2,5,3,4]
+			</Code>
+		</codes>
+		<p>If either of the first two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-insert-error-input.surql">
+				SELECT * FROM array::insert(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-insert-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -537,27 +812,13 @@
 				[3,4]
 			</Code>
 		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "join"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>array::join</h3>
-		<p>The <code>array::join</code> function joins string-like values in an array together with a delimiter.</p>
-		<Code @name="docs-surrealql-functions-array-join.surql" text="API Definition">
-			array::join(array, string) -> string
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-array-join-input.surql">
-				SELECT * FROM array::join(["Hello", "World!"], ", ");
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-intersect-error-input.surql">
+				SELECT * FROM array::intersect(3, true);
 			</Code>
-			<Code @name="docs-surrealql-functions-array-join-result.txt">
-				"Hello, World!"
+			<Code @name="docs-surrealql-functions-array-intersect-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -583,6 +844,79 @@
 				9
 			</Code>
 		</codes>
+		<p>If the argument does not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-len-error-input.surql">
+				SELECT * FROM array::len("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-len-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "logical"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::logical_and, array::logical_or , array::logical_xor , and array::logical_not</h3>
+		<p>The <code>array::logical_*</code> perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</p>
+		<Code @name="docs-surrealql-functions-array-logical.surql" text="API Definition">
+			array::logical_*(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical-input.surql">
+				SELECT * FROM array::logical_and([true, false, true, false], [true, true, false, false]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical-result.txt">
+				"[true, false, false, false]"
+			</Code>
+		</codes>
+		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical-error-input.surql">
+				SELECT * FROM array::logical_and([0, 1], [])
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical-error-result.txt">
+				"[0, null]"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "matches"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::matches</h3>
+		<p>The <code>array::matches</code> returns an array of boolenas</p>
+		<Code @name="docs-surrealql-functions-array-matches.surql" text="API Definition">
+			array::matches(Array,value)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-matches-input.surql">
+				SELECT * FROM array::matches([0, 1, 2], 1);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-matches-result.txt">
+				"[false, true, false]"
+			</Code>
+		</codes>
+		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-matches-error-input.surql">
+				SELECT * FROM array::matches([{id: "ohno:0"}, {id: "ohno:1"}], {id: "ohno:1"})
+			</Code>
+			<Code @name="docs-surrealql-functions-array-matches-error-result.txt">
+				"[false, true]"
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -606,6 +940,15 @@
 				4
 			</Code>
 		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-pop-error-input.surql">
+				SELECT * FROM array::pop(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-pop-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -618,7 +961,7 @@
 		<h3>array::prepend</h3>
 		<p>The <code>array::prepend</code> function prepends a value to the end of an array.</p>
 		<Code @name="docs-surrealql-functions-array-prepend.surql" text="API Definition">
-			array::prepend(array, any) -> array
+			array::prepend(array, value) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -627,6 +970,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-prepend-result.txt">
 				[5,1,2,3,4]
+			</Code>
+		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-prepend-error-input.surql">
+				SELECT * FROM array::prepend(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-prepend-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -641,7 +993,7 @@
 		<h3>array::push</h3>
 		<p>The <code>array::push</code> function appends a value to the end of an array.</p>
 		<Code @name="docs-surrealql-functions-array-push.surql" text="API Definition">
-			array::push(array, any) -> array
+			array::push(array, value) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
@@ -650,6 +1002,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-push-result.txt">
 				[1,2,3,4,5]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-push-error-input.surql">
+				SELECT * FROM array::push(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-push-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -675,6 +1036,15 @@
 				[1,2,4,5]
 			</Code>
 		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-remove-error-input.surql">
+				SELECT * FROM array::remove(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-remove-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -698,44 +1068,13 @@
 				[5,4,3,2,1]
 			</Code>
 		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "slice"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>array::slice</h3>
-		<p>The <code>array::slice</code> function slices an array from and until a certain index.</p>
-		<Code @name="docs-surrealql-functions-array-slice.surql" text="API Definition">
-			array::slice(array, begin, limit) -> array
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-array-slice-input.surql">
-				SELECT * FROM array::slice(['a', 'b', 'c', 'd', 'e'], 1, 2);
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-reverse-error-input.surql">
+				SELECT * FROM array::reverse(3);
 			</Code>
-			<Code @name="docs-surrealql-functions-array-slice-result.txt">
-				['b', 'c']
-			</Code>
-		</codes>
-		<p>The <code>array::slice</code> function also allows negative lookups:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-array-slice-negative-begin-input.surql">
-				SELECT * FROM array::slice(['a', 'b', 'c', 'd', 'e'], -3);
-			</Code>
-			<Code @name="docs-surrealql-functions-array-slice-negative-begin-result.txt">
-				['c', 'd', 'e']
-			</Code>
-		</codes>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-array-slice-negative-limit-input.surql">
-				SELECT * FROM array::slice(['a', 'b', 'c', 'd', 'e'], 1, -1);
-			</Code>
-			<Code @name="docs-surrealql-functions-array-slice-negative-limit-result.txt">
-				['b', 'c', 'd']
+			<Code @name="docs-surrealql-functions-array-reverse-error-result.txt">
+				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -793,6 +1132,15 @@
 				["something",4,3,3,2,1,1,9,null]
 			</Code>
 		</codes>
+		<p>If the first argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-error-input.surql">
+				SELECT * FROM array::sort("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-error-result.txt">
+				"some text"
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
@@ -814,6 +1162,15 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-asc-result.txt">
 				[null,0,1,1,2,3,3,4,"something"]
+			</Code>
+		</codes>
+		<p>If the argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-asc-error-input.surql">
+				SELECT * FROM array::sort::asc("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-asc-error-result.txt">
+				"some text"
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -839,6 +1196,47 @@
 				["something",4,3,3,2,1,1,9,null]
 			</Code>
 		</codes>
+		<p>If the argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-desc-error-input.surql">
+				SELECT * FROM array::sort::desc("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-desc-error-result.txt">
+				"some text"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "transpose"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::transpose</h3>
+		<p>The <code>array::transpose</code> is used to perform 2d array transposition but it's behavior in cases of arrays of differing sizes can be best described as taking in multiple arrays and 'layering' them on top of each other.</p>
+		<Code @name="docs-surrealql-functions-array-transpose.surql" text="API Definition">
+			array::union(array, array) -> array array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-transpose-input.surql">
+				SELECT * FROM array::transpose([[0, 1], [2, 3]]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-transpose-result.txt">
+				"[[0, 2], [1, 3]]"
+			</Code>
+		</codes>
+        {{!-- <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-union-error-input.surql">
+				SELECT * FROM array::union(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-union-error-result.txt">
+				null
+			</Code>
+		</codes> --}}
 	</Layout::Text>
 
 </Layout::Group>
@@ -862,8 +1260,18 @@
 				[1,2,6,3,4,5]
 			</Code>
 		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-union-error-input.surql">
+				SELECT * FROM array::union(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-union-error-result.txt">
+				null
+			</Code>
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>
+
 
 <Layout::Gap large />
