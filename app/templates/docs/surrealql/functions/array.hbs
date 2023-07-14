@@ -55,11 +55,35 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#boolean">
-					<code>array::boolean_and() </code>, <code> array::boolean_or()</code>, <code>array::boolean_xor()</code> , and <code>array::boolean_not() </code>
+					<a href="#boolean_and">
+					<code>array::boolean_and() </code>
 					</a>
 				</td>
-				<td> Perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</td>
+				<td> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND"><code>AND</code> bitwise operations</Link> on the input arrays per-element based on the element's truthiness. <br/> If one array is shorter than the other it is considered null and thus false.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#boolean_or">
+					<code> array::boolean_or()</code>
+					</a>
+				</td>
+				<td> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR"><code>OR</code> bitwise operations</Link> on the input arrays per-element based on the element's truthiness. <br/> It takes two arrays and if one array is shorter than the other or missing, the output is considered null and thus false.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#boolean_xor">
+					<code>array::boolean_xor()</code>
+					</a>
+				</td>
+				<td> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR"><code>XOR</code> bitwise operations</Link> on the input array(s) per-element based on the element's truthiness. <br/>It takes two arrays and if one array is shorter than the other or missing, the output is considered null and thus false.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#boolean_not">
+					<code>array::boolean_not() </code>
+					</a>
+				</td>
+				<td> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_NOT"><code>NOT</code> bitwise operations</Link> on the input array(s) per-element based on the element's truthiness. <br/> It takes in one array and it returns false if its single operand can be converted to true.</td>
 			</tr>
 			<tr>
 				<td>
@@ -167,11 +191,27 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#logical">
-						<code>array::logical_and() </code>, <code> array::logical_or()</code>, <code>array::logical_xor()</code> , and <code>array::logical_not() </code>
+					<a href="#logical_and">
+						<code>array::logical_and() </code>
 					</a>
 				</td>
-				<td>Similar to their boolean versions but they return the element that represents the resulting truthiness similar to the above. Note that the functions prioritize the elements on the left hand. Note that in the event that neither element can represent the truthiness of the output, the resulting element is a boolean value of the truthiness.</td>
+				<td>Performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND"><code>AND</code> logical operations</Link> local but they return the element that represents the resulting truthiness similar to the above. Note that the functions prioritize the elements on the left hand. Also, in the event that neither element can represent the truthiness of the output, the resulting element is a boolean value of the truthiness.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#logical_or">
+						<code> array::logical_or()</code>
+					</a>
+				</td>
+				<td>Performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"><code>OR</code> logical operations</Link>. Note that the functions prioritize the elements on the left hand.</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#logical_xor">
+						<code>array::logical_xor()</code>
+					</a>
+				</td>
+				<td>Performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"><code>XOR</code> logical operations</Link>.</td>
 			</tr>
 			<tr>
 				<td>
@@ -411,11 +451,11 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "boolean"}}>
+<Layout::Group {{waypoint "boolean_and"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>array::boolean_and, array::boolean_or , array::boolean_xor , and array::boolean_not</h3>
-		<p>The <code>array::boolean_*</code> perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</p>
+		<h3>array::boolean_and</h3>
+		<p>The <code>array::boolean_and</code> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND"><code>AND</code> bitwise operations</Link> on the input arrays per-element based on the element's truthiness. <br/> If one array is shorter than the other it is considered null and thus false. </p>
 		<Code @name="docs-surrealql-functions-array-boolean.surql" text="API Definition">
 			array::boolean_and(lh: Array, rh: Array)
 		</Code>
@@ -435,6 +475,84 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean-error-result.txt">
 				"[false, false]",
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "boolean_or"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::boolean_or</h3>
+		<p>The <code>array::boolean_or</code>Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR"><code>OR</code> bitwise operations</Link> on the input arrays per-element based on the element's truthiness. <br/> It takes two arrays and if one array is shorter than the other or missing, the output is considered null and thus false.</p>
+		<Code @name="docs-surrealql-functions-array-boolean_or.surql" text="API Definition">
+			array::boolean_or(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean_or-input.surql">
+				SELECT * FROM array::boolean_or([false, true, false, true], [false, false, true, true])
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean_or-result.txt">
+				[false, true, true, true]
+			</Code>
+		</codes>
+		{{!-- <p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean_or-error-input.surql">
+				SELECT * FROM array::boolean_and([true, true], [false])
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean_or-error-result.txt">
+				"[false, false]",
+			</Code>
+		</codes> --}}
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "boolean_xor"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::boolean_xor</h3>
+		<p>The <code>array::boolean_xor</code> Performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"><code>XOR</code> bitwise operations</Link>.</p>
+		<Code @name="docs-surrealql-functions-array-boolean_xor.surql" text="API Definition">
+			array::boolean_xor(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean_xor-input.surql">
+				SELECT * FROM array::boolean_xor([false, true, false, true], [false, false, true, true]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean_xor-result.txt">
+				[false, true, true, false]
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "boolean_not"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::boolean_not</h3>
+		<p>The <code>array::boolean_not</code> Perform the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_NOT"><code>NOT</code> bitwise operations</Link> on the input array(s) per-element based on the element's truthiness. <br/> It takes in one array and it returns false if its single operand can be converted to true.</p>
+		<Code @name="docs-surrealql-functions-array-boolean_not.surql" text="API Definition">
+			array::boolean_not(Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-boolean_not-input.surql">
+				SELECT * FROM array::boolean_not([false, true, 0, 1]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-boolean_not-result.txt">
+				[true, false, true, false]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -859,30 +977,94 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "logical"}}>
+<Layout::Group {{waypoint "logical_and"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>array::logical_and, array::logical_or , array::logical_xor , and array::logical_not</h3>
-		<p>The <code>array::logical_*</code> perform their respective logical operations on the input array(s) per-element based on the element's truthiness. <br/> For those that take two arrays, missing elements (if one array is shorter than the other) are considered null and thus false.</p>
-		<Code @name="docs-surrealql-functions-array-logical.surql" text="API Definition">
-			array::logical_*(lh: Array, rh: Array)
+		<h3>array::logical_and</h3>
+		<p>The <code>array::logical_and</code> performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND"><code>AND</code> logical operations</Link> local but they return the element that represents the resulting truthiness similar to the above. Note that the functions prioritize the elements on the left hand. Also, in the event that neither element can represent the truthiness of the output, the resulting element is a boolean value of the truthiness.</p>
+		<Code @name="docs-surrealql-functions-array-logical_and.surql" text="API Definition">
+			array::logical_and(lh: Array, rh: Array)
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-array-logical-input.surql">
+			<Code @name="docs-surrealql-functions-array-logical_and-input.surql">
 				SELECT * FROM array::logical_and([true, false, true, false], [true, true, false, false]);
 			</Code>
-			<Code @name="docs-surrealql-functions-array-logical-result.txt">
+			<Code @name="docs-surrealql-functions-array-logica_and-result.txt">
 				"[true, false, false, false]"
 			</Code>
 		</codes>
 		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-array-logical-error-input.surql">
+			<Code @name="docs-surrealql-functions-array-logical_and-error-input.surql">
 				SELECT * FROM array::logical_and([0, 1], [])
 			</Code>
-			<Code @name="docs-surrealql-functions-array-logical-error-result.txt">
-				"[0, null]"
+			<Code @name="docs-surrealql-functions-array-logical_and-error-result.txt">
+				[0, null]
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "logical_or"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::logical_or</h3>
+		<p>The <code>array::logical_or</code> Performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"><code>OR</code> logical operations</Link>. Note that the functions prioritize the elements on the left hand.</p>
+		<Code @name="docs-surrealql-functions-array-logical_or.surql" text="API Definition">
+			array::logical_or(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical_or-input.surql">
+				SELECT * FROM array::logical_or([true, false, true, false], [true, true, false, false]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical_or-result.txt">
+				[true, true, true, false]
+			</Code>
+		</codes>
+		<p> If one of the arrray is empty, the first array is returned.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical_or-error-input.surql">
+				SELECT * FROM array::logical_or([0, 1], []);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical_or-error-result.txt">
+				[0, 1]
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "logical_xor"}}>
+
+	<Layout::Text text-l text-f>
+		<h3> array::logical_xor </h3>
+		<p>The <code>array::logical_xor</code> performs the <Link @link="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"><code>XOR</code> logical operations</Link>.</p>
+		<Code @name="docs-surrealql-functions-array-logical.surql" text="API Definition">
+			array::logical_xor(lh: Array, rh: Array)
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical_xor-input.surql">
+				SELECT * FROM array::logical_xor([true, false, true, false], [true, true, false, false]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical_xor-result.txt">
+				"[false, true, true, false]"
+			</Code>
+		</codes>
+		<p>If one of the arrray is empty, the first array is returned.</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-logical_xor-error-input.surql">
+				SELECT * FROM array::logical_xor([0, 1], [])
+			</Code>
+			<Code @name="docs-surrealql-functions-array-logical_xor-error-result.txt">
+				"[0, 1]"
 			</Code>
 		</codes>
 	</Layout::Text>
