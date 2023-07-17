@@ -224,6 +224,7 @@ Router.map(function () {
 					this.route('surrealql-functions');
 				});
 				this.route('sleep');
+				this.route('vector');
 			});
 			this.route('demo');
 		});
