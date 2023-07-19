@@ -32,5 +32,9 @@ DEFINE [
 			| FOR update @expression
 			| FOR delete @expression
 		] ]
-	| INDEX @name ON [ TABLE ] @table [ FIELDS | COLUMNS ] @fields [ UNIQUE ]
+	| ANALYZER @name
+		[ TOKENIZERS @tokenizers ]
+		[ FILTERS @filters ]
+	| INDEX @name ON [ TABLE ] @table [ FIELDS | COLUMNS ] @fields
+		[ UNIQUE | SEARCH ANALYZER @analyzer [ BM25 [(@k1, @b)] ] [ HIGHLIGHTS ] ]
 ]

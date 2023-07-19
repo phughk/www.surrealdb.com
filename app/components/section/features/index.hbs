@@ -223,20 +223,18 @@
 
 			<Layout::Gap mini />
 
-			<Layout::Blocks cols-2-to-1 as |block|>
+			<Layout::Blocks cols-1 as |block|>
 				<block>
 					<h4 flex row middle>
 						Full text indexing and filtering
-						<l purple>Planned 1.0</l>
+						<l green>Complete</l>
 					</h4>
 					<p>
 						The ability to define full-text indexes, with functionality to search through the full-text index
-						on a table. Using a Apache Lucene query syntax, searches support field queries, wildcard
-						searches, fuzzy searches, proximity searches, relevance matching, boolean operators, subquery
-						grouping, and field grouping.</p>
+						on a table. Searches support field queries, configurable text analyzers, relevance matching, highlighting with offsets extraction.</p>
 				</block>
 				<block>
-					<Code min-h-100 @name="features/platform/fulltext.surql" />
+					<Code @name="features/platform/fulltext.surql" />
 				</block>
 			</Layout::Blocks>
 
@@ -725,6 +723,13 @@
 				</block>
 				<block>
 					<h4 flex row middle>
+						Search functions
+						<l green>Complete</l>
+					</h4>
+					<p>Functions related to the full-text search capabilities, such as calculating relevance scores or highlighting content.</p>
+				</block>
+				<block>
+					<h4 flex row middle>
 						String functions
 						<l green>Complete</l>
 					</h4>
@@ -760,6 +765,7 @@
 						machine learning, and data analysis.
 					</p>
 				</block>
+
 			</Layout::Blocks>
 
 			<Layout::Gap mini />

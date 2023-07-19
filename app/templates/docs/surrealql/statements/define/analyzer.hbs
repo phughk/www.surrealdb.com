@@ -1,0 +1,76 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements">Statements</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.define"><code>DEFINE</code> statement</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.define.analyzer"><code>ANALYZER</code></Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+	<h2><code>DEFINE ANALYZER</code> statement</h2>
+	<p>
+		In the context of a database, an analyzer plays a crucial role in text processing and searching.
+		It is defined by its name, a set of tokenizers, and a collection of filters.
+	</p>
+	<h4>Requirements</h4>
+	<ul>
+		<li>You must be authenticated as a root, namespace, or database user before you can use the <code>DEFINE INDEX</code> statement.</li>
+		<li><LinkTo @route="docs.surrealql.statements.use">You must select your namespace and database</LinkTo> before you can use the <code>DEFINE INDEX</code> statement.</li>
+	</ul>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/define/analyzer/syntax.typescript" text="SQL Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Tokenizers</h3>
+	<p>Tokenizers are responsible for breaking down a given text into individual tokens.</p>
+	<ul>
+		<li><code>blank</code>: creates a new token each time a space, tab, or newline character is encountered.</li>
+		<li><code>camel</code>: creates a new token when the next character is uppercase.</li>
+		<li><code>class</code>: creates a new token when the Unicode class of the next character changes (digit, letter, punctuation, blank).</li>
+		<li><code>punct</code>: creates a new token each time a punctuation character is encountered.</li>
+	</ul>
+
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Filters</h3>
+	<p>Filters take on the task of transforming these tokens for further processing and analysis.</p>
+	<ul>
+		<li><code>ascii</code>: replaces or removes diacritical marks.</li>
+		<li><code>edgengram</code>: useful for finding a term by its prefix.</li>
+		<li><code>lowercase</code>: converts the token to lowercase.</li>
+		<li>
+			<code>snowball</code>: applies snowball stemming to the token.
+			The following languages are supported:
+			Arabic, Danish, Dutch, English, French, German, Greek, Hungarian, Italian,
+			Norwegian, Portuguese, Romanian, Russian, Spanish, Swedish, Tamil, Turkish.
+		</li>
+		<li><code>uppercase</code>: converts the token to uppercase.</li>
+	</ul>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>This example creates an analyzer that splits tokens on blank characters and removes diacritical marks.</p>
+	<Code @name="docs/surrealql/statements/define/analyzer/analyzer-ascii.surql" />
+	<p>This command statement creates an analyzer specifically designed for processing English texts.</p>
+	<Code @name="docs/surrealql/statements/define/analyzer/analyzer-english.surql" />
+	<p>This statement creates an analyzer specifically designed for auto-completion tasks.</p>
+	<Code @name="docs/surrealql/statements/define/analyzer/analyzer-autocomplete.surql" />
+	<p>This command statement creates an analyzer specifically designed for source code analysis.</p>
+	<Code @name="docs/surrealql/statements/define/analyzer/analyzer-code.surql" />
+</Layout::Text>
+
+<Layout::Gap large />

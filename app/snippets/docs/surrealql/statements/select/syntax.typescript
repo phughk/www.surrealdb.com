@@ -15,4 +15,5 @@ SELECT [ VALUE ] @fields [ AS @alias ]
 	[ FETCH @fields ... ]
 	[ TIMEOUT @duration ]
 	[ PARALLEL ]
+	[ EXPLAIN [ FULL ]]
 ;

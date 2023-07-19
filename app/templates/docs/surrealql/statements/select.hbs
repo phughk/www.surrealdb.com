@@ -78,6 +78,43 @@
 	<p>When processing a large result set with many interconnected records, it is possible to specify the <code>PARALLEL</code> keyword to signify that edges and remote records should be fetched and processed in parallel.</p>
 	<Code @name="docs/surrealql/statements/select/parallel.surql" />
 
+	<h4>The <code>EXPLAIN</code> clause</h4>
+	<p>When <code>EXPLAIN</code> is used, the <code>SELECT</code> statement returns an explanation, essentially revealing the execution plan to provide transparency and understanding of the query performance.</p>
+	<Code @name="docs/surrealql/statements/select/explain.surql" />
+	<p>Here is the result when the field 'email' is not indexed. We can see that the execution plan will iterate over the whole table.</p>
+	<Code @name="docs-surrealql-functions-select-explain-result.js">
+		[
+				{
+						detail: {
+								table: 'person'
+						},
+						operation: 'Iterate Table'
+				}
+		]
+	</Code>
+	<Code @name="docs/surrealql/statements/select/explain-full.surql" />
+	<p>Here is the result when the 'email' field is indexed. We can see that the execution plan will proceed by utilizing the index.</p>
+	<Code @name="docs-surrealql-functions-select-explain-full-result.js">
+		[
+				{
+						detail: {
+								plan: {
+										index: 'email',
+										operator: '=',
+										value: 'tobie@surrealdb.com'
+								},
+								table: 'person'
+						},
+						operation: 'Iterate Index'
+				},
+				{
+						detail: {
+								count: 1
+						},
+						operation: 'Fetch'
+				}
+		]
+	</Code>
 </Layout::Text>
 
 <Layout::Gap large />

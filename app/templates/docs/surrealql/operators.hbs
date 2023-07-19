@@ -376,6 +376,14 @@
 				</td>
 				<td>Checks whether a geometry type intersects another geometry type</td>
 			</tr>
+			<tr>
+				<td>
+					<a href="#matches">
+						<code>@@</code> or <code>@[ref]@</code>
+					</a>
+				</td>
+				<td>Checks whether the terms are found in a full-text indexed field</td>
+			</tr>
 		</tbody>
 	</table>
 </Layout::Table>
@@ -1287,6 +1295,53 @@
 			</Code>
 			<Code @name="docs-surrealql-operators-intersects-result.txt">
 				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "matches"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>MATCHES</code></h3>
+		<p>Checks whether the terms are found in a full-text indexed field.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-matches-input.surql">
+				SELECT * FROM book WHERE title @@ 'rust web';
+			</Code>
+			<Code @name="docs-surrealql-operators-matches-result.js">
+				[
+					{
+						id: book:1,
+						title: 'Rust Web Programming'
+					}
+				]
+			</Code>
+		</codes>
+		<p>
+			Using the matches operator with a reference checks whether the terms are found,
+			highlights the searched terms, and computes the full-text score.
+		</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-matches-ref-input.surql">
+				SELECT id,
+						search::highlight('<b>', '</b>', 1) AS title,
+						search::score(1) AS score
+				FROM book
+				WHERE title @1@ 'rust web'
+				ORDER BY score DESC;
+			</Code>
+			<Code @name="docs-surrealql-operators-matches-ref-result.js">
+				[
+					{
+						id: book:1,
+						score: 0.9227996468544006f,
+						title: '<b>Rust</b> <b>Web</b> Programming'
+					}
+				]
 			</Code>
 		</codes>
 	</Layout::Text>
