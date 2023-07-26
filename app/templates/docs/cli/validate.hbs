@@ -1,0 +1,65 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.cli">Command-line tool</Crumb::Item>
+	<Crumb::Item @link="docs.cli.validate">Validate command</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+	<h2>Validate command</h2>
+	<p>This command validates a SurrealQL query files.</p>
+	<blockquote yellow text="Before you start">Make sure you’ve <Link @link="docs.installation">installed SurrealDB</Link> — it should only take a second!</blockquote>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Command options</h3>
+	<Layout::Table filled>
+		<table>
+			<thead>
+				<tr>
+					<th w-40>Argument</th>
+					<th w-60>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>[PATTERN]</code>
+						<l yellow r>Required</l>
+					</td>
+					<td>Glob pattern for the files to validate [default: **/* .surql]</td>
+				</tr>
+			</tbody>
+		</table>
+	</Layout::Table>
+	<Layout::Gap tiny />
+
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>To perform validation on a SurrealQL local file, in a terminal run the <Ascua::Prism::Inline @language="shell" @code="surreal validate" /> command with the required argument.</p>
+	<codes vertical>
+		<Code @name="docs-cli-validate-main.shell" text="Command line">
+			user@localhost % surreal validate [PATTERN]
+		</Code>
+	</codes>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Command help</h3>
+	<p>To see the help information and usage instructions, in a terminal run the <Ascua::Prism::Inline @language="shell" @code="surreal validate --help" /> command without any further arguments. This command gives general information on the arguments, inputs, and additional options for the <code>validate</code> command.</p>
+	<codes vertical>
+		<Code @name="docs-cli-help-validate.shell" text="Command line">
+			user@localhost % surreal validate --help
+		</Code>
+		<Code @name="docs/cli/help/validate.txt" />
+	</codes>
+</Layout::Text>
+
+<Layout::Gap large />

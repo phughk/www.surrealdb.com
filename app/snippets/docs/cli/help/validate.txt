@@ -1,0 +1,10 @@
+Validating SurrealQL query files
+
+USAGE:
+    surreal validate [PATTERN]
+
+ARGS:
+  [PATTERN] Glob pattern for the files to validate [default: **/* .surql]
+
+OPTIONS:
+    -h, --help           Print help information

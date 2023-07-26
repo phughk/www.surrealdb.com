@@ -240,6 +240,7 @@ Router.map(function () {
 			this.route('isready');
 			this.route('sql');
 			this.route('help');
+			this.route('validate');
 		});
 
 		this.route('guides', function () {
