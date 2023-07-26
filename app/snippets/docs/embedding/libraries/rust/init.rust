@@ -1,0 +1,15 @@
+static DB: Surreal<Db> = Surreal::init();
+
+#[tokio::main]
+async fn main() -> surrealdb::Result<()> {
+    // Connect to the database
+    DB.connect::<File>("/path/to/database.db").await?;
+    // Select a namespace + database
+    DB.use_ns("test").use_db("test").await?;
+    // Create or update a specific record
+    let tobie: Option<Record> = DB
+        .update(("person", "tobie"))
+        .content(Person { name: "Tobie" })
+        .await?;
+    Ok(())
+}

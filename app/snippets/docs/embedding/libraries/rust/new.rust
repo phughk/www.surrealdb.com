@@ -1,0 +1,5 @@
+// In memory database
+let db = Surreal::new::<Mem>(()).await?;
+
+// RocksDB backed database
+let db = Surreal::new::<RocksDb>("/path/to/database").await?;

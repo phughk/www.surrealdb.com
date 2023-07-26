@@ -1,0 +1,10 @@
+// Create an in memory database
+DB.connect::<Mem>(()).await?;
+// Connect to a RocksDB file
+DB.connect::<RocksDb>("path/to/database.db").await?;
+// Connect to a SpeeDB file (note: RocksDB and SpeeDB can't be used together)
+DB.connect::<SpeeDb>("path/to/database.db").await?;
+// Connect to a FoundationDB file (note: make sure you have FoundationDB installed)
+DB.connect::<FDb>("path/to/fdb.cluster").await?;
+// Connect to a TiKv cluster
+DB.connect::<FDb>("127.0.0.1:2379").await?;

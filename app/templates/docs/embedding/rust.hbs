@@ -5,9 +5,678 @@
 </Crumb>
 
 <Layout::Text text-l text-f>
-	<h2><Devicon @size="50" @type="rust" /> Embedding in Rust</h2>
-	<p>SurrealDB is designed to be run in many different ways, and environments. Due to the <Link @link="docs.introduction.architecture">separation of the storage and compute</Link> layers, SurrealDB can be run in embedded mode, from within a number of different language environments. In Rust, SurrealDB can be run as an in-memory database, or it can persist data using a file-based storage engine. The documentation for embedding SurrealDB within Rust has not yet been released. In the meantime, please refer to the <Link @link="docs.integration.sdks.rust">Rust</Link> client SDK documentation to get started with connecting to SurrealDB from Rust.</p>
-	<p>To contribute to this documentation, <Link @link={{github}}>edit this file on GitHub</Link>.</p>
+	<h2>
+		<Devicon @size="50" @type="rust" /> Embedding in Rust
+	</h2>
+	<p>SurrealDB is designed to be run in many different ways, and environments. Due to the
+		<Link @link="docs.introduction.architecture">separation of the storage and API</Link> layers, SurrealDB can
+		be run in embedded mode, from within a number of different language environments. In Rust, SurrealDB can be run
+		as an in-memory database, it can persist data using a file-based storage engine, or on a distributed cluster.
+	</p>
+	<p>To contribute to this documentation,
+		<Link @link={{github}}>edit this file on GitHub</Link>.
+	</p>
+	<p>To contribute to the SDK code,
+		<Link @link="https://github.com/surrealdb/surrealdb">submit an Issue or Pull Request here</Link>.
+	</p>
 </Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Install the SDK</h3>
+	<p>First, create a new project using <code>cargo new</code> and add the SurrealDB crate to your dependencies:</p>
+	<Code @name="docs-integration-libraries-rust-crate.bash">
+		cargo add surrealdb
+	</Code>
+	<p>You will then need to enable the appropriate featues(for a full list see https://crates.io/crates/surrealdb)</p>
+	<Code @name="docs/embedding/libraries/rust/cargo-features.bash"></Code>
+	<p>You will need to add the following additional dependencies:</p>
+	<Code @name="docs-integration-libraries-rust-dependencies.bash">
+		cargo add serde --features derive
+		cargo add tokio --features macros,rt-multi-thread
+	</Code>
+</Layout::Text>
+
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Connect to SurrealDB</h3>
+	<p>Open <code>src/main.rs</code> and replace everything in there with the following code to try out some basic
+		operations using the SurrealDB SDK with an embedded database. Look at
+		<Link @link="docs.integration.sdks.rust">integrations to connect to a database.
+		</Link>
+	</p>
+	<Code @name="docs/embedding/libraries/rust/basic.rust" />
+
+	<p>Run your program from the command line with:</p>
+	<Code @name="docs-integration-libraries-rust-basic-run.bash">
+		cargo run
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>SDK methods</h3>
+	<p>The Rust SDK comes with a number of built-in functions.</p>
+</Layout::Text>
+
+<Layout::Gap tiny />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Function</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#init">
+						<Ascua::Prism::Inline @language="rust" @code="Surreal::init()" />
+					</a>
+					<l faint r>static</l>
+				</td>
+				<td>Initialises a static database engine</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#connect">
+						<Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" />
+					</a>
+				</td>
+				<td>Connects to a specific database endpoint, saving the connection on the static client</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#new">
+						<Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" />
+					</a>
+				</td>
+				<td>Connects to a local or remote database endpoint</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#use">
+						<Ascua::Prism::Inline @language="rust" @code="db.use_ns(namespace).use_db(database)" />
+					</a>
+				</td>
+				<td>Switch to a specific namespace and database</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#set">
+						<Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" />
+					</a>
+				</td>
+				<td>Assigns a value as a parameter for this connection</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#query">
+						<Ascua::Prism::Inline @language="rust" @code="db.query(sql)" />
+					</a>
+				</td>
+				<td>Runs a set of SurrealQL statements against the database</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#select">
+						<Ascua::Prism::Inline @language="rust" @code="db.select(resource)" />
+					</a>
+				</td>
+				<td>Selects all records in a table, or a specific record</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#create">
+						<Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" />
+					</a>
+				</td>
+				<td>Creates a record in the database</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#update">
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" />
+					</a>
+				</td>
+				<td>Updates all records in a table, or a specific record</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#merge">
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" />
+					</a>
+				</td>
+				<td>Modifies all records in a table, or a specific record</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#patch">
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" />
+					</a>
+				</td>
+				<td>Applies
+					<Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records in a table, or a
+					specific record
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#delete">
+						<Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" />
+					</a>
+				</td>
+				<td>Deletes all records, or a specific record</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "init" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="Surreal::init()" />
+		</h3>
+		<p>The <code>DB</code> static singleton ensures that a single database instance is available across very large
+			or complicated applications. With the singleton, only one connection to the database is instantiated, and
+			the database connection does not have to be shared across components or controllers.</p>
+		<Code @name="docs/embedding/libraries/rust/init.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "connect" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" />
+		</h3>
+		<p>Connects to a local or remote database endpoint.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>endpoint</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The database endpoint to connect to.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/connect.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "new" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" />
+		</h3>
+		<p>Connects to a local or remote database endpoint.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>endpoint</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The database endpoint to connect to.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/new.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "use" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.use_ns(ns).use_db(db)" />
+		</h3>
+		<p>Switch to a specific namespace and database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>ns</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Switches to a specific namespace.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>db</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Switches to a specific database.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs-integration-libraries-rust-use.rust">
+			db.use_ns("test").use_db("test").await?;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "set" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" />
+		</h3>
+		<p>Assigns a value as a parameter for this connection.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>key</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Specifies the name of the variable.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>val</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Assigns the value to the variable name.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/let.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "query" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.query(sql).bind(vars)" />
+		</h3>
+		<p>Runs a set of SurrealQL statements against the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>sql</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Specifies the SurrealQL statements.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>vars</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							Assigns variables which can be used in the query.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/query.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "select" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.select(resource)" />
+		</h3>
+		<p>Selects all records in a table, or a specific record, from the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or a record ID to select.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/select.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-select-func.surql">
+			SELECT * FROM $resource;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "create" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" />
+		</h3>
+		<p>Creates a record in the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or the specific record ID to create.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The document / record data to insert.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/create.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-create-func.surql">
+			CREATE $resource CONTENT $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "update" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" />
+		</h3>
+		<p>Updates all records in a table, or a specific record, in the database.</p>
+		<blockquote yellow text="Note">This function replaces the current document / record data with the specified
+			data.</blockquote>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or the specific record ID to update.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The document / record data to insert.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/update.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-update-func.surql">
+			UPDATE $resource CONTENT $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "change" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" />
+		</h3>
+		<p>Modifies all records in a table, or a specific record, in the database.</p>
+		<blockquote yellow text="Note">This function merges the current document / record data with the specified data.
+		</blockquote>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or the specific record ID to change
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The document / record data to insert.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/merge.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-change-func.surql">
+			UPDATE $resource MERGE $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "modify" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" />
+		</h3>
+		<p>Applies
+			<Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records, or a specific record, in the
+			database.
+		</p>
+		<blockquote yellow text="Note">This function patches the current document / record data with the specified
+			<Link @link="https://jsonpatch.com">JSON Patch</Link> data.
+		</blockquote>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or the specific record ID to modify.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The
+							<Link @link="https://jsonpatch.com">JSON Patch</Link> data with which to modify the records.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/patch.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-modify-func.surql">
+			UPDATE $resource PATCH $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "delete" }}>
+
+	<Layout::Text text-l text-f>
+		<h3>
+			<Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" />
+		</h3>
+		<p>Deletes all records in a table, or a specific record, from the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resource</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name or a record ID to select.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/embedding/libraries/rust/delete.rust" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-rust-delete-func.surql">
+			DELETE FROM $resource RETURN BEFORE;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
 
 <Layout::Gap large />

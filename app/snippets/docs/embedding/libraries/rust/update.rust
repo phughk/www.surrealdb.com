@@ -1,0 +1,12 @@
+// Update all records in a table
+let people: Vec<Person> = db.update("person").await?;
+// Update a record with a specific ID
+let person: Option<Person> = db
+    .update(("person", "tobie"))
+    .content(Person {
+        name: "Tobie",
+        settings: {
+            active: true,
+            marketing: true,
+        },
+    }).await?;

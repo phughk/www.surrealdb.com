@@ -1,10 +1,10 @@
 // Update all records in a table
-let people = db.update("person")
+let people: Vec<Person> = db.update("person")
     .patch(PatchOp::replace("/created_at", Datetime::default()))
     .await?;
 
 // Update a record with a specific ID
-let person = db.update(("person", "tobie"))
+let person: Option<Person> = db.update(("person", "tobie"))
     .patch(PatchOp::replace("/settings/active", false))
     .patch(PatchOp::add("/tags", &["developer", "engineer"]))
     .patch(PatchOp::remove("/temp"))

@@ -1,0 +1,9 @@
+// Assign the variable on the connection
+let mut result = db
+    .query("CREATE person; SELECT * FROM type::table($table);")
+    .bind(("table", "person"))
+    .await?;
+// Get the first result from the first query statement
+let created: Option<Person> = result.take(0)?;
+// Get all of the results from the second query statement
+let people: Vec<Person> = result.take(1)?;

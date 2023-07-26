@@ -1,0 +1,12 @@
+// Create a record with a random ID
+let person: Person = db.create("person").await?;
+// Create a record with a specific ID
+let record: Option<Record> = db
+    .create(("person", "tobie"))
+    .content(Person {
+        name: "Tobie",
+        settings: {
+            active: true,
+            marketing: true,
+       },
+    }).await?;

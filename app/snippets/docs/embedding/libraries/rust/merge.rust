@@ -1,0 +1,15 @@
+// Update all records in a table
+let people: Vec<Person> = db.update("person")
+    .merge(Document {
+        updated_at: Datetime::default(),
+    })
+    .await?;
+// Update a record with a specific ID
+let person: Option<Person> = db.update(("person", "tobie"))
+    .merge(Document {
+        updated_at: Datetime::default(),
+        settings: Settings {
+            active: true,
+        },
+    })
+    .await?;

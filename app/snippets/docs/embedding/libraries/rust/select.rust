@@ -1,0 +1,4 @@
+// Select all records from a table
+let people: Vec<Person> = db.select("person").await?;
+// Select a specific record from a table
+let person: Option<Person> = db.select(("person", "h5wxrf2ewk8xjxosxtyc")).await?;
