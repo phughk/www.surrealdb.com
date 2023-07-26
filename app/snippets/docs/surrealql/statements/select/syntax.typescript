@@ -1,5 +1,6 @@
 SELECT [ VALUE ] @fields [ AS @alias ]
 	FROM @targets
+	[ WITH [ NOINDEX | INDEX @indexes ... ]]
 	[ WHERE @conditions ]
 	[ SPLIT [ AT ] @field ... ]
 	[ GROUP [ BY ] @fields ... ]
