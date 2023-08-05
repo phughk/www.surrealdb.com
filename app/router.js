@@ -220,8 +220,9 @@ Router.map(function () {
 				this.route('time');
 				this.route('type');
 				this.route('script', function () {
-					this.route('context');
 					this.route('arguments');
+					this.route('built-in-functions');
+					this.route('context');
 					this.route('type-conversion');
 					this.route('surrealql-functions');
 				});
