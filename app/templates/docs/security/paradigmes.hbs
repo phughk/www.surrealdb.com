@@ -1,0 +1,29 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.security">Security</Crumb::Item>
+	<Crumb::Item @link="docs.security.paradigmes">Paradigmes</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2>Security paradigms</h2>
+    <p>There are multiple forms of authentication built into SurrealDB, each which their own advantages and usecases.</p>
+
+	<h3>Root, Namespace and Database users</h3>
+	<ul>
+		<li>Root, Namespace and Database users can be defined with the <Link @link="docs.surrealql.statements.define.user">DEFINE USER</Link> statement.</li>
+		<li>They live above the database layer, and can therefor be used to administrate databases and to for example, manage their respective schema's.</li>
+		<li>Because they live above the database layer, <code>PERMISSIONS</code> clauses do not apply to these users. What they can see and do is defined by their roles.</li>
+		<li>Each user is assigned one or more roles (currently limited to the built-in <code>OWNER</code>, <code>EDITOR</code> and <code>VIEWER</code> roles.</li>
+	</ul>
+
+	<h3>Scope users</h3>
+	<ul>
+		<li>Scope users live inside the database. When authenticated, they represent a single record in the database.</li>
+		<li>A scope's signin and signup methods are defined with the <Link @link="docs.surrealql.statements.define.scope">DEFINE SCOPE</Link> statement.</li>
+		<li>Because they live in the database, <code>PERMISSIONS</code> clauses can be used to write advanced business logic.</li>
+		<li>This same very mechanism allows SurrealDB to act as a BaaS (Backend as a Service).</li>
+		<li>Scope's follow a trust-centric model where access to anything is denied by default, but can be allowed with <code>PERMISSIONS</code> clauses per action.</li>
+	</ul>
+</Layout::Text>
+
+<Layout::Gap large />

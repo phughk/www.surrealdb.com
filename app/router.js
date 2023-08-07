@@ -233,6 +233,10 @@ Router.map(function () {
 			this.route('demo');
 		});
 
+		this.route('security', function () {
+			this.route('paradigmes');
+		});
+
 		this.route('cli', function () {
 			this.route('start');
 			this.route('import');

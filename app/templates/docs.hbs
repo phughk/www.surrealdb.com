@@ -233,6 +233,15 @@
 
 </subs>
 
+			<Layout::Helm::Menu::Item @link="docs.security" @text="Security"
+				selected={{begs-with (route-name) "docs.security" }} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.security.index" @text="Overview"
+					selected={{begs-with (route-name) "docs.security.index" }} />
+				<Layout::Helm::Menu::Item @link="docs.security.paradigmes" @text="Paradigmes"
+					selected={{begs-with (route-name) "docs.security.paradigmes" }} />
+			</subs>
+
 			<Layout::Helm::Menu::Item @link="docs.deployment" @text="Deployment" selected={{begs-with (route-name) "docs.deployment"}} />
 			<subs>
 				<Layout::Helm::Menu::Item @link="docs.deployment" @text="Overview" selected={{begs-with (route-name) "docs.deployment.index"}} />
