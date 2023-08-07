@@ -4,7 +4,7 @@
     "status": "OK",
     "result": [
       {
-        "login": {},
+        "users": {},
         "scope": {},
         "table": {},
         "token": {}

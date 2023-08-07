@@ -47,7 +47,7 @@
 		user@localhost % surreal start --log trace tikv://127.0.0.1:2379
 	</Code>
 
-	<p>In order to keep SurrealDB secure, the database disables root-level authentication if a password is not set. To set a root-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
+	<p>In order to keep SurrealDB secure, configure your initial root-level user by setting the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>. The root user will be persisted in storage, which means you don't have to include the command line arguments next time you start SurrealDB.</p>
 
 	<Code @name="docs-installation-running-tikv-5.shell">
 		user@localhost % surreal start --log trace --user root --pass root tikv://127.0.0.1:2379

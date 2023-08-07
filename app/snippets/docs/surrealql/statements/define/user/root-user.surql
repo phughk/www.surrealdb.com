@@ -1,0 +1,2 @@
+-- Create the user
+DEFINE USER username ON ROOT PASSWORD '123456' ROLES OWNER;

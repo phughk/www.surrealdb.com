@@ -33,7 +33,7 @@
 		user@localhost % docker run --rm --pull always -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace file:/mydata/mydatabase.db
 	</Code>
 
-	<p>In order to keep SurrealDB secure, the database disables root-level authentication if a password is not set. To set a root-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
+	<p>In order to keep SurrealDB secure, configure your initial root-level user by setting the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>. The root user will be persisted in storage, which means you don't have to include the command line arguments next time you start SurrealDB.</p>
 
 	<Code @name="docs-installation-running-docker-4.shell">
 		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:mydatabase.db

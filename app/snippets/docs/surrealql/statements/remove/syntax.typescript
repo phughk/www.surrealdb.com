@@ -1,6 +1,7 @@
 REMOVE [
 	NAMESPACE @name
 	| DATABASE @name
+	| USER @name ON [ ROOT | NAMESPACE | DATABASE ]
 	| LOGIN @name ON [ NAMESPACE | DATABASE ]
 	| TOKEN @name ON [ NAMESPACE | DATABASE ]
 	| SCOPE @name

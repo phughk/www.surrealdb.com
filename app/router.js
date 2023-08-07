@@ -187,6 +187,7 @@ Router.map(function () {
 					this.route('namespace');
 					this.route('database');
 					this.route('login');
+					this.route('user');
 					this.route('token');
 					this.route('scope');
 					this.route('table');

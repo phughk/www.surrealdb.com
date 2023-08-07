@@ -1,7 +1,7 @@
 DEFINE [
 	NAMESPACE @name
 	| DATABASE @name
-	| LOGIN @name ON [ NAMESPACE | DATABASE ] [ PASSWORD @pass | PASSHASH @hash ]
+	| USER @name ON [ ROOT | NAMESPACE | DATABASE ] [ PASSWORD @pass | PASSHASH @hash ] ROLES @roles
 	| TOKEN @name ON [ NAMESPACE | DATABASE | SCOPE @scope ] TYPE @type VALUE @value
 	| SCOPE @name
 		[ SESSION @duration ]

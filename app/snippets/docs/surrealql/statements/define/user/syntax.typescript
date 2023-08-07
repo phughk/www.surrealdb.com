@@ -1,0 +1,1 @@
+DEFINE USER @name ON [ ROOT | NAMESPACE | DATABASE ] [ PASSWORD @pass | PASSHASH @hash ] ROLES @roles

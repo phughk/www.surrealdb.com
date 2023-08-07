@@ -1,0 +1,47 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements">Statements</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.define"><code>DEFINE</code> statement</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.define.user"><code>USER</code></Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+	<h2><code>DEFINE USER</code> statement</h2>
+	<p>Use the <code>DEFINE USER</code> statement to create user accounts on SurrealDB.</p>
+	<blockquote yellow text="Note">
+		While existing logins still function, the <code>DEFINE LOGIN</code> statement has been replaced with <code>DEFINE USER</code>.
+	</blockquote>
+
+	<h4>Requirements</h4>
+	<ul>
+		<li>You must be authenticated as a root user to create a root level account using the <code>DEFINE USER</code> statement.</li>
+		<li>You must be authenticated as a root or Namespace user to create a Namespace level account using the <code>DEFINE USER</code> statement.</li>
+		<li>You must be authenticated as a root, Namespace, or Database user to create a Database level account using the <code>DEFINE USER</code> statement.</li>
+		<li>Depending on the type of user you are trying to define, <LinkTo @route="docs.surrealql.statements.use">you might need to select a namespace and/or database</LinkTo> before you can use the <code>DEFINE USER</code> statement.</li>
+	</ul>
+	<p>
+		Note: You cannot use the <code>DEFINE USER</code> statement to create a <code>SCOPE</code> user.
+	</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/define/user/syntax.typescript" text="SQL Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>The following example shows how you can create a <code>ROOT</code> user using the <code>DEFINE USER</code> statement.</p>
+	<Code @name="docs/surrealql/statements/define/user/root-user.surql" />
+	<p>The following example shows how you can create a <code>NAMESPACE</code> user using the <code>DEFINE USER</code> statement.</p>
+	<Code @name="docs/surrealql/statements/define/user/namespace-user.surql" />
+	<p>The following example shows how you can create a <code>DATABASE</code> user using the <code>DEFINE USER</code> statement.</p>
+	<Code @name="docs/surrealql/statements/define/user/database-user.surql" />
+</Layout::Text>
+
+<Layout::Gap large />
