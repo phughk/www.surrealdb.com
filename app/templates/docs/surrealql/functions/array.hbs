@@ -384,7 +384,7 @@
 				SELECT * FROM array::all([1, 2, 3, NONE, 'SurrealDB', 5]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-all-result.txt">
-				false
+				[ false ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -407,7 +407,7 @@
 				SELECT * FROM array::any([1, 2, 3, NONE, 'SurrealDB', 5]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-any-result.txt">
-				true
+				[ true ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -430,7 +430,7 @@
 				SELECT * FROM array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-at-result.txt">
-				"r"
+				[ "r" ]
 			</Code>
 		</codes>
 		<p>You can also pass a negative index. This will perform the lookup in reverse:</p>
@@ -439,7 +439,7 @@
 				SELECT * FROM array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], -3);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-at-negative-index-result.txt">
-				"e"
+				[ "e" ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -485,7 +485,7 @@
 				SELECT * FROM array::boolean_and(["true", "false", 1, 1], ["true", "true", 0, "true"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean-result.txt">
-				["true", "false", 0, 1]
+				[ "true", "false", 0, 1 ]
 			</Code>
 		</codes>
 		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
@@ -494,7 +494,7 @@
 				SELECT * FROM array::boolean_and([true, true], [false])
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean-error-result.txt">
-				[false, false]
+				[ false, false ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -517,7 +517,7 @@
 				SELECT * FROM array::boolean_or([false, true, false, true], [false, false, true, true])
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean_or-result.txt">
-				[false, true, true, true]
+				[ false, true, true, true ]
 			</Code>
 		</codes>
 		{{!-- <p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
@@ -549,7 +549,7 @@
 				SELECT * FROM array::boolean_xor([false, true, false, true], [false, false, true, true]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean_xor-result.txt">
-				[false, true, true, false]
+				[ false, true, true, false ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -572,7 +572,7 @@
 				SELECT * FROM array::boolean_not([false, true, 0, 1]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-boolean_not-result.txt">
-				[true, false, true, false]
+				[ true, false, true, false ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -618,7 +618,7 @@
 				SELECT * FROM array::complement([1,2,3,4], [3,4,5,6]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-complement-result.txt">
-				[1,2]
+				[ 1, 2 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -641,7 +641,7 @@
                 SELECT * FROM array::concat([1,2,3,4], [3,4,5,6]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-concat-result.txt">
-				[1,2,3,4,3,4,5,6]
+				[ 1, 2, 3, 4, 3, 4, 5, 6 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -664,7 +664,7 @@
                 SELECT * FROM array::clump([0, 1, 2, 3], 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-clump-result.txt">
-				[[0, 1], [2, 3]]
+				[ [0, 1], [2, 3] ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -687,7 +687,7 @@
 				SELECT * FROM array::difference([1,2,3,4], [3,4,5,6]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-difference-result.txt">
-				[1,2,5,6]
+				[ 1, 2, 5, 6 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -710,7 +710,7 @@
 				SELECT * FROM array::distinct([1,2,1,3,3,4]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-distinct-result.txt">
-				[1,2,3,4]
+				[ 1, 2, 3, 4 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -733,7 +733,7 @@
 				SELECT * FROM array::flatten([ [1,2], [3, 4], 'SurrealDB', [5, 6, [7, 8]] ]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-flatten-result.txt">
-				[1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8]]
+				[ 1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8] ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -756,7 +756,7 @@
 				SELECT * FROM array::find_index(['a', 'b', 'c', 'b', 'a'], 'b');
 			</Code>
 			<Code @name="docs-surrealql-functions-array-find_index-result.txt">
-				1
+				[ 1 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -779,7 +779,7 @@
 				SELECT * FROM array::filter_index(['a', 'b', 'c', 'b', 'a'], 'b');
 			</Code>
 			<Code @name="docs-surrealql-functions-array-filter_index-result.txt">
-				[1, 3]
+				[ 1, 3 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -802,7 +802,7 @@
 				SELECT * FROM array::first(['s', 'u', 'r', 'r', 'e', 'a', 'l']);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-first-result.txt">
-				"s"
+				[ "s" ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -825,7 +825,7 @@
 				SELECT * FROM array::group([1, 2, 3, 4, [3,5,6], [2,4,5,6], 7, 8, 8, 9]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-group-result.txt">
-				[1,2,3,4,5,6,7,8,9]
+				[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -848,7 +848,7 @@
 				SELECT * FROM array::insert([1,2,3,4], 5, 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-insert-result.txt">
-				[1,2,5,3,4]
+				[ 1, 2, 5, 3, 4 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -871,7 +871,7 @@
 				SELECT * FROM array::intersect([1,2,3,4], [3,4,5,6]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-intersect-result.txt">
-				[3,4]
+				[ 3, 4 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -894,7 +894,7 @@
 				SELECT * FROM array::last(['s', 'u', 'r', 'r', 'e', 'a', 'l']);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-last-result.txt">
-				"l"
+				[ "l" ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -917,7 +917,7 @@
 				SELECT * FROM array::len([1,2,1,null,"something",3,3,4,0]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-len-result.txt">
-				9
+				[ 9 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -940,7 +940,7 @@
 				SELECT * FROM array::logical_and([true, false, true, false], [true, true, false, false]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logica_and-result.txt">
-				[true, false, false, false]
+				[ true, false, false, false ]
 			</Code>
 		</codes>
 		<p>For those that take two arrays, missing elements (if one array is shorter than the other) are considered <code>null</code> and thus false.</p>
@@ -949,7 +949,7 @@
 				SELECT * FROM array::logical_and([0, 1], [])
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logical_and-error-result.txt">
-				[0, null]
+				[ 0, null ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -972,7 +972,7 @@
 				SELECT * FROM array::logical_or([true, false, true, false], [true, true, false, false]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logical_or-result.txt">
-				[true, true, true, false]
+				[ true, true, true, false ]
 			</Code>
 		</codes>
 		<p> If one of the arrray is empty, the first array is returned.</p>
@@ -981,7 +981,7 @@
 				SELECT * FROM array::logical_or([0, 1], []);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logical_or-error-result.txt">
-				[0, 1]
+				[ 0, 1 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1004,7 +1004,7 @@
 				SELECT * FROM array::logical_xor([true, false, true, false], [true, true, false, false]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logical_xor-result.txt">
-				[false, true, true, false]
+				[ false, true, true, false ]
 			</Code>
 		</codes>
 		<p>If one of the arrray is empty, the first array is returned.</p>
@@ -1013,7 +1013,7 @@
 				SELECT * FROM array::logical_xor([0, 1], [])
 			</Code>
 			<Code @name="docs-surrealql-functions-array-logical_xor-error-result.txt">
-				[0, 1]
+				[ 0, 1 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1045,7 +1045,7 @@
 				SELECT * FROM array::matches([{id: "ohno:0"}, {id: "ohno:1"}], {id: "ohno:1"})
 			</Code>
 			<Code @name="docs-surrealql-functions-array-matches-error-result.txt">
-				[false, true]
+				[ false, true ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1068,7 +1068,7 @@
 				SELECT * FROM array::pop([1,2,3,4]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-pop-result.txt">
-				4
+				[ 4 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1091,7 +1091,7 @@
 				SELECT * FROM array::prepend([1,2,3,4], 5);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-prepend-result.txt">
-				[5,1,2,3,4]
+				[ 5, 1, 2, 3, 4 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1114,7 +1114,7 @@
 				SELECT * FROM array::push([1,2,3,4], 5);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-push-result.txt">
-				[1,2,3,4,5]
+				[ 1, 2, 3, 4, 5 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1137,7 +1137,7 @@
 				SELECT * FROM array::remove([1,2,3,4,5], 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-remove-result.txt">
-				[1,2,4,5]
+				[ 1, 2, 4, 5 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1160,7 +1160,7 @@
 				SELECT * FROM array::reverse([1,2,3,4,5]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-reverse-result.txt">
-				[5,4,3,2,1]
+				[ 5, 4, 3, 2, 1 ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1191,7 +1191,7 @@
 				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-result-1.txt">
-				[null,0,1,1,2,3,3,4,"something"]
+				[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 			</Code>
 		</codes>
 		<codes vertical>
@@ -1199,7 +1199,7 @@
 				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], false);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-result-2.txt">
-				["something",4,3,3,2,1,1,9,null]
+				[ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 			</Code>
 		</codes>
 		<codes vertical>
@@ -1207,7 +1207,7 @@
 				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], "asc");
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-result-3.txt">
-				[null,0,1,1,2,3,3,4,"something"]
+				[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 			</Code>
 		</codes>
 		<codes vertical>
@@ -1215,7 +1215,7 @@
 				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], "desc");
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-result-4.txt">
-				["something",4,3,3,2,1,1,9,null]
+				[ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1238,7 +1238,7 @@
 				SELECT * FROM array::sort::asc([1,2,1,null,"something",3,3,4,0]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-asc-result.txt">
-				[null,0,1,1,2,3,3,4,"something"]
+				[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1261,7 +1261,7 @@
 				SELECT * FROM array::sort::desc([1,2,1,null,"something",3,3,4,0]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-sort-desc-result.txt">
-				["something",4,3,3,2,1,1,9,null]
+				[ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1284,7 +1284,7 @@
 				SELECT * FROM array::transpose([[0, 1], [2, 3]]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-transpose-result.txt">
-				[[0, 2], [1, 3]]
+				[ [0, 2], [1, 3] ]
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1307,7 +1307,7 @@
 				SELECT * FROM array::union([1,2,1,6], [1,3,4,5,6]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-union-result.txt">
-				[1,2,6,3,4,5]
+				[ 1, 2, 6, 3, 4, 5 ]
 			</Code>
 		</codes>
 	</Layout::Text>
