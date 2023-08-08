@@ -1,0 +1,10 @@
+{
+    "result": {
+        "action": "CREATE",
+        "id": "0189d6e3-8eac-703a-9a48-d9faa78b44b9",
+        "result": {
+            "id": "person:8s0j0bbm3ngrd5c9bx53",
+            "name": "John"
+        }
+    }
+}

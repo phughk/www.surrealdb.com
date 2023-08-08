@@ -86,23 +86,22 @@
 				</td>
 				<td>Remove a variable from the currect connection</td>
 			</tr>
-			{{!-- Leaving commented out for now as it's not yet implemented --}}
-			{{!-- <tr> --}}
-				{{!-- <td> --}}
-					{{!-- <a href="#live"> --}}
-						{{!-- <code>live</code> <code>[ sql ]</code> --}}
-					{{!-- </a> --}}
-				{{!-- </td> --}}
-				{{!-- <td>Initiate a live query</td> --}}
-			{{!-- </tr> --}}
-			{{!-- <tr> --}}
-				{{!-- <td> --}}
-					{{!-- <a href="#kill"> --}}
-						{{!-- <code>kill</code> <code>[ queryUuid ]</code> --}}
-					{{!-- </a> --}}
-				{{!-- </td> --}}
-				{{!-- <td>Kill an active live query</td> --}}
-			{{!-- </tr> --}}
+			<tr>
+				<td>
+					<a href="#live">
+						<code>live</code> <code>[ table, diff ]</code>
+					</a>
+				</td>
+				<td>Initiate a live query</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#kill">
+						<code>kill</code> <code>[ queryUuid ]</code>
+					</a>
+				</td>
+				<td>Kill an active live query</td>
+			</tr>
 			<tr>
 				<td>
 					<a href="#query">
@@ -469,6 +468,87 @@
 		<Code @name="docs/integration/websocket/text/req-unset.json" @language="json" />
 		<h4>Response</h4>
 		<Code @name="docs/integration/websocket/text/res-unset.json" @language="json" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "live"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>live</code> <code>[ table ]</code> method</h3>
+		<p>This methods initiates a live query for a specified table name</p>
+		<blockquote yellow text="Information">
+			For more advanced live queries where filters are needed, use the <a href="#query">Query</a> method to initiate a custom live query.
+		</blockquote>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Parameter</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>table</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>The table to initiate a live query for</td>
+					</tr>
+					<tr>
+						<td>
+							<code>diff</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>If set to true, live notifications will contain an array of <Link @link="https://jsonpatch.com">JSON Patches</Link> instead of the entire record</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<h4>Example message</h4>
+		<Code @name="docs/integration/websocket/text/req-live.json" @language="json" />
+		<h4>Response</h4>
+		<Code @name="docs/integration/websocket/text/res-live.json" @language="json" />
+		<h4>Live notification</h4>
+		<p>For every creation, update or deletion on the specified table, a live notification will be sent. Live notifications do not have an ID attached, but rather include the Live Query's UUID in the result object.</p>
+		<Code @name="docs/integration/websocket/text/res-live-notification.json" @language="json" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "kill"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>kill</code> <code>[ queryUuid ]</code> method</h3>
+		<p>This methods kills an active live query</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Parameter</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>queryUuid</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>The UUID of the live query to kill</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<h4>Example message</h4>
+		<Code @name="docs/integration/websocket/text/req-kill.json" @language="json" />
+		<h4>Response</h4>
+		<Code @name="docs/integration/websocket/text/res-kill.json" @language="json" />
 	</Layout::Text>
 
 </Layout::Group>
