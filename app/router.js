@@ -235,6 +235,7 @@ Router.map(function () {
 
 		this.route('security', function () {
 			this.route('paradigmes');
+			this.route('scope-authentication');
 		});
 
 		this.route('cli', function () {

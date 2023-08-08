@@ -1,0 +1,67 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.security">Security</Crumb::Item>
+	<Crumb::Item @link="docs.security.paradigmes">Scope authentication</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2>Setup scope authentication</h2>
+    <p>Scopes live within a database, meaning <code>PERMISSIONS</code> clauses apply to them, making them suitable to write your own business logic.</p>
+
+	<ul>
+		<li>Scope users live inside the database. When authenticated, they represent a single record in the database.</li>
+		<li>A scope's signin and signup methods are defined with the <Link @link="docs.surrealql.statements.define.scope">DEFINE SCOPE</Link> statement.</li>
+		<li>Because they live in the database, <code>PERMISSIONS</code> clauses can be used to write advanced business logic.</li>
+		<li>This same very mechanism allows SurrealDB to act as a BaaS (Backend as a Service).</li>
+		<li>Scope's follow a trust-centric model where access to anything is denied by default, but can be allowed with <code>PERMISSIONS</code> clauses per action.</li>
+	</ul>
+
+	<Layout::gap tiny />
+
+	<h3>Setup scope authentication</h3>
+	<p>We will go over one of many ways to set up scope authentication, and explain the various queries along the way. There is no one set way to go about this, so feel free to modify where needed!</p>
+
+	<h4>User table</h4>
+	<p>Typically, you would define a user table beforehand. Here we:</p>
+	<ul>
+		<li>Allow a authenticated user to select, update and delete their own user record.</li>
+		<li>Assert that the email provided by the user, is actually an email address.</li>
+		<li>Ensure that we do not sure any duplicate users by creating a unique index for the email field.</li>
+	</ul>
+	<Code @name="docs/security/scope-authentication/user-table.surql" text="Table definition" />
+
+	<Layout::gap tiny />
+
+	<h4>User scope</h4>
+	<p>Next up, we will define the actual scope which will allow users to signin and signup. Here we:</p>
+	<ul>
+		<li>Set user tokens to expire in 1 day.</li>
+		<li>Allow them to signin by providing the <code>email</code> and <code>password</code> parameters.</li>
+		<li>Allow them to signup by providing the <code>name</code>, <code>email</code> and <code>password</code> parameters.</li>
+	</ul>
+	<Code @name="docs/security/scope-authentication/user-scope.surql" text="Scope definition" />
+
+	<Layout::gap tiny />
+
+	<h4>Using the signup method</h4>
+	<p>Once our schema has be configured, we can start to use the scope. We will show an example on how to do this both via the JavaScript SDK and with an HTTP request.</p>
+
+	<h5>JavaScript SDK</h5>
+	<Code @name="docs/security/scope-authentication/user-signup.js" />
+
+	<h5>HTTP Request</h5>
+	<Code @name="docs/security/scope-authentication/user-signup.bash" />
+
+	<Layout::gap tiny />
+
+	<h4>Using the signin method</h4>
+	<p>Whilst the singup method will return a token, it will expire at some point. Here is how you can signin existing users afterwards:</p>
+
+	<h5>JavaScript SDK</h5>
+	<Code @name="docs/security/scope-authentication/user-signup.js" />
+
+	<h5>HTTP Request</h5>
+	<Code @name="docs/security/scope-authentication/user-signup.bash" />
+</Layout::Text>
+
+<Layout::Gap large />
