@@ -1,0 +1,68 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.security">Security</Crumb::Item>
+	<Crumb::Item @link="docs.security.paradigmes">Scope authentication</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2>Setup system users</h2>
+    <p>System users live above a database, meaning <code>PERMISSIONS</code> clauses don't apply to them. They are rather used to administrate data in the database, and to manage schema.</p>
+
+	<ul>
+		<li>System users is the term we use to describe root, namespace and database level users.</li>
+		<li>They can be defined with the <Link @link="docs.surrealql.statements.define.user">DEFINE USER</Link> statement.</li>
+		<li>System users live above the database layer, and can therefor be used to administrate databases and to for example, manage their respective schema's.</li>
+		<li>Because they live above the database layer, <code>PERMISSIONS</code> clauses do not apply to these users. What they can see and do is defined by their roles.</li>
+		<li>Each user is assigned one or more roles (currently limited to the built-in <code>OWNER</code>, <code>EDITOR</code> and <code>VIEWER</code> roles).</li>
+	</ul>
+
+	<Layout::gap tiny />
+
+	<h3>Setup a system user</h3>
+	<p>We can use the <Link @link="docs.surrealql.statements.define.user"><code>DEFINE USER</code></Link> statement to define new system users.</p>
+
+	<h3>Root-level user</h3>
+	<p>We will start of with an example of how to create a root-level user. Here we:</p>
+	<ul>
+		<li>Define user <code>john</code>, on the <code>ROOT</code> level.</li>
+		<li>We assign him a password (which is very secure)</li>
+		<li>We make him an owner. This means that he can access and alter anything within his scope (in this case the entire instance)</li>
+	</ul>
+	<Code @name="docs/security/system-users/root-define.surql" text="Create root user" />
+
+	<Layout::gap tiny />
+
+	<h4>Signin the root-level user</h4>
+	<p>We will show an example on how to signin a root user both via the JavaScript SDK and with an HTTP request.</p>
+
+	<h5>JavaScript SDK</h5>
+	<Code @name="docs/security/system-users/root-signin.js" />
+
+	<h5>HTTP Request</h5>
+	<Code @name="docs/security/system-users/root-signin.bash" />
+
+	<Layout::gap tiny />
+
+	<h3>Database-level user</h3>
+	<p>We will start of with an example of how to create a database-level user. Here we:</p>
+	<ul>
+		<li>Define user <code>mary</code>, on the <code>DATABASE</code> level.</li>
+		<li>We assign her a password (which is very secure)</li>
+		<li>We make her an editor. This means that she can access and alter anything within her scope, except for IAM related queries (defining/removing users)</li>
+	</ul>
+	<Code @name="docs/security/system-users/database-define.surql" text="Create root user" />
+
+	<Layout::gap tiny />
+
+	<h4>Signin the database-level user</h4>
+	<p>We will show an example on how to signin a database-level user both via the JavaScript SDK and with an HTTP request.</p>
+	<p>Notice how we need to pass along <code>NS</code> and <code>DB</code> properties here, to let SurrealDB know on which database this user is located.</p>
+
+	<h5>JavaScript SDK</h5>
+	<Code @name="docs/security/system-users/database-signin.js" />
+
+	<h5>HTTP Request</h5>
+	<Code @name="docs/security/system-users/database-signin.bash" />
+</Layout::Text>
+
+<Layout::Gap large />
