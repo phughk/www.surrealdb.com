@@ -44,4 +44,44 @@
 	<Code @name="docs/surrealql/statements/define/user/database-user.surql" />
 </Layout::Text>
 
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Roles</h3>
+	<p>Currently, only the built-in roles <code>OWNER</code>, <code>EDITOR</code> and <code>VIEWER</code> are available.</p>
+</Layout::Text>
+
+<Layout::Gap tiny />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Role</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>OWNER</code>
+				</td>
+				<td>Grants permissions to access and alter any resource.</td>
+			</tr>
+			<tr>
+				<td>
+					<code>EDITOR</code>
+				</td>
+				<td>Grants permissions to access any resource, and to alter any resource besides IAM related resources on the same level (such as users).</td>
+			</tr>
+			<tr>
+				<td>
+					<code>VIEWER</code>
+				</td>
+				<td>Grants permissions to access any resource, but does not allow altering resources.</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
 <Layout::Gap large />
