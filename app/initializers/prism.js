@@ -15,7 +15,7 @@ export default {
 				},
 				variable: /[$][\w.]+/,
 				function:
-					/\b(?:fn|function|count|(?:(array|crypto|duration|fn|geo|http|is|math|meta|parse|rand|search|session|sleep|string|time|type|vector)::[\w]+)(::[\w]+)?)(?=\s*\()/i,
+					/\b(?:fn|function|count|sleep|rand|(?:(array|crypto|duration|fn|geo|http|is|math|meta|parse|rand|search|session|sleep|string|time|type|vector)::[\w]+)(::[\w]+)?)(?=\s*\()/i,
 				range: /\b[\w\d]+[:]([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)\.\.([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)/i,
 				record: /\b[\w\d]+[:](([\w\d]+\b|⟨[^⟩]+⟩|`[^`]+`)|(?=\{|\[))?/i,
 				cast: /[<](bool|int|float|string|number|decimal|datetime|duration|future)[>]/,
