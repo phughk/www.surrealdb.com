@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "method": "insert",
+    "params": [
+        "person",
+        [
+            {
+                "name": "Mary Doe"
+            },
+            {
+                "name": "John Doe"
+            }
+        ]
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "result": [
+        {
+            "id": "person:s5fa6qp4p8ey9k5j0m9z",
+            "name": "Mary Doe"
+        },
+        {
+            "id": "person:xtbbojcm82a97vus9x0j",
+            "name": "John Doe"
+        }
+    ]
+}

@@ -129,6 +129,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#insert">
+						<code>insert</code> <code>[ thing, data ]</code>
+					</a>
+				</td>
+				<td>Insert one or multiple records in a table</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#update">
 						<code>update</code> <code>[ thing, data ]</code>
 					</a>
@@ -577,6 +585,56 @@
 		<Code @name="docs/integration/websocket/text/req-create.json" @language="json" />
 		<h4>Response</h4>
 		<Code @name="docs/integration/websocket/text/res-create.json" @language="json" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "insert"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>insert</code> <code>[ thing, data ]</code> method</h3>
+		<p>This method inserts one or multiple records in a table</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Parameter</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>thing</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>The table to insert in to</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>One or multiple record(s)</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<h4>Example message</h4>
+		<codes vertical>
+			<Code @name="docs/integration/websocket/text/req-insert.json" @language="json" text="Request" />
+			<Code @name="docs/integration/websocket/text/res-insert.json" @language="json" text="Response" />
+		</codes>
+
+		<Layout::Gap tiny />
+
+		<h4>Bulk insert</h4>
+		<codes vertical>
+			<Code @name="docs/integration/websocket/text/req-insert-bulk.json" @language="json" text="Request" />
+			<Code @name="docs/integration/websocket/text/res-insert-bulk.json" @language="json" text="Response" />
+		</codes>
 	</Layout::Text>
 
 </Layout::Group>

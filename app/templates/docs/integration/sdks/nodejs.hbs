@@ -172,6 +172,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#insert">
+						<Ascua::Prism::Inline @language="ts" @code="async db.insert<T, U>(thing, data)" />
+					</a>
+				</td>
+				<td>Inserts one or multiple records in the database</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#update">
 						<Ascua::Prism::Inline @language="ts" @code="async db.update<T>(thing, data)" />
 					</a>
@@ -789,6 +797,52 @@
 		<p>This function will run the following query in the database:</p>
 		<Code @name="docs-integration-libraries-nodejs-create-func.surql">
 			CREATE $thing CONTENT $data;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "insert"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.insert<T, U>(thing, data)" /></h3>
+		<p>Insers one or multiple records in the database.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>thing</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name to insert to.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>data</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							Either a single document/record or an array of documents/records to insert
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/javascript/insert.ts" @language="ts" />
+		<p>This function will run the following query in the database:</p>
+		<Code @name="docs-integration-libraries-javascript-insert-func.surql">
+			INSERT INTO $thing $data;
 		</Code>
 	</Layout::Text>
 
