@@ -148,6 +148,30 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#live">
+						<Ascua::Prism::Inline @language="ts" @code="async db.live<T>(table, callback, diff)" />
+					</a>
+				</td>
+				<td>Initiate a live query</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#listenLive">
+						<Ascua::Prism::Inline @language="ts" @code="async db.listenLive<T>(queryUuid, callback)" />
+					</a>
+				</td>
+				<td>Register a callback for a running live query</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#kill">
+						<Ascua::Prism::Inline @language="ts" @code="async db.kill(queryUuid)" />
+					</a>
+				</td>
+				<td>Kill a running live query</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#query">
 						<Ascua::Prism::Inline @language="ts" @code="async db.query<T>(sql, vars)" />
 					</a>
@@ -672,6 +696,159 @@
 		<Code @name="docs-integration-libraries-nodejs-unset.js">
 			// Remove the variable from the connection
 			await db.unset('name');
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "live"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.live<T>(table, callback, diff)" /></h3>
+		<p>Initiates a live query.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>table</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name to listen for changes for
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>callback</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							A callback function that processes live notifications
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>diff</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							If set to true, live notifications will include an array of <Link @link="https://jsonpatch.com">JSON Patch</Link> objects, rather than the entire record for each notification.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs-integration-libraries-javascript-live.js">
+			// The uuid of the live query will be returned
+			const queryUuid = await db.live(
+				"person",
+				// The callback function takes an object with the "action" and "result" properties
+				({ action, result }) => {
+					// action can be: "CREATE", "UPDATE", "DELETE" or "CLOSE"
+				    if (action === 'CLOSE") return;
+
+					// result contains either the entire record, or a set of JSON patches when diff mode is enabled
+					processSomeLiveQueryUpdate(result);
+				}
+			)
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "listenLive"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.listenLive<T>(queryUuid, callback)" /></h3>
+		<p>Registers a callback function for a running live query.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>queryUuid</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The UUID of a running live query
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>callback</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							A callback function that processes live notifications
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs-integration-libraries-javascript-live.js">
+			await db.listenLive(
+				queryUuid,
+				// The callback function takes an object with the "action" and "result" properties
+				({ action, result }) => {
+					// action can be: "CREATE", "UPDATE", "DELETE" or "CLOSE"
+				    if (action === 'CLOSE") return;
+
+					// result contains either the entire record, or a set of JSON patches when diff mode is enabled
+					processSomeLiveQueryUpdate(result);
+				}
+			)
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "kill"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.kill(queryUuid)" /></h3>
+		<p>Kills a running live query by it's UUID</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>queryUuid</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The UUID of the live query you wish to kill
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs-integration-libraries-javascript-live.js">
+			await db.kill(queryUuid)
 		</Code>
 	</Layout::Text>
 
