@@ -1,0 +1,39 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements">Statements</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.live-select"><code>LIVE SELECT</code> statement</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2><code>LIVE SELECT</code> statement</h2>
+	<p>The LIVE SELECT statement can be used to initiate a live selection against a table, optionally with filters.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/live-select/syntax.typescript" text="Surql Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+
+	<h3>Example usage</h3>
+
+	<h4>Basic usage</h4>
+	<p>By default, SurrealDB will push the entire record over the websocket when created or updated, and just the record's ID when deleted.</p>
+	<Code @name="docs/surrealql/statements/live-select/simple.surql" />
+
+	<h4>Diff</h4>
+	<p>When using the <code>DIFF</code> mode, updates will be sent in the form of an array with <Link @link="https://jsonpatch.com">JSON Patch</Link> messages.</p>
+	<Code @name="docs/surrealql/statements/live-select/diff.surql" />
+
+	<h4>Filter the live query</h4>
+	<p>You can optionally apply filters with the <code>WHERE</code> clause.</p>
+	<Code @name="docs/surrealql/statements/live-select/filtered.surql" />
+</Layout::Text>
+
+<Layout::Gap large />

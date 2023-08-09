@@ -176,6 +176,7 @@ Router.map(function () {
 				this.route('commit');
 				this.route('ifelse');
 				this.route('select');
+				this.route('live-select');
 				this.route('insert');
 				this.route('create');
 				this.route('update');

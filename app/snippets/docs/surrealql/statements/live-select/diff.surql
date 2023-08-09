@@ -1,0 +1,1 @@
+LIVE SELECT DIFF FROM person;
