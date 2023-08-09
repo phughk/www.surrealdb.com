@@ -249,6 +249,7 @@ Router.map(function () {
 			this.route('sql');
 			this.route('help');
 			this.route('validate');
+			this.route('upgrade');
 		});
 
 		this.route('guides', function () {

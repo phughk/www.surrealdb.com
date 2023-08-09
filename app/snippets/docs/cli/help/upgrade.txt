@@ -1,0 +1,9 @@
+Upgrade to the latest stable version
+
+Usage: surreal upgrade [OPTIONS]
+
+Options:
+      --nightly            Install the latest nightly version
+      --version <VERSION>  Install a specific version
+      --dry-run            Don't actually replace the executable
+  -h, --help               Print help

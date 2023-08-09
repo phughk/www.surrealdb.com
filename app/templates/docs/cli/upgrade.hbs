@@ -1,0 +1,103 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.cli">Command-line tool</Crumb::Item>
+	<Crumb::Item @link="docs.cli.upgrade">Upgrade command</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+	<h2>Upgrade command</h2>
+	<p>This command upgrades SurrealDB to the latest version, nightly or a specified version</p>
+	<blockquote yellow text="Before you start">Make sure you’ve <Link @link="docs.installation">installed SurrealDB</Link> — it should only take a second!</blockquote>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Command options</h3>
+	<Layout::Table filled>
+		<table>
+			<thead>
+				<tr>
+					<th w-40>Argument</th>
+					<th w-60>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>--nightly</code>
+						<l faint r>Optional</l>
+					</td>
+					<td>Install the nightly version of SurrealDB</td>
+				</tr>
+				<tr>
+					<td>
+						<code>--version</code>
+						<l faint r>Optional</l>
+					</td>
+					<td>Install a specific version of SurrealDB</td>
+				</tr>
+				<tr>
+					<td>
+						<code>--dry-run</code>
+						<l faint r>Optional</l>
+					</td>
+					<td>Do not actually replace the currently installed binary</td>
+				</tr>
+			</tbody>
+		</table>
+	</Layout::Table>
+	<Layout::Gap tiny />
+
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>This example shows how you can use the upgrade command to upgrade to the latest version of SurrealDB</p>
+	<codes vertical>
+		<Code @name="docs-cli-upgrade-main.shell" text="Command line">
+			user@localhost % surreal upgrade
+		</Code>
+	</codes>
+
+	<h4>Global install</h4>
+	<p>If SurrealDB is installed globally on your system, you might need to run the upgrade command with elevated permissions.</p>
+	<codes vertical>
+		<Code @name="docs-cli-upgrade-sudo.shell" text="Command line">
+			user@localhost % sudo surreal upgrade
+		</Code>
+	</codes>
+
+	<h4>Install nightly</h4>
+	<p>Use the <code>--nightly</code> flag to upgrade to the latest nightly version of SurrealDB.</p>
+	<codes vertical>
+		<Code @name="docs-cli-upgrade-nightly.shell" text="Command line">
+			user@localhost % surreal upgrade --nightly
+		</Code>
+	</codes>
+
+	<h4>Install specific version</h4>
+	<p>Use the <code>--version</code> flag to upgrade to the a specific version of SurrealDB.</p>
+	<codes vertical>
+		<Code @name="docs-cli-upgrade-specific-version.shell" text="Command line">
+			user@localhost % surreal upgrade --version v1.0.0-beta.10
+		</Code>
+	</codes>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Command help</h3>
+	<p>To see the help information and usage instructions, in a terminal run the <Ascua::Prism::Inline @language="shell" @code="surreal upgrade --help" /> command without any further arguments. This command gives general information on the arguments, inputs, and additional options for the <code>upgrade</code> command.</p>
+	<codes vertical>
+		<Code @name="docs-cli-help-upgrade.shell" text="Command line">
+			user@localhost % surreal upgrade --help
+		</Code>
+		<Code @name="docs/cli/help/upgrade.txt" />
+	</codes>
+</Layout::Text>
+
+<Layout::Gap large />
