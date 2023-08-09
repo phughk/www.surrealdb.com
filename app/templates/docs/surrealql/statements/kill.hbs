@@ -8,6 +8,10 @@
 <Layout::Text text-l text-f>
     <h2><code>KILL</code> statement</h2>
 	<p>The KILL statement is used to terminate a running live query.</p>
+	<p>
+		While the KILL statement does accept a value type, this value must resolve to a UUID.
+		Consequently, it will accept a string literal of a UUID or a param.
+	</p>
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -26,6 +30,9 @@
 	<h4>Basic usage</h4>
 	<p>The <code>KILL</code> statement expects the UUID of a running live query to be passed.</p>
 	<Code @name="docs/surrealql/statements/kill/simple.surql" />
+
+	<p>The <code>KILL</code> statement will also allow for parameters to be used.</p>
+	<Code @name="docs/surrealql/statements/kill/param.surql" />
 </Layout::Text>
 
 <Layout::Gap large />
