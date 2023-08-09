@@ -1,0 +1,31 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements">Statements</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.statements.kill"><code>KILL</code> statement</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2><code>KILL</code> statement</h2>
+	<p>The KILL statement is used to terminate a running live query.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/kill/syntax.typescript" text="Surql Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+
+	<h3>Example usage</h3>
+
+	<h4>Basic usage</h4>
+	<p>The <code>KILL</code> statement expects the UUID of a running live query to be passed.</p>
+	<Code @name="docs/surrealql/statements/kill/simple.surql" />
+</Layout::Text>
+
+<Layout::Gap large />

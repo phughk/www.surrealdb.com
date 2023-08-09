@@ -177,6 +177,7 @@ Router.map(function () {
 				this.route('ifelse');
 				this.route('select');
 				this.route('live-select');
+				this.route('kill');
 				this.route('insert');
 				this.route('create');
 				this.route('update');
