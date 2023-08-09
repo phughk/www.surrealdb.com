@@ -63,6 +63,22 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#max">
+						<code>time::max()</code>
+					</a>
+				</td>
+				<td>Finds the most recent datetime in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#min">
+						<code>time::min()</code>
+					</a>
+				</td>
+				<td>Finds the least recent datetime in an array</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#minute">
 						<code>time::minute()</code>
 					</a>
@@ -306,6 +322,52 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-time-hour-result.txt">
 				8
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "max"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::max</h3>
+		<p>The <code>time::max</code> function extracts the minutes as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-max.surql" text="API Definition">
+			time::max(array) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-max-input.surql">
+				SELECT * FROM time::max(["1987-06-22T08:30:45Z", "1988-06-22T08:30:45Z"])
+			</Code>
+			<Code @name="docs-surrealql-functions-time-max-result.txt">
+				"1988-06-22T08:30:45Z"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "min"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::min</h3>
+		<p>The <code>time::min</code> function extracts the minutes as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-min.surql" text="API Definition">
+			time::min(array) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-min-input.surql">
+				SELECT * FROM time::min(["1987-06-22T08:30:45Z", "1988-06-22T08:30:45Z"])
+			</Code>
+			<Code @name="docs-surrealql-functions-time-min-result.txt">
+				"1987-06-22T08:30:45Z"
 			</Code>
 		</codes>
 	</Layout::Text>
