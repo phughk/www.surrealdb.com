@@ -1,1 +1,1 @@
-var db = SurrealDbWsClient.New("localhost:8000");
+var db = SurrealDbWsClient.New("127.0.0.1:8000");
