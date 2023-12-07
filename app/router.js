@@ -44,11 +44,6 @@ Router.map(function () {
 		this.route('giveaway');
 	});
 
-	this.route('usecase', function () {
-		this.route('jamstack');
-		this.route('serverless');
-	});
-
 	this.route('showcase', function () {
 		this.route('modelling');
 		this.route('surrealql');

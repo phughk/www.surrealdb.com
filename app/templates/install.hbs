@@ -11,7 +11,7 @@
 		<Button::Thicker @link="features">
 			<i class="fal fa-list-check"></i> <span>View all features</span>
 		</Button::Thicker>
-		<Button::Thicker @link="docs.introduction.start">
+		<Button::Thicker @link="https://docs.surrealdb.com/docs/introduction/start/">
 			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
 		</Button::Thicker>
 	</Layout::Text>
@@ -26,7 +26,7 @@
 			<h4>
 				<Devicon @size="45" @type="apple" /> Install on macOS
 			</h4>
-			<p>The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools, and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to install SurrealDB. View the <Link @link="docs.installation.macos">documentation</Link> for more information.</p>
+			<p>The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools, and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to install SurrealDB. View the <Link @link="https://docs.surrealdb.com/docs/installation/macos">documentation</Link> for more information.</p>
 			<Code @name="install-macos.bash">
 				brew install surrealdb/tap/surreal
 			</Code>
@@ -35,7 +35,7 @@
 			<h4>
 				<Devicon @size="45" @type="linux" /> Install on Linux
 			</h4>
-			<p>The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link="docs.installation.linux">documentation</Link> for more information.</p>
+			<p>The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link="https://docs.surrealdb.com/docs/installation/linux">documentation</Link> for more information.</p>
 			<Code @name="install-linux.bash">
 				curl -sSf https://install.surrealdb.com | sh
 			</Code>
@@ -49,7 +49,7 @@
 		<h4>
 			<Devicon @size="45" @type="windows" /> Install on Windows
 		</h4>
-		<p>The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link="docs.installation.windows">documentation</Link> for more information.</p>
+		<p>The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link="https://docs.surrealdb.com/docs/installation/windows">documentation</Link> for more information.</p>
 		<Code @name="install-windows.bash">
 			iwr https://windows.surrealdb.com -useb | iex
 		</Code>
@@ -66,7 +66,7 @@
 		<h4>
 			<Devicon @size="45" @type="docker" /> Run using Docker
 		</h4>
-		<p>Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The <Link @link={{url "docker"}}>SurrealDB docker container</Link> contains the full command-line tools for importing and exporting data from a running server, or for running a server itself. View the <Link @link="docs.installation.running.docker">documentation</Link> for more information.</p>
+		<p>Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The <Link @link={{url "docker"}}>SurrealDB docker container</Link> contains the full command-line tools for importing and exporting data from a running server, or for running a server itself. View the <Link @link="https://docs.surrealdb.com/docs/installation/running/docker">documentation</Link> for more information.</p>
 		<Code @name="install-docker.bash">
 			docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start
 		</Code>
