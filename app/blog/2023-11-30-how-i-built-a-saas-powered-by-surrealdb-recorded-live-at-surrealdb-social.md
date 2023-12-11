@@ -7,3 +7,5 @@ summary: "Join Software Engineer Micha de Vries as he explores his journey as a 
 ---
 
 Join Software Engineer Micha de Vries as he explores his journey as a developer and dives into a practical application of SurrealDB, showcasing his SaaS product PlayrBase, built almost entirely with SurrealDB.
+
+![](https://www.youtube.com/embed/NMcMSqemMo0?si=qx2sImHvMFQ1q4m4)

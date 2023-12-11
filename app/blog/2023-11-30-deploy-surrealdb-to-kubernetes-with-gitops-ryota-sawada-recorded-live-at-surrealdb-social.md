@@ -11,3 +11,5 @@ Community Spotlight talk by Ryota Sawada. When trying out SurrealDB on your loca
 SurrealDB documentation covers the HA scenario with TiKV used as the storage backend, but it mainly talks about connecting SurrealDB, and not so much about future upgrades and declarative management. 
 
 This talk covers how you can start your cluster using GitOps, and manage all the configuration declaratively.
+
+![](https://www.youtube.com/embed/04opYXTt3sc?si=ldu2I8AnizfgveBA)
