@@ -1,6 +1,6 @@
 ---
 show: false
-date: 2023-12-06
+date: 2023-12-14
 image: cloa17lnv13s73fmib30
 title: "What is SurrealML: A getting started guide"
 summary: "The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete."
