@@ -26,6 +26,16 @@ module.exports = function (environment) {
 			db: 'surreal',
 		},
 
+		// Markdown file import details for
+		// generating a markdown file tree from
+		// a folder in the app workspace.
+
+		mdfiles: {
+			folders: {
+				'blog': 'app/blog'
+			}
+		},
+
 		// Set the configuration options for
 		// the @ascua/update addon, so that the
 		// page can update when available.

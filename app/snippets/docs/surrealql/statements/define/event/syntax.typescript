@@ -1,1 +1,0 @@
-DEFINE EVENT @name ON [ TABLE ] @table [ WHEN @expression ] THEN @expression

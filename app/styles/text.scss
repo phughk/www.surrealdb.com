@@ -66,7 +66,7 @@ h2 {
 
 	font-weight: 600;
 	line-height: 1.2;
-	font-size: 60px;
+	font-size: 40px;
 	letter-spacing: -1px;
 	font-family: "SF Pro Display";
 	transition: color 0.3s;
@@ -329,7 +329,7 @@ g {
 		background: linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
 		background: -moz-linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
 		background: -webkit-linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
-	
+
 		span[gradient] {
 		border-radius: 5rem;
 		padding-left: 1.5rem;
@@ -338,33 +338,33 @@ g {
 		padding-bottom: 0.5rem;
 		border: 1px solid #fff;
 		}
-	
+
 		img[inline] {
 			height: 45px;
 		}
-	
+
 		i {
 			vertical-align: middle;
 		}
-	
+
 		@include media(max-width-1449) {
 			font-size: 46px;
-	
+
 			img[inline] {
 				height: 34px;
 			}
 		}
-	
+
 		@include media(max-width-600) {
 			width: 100%;
 			font-size: 38px;
 			margin-bottom: 0px;
-	
+
 			img[inline] {
 				height: 28px;
 			}
 		}
-	
+
 	}
 
 b {
@@ -383,7 +383,7 @@ b {
 	i {
 		vertical-align: middle;
 	}
-	
+
 	}
 
 li {

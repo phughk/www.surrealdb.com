@@ -1,4 +1,0 @@
-// Delete all records from a table
-let people: Vec<Person> = db.delete("person").await?;
-// Delete a specific record from a table
-let person: Option<Person> = db.delete(("person", "h5wxrf2ewk8xjxosxtyc")).await?;

@@ -1,6 +1,10 @@
 {{~#each @tokens as |item|~}}
 	{{~#if (eq item.type 'text')~}}
-		{{{item.text}}}
+		{{#if item.tokens.length}}
+			<Markup::Tokens @tokens={{item.tokens}} />
+		{{else}}
+			{{{item.text}}}
+		{{/if}}
 	{{~else if (eq item.type 'link')~}}
 		<Link @link={{item.href}} title={{item.title}}>
 			<Markup::Tokens @tokens={{item.tokens}} />

@@ -1,1 +1,0 @@
-DEFINE USER john ON ROOT PASSWORD "VerySecurePassword!" ROLES OWNER;

@@ -1,129 +1,124 @@
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
-
-
 <Meta::Tags
-	@image={{blog-image this.model.image}}
-	@title="SurrealDB | {{this.model.title}}"
-	@description={{this.model.text}}
+	@image={{blog-image this.model.attributes.image}}
+	@title="SurrealDB | {{this.model.attributes.title}}"
+	@description={{this.model.attributes.summary}}
 />
+
 <section blog>
-<Layout::Gap blog />
 
-<Layout::Helm blog>
+	<Layout::Gap blog />
 
-	<Layout::Helm::Menu>
-		<div>
-			<Link @link="blog.index">
-				<i class="fas fa-arrow-left"></i>
-				<span>Show all posts</span>
-			</Link>
-		</div>
-		<nav>
-			<Layout::Helm::Menu::Item @text={{@model.title}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
-			{{#each this.headings as |heading|}}
-				<Layout::Helm::Menu::Item @text={{heading.text}} @link={{heading.link}} selected={{is-waypoint heading.id}} />
-			{{/each}}
-		</nav>
-		<div>
-			<Signup::Newsletter bordered thinner>
-				<i class="fal fa-envelope"></i>
-				<span>Subscribe</span>
-			</Signup::Newsletter>
-		</div>
-	</Layout::Helm::Menu>
+	<Layout::Helm blog>
 
-	<Layout::Helm::Main>
+		<Layout::Helm::Menu>
+			<div>
+				<Link @link="blog.index">
+					<i class="fas fa-arrow-left"></i>
+					<span>Show all posts</span>
+				</Link>
+			</div>
+			<nav>
+				<Layout::Helm::Menu::Item @text={{@model.attributes.title}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
+				{{#each this.headings as |heading|}}
+					<Layout::Helm::Menu::Item @text={{heading.text}} @link={{heading.link}} selected={{is-waypoint heading.id}} />
+				{{/each}}
+			</nav>
+			<div>
+				<Signup::Newsletter bordered thinner>
+					<i class="fal fa-envelope"></i>
+					<span>Subscribe</span>
+				</Signup::Newsletter>
+			</div>
+		</Layout::Helm::Menu>
 
-		<Layout::Switch {{waypoint "main"}} />
+		<Layout::Helm::Main>
 
-		<Layout::Blocks cols-1 full>
+			<Layout::Switch {{waypoint "main"}} />
 
-			<Layout::Blocks::Image @image={{blog-image this.model.image}} />
+			<Layout::Blocks cols-1 full>
 
-			<Layout::Blocks::Block>
-				<p hide mobile tablet>
-					<Link @link="blog.index" faint>
-						<i class="fas fa-arrow-left"></i> <span>Show all posts</span>
-					</Link>
-				</p>
-				<p>{{date-format this.model.time "LL"}}</p>
-				<h1>{{this.model.title}}</h1>
-				<h4>{{this.model.label}}</h4>
-				<Markup @html={{this.model.html}} />
-			</Layout::Blocks::Block>
+				<Layout::Blocks::Image @image={{blog-image this.model.attributes.image}} />
 
-			<Layout::Blocks::Block>
-				<Ascua::Social::Linkedin @url={{@model.url}}>
-					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
-						Share on LinkedIn
-					</Ascua::Tooltip>
-					<i large class="fab fa-linkedin"></i>
-				</Ascua::Social::Linkedin>
-				&nbsp;
-				<Ascua::Social::Twitter @url={{@model.url}} @text={{@model.title}} @via="surrealdb" @tags="surrealdb">
-					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
-						Share on X
-					</Ascua::Tooltip>
-					<i large class="fab fa-twitter"></i>
-				</Ascua::Social::Twitter>
-				&nbsp;
-				<Ascua::Social::Whatsapp @url={{@model.url}} @text={{@model.title}}>
-					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
-						Share on WhatsApp
-					</Ascua::Tooltip>
-					<i large class="fab fa-whatsapp"></i>
-				</Ascua::Social::Whatsapp>
-				&nbsp;
-				<Ascua::Social::Email @subject={{@model.title}} @body={{@model.url}}>
-					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
-						Share by email
-					</Ascua::Tooltip>
-					<i large class="fas fa-envelope"></i>
-				</Ascua::Social::Email>
-			</Layout::Blocks::Block>
+				<Layout::Blocks::Block>
+					<p hide mobile tablet>
+						<Link @link="blog.index" faint>
+							<i class="fas fa-arrow-left"></i> <span>Show all posts</span>
+						</Link>
+					</p>
+					<p>{{date-format this.model.attributes.date "LL"}}</p>
+					<h1>{{this.model.attributes.title}}</h1>
+					<h4>{{this.model.attributes.label}}</h4>
+					<Markup @html={{this.model.content}} />
+				</Layout::Blocks::Block>
 
-		</Layout::Blocks>
+				<Layout::Blocks::Block>
+					<Ascua::Social::Linkedin @url="https://surrealdb.com/blog/{{this.model.attributes.slug}}">
+						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+							Share on LinkedIn
+						</Ascua::Tooltip>
+						<i large class="fab fa-linkedin"></i>
+					</Ascua::Social::Linkedin>
+					&nbsp;
+					<Ascua::Social::Twitter @url="https://surrealdb.com/blog/{{this.model.attributes.slug}}" @text={{@model.attributes.title}} @via="surrealdb" @tags="surrealdb">
+						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+							Share on X
+						</Ascua::Tooltip>
+						<i large class="fab fa-twitter"></i>
+					</Ascua::Social::Twitter>
+					&nbsp;
+					<Ascua::Social::Whatsapp @url="https://surrealdb.com/blog/{{this.model.attributes.slug}}" @text={{@model.attributes.title}}>
+						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+							Share on WhatsApp
+						</Ascua::Tooltip>
+						<i large class="fab fa-whatsapp"></i>
+					</Ascua::Social::Whatsapp>
+					&nbsp;
+					<Ascua::Social::Email @subject={{@model.attributes.title}} @body="https://surrealdb.com/blog/{{this.model.attributes.slug}}">
+						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+							Share by email
+						</Ascua::Tooltip>
+						<i large class="fas fa-envelope"></i>
+					</Ascua::Social::Email>
+				</Layout::Blocks::Block>
 
-	</Layout::Helm::Main>
+			</Layout::Blocks>
 
-</Layout::Helm>
+		</Layout::Helm::Main>
 
-<Layout::Gap small />
-
-<section>
+	</Layout::Helm>
 
 	<Layout::Gap small />
 
-	<Layout::Boxes cols-2-to-1>
-		{{#if this.prev}}
-			<LinkTo @route="blog.post" @model={{this.prev.slug}}>
-				<Layout::Boxes::Item @image={{blog-image this.prev.image}} @stamp={{date-format this.prev.time "LL"}} @title={{this.prev.title}} @label={{this.prev.label}} @text={{this.prev.text}} />
-			</LinkTo>
-		{{else}}
-			<Layout::Boxes::Item @label="No older posts" centered />
-		{{/if}}
-		{{#if this.next}}
-			<LinkTo @route="blog.post" @model={{this.next.slug}}>
-				<Layout::Boxes::Item @image={{blog-image this.next.image}} @stamp={{date-format this.next.time "LL"}} @title={{this.next.title}} @label={{this.next.label}} @text={{this.next.text}} />
-			</LinkTo>
-		{{else}}
-			<Layout::Boxes::Item @label="No newer posts" centered />
-		{{/if}}
-	</Layout::Boxes>
+	<section>
 
-	<Layout::Gap mini />
+		<Layout::Gap small />
 
-	<Layout::Text>
-		<p same>To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "x"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
-		<Signup::Newsletter bordered thicker />
-	</Layout::Text>
+		<Layout::Boxes cols-2-to-1>
+			{{#if this.prev}}
+				<LinkTo @route="blog.post" @model={{this.prev.attributes.slug}}>
+					<Layout::Boxes::Item @image={{blog-image this.prev.attributes.image}} @stamp={{date-format this.prev.attributes.date "LL"}} @title={{this.prev.attributes.title}} @label={{this.prev.attributes.label}} @text={{this.prev.attributes.summary}} />
+				</LinkTo>
+			{{else}}
+				<Layout::Boxes::Item @label="No older posts" centered />
+			{{/if}}
+			{{#if this.next}}
+				<LinkTo @route="blog.post" @model={{this.next.attributes.slug}}>
+					<Layout::Boxes::Item @image={{blog-image this.next.attributes.image}} @stamp={{date-format this.next.attributes.date "LL"}} @title={{this.next.attributes.title}} @label={{this.next.attributes.label}} @text={{this.next.attributes.summary}} />
+				</LinkTo>
+			{{else}}
+				<Layout::Boxes::Item @label="No newer posts" centered />
+			{{/if}}
+		</Layout::Boxes>
 
-	<Layout::Gap small />
+		<Layout::Gap mini />
 
-</section>
+		<Layout::Text>
+			<p same>To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "x"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
+			<Signup::Newsletter bordered thicker />
+		</Layout::Text>
+
+		<Layout::Gap small />
+
+	</section>
 
 </section>

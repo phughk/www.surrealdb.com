@@ -1,1 +1,0 @@
-DEFINE SCOPE @name SESSION @duration SIGNUP @expression SIGNIN @expression

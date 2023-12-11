@@ -1,7 +1,0 @@
-[
-  {
-    "time": "141.334µs",
-    "status": "ERR",
-    "detail": "You need to specify a namespace and a database to use"
-  }
-]

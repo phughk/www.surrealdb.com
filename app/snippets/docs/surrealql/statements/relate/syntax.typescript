@@ -1,8 +1,0 @@
-RELATE [ ONLY ] @from_record -> @table -> @to_record
-	[ CONTENT @value
-	  | SET @field = @value ...
-	]
-	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @fields ... ]
-	[ TIMEOUT @duration ]
-	[ PARALLEL ]
-;

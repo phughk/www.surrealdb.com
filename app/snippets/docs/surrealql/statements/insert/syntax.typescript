@@ -1,6 +1,0 @@
-INSERT [ IGNORE ] INTO @what
-	[ @value
-	  | (@fields) VALUES (@values)
-		[ ON DUPLICATE KEY UPDATE @field = @value ... ]
-	]
-;

@@ -1,1 +1,0 @@
-await db.Kill(queryUuid);

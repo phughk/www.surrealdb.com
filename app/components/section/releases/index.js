@@ -30,74 +30,23 @@ export default class extends Component {
 					{
 						name: 'Bug fixes',
 						text: [
-							{
-								category: 'bug',
-								text: 'Majorly improved error messages.',
-							},
-							{
-								category: 'bug',
-								text: 'When a scope fails to authenticate, we now give a detailed explanation as to why.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure parameters are computed before being stored on WebSocket.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>DEFAULT</code> clause is displayed on <code>DEFINE FIELD</code> statements.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure scope <code>SIGNUP</code> and <code>SIGNIN</code> works with guest access disabled.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix authentication issues with <code>LIVE SELECT</code> statements.',
-							},
-							{
-								category: 'bug',
-								text: 'Support <code>FOR</code> statements inside code blocks.',
-							},
-							{
-								category: 'bug',
-								text: 'When a scope fails to authenticate, we now give a detailed explanation as to why.',
-							},
-							{
-								category: 'bug',
-								text: 'Cluster bootstrapping now warns and continues instead of fail-stopping',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure Live Queries are killed correctly.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure that scripting functions can be used within <code>SELECT</code>-statement predicates.',
-							},
-							{
-								category: 'bug',
-								text: 'Avoid panics when displaying errors.',
-							},
-							{
-								category: 'bug',
-								text: 'Prevent infinite parser recursion in stmts & binary exprs.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix panic on commit when defining db and tb in strict mode.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix decimal deserialisation.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix change feeds enabled at the database-level.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow for multiple indexes on a single field.',
-							},
+							'Majorly improved error messages.',
+							'When a scope fails to authenticate, we now give a detailed explanation as to why.',
+							'Ensure parameters are computed before being stored on WebSocket.',
+							'Ensure <code>DEFAULT</code> clause is displayed on <code>DEFINE FIELD</code> statements.',
+							'Ensure scope <code>SIGNUP</code> and <code>SIGNIN</code> works with guest access disabled.',
+							'Fix authentication issues with <code>LIVE SELECT</code> statements.',
+							'Support <code>FOR</code> statements inside code blocks.',
+							'When a scope fails to authenticate, we now give a detailed explanation as to why.',
+							'Cluster bootstrapping now warns and continues instead of fail-stopping',
+							'Ensure Live Queries are killed correctly.',
+							'Ensure that scripting functions can be used within <code>SELECT</code>-statement predicates.',
+							'Avoid panics when displaying errors.',
+							'Prevent infinite parser recursion in stmts & binary exprs.',
+							'Fix panic on commit when defining db and tb in strict mode.',
+							'Fix decimal deserialisation.',
+							'Fix change feeds enabled at the database-level.',
+							'Allow for multiple indexes on a single field.',
 						],
 					},
 				],
@@ -123,22 +72,10 @@ export default class extends Component {
 					{
 						name: 'Bug fixes',
 						text: [
-							{
-								category: 'bug',
-								text: 'Ensure that errors within scope logic are properly handled and do not cause a panic.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure that capabilities are properly applied to embedded scripting functions.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix various niche issues caught by fuzzer that could cause a panic.',
-							},
-							{
-								category: 'bug',
-								text: 'Fix relative file paths.',
-							},
+							'Ensure that errors within scope logic are properly handled and do not cause a panic.',
+							'Ensure that capabilities are properly applied to embedded scripting functions.',
+							'Fix various niche issues caught by fuzzer that could cause a panic.',
+							'Fix relative file paths.',
 						],
 					},
 				],
@@ -208,163 +145,49 @@ export default class extends Component {
 					{
 						name: 'Bug fixes',
 						text: [
-							{
-								category: 'bug',
-								text: 'Ensure duration addition and subtraction does not panic.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure custom functions can write to the database without being wrapped in a transaction.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure edge record deletes do not cascade to related records.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>http::*</code> functions parse response bodies as JSON instead of SurrealQL.',
-							},
-							{
-								category: 'bug',
-								text: 'Fixed HTTP errors sometimes being unable to be deserialised.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow exports larger than 10,240 bytes for local engines.',
-							},
-							{
-								category: 'bug',
-								text: 'Fixed an issue where <code>array::remove()</code> would cause a panic.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>string::slice()</code> properly handles UTF-8 values.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure large duration do not cause a panic.',
-							},
-							{
-								category: 'bug',
-								text: 'Prevent infinite recursion with futures causing an overflow.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure chained <code>future</code> values have access to current document context.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>$input</code> is available to array fields in <code>SET</code> clause',
-							},
-							{
-								category: 'bug',
-								text: 'Make computation depth 4X deeper, and configurable via the <code>SURREAL_MAX_COMPUTATION_DEPTH</code> environment variable.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure JSON-like text is trimmed before parsing.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure Idiom paths result in writeable transactions where necessary.',
-							},
-							{
-								category: 'bug',
-								text: 'Visibly warn if failed to deserialize websocket response.',
-							},
-							{
-								category: 'bug',
-								text: 'Throw an error for invalid patches instead of panicking.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure errors do not hide other results. If any query in a set of queries were to fail in the CLI, only the error would be shown. This is now fixed by including the error in an array of results.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure duration is bigger than zero before truncating and rounding datetime.',
-							},
-							{
-								category: 'bug',
-								text: 'Pass on the error that causes a transaction to fail.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow custom functions to be defined with an empty body.',
-							},
-							{
-								category: 'bug',
-								text: 'Limit output size of all <code>string::*</code> functions to prevent memory exhaustion.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow <code>\\</code> escaped characters to be used in embedded scripting functions.',
-							},
-							{
-								category: 'bug',
-								text: 'Fixed not being able to select from an array by index, directly after an array filter.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow deletions of records on <code>DROP</code> tables.',
-							},
-							{
-								category: 'bug',
-								text: 'Allow keywords as ident prefix.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure permissions are enforced on edge <code>in</code> and <code>out</code> fields.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure records can be <code>INSERT</code>ed on tables with permissions.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure foreign tables are deleted fully when removed',
-							},
-							{
-								category: 'bug',
-								text: 'Support whitespace between function keyword and argument list for embedded scription functions.',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>ON DUPLICATE KEY UPDATE</code> clause is displayed on <code>INSERT</code> statement.',
-							},
-							{
-								category: 'bug',
-								text: 'Limit parser depth to prevent exhaustion and overflows.',
-							},
-							{
-								category: 'bug',
-								text: 'Prevent being able to create a record with an empty ID.',
-							},
-							{
-								category: 'bug',
-								text: 'Throw an error when a record is created with a mismatched record ID.',
-							},
-							{
-								category: 'bug',
-								text: 'Support arbitrary number of arrays in <code>array::concat()</code>.',
-							},
-							{
-								category: 'bug',
-								text: 'Support <code>ON DUPLICATE KEY UPDATE</code> when a unique index entry exists.',
-							},
+							'Ensure duration addition and subtraction does not panic.',
+							'Ensure custom functions can write to the database without being wrapped in a transaction.',
+							'Ensure edge record deletes do not cascade to related records.',
+							'Ensure <code>http::*</code> functions parse response bodies as JSON instead of SurrealQL.',
+							'Fixed HTTP errors sometimes being unable to be deserialised.',
+							'Allow exports larger than 10,240 bytes for local engines.',
+							'Fixed an issue where <code>array::remove()</code> would cause a panic.',
+							'Ensure <code>string::slice()</code> properly handles UTF-8 values.',
+							'Ensure large duration do not cause a panic.',
+							'Prevent infinite recursion with futures causing an overflow.',
+							'Ensure chained <code>future</code> values have access to current document context.',
+							'Ensure <code>$input</code> is available to array fields in <code>SET</code> clause',
+							'Make computation depth 4X deeper, and configurable via the <code>SURREAL_MAX_COMPUTATION_DEPTH</code> environment variable.',
+							'Ensure JSON-like text is trimmed before parsing.',
+							'Ensure Idiom paths result in writeable transactions where necessary.',
+							'Visibly warn if failed to deserialize websocket response.',
+							'Throw an error for invalid patches instead of panicking.',
+							'Ensure errors do not hide other results. If any query in a set of queries were to fail in the CLI, only the error would be shown. This is now fixed by including the error in an array of results.',
+							'Ensure duration is bigger than zero before truncating and rounding datetime.',
+							'Pass on the error that causes a transaction to fail.',
+							'Allow custom functions to be defined with an empty body.',
+							'Limit output size of all <code>string::*</code> functions to prevent memory exhaustion.',
+							'Allow <code>\\</code> escaped characters to be used in embedded scripting functions.',
+							'Fixed not being able to select from an array by index, directly after an array filter.',
+							'Allow deletions of records on <code>DROP</code> tables.',
+							'Allow keywords as ident prefix.',
+							'Ensure permissions are enforced on edge <code>in</code> and <code>out</code> fields.',
+							'Ensure records can be <code>INSERT</code>ed on tables with permissions.',
+							'Ensure foreign tables are deleted fully when removed',
+							'Support whitespace between function keyword and argument list for embedded scription functions.',
+							'Ensure <code>ON DUPLICATE KEY UPDATE</code> clause is displayed on <code>INSERT</code> statement.',
+							'Limit parser depth to prevent exhaustion and overflows.',
+							'Prevent being able to create a record with an empty ID.',
+							'Throw an error when a record is created with a mismatched record ID.',
+							'Support arbitrary number of arrays in <code>array::concat()</code>.',
+							'Support <code>ON DUPLICATE KEY UPDATE</code> when a unique index entry exists.',
 						],
 					},
 					{
 						name: 'Performance improvements',
 						text: [
-							{
-								category: 'performance',
-								text: 'Parsing nested objects and blocks now has an O(n) complexity instead of O(2^n), resulting in a 3666x improvement.',
-							},
-							{
-								category: 'performance',
-								text: 'The JSON parser is now 153 times faster.',
-							},
+							'Parsing nested objects and blocks now has an O(n) complexity instead of O(2^n), resulting in a 3666x improvement.',
+							'The JSON parser is now 153 times faster.',
 						],
 					},
 				],
@@ -381,7 +204,7 @@ export default class extends Component {
 						name: 'Features',
 						text: [
 							'Add WebSocket binary protocol',
-							'Don’t treat <code>NONE</code> and <code>NULL</code> as the same',
+							"Don't treat <code>NONE</code> and <code>NULL</code> as the same",
 							'Allow <code>SELECT</code> statements to <code>START AT 0</code>',
 							'Add <code>not()</code> function for negating a value',
 							'Add support for mathematical constants',
@@ -416,83 +239,29 @@ export default class extends Component {
 					{
 						name: 'Bug fixes',
 						text: [
-							{
-								category: 'bug',
-								text: 'Enable searching within Record IDs using the CONTAINS operator',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure date strings are not treated as datetimes',
-							},
-							{
-								category: 'bug',
-								text: 'Limit computation depth in functions, futures, and subqueries',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure SQL queries are parsed completely or fail',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure all valid unicode characters are parsed without failing',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure nested non-defined objects are not stored in <code>SCHEMAFULL</code> tables',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure equals comparator function never reeaches unreachable code',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure cancelled context does not prevent FETCH of records',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure GROUP BY fields with functions are output correctly',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure system parameters are not able to be overridden',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure record is only deleted after permissions have been checked',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure double quote characters are always escaped properly',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure RocksDB range scans are inclusive at the start',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure uncaught JavaScript exceptions are caught in JavaScript runtime',
-							},
-							{
-								category: 'bug',
-								text: 'Do not run permissions on <code>DEFINE EVENT</code> and <code>DEFINE TABLE</code> queries',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure invalid datetimes to not panic',
-							},
+							'Enable searching within Record IDs using the CONTAINS operator',
+							'Ensure date strings are not treated as datetimes',
+							'Limit computation depth in functions, futures, and subqueries',
+							'Ensure SQL queries are parsed completely or fail',
+							'Ensure all valid unicode characters are parsed without failing',
+							'Ensure nested non-defined objects are not stored in <code>SCHEMAFULL</code> tables',
+							'Ensure equals comparator function never reeaches unreachable code',
+							'Ensure cancelled context does not prevent FETCH of records',
+							'Ensure GROUP BY fields with functions are output correctly',
+							'Ensure system parameters are not able to be overridden',
+							'Ensure record is only deleted after permissions have been checked',
+							'Ensure double quote characters are always escaped properly',
+							'Ensure RocksDB range scans are inclusive at the start',
+							'Ensure uncaught JavaScript exceptions are caught in JavaScript runtime',
+							'Do not run permissions on <code>DEFINE EVENT</code> and <code>DEFINE TABLE</code> queries',
+							'Ensure invalid datetimes to not panic',
 						],
 					},
 					{
 						name: 'Performance improvements',
 						text: [
-							{
-								category: 'performance',
-								text: 'Limit computation depth in functions, futures, and subqueries',
-							},
-							{
-								category: 'performance',
-								text: 'Ensure PERMISSIONS clauses are not run for ROOT / NS / DB users',
-							},
+							'Limit computation depth in functions, futures, and subqueries',
+							'Ensure PERMISSIONS clauses are not run for ROOT / NS / DB users',
 						],
 					},
 				],
@@ -535,107 +304,35 @@ export default class extends Component {
 					{
 						name: 'Bug fixes',
 						text: [
-							{
-								category: 'bug',
-								text: 'Add support for escaped characters and unicode characters in strings',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure datetimes work correctly in Eastern timezones',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>is::uuid()</code> parses valid UUIDs correctly',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>LET</code> statements throw errors correctly on failure',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure Record IDs are parsed correctly when defined as a string',
-							},
-							{
-								category: 'bug',
-								text: 'Fix bug where escaped characters were not supported in regex values',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure datetimes with milliseconds or nanoseconds are parsed correctly',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure datetimes with partial timezones are correctly calculated',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>time::month()</code> returns the month of the specified datetime',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>FETCH</code> clauses fetch the respective data correctly',
-							},
-							{
-								category: 'bug',
-								text: 'Handle connection errors properly when WebSocket clients disconnect improperly',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure HTTP session is not verified multiple times when requesting an invalid HTTP route',
-							},
-							{
-								category: 'bug',
-								text: 'Use <code>Accept</code> header instead of <code>Content-Type</code> header for client content negotiation',
-							},
-							{
-								category: 'bug',
-								text: 'Fix key scan range iteration in RocksDB, which caused SurrealDB to randomly crash',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure authenticated session data is stored after successful scope signup / signin',
-							},
-							{
-								category: 'bug',
-								text: 'Fix bug where <code>http</code> functions would panic when an invalid URI was specified',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure correct transaction type (optimistic / pessimistic) was initiated when using TiKV distributed storage engine',
-							},
-							{
-								category: 'bug',
-								text: 'Ensure <code>math::mean()</code>, <code>math::median()</code>, and <code>math::sqrt()</code> work correctly with empty or zero values',
-							},
-							{
-								category: 'bug',
-								text: 'Fix bug where <code>MultiPoint</code>, <code>MultiLine</code>, and <code>MultiPolygon</code> geometry values were not formatted correctly',
-							},
-							{
-								category: 'bug',
-								text: 'Fix bug where defined fields with empty values would be set on the root object, losing the object structure',
-							},
+							'Add support for escaped characters and unicode characters in strings',
+							'Ensure datetimes work correctly in Eastern timezones',
+							'Ensure <code>is::uuid()</code> parses valid UUIDs correctly',
+							'Ensure <code>LET</code> statements throw errors correctly on failure',
+							'Ensure Record IDs are parsed correctly when defined as a string',
+							'Fix bug where escaped characters were not supported in regex values',
+							'Ensure datetimes with milliseconds or nanoseconds are parsed correctly',
+							'Ensure datetimes with partial timezones are correctly calculated',
+							'Ensure <code>time::month()</code> returns the month of the specified datetime',
+							'Ensure <code>FETCH</code> clauses fetch the respective data correctly',
+							'Handle connection errors properly when WebSocket clients disconnect improperly',
+							'Ensure HTTP session is not verified multiple times when requesting an invalid HTTP route',
+							'Use <code>Accept</code> header instead of <code>Content-Type</code> header for client content negotiation',
+							'Fix key scan range iteration in RocksDB, which caused SurrealDB to randomly crash',
+							'Ensure authenticated session data is stored after successful scope signup / signin',
+							'Fix bug where <code>http</code> functions would panic when an invalid URI was specified',
+							'Ensure correct transaction type (optimistic / pessimistic) was initiated when using TiKV distributed storage engine',
+							'Ensure <code>math::mean()</code>, <code>math::median()</code>, and <code>math::sqrt()</code> work correctly with empty or zero values',
+							'Fix bug where <code>MultiPoint</code>, <code>MultiLine</code>, and <code>MultiPolygon</code> geometry values were not formatted correctly',
+							'Fix bug where defined fields with empty values would be set on the root object, losing the object structure',
 						],
 					},
 					{
 						name: 'Performance improvements',
 						text: [
-							{
-								category: 'performance',
-								text: 'Miscellaneous performance optimizations and code cleanup',
-							},
-							{
-								category: 'performance',
-								text: 'Limit maximum allowed runtime and memory in JavaScript functions',
-							},
-							{
-								category: 'performance',
-								text: 'Ensure <code>crypto</code> and <code>rand</code> functions do not allow unbounded resource usage',
-							},
-							{
-								category: 'performance',
-								text: 'Ensure read-only transactions are used when write functionality is not needed when using TiKV distributed storage engine',
-							},
+							'Miscellaneous performance optimizations and code cleanup',
+							'Limit maximum allowed runtime and memory in JavaScript functions',
+							'Ensure <code>crypto</code> and <code>rand</code> functions do not allow unbounded resource usage',
+							'Ensure read-only transactions are used when write functionality is not needed when using TiKV distributed storage engine',
 						],
 					},
 				],

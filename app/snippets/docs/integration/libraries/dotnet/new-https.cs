@@ -1,1 +1,0 @@
-var db = SurrealDbHttpsClient.New("cloud.surrealdb.com");

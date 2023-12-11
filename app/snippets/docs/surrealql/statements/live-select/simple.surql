@@ -1,1 +1,0 @@
-LIVE SELECT * FROM person;

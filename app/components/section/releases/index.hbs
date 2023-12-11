@@ -26,7 +26,7 @@
 
 				<Layout::Text text-l>
 
-					<h3>{{item.name}}</h3>
+					<h2>{{item.name}}</h2>
 
 					{{#if item.time}}
 						<p code>
@@ -40,109 +40,56 @@
 
 				</Layout::Text>
 
-				{{#if item.path}}
-
+				{{#if item.info}}
 					{{#if (is-component item.info)}}
-
-						{{!-- <Layout::Gap mini /> --}}
-
 						{{#let (component item.info) as |component|}}
 							<component />
 						{{/let}}
-
 					{{/if}}
-
-				{{else}}
-
-					<Layout::Gap mini />
-
 				{{/if}}
 
 				{{#if item.text}}
-
 					<Layout::Text text-l>
 						<ul>
 							{{#each item.text as |item|}}
-								{{#if item.text}}
-									<li>
-										{{#if (eq item.category "scripting")}}
-											<Nudge::Scripting />
-										{{/if}}
-										{{#if (eq item.category "performance")}}
-											<Nudge::Performance />
-										{{/if}}
-										{{{item.text}}}
-									</li>
-								{{else}}
-									<li>{{{item}}}</li>
-								{{/if}}
+								<li>{{{item}}}</li>
 							{{/each}}
 						</ul>
 					</Layout::Text>
-
 				{{/if}}
 
 				{{#if item.data}}
-
-					{{#each item.data as |sect idx|}}
-
-						{{#if sect.name}}
-							<Layout::Text text-l>
-								<p>{{sect.name}}</p>
-							</Layout::Text>
-						{{/if}}
-
+					{{#each item.data as |sect|}}
+						<Layout::Text text-l>
+							<p>{{sect.name}}</p>
+						</Layout::Text>
 						<Layout::Text text-l>
 							<ul>
 								{{#each sect.text as |item|}}
-									{{#if item.text}}
-										<li>
-											{{#if (eq item.category "bug")}}
-												<Nudge::Bug />
-											{{/if}}
-											{{#if (eq item.category "script")}}
-												<Nudge::Script />
-											{{/if}}
-											{{#if (eq item.category "performance")}}
-												<Nudge::Performance />
-											{{/if}}
-											{{{item.text}}}
-										</li>
-									{{else}}
-										<li>{{{item}}}</li>
-									{{/if}}
+									<li>{{{item}}}</li>
 								{{/each}}
 							</ul>
 						</Layout::Text>
-
-						{{#if (ne idx item.text.length)}}
-							<Layout::Gap tiny />
-						{{/if}}
-
-
+						<Layout::Gap tiny />
 					{{/each}}
-
 				{{/if}}
 
 				{{#if item.path}}
-
 					{{#if (is-component item.path)}}
-
 						<Layout::Gap tiny />
-
 						{{#let (component item.path) as |component|}}
 							<component />
 						{{/let}}
-
 					{{/if}}
-
 				{{/if}}
 
-				<Layout::Gap tiny />
+				<Layout::Gap mini />
 
 			</section>
 
 		{{/each}}
+
+		<Layout::Gap small />
 
 	</Layout::Helm::Main>
 

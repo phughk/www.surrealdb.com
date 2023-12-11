@@ -1,1 +1,0 @@
-bool status = await db.Health();

@@ -1,3 +1,0 @@
-await using var liveQuery = await db.LiveTable<Person>("person");
-
-// Consume the live query...

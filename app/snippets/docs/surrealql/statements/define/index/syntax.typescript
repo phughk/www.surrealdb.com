@@ -1,2 +1,0 @@
-DEFINE INDEX @name ON [ TABLE ] @table [ FIELDS | COLUMNS ] @fields
-	[ UNIQUE | SEARCH ANALYZER @analyzer [ BM25 [(@k1, @b)] ] [ HIGHLIGHTS ] ]

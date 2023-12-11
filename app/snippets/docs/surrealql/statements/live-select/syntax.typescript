@@ -1,9 +1,0 @@
-LIVE SELECT
-	[
-		[ VALUE ] @fields [ AS @alias ]
-		| DIFF
-	]
-	FROM @targets
-	[ WHERE @conditions ]
-	[ FETCH @fields ... ]
-;

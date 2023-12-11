@@ -1,1 +1,0 @@
-DEFINE FIELD metadata ON TABLE user FLEXIBLE TYPE object;

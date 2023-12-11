@@ -1,6 +1,0 @@
-DEFINE FUNCTION fn::@name(
-	[ @argument: @type ... ]
-) {
-	[ @query ... ]
-	[ RETURN @returned ]
-}

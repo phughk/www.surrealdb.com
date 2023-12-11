@@ -1,1 +1,0 @@
-[2022-07-28 15:50:34] INFO  surrealdb::cli The SQL file was exported successfully

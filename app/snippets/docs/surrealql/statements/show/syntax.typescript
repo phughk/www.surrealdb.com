@@ -1,1 +1,0 @@
-SHOW CHANGES FOR TABLE @tableName [SINCE "@timestamp"] [LIMIT @number]

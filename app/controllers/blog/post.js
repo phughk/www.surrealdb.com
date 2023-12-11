@@ -1,11 +1,7 @@
 import Controller from '@ember/controller';
 import { inject } from '@ember/controller';
-import { tracked } from '@glimmer/tracking';
 import { cache } from '@ascua/decorators';
-
-const slug = function(text) {
-	return String(text).replace(/[\s.]/gi, '-').replace(/[^a-zA-Z0-9_-]+/g, '').replace(/--/, '-').toLowerCase();
-}
+import { slug } from 'surreal/utils/slug';
 
 export default class extends Controller {
 
@@ -24,19 +20,19 @@ export default class extends Controller {
 	}
 
 	@cache get index() {
-		return this.blog.posts.findIndex(post => post.id === this.model.id);
+		return this.blog.posts.findIndex(post => post.attributes.title === this.model.attributes.title);
 	}
 
 	@cache get prev() {
-		return this.blog.posts[this.index+1] || null;
+		return this.blog.posts[this.index + 1] || null;
 	}
 
 	@cache get next() {
-		return this.blog.posts[this.index-1] || null;
+		return this.blog.posts[this.index - 1] || null;
 	}
 
 	@cache get html() {
-		return this.model.html || '';
+		return this.model.content || '';
 	}
 
 }

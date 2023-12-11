@@ -19,10 +19,10 @@
 	{{#if this.posts.length}}
 
 		<Layout::Boxes cols-3-to-2-to-1>
-			{{#each this.posts as |post i|}}
-					<LinkTo @route="blog.post" @model={{post.slug}}>
-						<Layout::Boxes::Item @image={{blog-image post.image "small"}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{markdown post.text inline=true}} />
-					</LinkTo>
+			{{#each this.posts as |post|}}
+				<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
+					<Layout::Boxes::Item @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+				</LinkTo>
 			{{/each}}
 		</Layout::Boxes>
 
