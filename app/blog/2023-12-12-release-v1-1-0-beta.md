@@ -10,7 +10,7 @@ Hello Developers!
 
 After months of hard work, we're excited to roll out v1.1.0-beta.
 
-This release is packed with features and improvements that we believe will make your development experience smoother and more efficient. From additional configuration flags, performance improvements, memory leak fixes, bug fixes, and new features, there's a lot to explore. We've also improved the internal memory allocators, and release machine learning model computation powered by SurrealML. This release incorporates a number of contributions and feature suggestions from the community. For full release information, view the [release notes](/releases#v1-1-0).
+This release is packed with features and improvements that we believe will make your development experience smoother and more efficient. From additional configuration flags, performance improvements, memory leak fixes, bug fixes, and new features, there's a lot to explore. We've also improved the internal memory allocators and released machine learning model computation powered by SurrealML. This release incorporates a number of contributions and feature suggestions from the community. For full release information, view the [release notes](/releases#v1-1-0).
 
 Let's dive right into it and see what's new:
 
