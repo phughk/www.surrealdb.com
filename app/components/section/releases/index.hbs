@@ -42,9 +42,9 @@
 						<p code>
 							{{#if (gt item.time (now))}}
 								{{#if item.beta}}
-									Beta release {{date-format item.beta "LL"}}
+									Beta released on {{date-format item.beta "LL"}}
 								{{else}}
-									Stable release on {{date-format item.time "LL"}}
+									Planned for release on {{date-format item.time "LL"}}
 								{{/if}}
 							{{else}}
 								Released on {{date-format item.time "LL"}}
