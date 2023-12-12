@@ -9,7 +9,11 @@
 		</div>
 		<nav>
 			{{#each this.model as |item|}}
-				<Layout::Helm::Menu::Item @text={{item.link}} @link="#{{item.hash}}" selected={{is-waypoint item.hash}} />
+				{{#if (gt item.time (now))}}
+					<Layout::Helm::Menu::Item @text="{{item.name}}-beta" @link="#{{slug item.name}}" selected={{is-waypoint (slug item.name)}} />
+				{{else}}
+					<Layout::Helm::Menu::Item @text="{{item.name}}" @link="#{{slug item.name}}" selected={{is-waypoint (slug item.name)}} />
+				{{/if}}
 			{{/each}}
 		</nav>
 	</Layout::Helm::Menu>
@@ -18,7 +22,7 @@
 
 		{{#each this.model as |item idx|}}
 
-			<section {{waypoint item.hash}}>
+			<section {{waypoint (slug item.name)}}>
 
 				{{#if (ne idx 0)}}
 					<Layout::Gap mini />
@@ -26,27 +30,43 @@
 
 				<Layout::Text text-l>
 
-					<h2>{{item.name}}</h2>
+					<h2>
+						{{#if (gt item.time (now))}}
+							Release {{item.name}}-beta
+						{{else}}
+							Release {{item.name}}
+						{{/if}}
+					</h2>
 
 					{{#if item.time}}
 						<p code>
 							{{#if (gt item.time (now))}}
-								Planned {{date-format item.time "DD MMMM, YYYY"}}
+								{{#if item.beta}}
+									Beta release {{date-format item.beta "LL"}}
+								{{else}}
+									Stable release on {{date-format item.time "LL"}}
+								{{/if}}
 							{{else}}
-								{{date-format item.time "DD MMMM, YYYY"}}
+								Released on {{date-format item.time "LL"}}
 							{{/if}}
 						</p>
 					{{/if}}
 
 				</Layout::Text>
 
-				{{#if item.info}}
-					{{#if (is-component item.info)}}
-						{{#let (component item.info) as |component|}}
-							<component />
+				{{#if (gt item.time (now))}}
+					<blockquote yellow text="Information">
+						<code>{{item.name}}-beta</code> will be released as a stable version on {{date-format item.time "LL"}}.
+					</blockquote>
+				{{/if}}
+
+				{{#let (concat "section/releases/" (slug item.name) "-notice") as |path|}}
+					{{#if (is-component path)}}
+						{{#let (component path) as |component|}}
+							<component @release={{item}} />
 						{{/let}}
 					{{/if}}
-				{{/if}}
+				{{/let}}
 
 				{{#if item.text}}
 					<Layout::Text text-l>
@@ -74,14 +94,13 @@
 					{{/each}}
 				{{/if}}
 
-				{{#if item.path}}
-					{{#if (is-component item.path)}}
-						<Layout::Gap tiny />
-						{{#let (component item.path) as |component|}}
-							<component />
+				{{#let (concat "section/releases/" (slug item.name)) as |path|}}
+					{{#if (is-component path)}}
+						{{#let (component path) as |component|}}
+							<component @release={{item}} />
 						{{/let}}
 					{{/if}}
-				{{/if}}
+				{{/let}}
 
 				<Layout::Gap mini />
 

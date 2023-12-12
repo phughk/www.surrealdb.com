@@ -1,0 +1,53 @@
+<Layout::Blocks cols-1 as |block|>
+
+	<block>
+		<h4 row middle>
+			Get realtime updates in your Rust application with the Live Query API
+		</h4>
+		<p><code>v1.1.0</code> introduces a new Live Query API to the Rust SDK, for powerful realtime updates in your Rust applications.</p>
+	</block>
+	<block>
+		<Code @name="releases/v1.1.0/live-queries-rust.rust" />
+	</block>
+
+	<block>
+		<h4 row middle>
+			Object functions
+		</h4>
+		<p>It was previously impossible to iterate over objects, so we introduced some new functions to make working with object data structures easier.</p>
+	</block>
+	<block>
+		<Code @name="releases/v1.1.0/object-functions.surql" />
+	</block>
+
+	<block>
+		<h4 row middle>
+			String prefixes
+		</h4>
+		<p>Strings can optimistically be parsed as Record IDs, Datetimes or as a UUID, if the content matches such a value. With string prefixes you get to decide what value a string holds.</p>
+	</block>
+	<block>
+		<Code @name="releases/v1.1.0/string-prefixes.surql" />
+	</block>
+
+	<block>
+		<h4 row middle>
+			Deterministic <code>SELECT ONLY</code>
+		</h4>
+		<p>The <code>ONLY</code> clause is sometimes not deterministic. Selecting from an array, table or range with the <code>ONLY</code> clause now requires you to limit the result to <code>1</code>.</p>
+	</block>
+	<block>
+		<Code @name="releases/v1.1.0/deterministic-select-only.surql" />
+	</block>
+
+	<block>
+		<h4 row middle>
+			Optional function arguments
+		</h4>
+		<p>Optional function arguments on custom functions are now actually optional!</p>
+	</block>
+	<block>
+		<Code @name="releases/v1.1.0/optional-function-arguments.surql" />
+	</block>
+
+</Layout::Blocks>
