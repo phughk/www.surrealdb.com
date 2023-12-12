@@ -1,6 +1,6 @@
 ---
-show: false
-date: 2023-12-14
+show: true
+date: 2023-12-12
 image: cloa17lnv13s73fmib30
 title: "What is SurrealML: A getting started guide"
 summary: "The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete."
@@ -64,16 +64,9 @@ Looking at what you can do with SurrealML, you can deploy your model with a few 
 
 To upload a model and run ML queries we need the following checklist:
 
-- [ ]  SurrealDB compiled with the ML feature
 - [ ]  a client for packaging trained machine learning models so they can be uploaded to SurrealDB
 - [ ]  a client to interact with SurrealDB
 - [ ]  a ML framework to train the model
-
-### SurrealDB with ML feature
-
-At the time of writing this guide, the ML feature is in Beta. 
-
-This means that you will have to download SurrealDB from the [source](https://github.com/surrealdb/surrealdb/), check out the `machine/learning/maxwell` branch, and compile SurrealDB with the `ML` feature. Once the compilation is done, you will be able to interact with the uploading of ML models to SurrealDB. You will also be able to interact with the `ml::` SurrealQL functions. 
 
 ### Packaging trained ML models
 
@@ -91,11 +84,9 @@ https://github.com/surrealdb/surrealdb.py
 
 We also need to train our ML model. For this example, we will be covering `sklearn` and `pytorch` examples, so install the ML module that you wish to use. Now that we have everything set up the way we want it, we can move on to training our models.
 
-## 1. Training our Pytorch model
+## Training our Pytorch model
 
 For our `pytorch` example, we will use `numpy` to handle the data. For our toy example, we will do a simple linear regression model to predict the house prices of a simple small dataset. This is a classic example of exploring machine learning. First, we define our data with the following code:
-
- 
 
 ```python
 import torch
@@ -180,11 +171,9 @@ for epoch in range(num_epochs):
 
 Our model is now trained, and we can move on to saving it.
 
-## Saving the Pytorch Model in .surml Format with SurrealML
+## Saving the Pytorch model with SurrealML
 
 We will use the SurrealML package to store our trained model. However, before we do that we need to create some dummy data so the model can be traced so the model can be saved in the ONNX format making the model language agnostic. We can create the dummy data with the code below:
-
- 
 
 ```python
 test_squarefoot = torch.tensor([2800, 3200], dtype=torch.float32)
@@ -225,7 +214,7 @@ file.save("./test.surml")
 
 Before we continue with our Pytorch model, we can make a quick detour for training an sklearn model. 
 
-## 2. Training a **scikit-learn** model
+## Training a **scikit-learn** model
 
 If we train either a Pytorch model or a sklearn model, the interfaces will be the same when it comes to loading and interacting with the model. The interactions in the database will also be the same so we will just cover quickly how to train a sklearn model in this section, and then continue with the Pytorch example for the test of the guide.
 
@@ -261,7 +250,7 @@ new_file = SurMlFile.load("./test.surml")
 Since we’ve previously defined all we need in the headers for normalisation and input mapping, we can now perform our inference with raw computes or buffered computes. A raw compute is what it implies. You have to do all the normalisations and mappings yourself, and you just pass in the raw data. This is to stop us from holding you back if you are doing something fancy with multiple dimension inputs. A raw compute can be performed with the sample code below:
 
 ```python
-result = new_file.raw_compute([1.0, 2.0])
+result = new_file.raw_compute([ 1.0, 2.0 ])
 ```
 
 If we want to do a buffered compute, everything in the header of the file, including the normalization of the data, will be performed, and we merely need to pass in a [dict](https://docs.python.org/3/library/stdtypes.html#typesmapping) with the correct data mapping as demonstrated with the following code:
@@ -279,36 +268,24 @@ We have now covered all that we need for local inference, we can now move on to 
 
 ## Integrating Our Model with SurrealDB
 
-Before we upload our model into our database, we need the following imports:
+To upload our model into SurrealDB, we can use the `surreal` command-line tool:
 
-```python
-import json
-
-import requests
-from surrealdb import SurrealDB
-from surrealml import SurMlFile
+```bash
+surreal ml import --ns myns --db mydb linear_test.surml
 ```
 
-We can load our model, and upload it with the following code:
-
-```python
-test_load = SurMlFile.load("./linear_test.surml")
-url = "http://0.0.0.0:8000/ml/import"
-SurMlFile.upload("./linear_test.surml", url, 36864)
-```
-
-It’s that simple. The `36864` is a standard chunk size. The chunk size will vary depending on network bandwidth constraints, the higher the network bandwidth, the higher the chunk size. The client chunks up the file and streams these chunks to the SurrealDB instance which will then store the model for computation when needed. We will work on streaming directly from merely pointing to a surml file in the future so the entire model never has to be loaded into memory if this is a concern for users.
+It’s that simple. The command-line tool sends the file to the SurrealDB instance which will then store the model for computation when needed.
 
 Now that our model is uploaded onto the SurrealDB instance, we can perform a raw compute with the code below:
 
 ```python
-outcome = connection.query("ml::Prediction<0.0.1>(1.0, 1.0);")
+outcome = connection.query("ml::Prediction<0.0.1>([ 1.0, 1.0 ]);")
 ```
 
 Remember, we called our model “Prediction” when packaging our model, but we can call our model whatever we want as SurrealDB supports as many models as you can train and there’s  storage space. We can also perform a buffered compute with the following code:
 
 ```python
-outcome = connection.query("ml::Prediction<0.0.1>({squarefoot: 500.0, num_floors: 1.0});")
+outcome = connection.query("ml::Prediction<0.0.1>({ squarefoot: 500.0, num_floors: 1.0 });")
 ```
 
 We are just passing in numbers in this example, but remember, this is a raw SQL function, you can be as creative as you want with it.
