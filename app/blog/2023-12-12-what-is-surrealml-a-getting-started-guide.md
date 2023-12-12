@@ -10,7 +10,7 @@ by Maxwell Flitton, 5 min read
 
 ## Introduction
 
-The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete. The problems of hosting and version control of machine learning models are very real. How do you store your models? How do you deploy those models? How do you roll over to a new version and compare the performance of those two models? While a lot of tools can carry out these individual steps, they generally require custom-built pipelines and systems. We can read more on these challenges [here](https://medium.com/@rohitshende020/how-to-overcome-common-challenges-in-deploying-machine-learning-models-d7f753a381a7).
+The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete. The problems of hosting and version control of machine learning models are very real. How do you store your models? How do you deploy those models? How do you roll over to a new version and compare the performance of those two models? While a lot of tools can carry out these individual steps, they generally require custom-built pipelines and systems. We can read more on these challenges [here](https://medium.com/@rohitshende020/how-to-overcome-common-challenges-in-deploying-machine-learning-models-d7f753a381a7) on Medium.
 
 Unlike the training of models, hosting and version control of models is not as simple as importing a library and running a few commands.
 
