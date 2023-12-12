@@ -10,7 +10,7 @@ Hello developers!
 
 After months of hard work, we're excited to roll out v1.1.0-beta.
 
-This release is packed with features and improvements that we believe will make your development experience smoother and more efficient. From additional configuration flags, performance improvements, memory leak fixes, bug fixes, and new features, there's a lot to explore. We've also improved the internal memory allocators and released machine learning model computation powered by SurrealML. This release incorporates a number of contributions and feature suggestions from the community. For full release information, view the [release notes](/releases#v1-1-0) here.
+This release is packed with features and improvements that we believe will make your development experience smoother and more efficient. From additional configuration flags, performance improvements, memory leak fixes, bug fixes, and new features, there's a lot to explore. We've also improved the internal memory allocators and released machine learning model computation powered by SurrealML. This release incorporates a number of contributions and feature suggestions from the community. For full release information, view the [release notes](/releases#v1-1-0).
 
 Let's dive right into it and see what's new:
 
@@ -97,4 +97,4 @@ RETURN d"2023-11-28T11:41:20.262Z";
 RETURN u"8c54161f-d4fe-4a74-9409-ed1e137040c1";
 ```
 
-We're excited to see what users will build with the new functionality and performance improvements introduced in this release. For questions, find us on [GitHub](https://github.com/surrealdb) and [Discord](https://discord.gg/surrealdb) here.
+We're excited to see what users will build with the new functionality and performance improvements introduced in this release. For questions, find us on [GitHub](https://github.com/surrealdb) and [Discord](https://discord.gg/surrealdb).
