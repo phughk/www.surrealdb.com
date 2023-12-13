@@ -6,7 +6,7 @@ RETURN s"5:20";
 -- This will be a record ID.
 RETURN r"person:john";
 -- This fails, as it's not a valid record ID.
-RETURN r"person:john";
+RETURN r"I am not a record ID";
 
 -- Example for a date and a UUID.
 RETURN d"2023-11-28T11:41:20.262Z";
