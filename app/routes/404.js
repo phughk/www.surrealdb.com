@@ -9,7 +9,7 @@ export default class extends Route {
 
 		let location = undefined;
 
-		path = path.toLowerCase();
+		path = path.toLowerCase().replace(/\/$/, '');
 
 		switch (true) {
 			// Redirect root product pages
@@ -50,6 +50,9 @@ export default class extends Route {
 			case path === 'docs/surrealql/functions':
 			case path === 'docs/surrealql/statements':
 				location = `https://docs.surrealdb.com/${path}/overview`;
+				break;
+			case path.startsWith('docs/'):
+				location = `https://docs.surrealdb.com/${path}/`;
 				break;
 		}
 
