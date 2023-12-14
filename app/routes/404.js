@@ -51,6 +51,10 @@ export default class extends Route {
 			case path === 'docs/surrealql/statements':
 				location = `https://docs.surrealdb.com/${path}/overview`;
 				break;
+			case path.startsWith('docs/integration/libraries/'):
+				path = path.replace('libraries', 'sdks');
+				location = `https://docs.surrealdb.com/${path}/`;
+				break;
 			case path.startsWith('docs/'):
 				location = `https://docs.surrealdb.com/${path}/`;
 				break;
