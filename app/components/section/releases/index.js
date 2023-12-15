@@ -5,6 +5,20 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2023-12-14'),
+				name: 'v1.0.1',
+				data: [
+					{
+						name: 'Bug fixes',
+						text: [
+							'Add a patch for <a href="https://github.com/surrealdb/surrealdb/security/advisories/GHSA-x5fr-7hhj-34j3">GHSA-x5fr-7hhj-34j3</a>.',
+							'Tables defined without explicit permissions have <code>NONE</code> instead of <code>FULL</code> permissions.',
+							'Table permissions are always explicitly displayed with the <code>INFO FOR DB</code> statement.',
+						],
+					},
+				],
+			},
+			{
 				beta: new Date('2023-12-12'),
 				time: new Date('2024-01-09'),
 				name: 'v1.1.0',
