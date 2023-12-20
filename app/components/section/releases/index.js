@@ -5,6 +5,35 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2023-12-20'),
+				name: 'v1.1.0-beta.2',
+				data: [
+					{
+						name: 'Features',
+						text: [
+							'Add a <code>--beta</code> flag to <code>surreal upgrade</code> to make installing the latest beta release easier.',
+						],
+					},
+					{
+						name: 'Bug fixes',
+						text: [
+							'Fix runtime regressions introduced in v1.1.0-beta.1, which broke backwards compatibility with v1.0.',
+							'Fix time regression in Wasm binaries.',
+							'Fix computing futures in query conditions.',
+							'Fix issue with scoring on complex queries.',
+							'Fix ML support on Windows and enable the feature in Windows binaries.',
+							'Replace the custom JWT parser causing decoding issues.',
+							'Ensure compression is only enabled when response is a certain size.',
+							'Respect alias for dynamic field queries with <code>type::field</code>.',
+							'Prevent overflow in <code>math::power</code>.',
+							'Fix error message pointing to wrong character.',
+							'Expand logic for static value validation to improve <code>DEFAULT</code> clause handling.',
+							'Fallback to a string when record ID parsing fails.',
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2023-12-14'),
 				name: 'v1.0.1',
 				data: [
