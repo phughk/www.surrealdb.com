@@ -5,6 +5,18 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2023-12-21'),
+				name: 'v1.0.2',
+				data: [
+					{
+						name: 'Bug fixes',
+						text: [
+							'Support connecting to beta servers from the Rust SDK.',
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2023-12-20'),
 				name: 'v1.1.0-beta.2',
 				data: [
