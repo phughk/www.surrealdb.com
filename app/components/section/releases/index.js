@@ -5,6 +5,25 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2024-01-05'),
+				name: 'v1.1.0-beta.3',
+				data: [
+					{
+						name: 'Bug fixes',
+						text: [
+							'Ensure an attempt to set a protected variable returns an error.',
+							'Fix duration addition in timeout causing overflow.',
+							'Fix compile-time regressions introduced in v1.1.0-beta.1, which broke backwards compatibility with v1.0.',
+							'Fix a bug where a non-empty list parser would parse empty lists.',
+							'Limit recursion depth when parsing nested RELATE statements.',
+							'Ensure REMOVE statement does not only remove the first 1000 keys.',
+							'Fix BTree deletion bug.',
+							'Replace close method on live::Stream with a Drop trait implementation.',
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2023-12-21'),
 				name: 'v1.0.2',
 				data: [
