@@ -1,5 +1,5 @@
 ---
-show: true
+show: false
 date: 2023-12-12
 image: clrmnc23j29s73b5n7q0
 title: "Release v1.1.0-beta"
