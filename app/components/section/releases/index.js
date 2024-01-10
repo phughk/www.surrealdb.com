@@ -5,6 +5,79 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2024-01-09'),
+				name: 'v1.1.0',
+				data: [
+					{
+						name: 'Features',
+						text: [
+							'The <code>type::is::record()</code> function now accepts a second optional table argument, validating the record being stored on the passed table.',
+							'Add <code>time::micros()</code>, <code>time::millis()</code> and <code>time::from::nanos</code> functions.',
+							'Add <code>type::is::none()</code> function.',
+							'Add <code>object::entries()</code>, <code>object::from_entries()</code>, <code>object::len()</code>, <code>object::keys()</code> and <code>object::values()</code> functions.',
+
+							'Clean paths in the start command and honour <code>~</code>.',
+							'CLI: Split results by comment.',
+							'Add <code>surreal sql</code> welcome message.',
+							'Add Debugging env flag: <code>SURREAL_INSECURE_FORWARD_SCOPE_ERRORS</code>.',
+							'Add <code>SURREAL_ROCKSDB_KEEP_LOG_FILE_NUM</code> environment variable (default 20).',
+							'Support auth levels for basic auth (behind feature flag)',
+
+							'Add remainder/modulo operator.',
+							'Implement string prefixes: <code>s</code>, <code>r</code>, <code>d</code> and <code>u</code>.',
+							'Add ability to cast string to a Thing/Record ID.',
+
+							'Analyzers to support functions.',
+							'Support of subfields for embedding indexing.',
+
+							'Add live query API to Rust SDK.',
+							'Add <code>Query::with_stats()</code> to return query statistics along with the results.',
+
+							'Permissions are now always displayed for visiblity',
+						],
+					},
+					{
+						name: 'Bug fixes',
+						text: [
+							'Fix stack overflow in graph traversal.',
+							'Bugfix - parse error for invalid leading whitespace.',
+							'Fix memory leak caused by OTEL callbacks.',
+							'Fix wrong function name export and function name parsing.',
+							'The position of the <code>LIMIT</code> and <code>ORDER</code> clauses are now interchangable.',
+							'Fix index plan for idiom param value.',
+							'Fix bug where error offset could underflow.',
+							'Query results should be consistent and representative.',
+							'Indexes used with the operators <code>CONTAINS [ ANY | ALL ]</code>.',
+							'Forward custom thrown errors in <code>SIGNIN</code> and <code>SIGNUP</code> queries.',
+							'Fix <code>ORDER BY RAND()</code> failing to parse when selecting specific fields.',
+							'Fix identifiers which look like numbers failing to parse.',
+							'Change math::median indexing for even length arrays.',
+							'Pass IP & Origin onto session used by scope queries.',
+							'Fix possible corruption of MTree and incomplete knn.',
+							'Allow <code>array::flatten()</code> to be used as an aggregate function.',
+							'Make <code>SELECT ONLY</code> deterministic.',
+							'Optional function arguments should be optional.',
+							'Default table permissions should be <code>NONE</code>',
+							'Bugfix: Fix inconsistant record parsing',
+						],
+					},
+					{
+						name: 'Performance improvements',
+						text: [
+							'Enable compression on the HTTP connector.',
+							'Make <code>REMOVE [ TABLE | DATABASE | NAMESPACE ]</code> faster for TiKV and FoundationDB.',
+							'Repetitive expressions and idioms are not anymore re-evaluated.',
+							'Improve performance of <code>CREATE</code> statements, and record insertion.',
+							'Improve RocksDB performance and configuration, introducing <code>SURREAL_ROCKSDB_THREAD_COUNT</code>, <code>SURREAL_ROCKSDB_WRITE_BUFFER_SIZE</code>, <code>SURREAL_ROCKSDB_TARGET_FILE_SIZE_BASE</code>, <code>SURREAL_ROCKSDB_MAX_WRITE_BUFFER_NUMBER</code>, <code>SURREAL_ROCKSDB_MIN_WRITE_BUFFER_NUMBER_TO_MERGE</code>, <code>SURREAL_ROCKSDB_ENABLE_PIPELINED_WRITES</code>, <code>SURREAL_ROCKSDB_ENABLE_BLOB_FILES</code>, <code>SURREAL_ROCKSDB_MIN_BLOB_SIZE</code> environment variables.',
+							'Improve SpeeDB performance and configuration, introducing <code>SURREAL_SPEEDB_THREAD_COUNT</code>, <code>SURREAL_SPEEDB_WRITE_BUFFER_SIZE</code>, <code>SURREAL_SPEEDB_TARGET_FILE_SIZE_BASE</code>, <code>SURREAL_SPEEDB_MAX_WRITE_BUFFER_NUMBER</code>, <code>SURREAL_SPEEDB_MIN_WRITE_BUFFER_NUMBER_TO_MERGE</code>, <code>SURREAL_SPEEDB_ENABLE_PIPELINED_WRITES</code>, <code>SURREAL_SPEEDB_ENABLE_BLOB_FILES</code>, <code>SURREAL_SPEEDB_MIN_BLOB_SIZE</code> environment variables.',
+							'Improve WebSocket performance, introduce <code>SURREAL_WEBSOCKET_MAX_FRAME_SIZE</code>, <code>SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE</code>, <code>SURREAL_WEBSOCKET_MAX_CONCURRENT_REQUESTS</code> environment variables.',
+							'Use specific memory allocators depending on OS.',
+							'Fix memory leak in Websocket implementation.',
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2024-01-05'),
 				name: 'v1.1.0-beta.3',
 				data: [
@@ -74,80 +147,6 @@ export default class extends Component {
 							'Add a patch for <a href="https://github.com/surrealdb/surrealdb/security/advisories/GHSA-x5fr-7hhj-34j3">GHSA-x5fr-7hhj-34j3</a>.',
 							'Tables defined without explicit permissions have <code>NONE</code> instead of <code>FULL</code> permissions.',
 							'Table permissions are always explicitly displayed with the <code>INFO FOR DB</code> statement.',
-						],
-					},
-				],
-			},
-			{
-				beta: new Date('2023-12-12'),
-				time: new Date('2024-01-09'),
-				name: 'v1.1.0',
-				data: [
-					{
-						name: 'Features',
-						text: [
-							'The <code>type::is::record()</code> function now accepts a second optional table argument, validating the record being stored on the passed table.',
-							'Add <code>time::micros()</code>, <code>time::millis()</code> and <code>time::from::nanos</code> functions.',
-							'Add <code>type::is::none()</code> function.',
-							'Add <code>object::entries()</code>, <code>object::from_entries()</code>, <code>object::len()</code>, <code>object::keys()</code> and <code>object::values()</code> functions.',
-
-							'Clean paths in the start command and honour <code>~</code>.',
-							'CLI: Split results by comment.',
-							'Add <code>surreal sql</code> welcome message.',
-							'Add Debugging env flag: <code>SURREAL_INSECURE_FORWARD_SCOPE_ERRORS</code>.',
-							'Add <code>SURREAL_ROCKSDB_KEEP_LOG_FILE_NUM</code> environment variable (default 20).',
-							'Support auth levels for basic auth (behind feature flag)',
-
-							'Add remainder/modulo operator.',
-							'Implement string prefixes: <code>s</code>, <code>r</code>, <code>d</code> and <code>u</code>.',
-							'Add ability to cast string to a Thing/Record ID.',
-
-							'Analyzers to support functions.',
-							'Support of subfields for embedding indexing.',
-
-							'Add live query API to Rust SDK.',
-							'Add <code>Query::with_stats()</code> to return query statistics along with the results.',
-
-							'Permissions are now always displayed for visiblity',
-						],
-					},
-					{
-						name: 'Bug fixes',
-						text: [
-							'Fix stack overflow in graph traversal.',
-							'Bugfix - parse error for invalid leading whitespace.',
-							'Fix memory leak caused by OTEL callbacks.',
-							'Fix wrong function name export and function name parsing.',
-							'The position of the <code>LIMIT</code> and <code>ORDER</code> clauses are now interchangable.',
-							'Fix index plan for idiom param value.',
-							'Fix bug where error offset could underflow.',
-							'Query results should be consistent and representative.',
-							'Indexes used with the operators <code>CONTAINS [ ANY | ALL ]</code>.',
-							'Forward custom thrown errors in <code>SIGNIN</code> and <code>SIGNUP</code> queries.',
-							'Fix <code>ORDER BY RAND()</code> failing to parse when selecting specific fields.',
-							'Fix identifiers which look like numbers failing to parse.',
-							'Change math::median indexing for even length arrays.',
-							'Pass IP & Origin onto session used by scope queries.',
-							'Fix possible corruption of MTree and incomplete knn.',
-							'Allow <code>array::flatten()</code> to be used as an aggregate function.',
-							'Make <code>SELECT ONLY</code> deterministic.',
-							'Optional function arguments should be optional.',
-							'Default table permissions should be <code>NONE</code>',
-							'Bugfix: Fix inconsistant record parsing',
-						],
-					},
-					{
-						name: 'Performance improvements',
-						text: [
-							'Enable compression on the HTTP connector.',
-							'Make <code>REMOVE [ TABLE | DATABASE | NAMESPACE ]</code> faster for TiKV and FoundationDB.',
-							'Repetitive expressions and idioms are not anymore re-evaluated.',
-							'Improve performance of <code>CREATE</code> statements, and record insertion.',
-							'Improve RocksDB performance and configuration, introducing <code>SURREAL_ROCKSDB_THREAD_COUNT</code>, <code>SURREAL_ROCKSDB_WRITE_BUFFER_SIZE</code>, <code>SURREAL_ROCKSDB_TARGET_FILE_SIZE_BASE</code>, <code>SURREAL_ROCKSDB_MAX_WRITE_BUFFER_NUMBER</code>, <code>SURREAL_ROCKSDB_MIN_WRITE_BUFFER_NUMBER_TO_MERGE</code>, <code>SURREAL_ROCKSDB_ENABLE_PIPELINED_WRITES</code>, <code>SURREAL_ROCKSDB_ENABLE_BLOB_FILES</code>, <code>SURREAL_ROCKSDB_MIN_BLOB_SIZE</code> environment variables.',
-							'Improve SpeeDB performance and configuration, introducing <code>SURREAL_SPEEDB_THREAD_COUNT</code>, <code>SURREAL_SPEEDB_WRITE_BUFFER_SIZE</code>, <code>SURREAL_SPEEDB_TARGET_FILE_SIZE_BASE</code>, <code>SURREAL_SPEEDB_MAX_WRITE_BUFFER_NUMBER</code>, <code>SURREAL_SPEEDB_MIN_WRITE_BUFFER_NUMBER_TO_MERGE</code>, <code>SURREAL_SPEEDB_ENABLE_PIPELINED_WRITES</code>, <code>SURREAL_SPEEDB_ENABLE_BLOB_FILES</code>, <code>SURREAL_SPEEDB_MIN_BLOB_SIZE</code> environment variables.',
-							'Improve WebSocket performance, introduce <code>SURREAL_WEBSOCKET_MAX_FRAME_SIZE</code>, <code>SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE</code>, <code>SURREAL_WEBSOCKET_MAX_CONCURRENT_REQUESTS</code> environment variables.',
-							'Use specific memory allocators depending on OS.',
-							'Fix memory leak in Websocket implementation.',
 						],
 					},
 				],
