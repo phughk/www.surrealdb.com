@@ -1,6 +1,6 @@
 ---
 show: true
-date: 2024-01-11
+date: 2024-01-12
 image: cmf5a4vpl3gc739vqp70
 title: "Introducing our new monthly release schedule"
 summary: "We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes."
