@@ -17,4 +17,4 @@ This guide will cover using [Auth0](https://auth0.com/) as the authentication pr
 
 This guide will cover the most general case, in which SurrealDB is the only backend for your application. You can still follow this guide even if you have additional backends, but in that case you may have other options available to request and validate tokens issued by Auth0. Likewise, even if your application is not strictly a  Single-Page Application (SPA), you may still follow and benefit from this guide.
 
-[Click here to ready the guide. Happy reading](https://docs.surrealdb.com/docs/how-to/integrate-auth0-as-authentication-provider/)!
+[Click here to read the guide. Happy reading](https://docs.surrealdb.com/docs/how-to/integrate-auth0-as-authentication-provider/)!
