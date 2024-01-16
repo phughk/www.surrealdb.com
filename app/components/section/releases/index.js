@@ -5,6 +5,21 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2024-01-16'),
+				name: 'v1.1.1',
+				data: [
+					{
+						name: 'Bug fixes',
+						text: [
+							'Fix WebSocket notification sending format.',
+							'Fix missing custom claims from token parameter.',
+							'Fix URL encoding in JS functions.',
+							'Fix panic when invoking parameters and functions without a database.',
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2024-01-09'),
 				name: 'v1.1.0',
 				data: [
