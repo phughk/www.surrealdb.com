@@ -56,7 +56,7 @@ fn handle(result: Result<Notification<Person>>) {
 }
 ```
 
-`Person`, in this case, is what you expect the records coming from the database to deserialise into. This means that it must implement `serde::Deserialize`. `notification.action` will tell you whether the action that triggered this notification was a creation, update or deletion. `[notification.data](http://notification.data)` will contain your deserialised object, `Person` in this particular case.
+`Person`, in this case, is what you expect the records coming from the database to deserialise into. This means that it must implement `serde::Deserialize`. `notification.action` will tell you whether the action that triggered this notification was a creation, update or deletion. `notification.data` will contain your deserialised object, `Person` in this particular case.
 
 With this out of the way, we can now listen to changes being made on the table and process them in real time.
 
