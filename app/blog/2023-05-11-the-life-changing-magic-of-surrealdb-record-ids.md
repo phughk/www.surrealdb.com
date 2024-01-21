@@ -2,7 +2,7 @@
 show: true
 date: 2023-05-11
 image: cl92kei03ggs73c8tqug
-title: "The life-changing magic of SurrealDB - record IDs"
+title: "The life-changing magic of SurrealDB record IDs"
 summary: "At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID, which we discussed in our live stream."
 ---
 
