@@ -6,6 +6,8 @@ title: "VART: A Persistent Data Structure For Snapshot Isolation"
 summary: "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control"
 ---
 
+by Farhan Ali Khan, 13 min read
+
 The foundation of a resilient database hinges on its ability to handle concurrent transactions without compromising data integrity and consistency. Addressing this challenge requires a focus on Isolation, a vital facet of the ACID properties. Isolation ensures the reliability and consistency of transactions when multiple transactions access data concurrently.
 
 This blog post delves into the intricacies of transaction isolation, and introduces VART—a persistent data structure designed for snapshot isolation. Furthermore, it offers a glimpse into the evolution of SurrealKV, our persistent in-memory, transactional Key-Value store with versioning support.
