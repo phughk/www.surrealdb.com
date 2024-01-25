@@ -11,7 +11,6 @@ function handler(event) {
 	headers['x-frame-options'] = { value: 'DENY' };
 	headers['x-xss-protection'] = { value: '1; mode=block' };
 	headers['referrer-policy'] = { value: 'no-referrer' };
-	headers['expect-ct'] = { value: 'enforce, max-age=86400' };
 
 	return response;
 
