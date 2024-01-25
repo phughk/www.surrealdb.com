@@ -2,7 +2,7 @@
 
 	<layout-videos-item ...attributes>
 
-		<pic><img src={{@image}} alt={{@title}}>{{#if @video}}<cover></cover>{{/if}}</pic>
+		<pic><img loading="lazy" src={{@image}} alt={{@title}}>{{#if @video}}<cover></cover>{{/if}}</pic>
 
 		<div>
 			<p>{{@stamp}}</p>
@@ -40,7 +40,7 @@
 			{{/if}}
 
 		</Ascua::Modal>
-	
+
 	{{/if}}
 
 {{/if}}
