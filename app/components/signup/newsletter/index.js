@@ -18,14 +18,14 @@ export default class extends Component {
 
 		event.preventDefault();
 
-		if (!this.firstname) throw "Please provide a first name";
-		if (!this.lastname) throw "Please provide a last name";
-		if (!this.email) throw "Please provide an email";
+		if (!this.firstname) throw 'Please provide a first name';
+		if (!this.lastname) throw 'Please provide a last name';
+		if (!this.email) throw 'Please provide an email';
 
 		yield fetch('https://form.surrealdb.com/b1167yg1864664e2nv8shudji2', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
 				firstname: this.firstname,

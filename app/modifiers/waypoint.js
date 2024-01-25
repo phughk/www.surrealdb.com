@@ -33,7 +33,7 @@ export default setModifierManager(
 		@inject waypoints;
 
 		constructor(owner, args) {
-		    setOwner(this, owner);
+			setOwner(this, owner);
 		}
 
 		install(element, { positional: [name] }) {

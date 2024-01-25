@@ -32,8 +32,8 @@ module.exports = function (environment) {
 
 		mdfiles: {
 			folders: {
-				'blog': 'app/blog'
-			}
+				blog: 'app/blog',
+			},
 		},
 
 		// Set the configuration options for
@@ -57,7 +57,7 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: 'G-J1NWM32T1V',
-				}
+				},
 			},
 			{
 				name: 'google-analytics',
@@ -65,7 +65,7 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: 'UA-159406644-1',
-				}
+				},
 			},
 			{
 				name: 'linkedin',
@@ -73,7 +73,7 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: '3271313',
-				}
+				},
 			},
 			{
 				name: 'customerio',
@@ -81,7 +81,7 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: '6c171d0b88c9c2d98059',
-				}
+				},
 			},
 			{
 				name: 'twitter-pixel',
@@ -89,7 +89,7 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: 'oexls',
-				}
+				},
 			},
 			{
 				name: 'mixpanel',
@@ -97,8 +97,8 @@ module.exports = function (environment) {
 				config: {
 					optimised: true,
 					id: 'be71b7f059b28f495cd2e087a59653a2',
-				}
-			}
+				},
+			},
 		],
 
 		// Set the configuration options for
@@ -127,18 +127,10 @@ module.exports = function (environment) {
 		CSP: {
 			report: false,
 			policy: {
-				'base-uri': [
-					"'self'",
-				],
-				'form-action': [
-					"'none'",
-				],
-				'default-src': [
-					"'self'",
-				],
-				'worker-src': [
-					"'self'"
-				],
+				'base-uri': ["'self'"],
+				'form-action': ["'none'"],
+				'default-src': ["'self'"],
+				'worker-src': ["'self'"],
 				'img-src': [
 					"'self'",
 					// Brandsafe
@@ -149,18 +141,14 @@ module.exports = function (environment) {
 					'https://www.linkedin.com/px/',
 					'https://*.ads.linkedin.com/',
 				],
-				'font-src': [
-					"'self'",
-				],
+				'font-src': ["'self'"],
 				'frame-src': [
 					"'self'",
 					// YouTube
 					'https://youtube.com',
 					'https://www.youtube.com',
 				],
-				'style-src': [
-					"'self'",
-				],
+				'style-src': ["'self'"],
 				'script-src': [
 					"'self'",
 					// Google
@@ -186,12 +174,8 @@ module.exports = function (environment) {
 					// Media
 					'https://surrealdb.s3.amazonaws.com/',
 				],
-				'manifest-src': [
-					"'self'",
-				],
-				'frame-ancestors': [
-					"'self'",
-				],
+				'manifest-src': ["'self'"],
+				'frame-ancestors': ["'self'"],
 				'block-all-mixed-content': null,
 				'upgrade-insecure-requests': null,
 			},
