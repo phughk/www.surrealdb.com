@@ -12,6 +12,9 @@ function handler(event) {
 	headers['x-xss-protection'] = { value: '1; mode=block' };
 	headers['referrer-policy'] = { value: 'no-referrer' };
 
+	delete headers['x-powered-by'];
+	delete headers['expect-ct'];
+
 	return response;
 
 }
