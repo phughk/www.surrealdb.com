@@ -36,28 +36,28 @@ layout-hero {
 			background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
 			background-color:#000000;
 		}
-	
+
 		content {
 			margin-top:0px;
 			text-align:center;
-	
+
 			@include media(max-width-960) {
 				text-align:left;
 				margin-top:50px;
 			}
-	
+
 			a[button] {
 				font-size:18px;
 				padding:15px 40px;
 				margin:0 10px 10px 10px;
-	
+
 				@include media(max-width-960) {
 					margin:0 10px 10px 0;
 				}
 			}
 		}
 	}
-	
+
 
 	&[products] {
 		height:auto;
@@ -83,7 +83,7 @@ layout-hero {
 			height:auto;
 			padding:120px 0 50px 0;
 		}
-		
+
 	}
 
 	&[install], &[releases], &[license], &[security], &[features], &[opensource], &[media], &[giveaway] {
@@ -262,7 +262,7 @@ layout-hero {
 	content {
 
 		margin-top:100px;
-		
+
 
 		@include media(max-width-768) {
 			margin-top:50px;
@@ -283,7 +283,6 @@ layout-hero {
 			font-size:90px;
 			margin:0 0 10px 0;
 			color:var(--same-color);
-			font-family:'SF Pro Display';
 
 			img {
 				height:45px;
@@ -328,7 +327,7 @@ layout-hero {
 			@include media(max-width-962) {
 				font-size:24px;
 			}
-			
+
 			@include media(max-width-768) {
 				font-size:24px;
 			}
@@ -352,37 +351,36 @@ layout-hero {
 			font-size:22px;
 			font-weight:600;
 			line-height:1.2;
-			font-family:"SF Pro Display";
 			transition:color 0.3s;
 			color:var(--same-color);
 			text-rendering:optimizeLegibility;
 			-webkit-font-smoothing:antialiased;
-		
+
 			img[inline] {
 				height:16px;
 			}
-		
+
 			i {
 				vertical-align:middle;
 			}
-		
+
 			span[faint] {
 				color:var(--faint-color);
 			}
-		
+
 			&[nhs] {
 				width:100%;
 				color:var(--faint-color);
 			}
-		
+
 			@include media(max-width-768) {
 				font-size:20px;
-		
+
 				img[inline] {
 					height:12px;
 				}
 			}
-		
+
 		}
 
 		p {
