@@ -96,67 +96,6 @@ module.exports = function (environment) {
 			style: 'default',
 		},
 
-		// Set the configuration options for
-		// the @ascua/fastboot addon, so that a
-		// content-security-policy can be set.
-
-		CSP: {
-			report: false,
-			policy: {
-				'base-uri': ["'self'"],
-				'form-action': ["'none'"],
-				'default-src': ["'self'"],
-				'worker-src': ["'self'"],
-				'img-src': [
-					"'self'",
-					// Brandsafe
-					'https://cdn.brandsafe.io/',
-					// Google
-					'https://www.google-analytics.com/',
-					// Linkedin
-					'https://www.linkedin.com/px/',
-					'https://*.ads.linkedin.com/',
-				],
-				'font-src': ["'self'"],
-				'frame-src': [
-					"'self'",
-					// YouTube
-					'https://youtube.com',
-					'https://www.youtube.com',
-				],
-				'style-src': ["'self'"],
-				'script-src': [
-					"'self'",
-					// Google
-					'https://www.google-analytics.com/',
-					// Mixpanel
-					'https://cdn.mxpnl.com/',
-				],
-				'connect-src': [
-					"'self'",
-					// Surreal
-					'wss://surreal.io/rpc',
-					// Version
-					'https://version.surrealdb.com',
-					// Surreal
-					'https://contact.surrealdb.com',
-					// Google
-					'https://www.google-analytics.com/',
-					// Mixpanel
-					'https://api.mixpanel.com',
-				],
-				'media-src': [
-					"'self'",
-					// Media
-					'https://surrealdb.s3.amazonaws.com/',
-				],
-				'manifest-src': ["'self'"],
-				'frame-ancestors': ["'self'"],
-				'block-all-mixed-content': null,
-				'upgrade-insecure-requests': null,
-			},
-		},
-
 		// Set ember flags / options for the
 		// ember runtime environment config
 
