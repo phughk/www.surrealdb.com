@@ -1,4 +1,4 @@
-<a {{on "click" (fn (mut this.show) true)}} ...attributes>
+<div {{on "click" (fn (mut this.show) true)}} ...attributes>
 	<div>
 		{{#if (has-block)}}
 			{{yield}}
@@ -8,7 +8,7 @@
 			Join cloud waitlist
 		{{/if}}
 	</div>
-</a>
+</div>
 
 {{#if this.show}}
 
@@ -22,7 +22,7 @@
 			The SurrealDB Team
 		{{else}}
 			Thank you for your interest in SurrealDB Cloud. We are building a fully-managed global SurrealDB database platform to make building applications even easier. Enter your email below for more information.
-			
+
 			<Layout::Gap tiny />
 
 			<form {{on "submit" this.submit.run}}>

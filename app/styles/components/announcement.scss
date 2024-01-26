@@ -1,0 +1,28 @@
+announcement {
+
+    width:auto;
+	padding:15px;
+	cursor:pointer;
+	text-align:center;
+	display:inline-block;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center top;
+    background-color:var(--black-color);
+
+	> div {
+		animation: move 4s linear infinite;
+		background-image: linear-gradient(to right, #ff00a0, #9600ff, #0084ff, #9600ff, #ff00a0);
+		background-size: 200% auto;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	@keyframes move {
+		to {
+			background-position: 200% center;
+		}
+	}
+
+}

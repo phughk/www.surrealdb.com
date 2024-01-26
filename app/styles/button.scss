@@ -1,4 +1,4 @@
-button, a[button] {
+button, a[button], div[button] {
 
 	height:auto;
 	border:none;
@@ -25,7 +25,11 @@ button, a[button] {
 	}
 
 	span + i {
-		padding-left:15px;
+		padding-left:10px;
+	}
+
+	i + span {
+		padding-left:10px;
 	}
 
 	& i {
