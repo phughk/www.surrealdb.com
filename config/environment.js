@@ -60,14 +60,6 @@ module.exports = function (environment) {
 				},
 			},
 			{
-				name: 'google-analytics',
-				environments: ['production'],
-				config: {
-					optimised: true,
-					id: 'UA-159406644-1',
-				},
-			},
-			{
 				name: 'linkedin',
 				environments: ['production'],
 				config: {
