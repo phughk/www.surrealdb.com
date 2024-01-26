@@ -10,12 +10,12 @@ h1 {
     display: block;
 
 	span[gradient] {
-	border: 1px solid #fff;
-    border-radius: 5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    display: inline-block;
+		border: 1px solid #fff;
+		border-radius: 5rem;
+		padding-bottom: 0.5rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		display: inline-block;
 	}
 
 	img[inline] {
@@ -312,62 +312,8 @@ h6 {
 
 }
 
-g {
-		width: 70%;
-		display: block;
-		font-size: 90px;
-		line-height: 1.1;
-		font-weight: 500;
-		letter-spacing: -5px;
-		font-family: "SF Pro Display";
-		background-clip: text;
-		transition: color 0.3s;
-		color: var(--text-color);
-		-webkit-background-clip: text;
-		text-rendering: optimizeLegibility;
-		-webkit-text-fill-color: transparent;
-		background: linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
-		background: -moz-linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
-		background: -webkit-linear-gradient(-60deg, rgba(135, 0, 255, 1) 0%, rgba(255, 0, 158, 1) 100%);
-
-		span[gradient] {
-		border-radius: 5rem;
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
-		display: inline-block;
-		padding-bottom: 0.5rem;
-		border: 1px solid #fff;
-		}
-
-		img[inline] {
-			height: 45px;
-		}
-
-		i {
-			vertical-align: middle;
-		}
-
-		@include media(max-width-1449) {
-			font-size: 46px;
-
-			img[inline] {
-				height: 34px;
-			}
-		}
-
-		@include media(max-width-600) {
-			width: 100%;
-			font-size: 38px;
-			margin-bottom: 0px;
-
-			img[inline] {
-				height: 28px;
-			}
-		}
-
-	}
-
 b {
+
 	font-size: 1.88235rem;
 	text-align: left;
 	width: 700px;
@@ -384,7 +330,7 @@ b {
 		vertical-align: middle;
 	}
 
-	}
+}
 
 li {
 	font-size: 16px;
