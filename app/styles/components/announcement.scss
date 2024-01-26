@@ -10,13 +10,15 @@ announcement {
 	background-position:center top;
     background-color:var(--black-color);
 
-	> div {
+	> button, > button:hover {
 		animation: move 4s linear infinite;
 		background-image: linear-gradient(to right, #ff00a0, #9600ff, #0084ff, #9600ff, #ff00a0);
 		background-size: 200% auto;
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		border: none;
+		padding: 0px;
 	}
 
 	@keyframes move {

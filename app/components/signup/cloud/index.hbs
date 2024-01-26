@@ -1,14 +1,12 @@
-<div {{on "click" (fn (mut this.show) true)}} ...attributes>
-	<div>
-		{{#if (has-block)}}
-			{{yield}}
-		{{else if @text}}
-			{{@text}}
-		{{else}}
-			Join cloud waitlist
-		{{/if}}
-	</div>
-</div>
+<button {{on "click" (fn (mut this.show) true)}} button ...attributes>
+	{{#if (has-block)}}
+		{{yield}}
+	{{else if @text}}
+		{{@text}}
+	{{else}}
+		Join cloud waitlist
+	{{/if}}
+</button>
 
 {{#if this.show}}
 
