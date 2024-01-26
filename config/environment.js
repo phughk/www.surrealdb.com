@@ -76,14 +76,6 @@ module.exports = function (environment) {
 				},
 			},
 			{
-				name: 'customerio',
-				environments: ['production'],
-				config: {
-					optimised: true,
-					id: '6c171d0b88c9c2d98059',
-				},
-			},
-			{
 				name: 'twitter-pixel',
 				environments: ['production'],
 				config: {
