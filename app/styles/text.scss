@@ -4,7 +4,7 @@ h1 {
 	line-height: 1.1;
 	font-weight: 600;
 	letter-spacing: -1px;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	color: var(--text-color);
     display: block;
@@ -68,7 +68,7 @@ h2 {
 	line-height: 1.2;
 	font-size: 40px;
 	letter-spacing: -1px;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	color:var(--text-color);
 	letter-spacing: -.035rem;
@@ -115,7 +115,7 @@ h3 {
 	font-weight: 500;
 	line-height: 1.2;
 	letter-spacing: -1px;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	letter-spacing: -.035rem;
 	color: var(--text-color);
@@ -151,7 +151,7 @@ h4 {
 	font-size: 22px;
 	font-weight: 600;
 	line-height: 1.2;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	color: var(--text-color);
 	text-rendering: optimizeLegibility;
@@ -197,7 +197,7 @@ h5 {
 	font-weight: 500;
 	line-height: 1.29412;
 	font-size: 30px;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	letter-spacing: -0.03em;
 	color: var(--text-color);
@@ -245,12 +245,13 @@ h5 {
 }
 
 h6 {
+
 	display: block;
 	font-size: 60px;
 	line-height: 1.1;
 	font-weight: 600;
 	letter-spacing: -1px;
-	font-family: "SF Pro Display";
+	font-family: var(--fonts);
 	transition: color 0.3s;
 	color: var(--text-color);
 

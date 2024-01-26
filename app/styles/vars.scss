@@ -19,6 +19,7 @@
 	--black-color:#000000;		// Same colourfrom light to dark mode
 	--lighter-color:#6e6e73;	// Same colourfrom light to dark mode
 	--flip-color:#ffffff;		// Flip colour from light to dark mode
+	--fonts: -apple-system, ui-sans-serif, system-ui, 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 	::selection {
 		color: #000000 !important;
