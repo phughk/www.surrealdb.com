@@ -4,7 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
 	let app = new EmberApp(defaults, {
-		sourcemaps: true,
+		sourcemaps: {
+			enabled: true
+		},
 		prism: {
 			copyToClipboard: true,
 			theme: 'okaidia',
