@@ -32,7 +32,7 @@ export default class extends Controller {
 	}
 
 	@cache get html() {
-		return this.model.content || '';
+		return this.model.body || '';
 	}
 
 }
