@@ -6,11 +6,14 @@ export default class extends Route {
 	@inject mdfiles;
 
 	model(params) {
-		return this.mdfiles.file('blog',
-			this.modelFor('blog').find(v => {
-				return params.post_slug === v.attributes.slug;
-			}).name
-		);
+		//
+		let path = this.modelFor('blog').find(v => {
+			return params.post_slug === v.attributes.slug;
+		}).path;
+		//
+		return fetch(path).then(data => {
+			return data.json();
+		});
 	}
 
 }
