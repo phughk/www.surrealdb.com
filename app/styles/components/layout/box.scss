@@ -64,7 +64,7 @@ layout-box {
 			&[clear] {
 
 				background-color: transparent;
-				
+
 				div {
 					padding-left: 15%;
 					padding-right:15%;
@@ -74,7 +74,7 @@ layout-box {
 					>h3 {
 						color: var(--text-color);
 					}
-	
+
 					>h4 {
 						color: var(--text-color);
 					}
@@ -83,7 +83,7 @@ layout-box {
 						width:95%;
 						color: var(--text-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
 						color: var(--text-color);
@@ -109,9 +109,9 @@ layout-box {
 				}
 
 			}
-		
+
 			&[white] {
-				background-color:var(--same-color);
+				background-color:var(--white-color);
 
 				div {
 					padding-left: 15%;
@@ -125,7 +125,7 @@ layout-box {
 						line-height: 1.1;
 						color: var(--text-color);
 					}
-	
+
 					>h4 {
 						color: var(--text-color);
 					}
@@ -136,7 +136,7 @@ layout-box {
 						padding-bottom: 60px;
 
 					}
-	
+
 					>p:first-child {
 						font-size: 17px;
 						padding-bottom: 60px;
@@ -175,7 +175,7 @@ layout-box {
 						}
 
 					}
-	
+
 					>h4 {
 						color: var(--text-color);
 					}
@@ -186,7 +186,7 @@ layout-box {
 						padding-bottom: 60px;
 
 					}
-	
+
 					>p:first-child {
 						font-size: 17px;
 						padding-bottom: 60px;
@@ -214,26 +214,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -254,30 +254,30 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
-		
+
 			&[pink] {
 				background: rgb(255,0,160);
 				background: -moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
@@ -306,26 +306,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -350,26 +350,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -394,26 +394,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -438,26 +438,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -481,26 +481,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -524,26 +524,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -567,26 +567,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -611,26 +611,26 @@ layout-box {
 
 					>h3 {
 						width:75%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -654,26 +654,26 @@ layout-box {
 						font-size: 62px;
 						font-weight: 600;
 						line-height: 1.1;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -690,26 +690,26 @@ layout-box {
 					>h3 {
 						font-size: 22px;
 						margin-bottom:0px;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--lighter-color);
+						color: var(--faint-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--lighter-color);
+						color: var(--faint-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -720,7 +720,7 @@ layout-box {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
-				
+
 				@media (prefers-color-scheme: light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
 				}
@@ -733,26 +733,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 
@@ -777,29 +777,29 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
-				
+
 			}
 
 			&[ml] {
@@ -816,21 +816,21 @@ layout-box {
 					padding: 60px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 				}
 			}
@@ -849,21 +849,21 @@ layout-box {
 					padding: 60px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 				}
 			}
@@ -886,25 +886,25 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
 						}
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -915,16 +915,16 @@ layout-box {
 						>h3 {
 							color: var(--text-color);
 						}
-		
+
 						>h4 {
 							color: var(--text-color);
 						}
-	
+
 						>p:last-child {
 							width:95%;
 							color: var(--faint-color);
 						}
-		
+
 						>p:first-child {
 							width:95%;
 							color: var(--faint-color);
@@ -942,7 +942,7 @@ layout-box {
 					padding-bottom: 20px;
 					border-radius: 0px;
 					background-color:none
-	
+
 					img {
 						width: 100%;
 						margin: auto;
@@ -952,7 +952,7 @@ layout-box {
 						object-fit: cover;
 						transition: transform 0.3s;
 					}
-	
+
 				}
 			}
 
@@ -973,7 +973,7 @@ layout-box {
 					@include media(max-width-1200) {
 						width:930px;
 					}
-				
+
 					@include media(max-width-1024) {
 						width:85%;
 					}
@@ -985,7 +985,7 @@ layout-box {
 					>h3 {
 						color: var(--text-color);
 					}
-	
+
 					>h4 {
 						color: var(--text-color);
 					}
@@ -998,7 +998,7 @@ layout-box {
 							width:100%;
 						}
 					}
-	
+
 					>p:first-child {
 						width:95%;
 						color: var(--text-color);
@@ -1019,7 +1019,7 @@ layout-box {
 					padding-bottom: 20px;
 					border-radius: 0px;
 					background-color:none
-	
+
 					img {
 						width: 100%;
 						margin: auto;
@@ -1029,7 +1029,7 @@ layout-box {
 						object-fit: cover;
 						transition: transform 0.3s;
 					}
-	
+
 				}
 			}
 
@@ -1038,42 +1038,42 @@ layout-box {
 				border-radius: 0px;
 				margin-bottom: 100px;
 				background-color:var(--dark-color);
-				
+
 				div {
 					padding: 0px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					@media (prefers-color-scheme: light) {
 						>h3 {
 							color: var(--text-color);
 						}
-		
+
 						>h4 {
 							color: var(--text-color);
 						}
-	
+
 						>p:last-child {
 							width:95%;
 							color: var(--faint-color);
 						}
-		
+
 						>p:first-child {
 							width:95%;
 							color: var(--faint-color);
@@ -1091,7 +1091,7 @@ layout-box {
 					padding-bottom: 20px;
 					border-radius: 0px;
 					background-color:none;
-	
+
 					img {
 						width: 100%;
 						margin: auto;
@@ -1101,7 +1101,7 @@ layout-box {
 						object-fit: cover;
 						transition: transform 0.3s;
 					}
-	
+
 				}
 			}
 
@@ -1115,21 +1115,21 @@ layout-box {
 					padding: 0px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
-	
+
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 				}

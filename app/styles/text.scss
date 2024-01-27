@@ -49,7 +49,7 @@ h1 {
 	}
 
 	&[same] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 	&[black] {
@@ -57,7 +57,7 @@ h1 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 }
@@ -104,7 +104,7 @@ h2 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 }
@@ -141,7 +141,7 @@ h3 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 }
@@ -186,7 +186,7 @@ h4 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 }
@@ -230,7 +230,7 @@ h5 {
 	}
 
 	&[same] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 	&[yaacomm] {
@@ -239,7 +239,7 @@ h5 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 }
@@ -296,7 +296,7 @@ h6 {
 	}
 
 	&[same] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 	&[black] {
@@ -304,11 +304,11 @@ h6 {
 	}
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 	&[flip] {
-		color:var(--flip-color);
+		color:var(--text-color);
 	}
 
 }
@@ -323,7 +323,7 @@ b {
 	letter-spacing: -0.03em;
 	font-family: "Inter";
 	transition: color 0.3s;
-	color: var(--same-color);
+	color: var(--white-color);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 
@@ -354,7 +354,7 @@ p {
 	-webkit-font-smoothing: antialiased;
 
 	&[white] {
-		color:var(--same-color);
+		color:var(--white-color);
 	}
 
 	&[code] {

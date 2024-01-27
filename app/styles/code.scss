@@ -32,7 +32,7 @@ code, :not(pre) > code[class*="language-"] {
 		background-color:var(--hover-color);
 
 		@media (prefers-color-scheme: light) {
-			color:var(--same-color);
+			color:var(--white-color);
 			transition:all .4s ease-in-out;
 			background-color:var(--hover-color);
 		}

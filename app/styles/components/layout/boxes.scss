@@ -111,14 +111,14 @@ layout-boxes {
 			}
 
 			&[hiring] {
-				background-color:var(--same-color);
+				background-color:var(--white-color);
 
 				picture {
 
 					max-width: 100%;
 					position: relative;
 					display:block;
-	
+
 					img:not(.devicon) {
 						width: 100%;
 						height: 100%;
@@ -127,7 +127,7 @@ layout-boxes {
 						object-fit: cover;
 						transition: transform 0.3s;
 					}
-	
+
 				}
 
 				div {
@@ -162,11 +162,11 @@ layout-boxes {
 						color: var(--text-color);
 					}
 				}
-				
+
 			}
 
 			&[white] {
-				background-color:var(--same-color);
+				background-color:var(--white-color);
 
 				div {
 					padding-left: 15%;
@@ -200,7 +200,7 @@ layout-boxes {
 						color: var(--text-color);
 					}
 				}
-				
+
 			}
 
 			&[light] {
@@ -272,26 +272,26 @@ layout-boxes {
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 
 				}
@@ -314,26 +314,26 @@ layout-boxes {
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 
 				}
@@ -368,26 +368,26 @@ layout-boxes {
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 
 				}
@@ -414,26 +414,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -458,26 +458,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -502,26 +502,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -545,26 +545,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -588,26 +588,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -631,26 +631,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -675,26 +675,26 @@ layout-boxes {
 
 					>h3 {
 						width:75%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -718,26 +718,26 @@ layout-boxes {
 						font-size: 62px;
 						font-weight: 600;
 						line-height: 1.1;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -758,22 +758,22 @@ layout-boxes {
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--lighter-color);
+						color: var(--faint-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--lighter-color);
+						color: var(--faint-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -797,26 +797,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 
@@ -841,26 +841,26 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--same-color);
+						color:var(--white-color);
 					}
 				}
 
@@ -880,21 +880,21 @@ layout-boxes {
 					padding: 60px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 				}
 			}
@@ -913,21 +913,21 @@ layout-boxes {
 					padding: 60px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 				}
 			}
@@ -950,16 +950,16 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -968,7 +968,7 @@ layout-boxes {
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1132,16 +1132,16 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1150,7 +1150,7 @@ layout-boxes {
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1192,21 +1192,21 @@ layout-boxes {
 					padding: 0px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					@media (prefers-color-scheme: light) {
@@ -1264,21 +1264,21 @@ layout-boxes {
 					padding: 0px;
 
 					>h3 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color: var(--white-color);
 					}
 
 				}

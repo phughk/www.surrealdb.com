@@ -282,7 +282,7 @@ layout-hero {
 			line-height:1;
 			font-size:90px;
 			margin:0 0 10px 0;
-			color:var(--same-color);
+			color:var(--white-color);
 
 			img {
 				height:45px;
@@ -318,7 +318,7 @@ layout-hero {
 
 			width:80%;
 			font-size:28px;
-			color:var(--same-color);
+			color:var(--white-color);
 
 			@include media(max-width-1250) {
 				width:100%;
@@ -338,7 +338,7 @@ layout-hero {
 
 			width:80%;
 			font-size:24px;
-			color:var(--same-color);
+			color:var(--white-color);
 
 			@include media(max-width-1250) {
 				width:100%;
@@ -352,7 +352,7 @@ layout-hero {
 			font-weight:600;
 			line-height:1.2;
 			transition:color 0.3s;
-			color:var(--same-color);
+			color:var(--white-color);
 			text-rendering:optimizeLegibility;
 			-webkit-font-smoothing:antialiased;
 
@@ -394,7 +394,7 @@ layout-hero {
 
 		a {
 
-			color:var(--same-color);
+			color:var(--white-color);
 
 		}
 
