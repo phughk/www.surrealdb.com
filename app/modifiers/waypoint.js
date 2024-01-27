@@ -9,10 +9,10 @@ const viewport = Viewport.Instance;
 export default setModifierManager(
 	(owner) => ({
 
-		capabilities: capabilities('3.13', { disableAutoTracking: true }),
+		capabilities: capabilities('3.22', { disableAutoTracking: false }),
 
 		createModifier(modifier, args) {
-			return new modifier.class(owner, args);
+			return new modifier(owner, args);
 		},
 
 		installModifier(instance, element, args) {
