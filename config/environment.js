@@ -6,7 +6,7 @@ module.exports = function (environment) {
 
 		environment,
 		rootURL: '/',
-		locationType: 'auto',
+		locationType: 'history',
 		modulePrefix: 'surreal',
 
 		fastboot: {
@@ -114,7 +114,7 @@ module.exports = function (environment) {
 		// to be used when using ember
 		// canary builds
 
-		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: { Date: false } },
+		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: false },
 
 	};
 
