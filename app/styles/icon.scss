@@ -24,10 +24,6 @@ i {
 		color: var(--faint-color);
 	}
 
-	&[route^="docs"] {
-		max-width: 1600px;
-	}
-
 	&[class^="devicon"] {
 		vertical-align: text-top;
 

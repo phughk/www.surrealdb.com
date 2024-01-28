@@ -1,0 +1,134 @@
+// variables
+// --------------------------
+
+$fa-css-prefix          : fa !default;
+$fa-style               : 900 !default;
+$fa-style-family        : "Font Awesome 6 Pro" !default;
+
+$fa-display             : inline-block !default;
+
+$fa-fw-width            : fa-divide(20em, 16) !default;
+$fa-inverse             : #fff !default;
+
+$fa-border-color        : #eee !default;
+$fa-border-padding      : .2em .25em .15em !default;
+$fa-border-radius       : .1em !default;
+$fa-border-style        : solid !default;
+$fa-border-width        : .08em !default;
+
+$fa-size-scale-2xs      : 10 !default;
+$fa-size-scale-xs       : 12 !default;
+$fa-size-scale-sm       : 14 !default;
+$fa-size-scale-base     : 16 !default;
+$fa-size-scale-lg       : 20 !default;
+$fa-size-scale-xl       : 24 !default;
+$fa-size-scale-2xl      : 32 !default;
+
+$fa-sizes: (
+  "2xs"                 : $fa-size-scale-2xs,
+  "xs"                  : $fa-size-scale-xs,
+  "sm"                  : $fa-size-scale-sm,
+  "lg"                  : $fa-size-scale-lg,
+  "xl"                  : $fa-size-scale-xl,
+  "2xl"                 : $fa-size-scale-2xl
+) !default;
+
+$fa-li-width            : 2em !default;
+$fa-li-margin           : $fa-li-width * fa-divide(5, 4) !default;
+
+$fa-pull-margin         : .3em !default;
+
+$fa-primary-opacity     : 1 !default;
+$fa-secondary-opacity   : .4 !default;
+
+$fa-stack-vertical-align: middle !default;
+$fa-stack-width         : ($fa-fw-width * 2) !default;
+$fa-stack-z-index       : auto !default;
+
+$fa-font-display        : block !default;
+$fa-font-path           : "/static/font/awesome" !default;
+
+$fa-var-angle-right: \f105;
+$fa-var-arrow-down: \f063;
+$fa-var-arrow-left: \f060;
+$fa-var-arrow-right: \f061;
+$fa-var-arrow-up: \f062;
+$fa-var-bars: \f0c9;
+$fa-var-navicon: \f0c9;
+$fa-var-cloud-arrow-down: \f0ed;
+$fa-var-cloud-download: \f0ed;
+$fa-var-cloud-download-alt: \f0ed;
+$fa-var-envelope: \f0e0;
+$fa-var-list-check: \f0ae;
+$fa-var-tasks: \f0ae;
+$fa-var-star: \f005;
+$fa-var-xmark: \f00d;
+$fa-var-close: \f00d;
+$fa-var-multiply: \f00d;
+$fa-var-remove: \f00d;
+$fa-var-times: \f00d;
+
+$fa-var-apple: \f179;
+$fa-var-chrome: \f268;
+$fa-var-dev: \f6cc;
+$fa-var-discord: \f392;
+$fa-var-docker: \f395;
+$fa-var-github: \f09b;
+$fa-var-instagram: \f16d;
+$fa-var-linkedin: \f08c;
+$fa-var-medium: \f23a;
+$fa-var-medium-m: \f23a;
+$fa-var-reddit: \f1a1;
+$fa-var-slack: \f198;
+$fa-var-slack-hash: \f198;
+$fa-var-stack-overflow: \f16c;
+$fa-var-threads: \e618;
+$fa-var-windows: \f17a;
+$fa-var-x-twitter: \e61b;
+$fa-var-youtube: \f167;
+
+$fa-icons: (
+  "angle-right": $fa-var-angle-right,
+  "arrow-down": $fa-var-arrow-down,
+  "arrow-left": $fa-var-arrow-left,
+  "arrow-right": $fa-var-arrow-right,
+  "arrow-up": $fa-var-arrow-up,
+  "bars": $fa-var-bars,
+  "navicon": $fa-var-navicon,
+  "cloud-arrow-down": $fa-var-cloud-arrow-down,
+  "cloud-download": $fa-var-cloud-download,
+  "cloud-download-alt": $fa-var-cloud-download-alt,
+  "envelope": $fa-var-envelope,
+  "list-check": $fa-var-list-check,
+  "tasks": $fa-var-tasks,
+  "star": $fa-var-star,
+  "xmark": $fa-var-xmark,
+  "close": $fa-var-close,
+  "multiply": $fa-var-multiply,
+  "remove": $fa-var-remove,
+  "times": $fa-var-times,
+);
+
+$fa-brand-icons: (
+  "apple": $fa-var-apple,
+  "chrome": $fa-var-chrome,
+  "dev": $fa-var-dev,
+  "discord": $fa-var-discord,
+  "docker": $fa-var-docker,
+  "github": $fa-var-github,
+  "instagram": $fa-var-instagram,
+  "linkedin": $fa-var-linkedin,
+  "medium": $fa-var-medium,
+  "medium-m": $fa-var-medium-m,
+  "reddit": $fa-var-reddit,
+  "slack": $fa-var-slack,
+  "slack-hash": $fa-var-slack-hash,
+  "stack-overflow": $fa-var-stack-overflow,
+  "threads": $fa-var-threads,
+  "windows": $fa-var-windows,
+  "x-twitter": $fa-var-x-twitter,
+  "youtube": $fa-var-youtube,
+);
+
+$fa-custom-icons: (
+);

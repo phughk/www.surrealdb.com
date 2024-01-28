@@ -1,6 +1,4 @@
 @import "@ascua/visuals";
-@import "@ascua/visuals/fonts/inter";
-@import "@ascua/visuals/fonts/awesome";
 
 @import "mixins";
 
@@ -16,6 +14,7 @@
 @import "button";
 @import "sizing";
 @import "colours";
+@import "fontawesome/main";
 @import "components/icon";
 @import "components/logo";
 @import "components/footer";
