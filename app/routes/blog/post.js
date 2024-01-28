@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
+import fetch from 'fetch';
 
 export default class extends Route {
 
