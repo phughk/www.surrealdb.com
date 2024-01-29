@@ -36,7 +36,14 @@ We can see the whole person record.
             ],
             "country": "England",
             "post_code": "MU1P 0XX"
-        }
+        },
+        "company_name": null,
+        "email": "said1813@example.com",
+        "first_name": "Caprice",
+        "id": "person:00e1nc508h9f7v63x72o",
+        "last_name": "Huber",
+        "name": "Caprice Huber",
+        "phone": "0115 262 2984"
     }
 ]
 ```
