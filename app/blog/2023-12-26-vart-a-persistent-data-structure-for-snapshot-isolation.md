@@ -16,7 +16,7 @@ This blog post delves into the intricacies of transaction isolation, and introdu
 
 Isolation levels, as defined by the [SQL standard](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-95-51.pdf), quantify the extent to which one transaction can operate independently of another. The SQL standard recognizes various isolation levels, each addressing specific anomalies such as dirty writes, dirty reads, lost updates, and other potential inconsistencies that can arise in a concurrent transactional environment. The list of these isolation levels is provided below for reference.
 
-<table style="display:block;overflow-x:auto;">
+<table class="scrollable-table">
 <thead>
   <tr>
     <th>Isolation Level</th>
