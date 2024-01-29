@@ -3,7 +3,7 @@ show: true
 date: 2024-01-23
 image: cmdt5enpl3gc739vqe6g
 title: "VART: A Persistent Data Structure For Snapshot Isolation"
-summary: "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control"
+summary: "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control."
 ---
 
 by Farhan Ali Khan, 13 min read

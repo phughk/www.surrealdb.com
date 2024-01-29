@@ -3,7 +3,7 @@ show: true
 date: 2024-01-29
 image: cmro8e2r3aec73fhdrv0
 title: "Beyond SQL Joins: Exploring SurrealDB's Multi-Model Relationships"
-summary: "Can't join? No worries, we can relate"
+summary: "Can't join? No worries, we can relate."
 ---
 
 by Alexander Fridriksson
