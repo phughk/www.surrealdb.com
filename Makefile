@@ -61,3 +61,9 @@ deploy:
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/robots.txt s3://www.surrealdb.com/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=30" --delete --exclude "*" --include "*.html" ./dist/ s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/version.txt s3://www.surrealdb.com/
+
+.PHONY: sitemap
+sitemap:
+	@echo "Generating sitemap..."
+	npx --yes sitemap-generator-cli --priority-map "1.0,0.9,0.8,0.7" https://surrealdb.com
+	aws s3 cp --region eu-west-2 --cache-control "public, max-age=30" ./sitemap.xml s3://www.surrealdb.com/
