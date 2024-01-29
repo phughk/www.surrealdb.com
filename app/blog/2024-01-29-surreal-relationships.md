@@ -339,9 +339,9 @@ Now I want to bring your attention to the following select statement, which show
 
 ```surql
 SELECT
-  <-product, 
+  <-person,
   id,
-  ->person
+  ->product
 FROM order
 ```
 
