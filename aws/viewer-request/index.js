@@ -1,23 +1,33 @@
 function handler(event) {
 
-    var request = event.request;
-    var headers = request.headers;
-    var host = request.headers.host.value;
+	var request = event.request;
+	var headers = request.headers;
+	var host = request.headers.host.value;
 
-    if (host !== 'surrealdb.com') {
+	if (host !== 'surrealdb.com') {
 
-        return {
+		return {
 			statusCode: 301,
 			statusDescription: 'Moved Permanently',
 			headers: {
-			    location: {
-			        value: `https://surrealdb.com${request.uri}`
-			    }
-            },
+				location: {
+					value: `https://surrealdb.com${request.uri}`
+				}
+			},
 		};
 
-    }
+	}
 
-    return request;
+	if (request.uri.endsWith('/')) {
+		request.uri = request.uri.concat('index.html');
+		return request;
+	}
+
+	if (request.uri.indexOf('.') < request.uri.lastIndexOf('/')) {
+		request.uri = request.uri.concat('/index.html');
+		return request;
+	}
+
+	return request;
 
 }
