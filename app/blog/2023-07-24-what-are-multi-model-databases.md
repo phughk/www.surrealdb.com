@@ -127,7 +127,7 @@ Multi-Model databases are often chosen as the primary database when you need to 
 
 ## SurrealDB, an innovative Multi-model cloud database
 
-[SurrealDB’s](https://surrealdb.com/install/) architecture is built in a layered approach, effectively separating compute from storage. This facilitates individual scaling of the compute (AKA query layer) and the storage layer as required.
+[SurrealDB’s](https://surrealdb.com/install) architecture is built in a layered approach, effectively separating compute from storage. This facilitates individual scaling of the compute (AKA query layer) and the storage layer as required.
 
 The query layer is responsible for handling queries from the client. It intelligently analyses which records must be selected, created, updated, or deleted. 
 
