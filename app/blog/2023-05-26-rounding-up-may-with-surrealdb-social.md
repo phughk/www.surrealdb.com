@@ -3,7 +3,7 @@ show: true
 date: 2023-05-26
 image: cl92ctq03ggs73c8tqpg
 title: "Rounding up May with SurrealDB Social"
-summary: "Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock,"
+summary: "Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock."
 ---
 
 Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock. In addition, the night will also include a live Q&A, plus food, drink and fun and games.
