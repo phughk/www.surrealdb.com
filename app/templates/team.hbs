@@ -16,34 +16,9 @@
 <Layout::Gap large />
 
 <Layout::Boxes cols-4-to-2-to-1>
-	<Layout::Boxes::Item text-l team @title="Tobie Morgan Hitchcock" @image="/static/img/team/tobie.jpg" @text="Co-founder and CEO" />
-	<Layout::Boxes::Item text-l team @title="Jaime Morgan Hitchcock" @image="/static/img/team/jaime.jpg" @text="Co-founder and COO" />
-	<Layout::Boxes::Item text-l team @title="Lizzie Holmes" @image="/static/img/team/lizzie.jpg" @text="Head of Operations" />
-	<Layout::Boxes::Item text-l team @title="Rushmore Mushambi" @image="/static/img/team/rushmore.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Hugh Kaznowski" @image="/static/img/team/hugh.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Aravind Putrevu" @image="/static/img/team/aravind.jpg" @text="Developer Relations Marketing Manager" />
-	<Layout::Boxes::Item text-l team @title="Emmanuel Keller" @image="/static/img/team/emmanuel.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Alexander Fridriksson" @image="/static/img/team/alexander.jpg" @text="Data Evangelist" />
-	<Layout::Boxes::Item text-l team @title="Yusuke Kuoka" @image="/static/img/team/yusuke.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Pratim Bhosale" @image="/static/img/team/pratim.jpg" @text="Developer Advocate" />
-	<Layout::Boxes::Item text-l team @title="Salvador Gironès" @image="/static/img/team/salvador.jpg" @text="Senior Platform Engineer" />
-	<Layout::Boxes::Item text-l team @title="Feranmi Okafor" @image="/static/img/team/feranmi.jpg" @text="Product Marketing Manager" />
-	<Layout::Boxes::Item text-l team @title="Micha de Vries" @image="/static/img/team/micha.jpg" @text="Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Lennex Zinyando" @image="/static/img/team/lennex.jpg" @text="Senior Frontend Engineer" />
-	<Layout::Boxes::Item text-l team @title="Naiyarah Hussain" @image="/static/img/team/naiyarah.jpg" @text="Developer Relations Manager" />
-	<Layout::Boxes::Item text-l team @title="Farhan Khan" @image="/static/img/team/farhan.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Mees Delzenne" @image="/static/img/team/mees.jpg" @text="Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Obinna Ekwuno" @image="/static/img/team/obinna.jpg" @text="Developer Experience Engineer" />
-	<Layout::Boxes::Item text-l team @title="Maxwell Flitton" @image="/static/img/team/maxwell.jpg" @text="Senior Software Engineer" />
-	<Layout::Boxes::Item text-l team @title="Ned Rudkins-Stow" @image="/static/img/team/ned.jpg" @text="Experiences Coordinator" />
-	<Layout::Boxes::Item text-l team @title="Meriel Cunningham" @image="/static/img/team/meriel.jpg" @text="Experiences Coordinator" />
-	<Layout::Boxes::Item text-l team @title="Raphael Darley" @image="/static/img/team/raphael.jpg" @text="Engineering Intern" />
-	<Layout::Boxes::Item text-l team @title="Akanksha Dharkar" @image="/static/img/team/akanksha.jpg" @text="Senior Frontend Engineer" />
-	<Layout::Boxes::Item text-l team @title="Dimitri Anoudis" @image="/static/img/team/dimitri.jpg" @text="Senior Frontend Engineer" />
-	<Layout::Boxes::Item text-l team @title="Gerard Guillemas" @image="/static/img/team/gerard.jpg" @text="Senior Security Engineer" />	
-	<Layout::Boxes::Item text-l team @title="Charli Baptie" @image="/static/img/team/charli.jpg" @text="Experiences Coordinator" />
-	<Layout::Boxes::Item text-l team @title="Kirstie Marsh" @image="/static/img/team/kirstie.jpg" @text="Chief of Staff" />
-	<Layout::Boxes::Item text-l team @title="Ignacio Paz" @image="/static/img/team/ignacio.jpg" @text="Sales Director" />
+	{{#each this.model as |person|}}
+		<Layout::Boxes::Item text-l team @image={{person.attributes.image}} @title={{person.attributes.name}} @text={{person.attributes.text}} />
+	{{/each}}
 </Layout::Boxes>
 
 <Layout::Gap large />
