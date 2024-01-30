@@ -21,7 +21,13 @@
 
 	<Layout::Gap large />
 
-	<Section::Opensource />
+	<Layout::Boxes cols-3-to-2-to-1>
+		{{#each this.model as |project|}}
+			<Link @link={{project.attributes.link}} mini>
+				<Layout::Boxes::Item opensource @image={{project.attributes.image}} @stamp={{project.attributes.lang}} @title={{project.attributes.name}} @text={{project.attributes.text}} hover />
+			</Link>
+		{{/each}}
+	</Layout::Boxes>
 
 	<Layout::Gap large />
 

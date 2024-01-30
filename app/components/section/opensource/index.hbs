@@ -1,7 +1,0 @@
-<Layout::Boxes cols-3-to-2-to-1>
-	{{#each this.model as |project|}}
-		<Link @link={{project.link}} mini>
-			<Layout::Boxes::Item opensource @image={{project.image}} @stamp={{project.lang}} @title={{project.name}} @text={{project.text}} hover />
-		</Link>
-	{{/each}}
-</Layout::Boxes>

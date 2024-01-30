@@ -15,7 +15,7 @@ export default class extends Route {
 				v.attributes.slug = slug(v.attributes.title);
 				return v;
 			});
-		});;
+		});
 	}
 
 	@action error(error, transition) {
