@@ -8,11 +8,11 @@
 	<Layout::Text text-l>
 		<h1>Our open source projects</h1>
 		<h3 lighter>SurrealDB is an open source company, supporting existing open source tools and communities wherever possible. Source code and core components for SurrealDB are variously licensed under a number of different licenses. A copy of each license can be found in each repository on GitHub.</h3>
-		<Button white @link="features">
-			<i class="fal fa-list-check"></i> <span>View all features</span>
+		<Button white @link={{url "gitorg"}}>
+			<i class="fab fa-github"></i> <span>View us on GitHub</span>
 		</Button>
-		<Button white @link="https://docs.surrealdb.com/docs/introduction/start/">
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+		<Button white @link={{url "github"}}>
+			<i class="fa fa-star"></i> <span>Star us on GitHub</span>
 		</Button>
 	</Layout::Text>
 </Layout::Hero>
@@ -32,5 +32,3 @@
 	<Layout::Gap large />
 
 </section>
-
-<Layout::Github />
