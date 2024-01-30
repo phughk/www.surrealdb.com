@@ -11,6 +11,10 @@ export default class extends Route {
 
 		path = path.toLowerCase().replace(/\/$/, '');
 
+		// Routes defined here need to also be added
+		// to the routes in aws/viewer-request/index.js
+		// so that they are redirected at the CDN layer.
+
 		switch (true) {
 			// Redirect root product pages
 			case path === 'cf':

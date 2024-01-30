@@ -30,44 +30,47 @@ function handler(event) {
 
 	}
 
+	let path = request.uri.toLowerCase().replace(/\/$/, '');
+
 	switch (true) {
 		// Redirect root product pages
-		case request.uri === '/cf':
-		case request.uri === '/kv':
-		case request.uri === '/lq':
-		case request.uri === '/ml':
-		case request.uri === '/ql':
-			return redirect(`/products/${request.uri}`);
+		case path === '/cf':
+		case path === '/kv':
+		case path === '/lq':
+		case path === '/ml':
+		case path === '/ql':
+			return redirect(`/products/${path}`);
 		// Redirect base docs page to intro page
-		case request.uri === '/docs':
+		case path === '/docs':
 			return redirect(`https://docs.surrealdb.com/docs/intro`);
 		// Redirect old websocket text protocol page
-		case request.uri === '/docs/integration/websocket/text':
+		case path === '/docs/integration/websocket/text':
 			return redirect(`https://docs.surrealdb.com/docs/integration/websocket`);
 		// Redirect old websocket binary protocol page
-		case request.uri === '/docs/integration/websocket/binary':
+		case path === '/docs/integration/websocket/binary':
 			return redirect(`https://docs.surrealdb.com/docs/integration/websocket`);
 		// Redirect old DEFINE LOGIN statement page
-		case request.uri === '/docs/surrealql/statements/define/login':
+		case path === '/docs/surrealql/statements/define/login':
 			return redirect(`https://docs.surrealdb.com/docs/surrealql/statements/define/user`);
 		// Redirect docs index pages to overview pages
-		case request.uri === '/docs/cli':
-		case request.uri === '/docs/deployment':
-		case request.uri === '/docs/embedding':
-		case request.uri === '/docs/faqs':
-		case request.uri === '/docs/installation':
-		case request.uri === '/docs/integration':
-		case request.uri === '/docs/integration/sdks':
-		case request.uri === '/docs/introduction':
-		case request.uri === '/docs/surrealql':
-		case request.uri === '/docs/surrealql/datamodel':
-		case request.uri === '/docs/surrealql/functions':
-		case request.uri === '/docs/surrealql/statements':
-			return redirect(`https://docs.surrealdb.com/${request.uri}/overview`);
-		case request.uri.startsWith('/docs/integration/libraries/'):
-			return redirect(`https://docs.surrealdb.com/${request.uri.replace('libraries', 'sdks')}/`);
+		case path === '/docs/cli':
+		case path === '/docs/deployment':
+		case path === '/docs/embedding':
+		case path === '/docs/faqs':
+		case path === '/docs/installation':
+		case path === '/docs/integration':
+		case path === '/docs/integration/sdks':
+		case path === '/docs/introduction':
+		case path === '/docs/surrealql':
+		case path === '/docs/surrealql/datamodel':
+		case path === '/docs/surrealql/functions':
+		case path === '/docs/surrealql/statements':
+			return redirect(`https://docs.surrealdb.com/${path}/overview`);
+		case path.startsWith('/docs/integration/libraries/'):
+			path = path.replace('libraries', 'sdks');
+			return redirect(`https://docs.surrealdb.com/${path}/`);
 		case request.uri.startsWith('/docs/'):
-			return redirect(`https://docs.surrealdb.com/${request.uri}/`);
+			return redirect(`https://docs.surrealdb.com/${path}/`);
 	}
 
 	if (request.uri.endsWith('/')) {
