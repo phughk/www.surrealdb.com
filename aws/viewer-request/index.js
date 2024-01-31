@@ -65,12 +65,12 @@ function handler(event) {
 		case path === '/docs/surrealql/datamodel':
 		case path === '/docs/surrealql/functions':
 		case path === '/docs/surrealql/statements':
-			return redirect(`https://docs.surrealdb.com/${path}/overview`);
+			return redirect(`https://docs.surrealdb.com${path}/overview`);
 		case path.startsWith('/docs/integration/libraries/'):
 			path = path.replace('libraries', 'sdks');
-			return redirect(`https://docs.surrealdb.com/${path}/`);
-		case request.uri.startsWith('/docs/'):
-			return redirect(`https://docs.surrealdb.com/${path}/`);
+			return redirect(`https://docs.surrealdb.com${path}/`);
+		case path.startsWith('/docs/'):
+			return redirect(`https://docs.surrealdb.com${path}/`);
 	}
 
 	if (request.uri.endsWith('/')) {

@@ -36,7 +36,7 @@ d. One of the following package managers: [npm](https://nodejs.org/en/download),
 
 ## Step 1: Install the SurrealDB library
 
-The [SurrealDB](https://surrealdb.com/docs/integration/libraries/javascript) driver for JavaScript enables simple and advanced querying of a remote database from a browser or from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.
+The [SurrealDB](https://surrealdb.com/docs/integration/sdks/javascript) driver for JavaScript enables simple and advanced querying of a remote database from a browser or from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.
 
 Install the SurrealDB library using `npm`:
 
