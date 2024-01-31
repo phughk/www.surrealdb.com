@@ -19,9 +19,11 @@
 				<user>{{@user}}</user>
 			</div>
 
-			<div>
-				<img loading="lazy" src={{@image}} alt={{@name}}>
-			</div>
+			{{#if @image}}
+				<div>
+					<img loading="lazy" src={{@image}} alt={{@name}}>
+				</div>
+			{{/if}}
 
 		</div>
 
