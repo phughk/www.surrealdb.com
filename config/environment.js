@@ -116,7 +116,7 @@ module.exports = function (environment) {
 		// to be used when using ember
 		// canary builds
 
-		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: false },
+		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: { Date: false } },
 
 	};
 
