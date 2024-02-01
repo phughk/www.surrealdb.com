@@ -35,6 +35,7 @@ module.exports = function (environment) {
 				blog: 'app/blog',
 				team: 'app/content/team',
 				projects: 'app/content/projects',
+				releases: 'app/content/releases',
 			},
 		},
 

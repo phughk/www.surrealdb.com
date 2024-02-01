@@ -27,4 +27,74 @@
 
 <Layout::Gap large />
 
-<Section::Releases />
+<Layout::Helm l-c>
+
+	<Layout::Helm::Menu>
+		<div>
+			<a {{on "click" (scroll-to top=0 smooth=true)}}>
+				<i class="fas fa-arrow-up"></i>
+				<span>Back to top</span>
+			</a>
+		</div>
+		<nav>
+			{{#each this.model as |release|}}
+				{{#if (gt release.attributes.date (now))}}
+					<Layout::Helm::Menu::Item @text="{{release.attributes.name}}-beta" @link="#{{slug release.attributes.name}}" selected={{is-waypoint (slug release.attributes.name)}} />
+				{{else}}
+					<Layout::Helm::Menu::Item @text="{{release.attributes.name}}" @link="#{{slug release.attributes.name}}" selected={{is-waypoint (slug release.attributes.name)}} />
+				{{/if}}
+			{{/each}}
+		</nav>
+	</Layout::Helm::Menu>
+
+	<Layout::Helm::Main>
+
+		{{#each this.model as |release idx|}}
+
+			<section {{waypoint (slug release.attributes.name)}}>
+
+				{{#if (ne idx 0)}}
+					<Layout::Gap mini />
+				{{/if}}
+
+				<Layout::Text text-l>
+
+					<h2>Release {{release.attributes.name}}</h2>
+
+					{{#if release.attributes.date}}
+						<p code>
+							{{#if (gt release.attributes.date (now))}}
+								{{#if release.attributes.date}}
+									Beta released on {{date-format release.attributes.date "LL"}}
+								{{else}}
+									Planned for release on {{date-format release.attributes.date "LL"}}
+								{{/if}}
+							{{else}}
+								Released on {{date-format release.attributes.date "LL"}}
+							{{/if}}
+						</p>
+					{{/if}}
+
+				</Layout::Text>
+
+				{{#if (gt release.attributes.date (now))}}
+					<blockquote yellow text="Information">
+						<code>{{release.attributes.name}}-beta</code> will be released as a stable version on {{date-format release.attributes.date "LL"}}.
+					</blockquote>
+				{{/if}}
+
+				<Layout::Text text-l>
+					<Markup @html={{release.body}} />
+				</Layout::Text>
+
+				<Layout::Gap mini />
+
+			</section>
+
+		{{/each}}
+
+		<Layout::Gap small />
+
+	</Layout::Helm::Main>
+
+</Layout::Helm>
