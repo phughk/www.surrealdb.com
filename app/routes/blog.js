@@ -18,7 +18,7 @@ export default class extends Route {
 		});
 	}
 
-	@action error(error, transition) {
+	@action error() {
 		return this.router.transitionTo('blog');
 	}
 

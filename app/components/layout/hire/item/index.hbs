@@ -1,0 +1,58 @@
+<layout-hire-item ...attributes>
+
+	{{#if @image}}
+		<picture class="default">
+			<source
+				srcset={{@imagedark}}
+				media="(prefers-color-scheme: dark)"
+			/>
+			<img loading="lazy" src={{@image}} alt={{@title}}>
+		</picture>
+		{{#if @imagehover}}
+			<picture class="hover">
+				<source
+					srcset={{@imagehoverdark}}
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img loading="lazy" src={{@imagehover}} alt={{@title}}>
+			</picture>
+		{{/if}}
+	{{/if}}
+
+	{{#if (or @stamp @title @label @text (has-block))}}
+		<div>
+
+			<div class="text-container">
+				{{#if @stamp}}
+					<p>{{@stamp}}</p>
+				{{/if}}
+
+				{{#if @title}}
+					<h3>
+						{{@title}}
+					</h3>
+				{{/if}}
+
+				{{#if @label}}
+					<h4>
+						{{@label}}
+					</h4>
+				{{/if}}
+
+				{{#if @text}}
+					<p>{{@text}}</p>
+				{{/if}}
+			</div>
+
+			{{#if @buttontext}}
+				<Button careers @link={{@url}}>
+					<span>{{@buttontext}}</span> <i class="fas fa-arrow-right"></i>
+				</Button>
+			{{/if}}
+
+			{{yield}}
+
+		</div>
+	{{/if}}
+
+</layout-hire-item>

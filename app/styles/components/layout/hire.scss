@@ -1,4 +1,4 @@
-layout-box {
+layout-hire {
 
 	display: block;
 
@@ -8,12 +8,12 @@ layout-box {
 		grid-gap: 10px 10px;
 		grid-template-columns: repeat(12, 1fr);
 
-		>a {
+		> a {
 
 			display: flex;
 			grid-column: auto / span 2;
 
-			>layout-box-item {
+			> layout-hire-item {
 
 				transition: box-shadow 0.3s;
 
@@ -31,8 +31,7 @@ layout-box {
 
 		}
 
-		>a>layout-box-item,
-		>layout-box-item {
+		> a > layout-hire-item, > layout-hire-item {
 
 			z-index: 1;
 			width: 100%;
@@ -43,14 +42,43 @@ layout-box {
 			grid-column: auto / span 2;
 			background-color: var(--dark-color);
 
+			&:not(:hover) {
+				picture.default {
+					opacity: 0.5;
+				}
+				picture.hover {
+					opacity: 0;
+				}
+			}
+
+			&:hover {
+				picture {
+					transition: opacity .5s ease, transform .7s ease;
+					transform: translateX(32%) translateY(-32%) scale(1.1);
+				}
+
+				picture.default {
+					opacity: 0;
+				}
+				picture.hover {
+					opacity: 1;
+				}
+			}
+
 			picture {
 
-				display: block;
-				max-width: 100%;
-				overflow: hidden;
-				position: relative;
+				pointer-events: none;
 
-				img {
+				transition: opacity .4s ease, transform .3s ease;
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translateX(32%) translateY(-32%);
+
+				width: 80%;
+				display: inline-block;
+
+				img:not(.devicon) {
 					width: 100%;
 					height: 100%;
 					display: block;
@@ -59,6 +87,10 @@ layout-box {
 					transition: transform 0.3s;
 				}
 
+			}
+
+			> div .text-container {
+				padding: 0px !important;
 			}
 
 			&[clear] {
@@ -71,20 +103,20 @@ layout-box {
 					padding-bottom: 5%;
 					padding-top: 5%;
 
-					>h3 {
+					> h3 {
 						color: var(--text-color);
 					}
 
-					>h4 {
+					> h4 {
 						color: var(--text-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						width:95%;
 						color: var(--text-color);
 					}
 
-					>p:first-child {
+					> p:first-child {
 						width:95%;
 						color: var(--text-color);
 					}
@@ -93,25 +125,94 @@ layout-box {
 			}
 
 			&[dark] {
-				background-color:var(--dark-color);
-				div {
 
+				background-color:var(--dark-color);
+
+				div {
 					padding:90px;
 				}
 
 			}
 
 			&[opensource] {
-				background-color:#0b0b0c;
-				div {
 
+				background-color:var(--darker-color);
+
+				div {
 					padding:60px;
 				}
 
 			}
 
+			&[hiring] {
+
+				background-color:var(--light-color);
+
+				> div {
+					padding-left:10%;
+					padding-right:10%;
+					padding-bottom:10%;
+					padding-top:10%;
+
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: flex-start;
+					gap: 30px;
+
+					.text-container {
+						max-width: 50%;
+					}
+
+					@include media(max-width-960) {
+						padding-left:10%;
+						padding-right:10%;
+						padding-bottom:10%;
+						padding-top:10%;
+					}
+
+					> h3 {
+						font-size: 26px;
+						font-weight: 600;
+						line-height: 1.2;
+						color: var(--text-color);
+
+						@include media(max-width-960) {
+							width:100%;
+							font-size: 24px;
+						}
+
+					}
+
+					> h4 {
+						color: var(--text-color);
+					}
+
+					> p:last-child {
+						font-size: 17px;
+						font-weight: 600;
+						padding-bottom: 60px;
+
+					}
+
+					> p:first-child {
+						font-size: 17px;
+						padding-bottom: 60px;
+						margin-bottom: 5px;
+						display: inline-block;
+						color: var(--text-color);
+					}
+
+					a div {
+						display: block !important;
+					}
+				}
+
+			}
+
 			&[white] {
-				background-color:var(--white-color);
+				background-color:var(--same-color);
 
 				div {
 					padding-left: 15%;
@@ -119,25 +220,25 @@ layout-box {
 					padding-bottom: 5%;
 					padding-top: 5%;
 
-					>h3 {
+					> h3 {
 						font-size: 38px;
 						font-weight: 600;
 						line-height: 1.1;
 						color: var(--text-color);
 					}
 
-					>h4 {
+					> h4 {
 						color: var(--text-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						font-size: 17px;
 						font-weight: 600;
 						padding-bottom: 60px;
 
 					}
 
-					>p:first-child {
+					 p:first-child {
 						font-size: 17px;
 						padding-bottom: 60px;
 						margin-bottom: 5px;
@@ -145,9 +246,11 @@ layout-box {
 						color: var(--text-color);
 					}
 				}
+
 			}
 
 			&[light] {
+
 				background-color:var(--light-color);
 
 				div {
@@ -159,35 +262,35 @@ layout-box {
 					@include media(max-width-960) {
 						padding-left:10%;
 						padding-right:10%;
-						padding-bottom:15%;
-						padding-top:5%;
+						padding-bottom:10%;
+						padding-top:10%;
 					}
 
-					>h3 {
-						font-size: 32px;
+					> h3 {
+						font-size: 26px;
 						font-weight: 600;
 						line-height: 1.2;
 						color: var(--text-color);
 
-						@include media(max-width-768) {
+						@include media(max-width-960) {
 							width:100%;
 							font-size: 24px;
 						}
 
 					}
 
-					>h4 {
+					> h4 {
 						color: var(--text-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						font-size: 17px;
 						font-weight: 600;
 						padding-bottom: 60px;
 
 					}
 
-					>p:first-child {
+					> p:first-child {
 						font-size: 17px;
 						padding-bottom: 60px;
 						margin-bottom: 5px;
@@ -207,34 +310,36 @@ layout-box {
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/jules.jpg");
 
 				div {
+
 					padding: 60px;
 
 					@include media(max-width-960) {
 						padding: 40px;
 					}
 
-					>h3 {
-						color: var(--white-color);
+					> h3 {
+						color: var(--same-color);
 					}
 
-					>h4 {
-						color: var(--white-color);
+					> h4 {
+						color: var(--same-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
-					>p:first-child {
+					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
+
 				}
 			}
 
@@ -247,34 +352,36 @@ layout-box {
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/nhs.jpg");
 
 				div {
+
 					padding: 60px;
 
 					@include media(max-width-960) {
 						padding: 40px;
 					}
 
-					>h3 {
-						color: var(--white-color);
+					> h3 {
+						color: var(--same-color);
 					}
 
-					>h4 {
-						color: var(--white-color);
+					> h4 {
+						color: var(--same-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
-					>p:first-child {
+					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
+
 				}
 			}
 
@@ -299,34 +406,36 @@ layout-box {
 				}
 
 				div {
+
 					padding: 60px;
 
 					@include media(max-width-960) {
 						padding: 40px;
 					}
 
-					>h3 {
-						color: var(--white-color);
+					> h3 {
+						color: var(--same-color);
 					}
 
-					>h4 {
-						color: var(--white-color);
+					> h4 {
+						color: var(--same-color);
 					}
 
-					>p:last-child {
+					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
-					>p:first-child {
+					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
+
 				}
 			}
 
@@ -343,6 +452,7 @@ layout-box {
 				}
 
 				div {
+
 					padding: 60px;
 
 					@include media(max-width-960) {
@@ -350,26 +460,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -394,26 +504,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -438,26 +548,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -481,26 +591,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -524,26 +634,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -567,26 +677,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -611,26 +721,26 @@ layout-box {
 
 					>h3 {
 						width:75%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -654,26 +764,26 @@ layout-box {
 						font-size: 62px;
 						font-weight: 600;
 						line-height: 1.1;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -690,26 +800,26 @@ layout-box {
 					>h3 {
 						font-size: 22px;
 						margin-bottom:0px;
-						color: var(--white-color);
+						color: var(--text-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--faint-color);
+						color: var(--lighter-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--faint-color);
+						color: var(--lighter-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -733,26 +843,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 
@@ -777,26 +887,26 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					p {
 						width:95%;
-						color:var(--white-color);
+						color:var(--same-color);
 					}
 				}
 
@@ -816,21 +926,21 @@ layout-box {
 					padding: 60px;
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 				}
 			}
@@ -849,21 +959,21 @@ layout-box {
 					padding: 60px;
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 				}
 			}
@@ -886,16 +996,16 @@ layout-box {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -904,7 +1014,7 @@ layout-box {
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -941,7 +1051,7 @@ layout-box {
 					position: relative;
 					padding-bottom: 20px;
 					border-radius: 0px;
-					background-color:none
+					background-color:none;
 
 					img {
 						width: 100%;
@@ -994,6 +1104,10 @@ layout-box {
 						width:95%;
 						color: var(--text-color);
 
+						@media (prefers-color-scheme: light) {
+							color: var(--faint-color);
+						}
+
 						@include media(max-width-768) {
 							width:100%;
 						}
@@ -1002,6 +1116,87 @@ layout-box {
 					>p:first-child {
 						width:95%;
 						color: var(--text-color);
+
+						@media (prefers-color-scheme: light) {
+							color: var(--faint-color);
+						}
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+
+				}
+
+				picture {
+
+					display: block;
+					width: 110px;
+					overflow: hidden;
+					position: relative;
+					padding-bottom: 20px;
+					border-radius: 0px;
+					background-color:none
+
+					img {
+						width: 100%;
+						margin: auto;
+						height: 100%;
+						display: block;
+						max-width: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+
+				}
+			}
+
+			&[hero] {
+
+				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color:transparent;
+
+				@include media(max-width-960) {
+					margin-bottom: 50px;
+				}
+
+				div {
+					padding: 0px;
+					max-width: 100%;
+
+					@include media(max-width-1200) {
+						width:930px;
+					}
+
+					@include media(max-width-1024) {
+						width:85%;
+					}
+
+					@include media(max-width-768) {
+						width:100%;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1043,21 +1238,21 @@ layout-box {
 					padding: 0px;
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					@media (prefers-color-scheme: light) {
@@ -1115,199 +1310,23 @@ layout-box {
 					padding: 0px;
 
 					>h3 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color: var(--same-color);
 					}
 
-				}
-
-			}
-
-			&[whysurrealdb1] {
-
-				height:auto;
-				background-size:cover;
-  				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
-
-				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
-				}
-
-				div {
-					padding: 60px;
-
-					@include media(max-width-960) {
-						padding: 40px;
-					}
-
-					>h3 {
-						color: var(--white-color);
-					}
-
-					>h4 {
-						color: var(--white-color);
-					}
-
-					>p:last-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					>p:first-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					p {
-						width:95%;
-						color:var(--white-color);
-					}
-				}
-
-			}
-
-			&[whysurrealdb2] {
-
-				height:auto;
-				background-size:cover;
-  				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whysurrealdb2.jpg");
-
-				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whysurrealdb2.jpg");
-				}
-
-				div {
-					padding: 60px;
-
-					@include media(max-width-960) {
-						padding: 40px;
-					}
-
-					>h3 {
-						color: var(--white-color);
-					}
-
-					>h4 {
-						color: var(--white-color);
-					}
-
-					>p:last-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					>p:first-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					p {
-						width:95%;
-						color:var(--white-color);
-					}
-				}
-
-			}
-
-			&[whysurrealdb3] {
-
-				height:auto;
-				background-size:cover;
-  				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whysurrealdb3.jpg");
-
-				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whysurrealdb3.jpg");
-				}
-
-				div {
-					padding: 60px;
-
-					@include media(max-width-960) {
-						padding: 40px;
-					}
-
-					>h3 {
-						color: var(--white-color);
-					}
-
-					>h4 {
-						color: var(--white-color);
-					}
-
-					>p:last-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					>p:first-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					p {
-						width:95%;
-						color:var(--white-color);
-					}
-				}
-
-			}
-
-			&[whysurrealdb4] {
-
-				height:auto;
-				background-size:cover;
-  				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whysurrealdb4.jpg");
-
-				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whysurrealdb4.jpg");
-				}
-
-				div {
-					padding: 60px;
-
-					@include media(max-width-960) {
-						padding: 40px;
-					}
-
-					>h3 {
-						color: var(--white-color);
-					}
-
-					>h4 {
-						color: var(--white-color);
-					}
-
-					>p:last-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					>p:first-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					p {
-						width:95%;
-						color:var(--white-color);
-					}
 				}
 
 			}
@@ -1393,7 +1412,7 @@ layout-box {
 	}
 
 	&[cols-4-to-2-to-1] content>a,
-	&[cols-4-to-2-to-1] content>layout-box-item {
+	&[cols-4-to-2-to-1] content>layout-hire-item {
 
 		grid-column: auto / span 3;
 
@@ -1482,7 +1501,7 @@ layout-box {
 	}
 
 	&[cols-3-to-2-to-1] content>a,
-	&[cols-3-to-2-to-1] content>layout-box-item {
+	&[cols-3-to-2-to-1] content>layout-hire-item {
 
 		grid-column: auto / span 4;
 
@@ -1571,7 +1590,7 @@ layout-box {
 	}
 
 	&[cols-3-to-1] content>a,
-	&[cols-3-to-1] content>layout-box-item {
+	&[cols-3-to-1] content>layout-hire-item {
 
 		grid-column: auto / span 4;
 
@@ -1600,7 +1619,7 @@ layout-box {
 	}
 
 	&[cols-2-to-1] content>a,
-	&[cols-2-to-1] content>layout-box-item {
+	&[cols-2-to-1] content>layout-hire-item {
 
 		grid-column: auto / span 6;
 
@@ -1629,7 +1648,7 @@ layout-box {
 	}
 
 	&[cols-1] content>a,
-	&[cols-1] content>layout-box-item {
+	&[cols-1] content>layout-hire-item {
 
 		grid-column: auto / span 12;
 

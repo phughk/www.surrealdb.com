@@ -118,7 +118,7 @@ layout-hero {
 	&[careers] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("/static/img/careers/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("/static/img/careers/hero.jpg");
 
 		@include media(max-width-960) {
 			top:0px;

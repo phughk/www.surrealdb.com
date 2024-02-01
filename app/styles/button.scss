@@ -97,4 +97,18 @@ button, a[button], div[button] {
 
 	}
 
+	&[careers] {
+
+		div {
+			font-size:14px;
+		}
+
+		border-color:var(--faint-color);
+
+		&:hover {
+			border-color:var(--black-color);
+		}
+
+	}
+
 }
