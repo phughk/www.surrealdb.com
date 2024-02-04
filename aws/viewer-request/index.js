@@ -30,16 +30,30 @@ function handler(event) {
 
 	}
 
-	let path = request.uri.toLowerCase().replace(/\/$/, '');
+	let path = request.uri.toLowerCase();
+
+	if (path.endsWith('/')) {
+		path = path.slice(0, -1);
+	}
 
 	switch (true) {
 		// Redirect root product pages
 		case path === '/cf':
+		case path === '/ix':
 		case path === '/kv':
 		case path === '/lq':
 		case path === '/ml':
 		case path === '/ql':
-			return redirect(`/products/${path}`);
+			return redirect(`https://surrealdb.com/products${path}`);
+		// Redirect store url to Store
+		case path === '/store':
+			return redirect('https://surrealdb.store');
+		// Redirect discord url to Discord
+		case path === '/discord':
+			return redirect('https://discord.gg/surrealdb');
+		// Redirect github url to GitHub
+		case path === '/github':
+			return redirect('https://github.com/surrealdb/surrealdb');
 		// Redirect base docs page to intro page
 		case path === '/docs':
 			return redirect(`https://docs.surrealdb.com/docs/intro`);
@@ -73,12 +87,12 @@ function handler(event) {
 			return redirect(`https://docs.surrealdb.com${path}/`);
 	}
 
-	if (request.uri.endsWith('/')) {
+	if (request.uri.endsWith('/') === true) {
 		request.uri = request.uri.concat('index.html');
 		return request;
 	}
 
-	if (request.uri.indexOf('.') < request.uri.lastIndexOf('/')) {
+	if (request.uri.includes('.') === false) {
 		request.uri = request.uri.concat('/index.html');
 		return request;
 	}
