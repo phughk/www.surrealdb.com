@@ -4,12 +4,14 @@ on:
   push:
     branches: [ main ]
 
+concurrency:
+  group: deployment
+
 jobs:
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    concurrency: deployment
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -28,7 +30,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    concurrency: deployment
     strategy:
       matrix:
         region: [af-south-1, ap-east-1, ap-south-1, ap-southeast-1, ap-southeast-2, ca-central-1, eu-central-1, eu-west-2, me-south-1, sa-east-1, us-west-2]
