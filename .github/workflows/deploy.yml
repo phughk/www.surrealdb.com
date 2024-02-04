@@ -7,11 +7,9 @@ on:
 jobs:
 
   build:
-
+    name: Build
     runs-on: ubuntu-latest
-
     concurrency: deployment
-
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -22,12 +20,16 @@ jobs:
         aws-region: us-east-2
         aws-access-key-id: ${{ secrets.AMAZON_ACCESS_KEY }}
         aws-secret-access-key: ${{ secrets.AMAZON_SECRET_KEY }}
-    - uses: google-github-actions/setup-gcloud@v0
-      with:
-        version: 'latest'
-        project_id: ${{ secrets.GOOGLE_PROJECT_ID }}
-        service_account_key: ${{ secrets.GOOGLE_SERVICE_KEY }}
-        export_default_credentials: true
     - run: npm ci
     - run: make build
     - run: make deploy
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    concurrency: deployment
+    strategy:
+      matrix:
+        region: [af-south-1 ap-east-1 ap-south-1 ap-southeast-1 ap-southeast-2 ca-central-1 eu-central-1 eu-west-2 me-south-1 sa-east-1 us-west-2]
+    steps:
+    - run: aws s3 sync --delete --exact-timestamp --source-region eu-west-2 --region ${{ matrix.region }} s3://www.surrealdb.com s3://www.${{ matrix.region }}.surrealdb.com

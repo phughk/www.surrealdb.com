@@ -61,7 +61,6 @@ deploy:
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/robots.txt s3://www.surrealdb.com/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=60" --exact-timestamps --delete --exclude "*" --include "*.html" ./dist/ s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/version.txt s3://www.surrealdb.com/
-	./deploy.sh
 
 .PHONY: sitemap
 sitemap:
