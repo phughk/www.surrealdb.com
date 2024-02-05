@@ -112,7 +112,7 @@ Let’s add these books and some more to our SurrealDB database.
 
 ```js
 INSERT INTO book [
-    {title:'Linux Installation Guide', content: 'Learn how to install Linux with this comprehensive guide. We cover everything from downloading the ISO, creating a bootable USB, to the actual installation process.'}
+    {title:'Linux Installation Guide', content: 'Learn how to install Linux with this comprehensive guide. We cover everything from downloading the ISO, creating a bootable USB, to the actual installation process.'},
     {title:'Advanced Linux Commands', content: 'This book dives deep into the world of Linux, exploring advanced commands and techniques that can help you master your system.'},
     {title:'Linux for Beginners', content: 'New to Linux? No problem. This book is designed to help beginners get started with Linux, covering the basics of the operating system and providing simple tutorials.'},
     {title:'Linux Networking Essentials', content: 'Discover the fundamentals of networking in Linux. This book covers network configuration, troubleshooting, and essential commands.'},
