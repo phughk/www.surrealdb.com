@@ -24,17 +24,29 @@ Change Feeds are great for ensuring accurate order and consistent replication of
 
 You can transfer data from SurrealDB to a different database. This database is specifically designed for certain queries. You can also send data to a system for auditing. Additionally, you can use it for monitoring trigger conditions or replaying events for disaster recovery. Change Feeds ensure you capture these changes accurately and consistently.
 
+We first [`DEFINE`](https://docs.surrealdb.com/docs/surrealql/statements/define/table#example-usage) the Change Feed:
+
 ```surql
 DEFINE TABLE reading CHANGEFEED 1d;
 DEFINE DATABASE foo CHANGEFEED 1h;
 ```
 
-To consume Change Feeds, we use a [`SHOW`query](https://surrealdb.com/docs/surrealql/statements/show):
+To be able to see the changes we need to [`CREATE`](https://surrealdb.com/docs/surrealql/statements/create) some records:
+
+```surql
+CREATE reading set story = "Once upon a time";
+CREATE reading set story = "there was a database";
+```
+
+Then we can consume the Change Feeds by using a [`SHOW`](https://surrealdb.com/docs/surrealql/statements/show) query:
 
 ```surql
 -- Replay changes to the reading table
 SHOW CHANGES FOR TABLE reading SINCE "2023-09-07T01:23:52Z" LIMIT 10;
 ```
+
+An important thing to keep in mind here is that the `SINCE <time>` needs to be after the time the `CHANGEFEED` was defined.
+
 
 ## Live Queries: Real-Time Change Notifications
 
@@ -58,7 +70,7 @@ One remarkable aspect of this query is that it adheres to [our row-based authori
 
 When you are retrieving a stream of updates, you are likely to be correlating the changes against data you already have. We offer a modifier for the query so users can choose the changes they want to see. The selection method is called [Diff-Patch-Match](https://github.com/google/diff-match-patch). It is similar to the changes you would see in your version control software. However, instead of handling lines, it handles objects.
 
-Like the [`UPDATE` statemen](https://surrealdb.com/docs/surrealql/statements/update)t, live queries only need to include the `DIFF` keyword.
+Like the [`UPDATE`](https://surrealdb.com/docs/surrealql/statements/update)statement, live queries only need to include the `DIFF` keyword.
 
 ```surql
 LIVE SELECT DIFF FROM table
