@@ -9,7 +9,7 @@ module.exports = function (defaults) {
 			insertScriptsAt: 'auto-import-scripts',
 		},
 		sourcemaps: {
-			enabled: false,
+			enabled: true,
 		},
 		prember: {
 			urls: async function ({ visit }) {

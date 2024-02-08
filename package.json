@@ -23,9 +23,6 @@
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test"
   },
-  "dependencies": {
-    "@ascua/server": "^0.3.9"
-  },
   "devDependencies": {
     "@ascua/arrays": "^0.3.9",
     "@ascua/core": "^0.3.9",
@@ -60,6 +57,7 @@
     "@ember/test-helpers": "^3.2.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
+    "@sentry/ember": "^7.100.1",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^8.2.2",
     "ember-auto-import": "^2.7.2",
