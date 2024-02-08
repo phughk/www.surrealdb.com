@@ -16,7 +16,7 @@ If you are curious about those questions, you have come to the right place.
 
 We will strip away all the fancy jargon and technical details and focus on understanding the essential concepts of databases through simple analogies.
 
-## How do we make sense of the word?
+## How do we make sense of the world?
 
 As long as humans have existed on this planet, we have tried to make sense of it.
 Just as cavemen drew symbols on walls, we draw symbols on paper... or perhaps more accurately... we type emojis into our smartphones.
