@@ -45,5 +45,10 @@ module.exports = function (defaults) {
 		includeFileExtensionInSnippetNames: false,
 	});
 
+	// Import the Sentry replay worker
+	app.import('vendor/replay-worker.min.js', {
+		outputFile: 'assets/replay-worker.js'
+	});
+
 	return app.toTree();
 };
