@@ -79,6 +79,14 @@ module.exports = function (environment) {
 					id: 'oexls',
 				},
 			},
+			{
+				name: 'clarity',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: 'idmjleqtib',
+				},
+			},
 		],
 
 		// Set the configuration options for
