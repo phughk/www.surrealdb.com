@@ -7,6 +7,10 @@ import * as Sentry from '@sentry/ember';
 if (window && window.location) {
 	Sentry.init({
 		dsn: "https://0fe0e9353babce33f5c128474af95ebf@o4506711289757696.ingest.sentry.io/4506711303127040",
+		// Ignore non-errors
+		ignoreErrors: [
+			'Non-Error promise rejection captured with value',
+		],
 		// Enable session replay
 		integrations: [
 			Sentry.replayIntegration({
