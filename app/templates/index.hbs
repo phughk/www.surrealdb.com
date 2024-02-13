@@ -27,7 +27,7 @@
 
 	<Layout::Gap small />
 
-	<Layout::Boxes cols-3-to-2-to-1>
+	{{!-- <Layout::Boxes cols-3-to-2-to-1>
 		<Link @link="https://docs.surrealdb.com/docs/surrealql/overview" mini>
 			<Layout::Boxes::Item transparent @alt="SurrealQL" @image="/static/img/products/ql.png" @text="The query language in SurrealDB looks and works similarly to traditional-SQL, but allows for querying over time-series and connected graph data. SurrealQL is an advanced query language, with programming language functionality, that allows developers or data analysts to work with SurrealDB in the ways they choose." hover />
 		</Link>
@@ -45,7 +45,7 @@
 		</Link>
 	</Layout::Boxes>
 
-	<Layout::Gap small />
+	<Layout::Gap small /> --}}
 
 	<Layout::Boxes cols-2-to-1>
 		<Layout::Boxes::Item text-l light @title="Database, realtime API layer, and security permissions all-in-one" @image="/static/img/illustrations/light/database-api-security.jpg" @imagedark="/static/img/illustrations/dark/database-api-security.jpg" @text="SurrealDB combines the database layer, the querying layer, and the API and authentication layer into one platform. Advanced table-based and row-based customisable access permissions allow for granular data access patterns for different types of users. There's no need for custom backend code and security rules with complicated database development." @buttontext="View all features" @url="features" />
@@ -79,28 +79,10 @@
 
 </content>
 
-<section dark>
-
-	<Layout::Gap large />
-
-	<Layout::Box cols-3-to-1>
-		<Link @link="community" mini>
-			<Layout::Box::Item white community @title="Community" @image="/static/img/img.png" @text="Join our community of maintainers, contributors, users, and surreal enthusiasts and help us make SurrealDB better for developers and organisations all around the world." @buttontext="Join the community" @url="community" />
-		</Link>
-		<Link @link="careers" mini>
-			<Layout::Box::Item white careers1 @title="Careers" @image="/static/img/img.png" @text="We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product." @buttontext="Find out more" @url="careers" />
-		</Link>
-		<Link @link="team" mini>
-			<Layout::Box::Item white team1 @title="Meet the team" @image="/static/img/img.png" @text="SurrealDB comprises an exceptionally talented team of engineers and accomplished leaders, each boasting a rich background in the realms of databases and cloud services." @buttontext="Meet the team" @url="team" />
-		</Link>
-	</Layout::Box>
-
-	<Layout::Gap large />
-
-</section>
-
 <section>
 
 	<Section::Testimonials />
 
 </section>
+
+<Layout::Newsletter />

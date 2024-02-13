@@ -1142,6 +1142,7 @@ layout-boxes {
 					>p:last-child {
 						width:95%;
 						color: var(--white-color);
+						margin-bottom: 30px;
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1151,6 +1152,7 @@ layout-boxes {
 					>p:first-child {
 						width:95%;
 						color: var(--white-color);
+						margin-bottom: 30px;
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1260,27 +1262,41 @@ layout-boxes {
 				margin-bottom: 100px;
 				background-color: transparent;
 
-				div {
-					padding: 0px;
+				display: flex;
+				flex-direction: column;
 
-					>h3 {
-						color: var(--white-color);
+				> div {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					flex: 1;
+
+					> div {
+						padding: 0px;
+
+						>h3 {
+							color: var(--white-color);
+						}
+
+						>h4 {
+							color: var(--white-color);
+						}
+
+						>p:last-child {
+							width:95%;
+							color: var(--white-color);
+						}
+
+						>p:first-child {
+							width:95%;
+							color: var(--white-color);
+						}
+
 					}
 
-					>h4 {
-						color: var(--white-color);
+					a {
+						align-self: start;
 					}
-
-					>p:last-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
-					>p:first-child {
-						width:95%;
-						color: var(--white-color);
-					}
-
 				}
 
 			}

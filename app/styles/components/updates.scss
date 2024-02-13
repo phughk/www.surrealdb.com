@@ -1,0 +1,32 @@
+updates {
+
+    width:auto;
+	height:60px;
+	cursor:pointer;
+	line-height:60px;
+	text-align:center;
+	display:inline-block;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center top;
+    background-color:var(--dark-color);
+
+	> button, > button:hover {
+		padding: 0px;
+		border-radius:0;
+		background-size:200% auto;
+		border-color: transparent;
+		animation:move 4s linear infinite;
+		background-image:linear-gradient(to right, #ff00a0, #9600ff, #0084ff, #9600ff, #ff00a0);
+		background-clip:text;
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+	}
+
+	@keyframes move {
+		to {
+			background-position: 200% center;
+		}
+	}
+
+}

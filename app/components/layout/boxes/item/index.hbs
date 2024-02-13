@@ -13,24 +13,48 @@
 	{{#if (or @stamp @title @label @text (has-block))}}
 		<div>
 
-			{{#if @stamp}}
-				<p>{{@stamp}}</p>
-			{{/if}}
+			{{#if @hero}}
+				<div>
+					{{#if @stamp}}
+						<p>{{@stamp}}</p>
+					{{/if}}
 
-			{{#if @title}}
-				<h3>
-					{{@title}}
-				</h3>
-			{{/if}}
+					{{#if @title}}
+						<h3>
+							{{@title}}
+						</h3>
+					{{/if}}
 
-			{{#if @label}}
-				<h4>
-					{{@label}}
-				</h4>
-			{{/if}}
+					{{#if @label}}
+						<h4>
+							{{@label}}
+						</h4>
+					{{/if}}
 
-			{{#if @text}}
-				<p>{{@text}}</p>
+					{{#if @text}}
+						<p>{{@text}}</p>
+					{{/if}}
+				</div>
+			{{else}}
+				{{#if @stamp}}
+					<p>{{@stamp}}</p>
+				{{/if}}
+
+				{{#if @title}}
+					<h3>
+						{{@title}}
+					</h3>
+				{{/if}}
+
+				{{#if @label}}
+					<h4>
+						{{@label}}
+					</h4>
+				{{/if}}
+
+				{{#if @text}}
+					<p>{{@text}}</p>
+				{{/if}}
 			{{/if}}
 
 			{{#if @buttontext}}
