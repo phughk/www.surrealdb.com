@@ -28,7 +28,6 @@ We first [`DEFINE`](https://docs.surrealdb.com/docs/surrealql/statements/define/
 
 ```surql
 DEFINE TABLE reading CHANGEFEED 1d;
-DEFINE DATABASE foo CHANGEFEED 1h;
 ```
 
 To be able to see the changes we need to [`CREATE`](https://surrealdb.com/docs/surrealql/statements/create) some records:
@@ -46,6 +45,8 @@ SHOW CHANGES FOR TABLE reading SINCE "2023-09-07T01:23:52Z" LIMIT 10;
 ```
 
 An important thing to keep in mind here is that the `SINCE <time>` needs to be after the time the `CHANGEFEED` was defined.
+
+Another thing to note is that defining a `CHANGEFEED` on a table implicitly defines a `CHANGEFEED` on the database as well.
 
 
 ## Live Queries: Real-Time Change Notifications
