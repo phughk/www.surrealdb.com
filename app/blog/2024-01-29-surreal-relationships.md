@@ -403,6 +403,6 @@ You can see more discussions around graph relations in our [SurrealDB Stream #17
 
 However, what if we want to make arbitrary relationships on the fly similar to relational style joins?
 
-We have ways of doing that, but that is a topic for another blog post, so make sure you subscribe to get notified when that comes out.
+We have ways of doing that, but that is a topic for [another blog post](/blog/thinking-inside-the-box-relational-style-joins-in-surrealdb), so make sure you subscribe to get notified when that comes out.
 
 Also you can run the above queries and more using our [demo data, which you can find in our docs.](https://docs.surrealdb.com/docs/surrealql/demo/)
