@@ -1,31 +1,35 @@
 Contact: mailto:security@surrealdb.com
-Expires: 2024-01-01T00:00:00.000Z
-Last-Updated: 2024-10-10T12:38:00.000Z
+Expires: 2025-01-01T00:00:00.000Z
+Last-Updated: 2024-02-20T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://surrealdb.com/.well-known/security.txt
 Policy: https://surrealdb.com/legal/security
 Hiring: https://surrealdb.com/careers
 
-At SurrealDB, we take the security the SurrealDB code, software, and cloud platform very seriously. If you believe you have found a security vulnerability in SurrealDB, we encourage you to let us know right away. We will investigate all legitimate reports and do our best to quickly fix the problem.
+We take the security of SurrealDB code, software, and infrastructure very seriously. If you believe you have found a security vulnerability in SurrealDB, we encourage you to let us know right away. We will investigate all legitimate reports and do our best to quickly fix the problem.
 
-If you discover a vulnerability, we would like to know about it so we can take steps to address it as quickly as possible. We would like to ask you to help us better protect our users and our systems.
+You can report any vulnerabilities or security issues to "security@surrealdb.com". For open source components, please report issues via Github Security Advisories instead of opening a public issue in GitHub.
 
-Please report any issues or vulnerabilities to security@surrealdb.com, instead of posting a public issue in GitHub. Please include the SurrealDB version identifier, by running `surreal version` on the command-line, and details on how the vulnerability can be exploited.
+Do:
 
-Please do the following:
+- Privately disclose the details of any potential vulnerability to SurrealDB.
+- Provide enough information to reproduce the vulnerability in your report.
+- Ask permission from SurrealDB to run automated security tools against its infrastructure.
 
-- E-mail your findings to mailto:security@surrealdb.com.
-- Do not reveal the problem to others until it has been resolved.
-- Do not run automated scanners on our infrastructure or dashboard. If you wish to do this, contact us and we will set up a sandbox for you.
-- Do not take advantage of the vulnerability or problem you have discovered, for example by downloading more data than necessary to demonstrate the vulnerability or deleting or modifying other people's data.
-- Where possible, please provide sufficient information to reproduce the problem, so we will be able to resolve it as quickly as possible. Usually, the IP address or the URL of the affected system and a description of the vulnerability will be sufficient, but complex vulnerabilities may require further explanation.
+Do not:
 
-What we promise:
+- Disclose the details of the vulnerability publicly or to third parties
+- Exploit a vulnerability beyond what is strictly necessary to verify its existence.
+- Run automated security tools against SurrealDB infrastructure without permission.
 
-- We will respond to your report within 3 business days with our evaluation of the report and an expected resolution date.
-- If you have followed the instructions above, we will not take any legal action against you in regard to the report.
-- We will handle your report with strict confidentiality, and not pass on your personal details to third parties without your permission.
-- We will keep you informed of the progress towards resolving the problem.
-- In the public information concerning the problem reported, we will give your name as the discoverer of the problem (unless you desire otherwise).
+Our responsibility:
 
-We strive to resolve all problems as quickly as possible, and we would like to play an active role in the ultimate publication on the problem after it is resolved.
+- Acknowledge your report within 3 business days of the date of communication.
+- Verify the issue and keep you informed of the progress toward its resolution.
+- Handle your report and any data you share with us with strict confidentiality.
+- Abstain from legal action against you for any report made following this policy.
+- Credit you in any relevant public security advisory, unless you desire otherwise.
+
+SurrealDB strives to provide timely and clear communication regarding any security issues that may impact users of its binaries, libraries and platforms using Github Security Advisories and other available communication channels. Generally, vulnerabilities will be discussed and resolved privately to minimize the risk of exploitation. Security advisories will generally be published once a release including a fix for the relevant vulnerability is available. The goal of publishing security advisories is to notify users of the risks involved with using a vulnerable version and to provide information for resolving the issue or implementing any possible workarounds.
+
+Vulnerabilities in third-party dependencies may only be independently published by SurrealDB when they affect a SurrealDB binary or platform. In those cases, the original CVE identifier will be referenced. Vulnerabilities affecting SurrealDB libraries will not be published again by SurrealDB when an advisory already exists for the original dependency as security tooling (e.g. cargo audit, or cargo deny check or Dependabot) will already be able to track it up the dependency tree.
