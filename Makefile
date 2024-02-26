@@ -56,7 +56,7 @@ stage:
 .PHONY: deploy
 deploy:
 	@echo "Deploy..."
-	aws s3 sync --region eu-west-2 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude "*" --include "*.html" ./dist/.well-known/ s3://www.surrealdb.com/.well-known/
+	aws s3 sync --region eu-west-2 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude ".DS_Store" ./dist/.well-known/ s3://www.surrealdb.com/.well-known/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/assets s3://www.surrealdb.com/assets/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/static s3://www.surrealdb.com/static/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/favicon.ico s3://www.surrealdb.com/
