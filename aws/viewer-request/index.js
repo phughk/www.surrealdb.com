@@ -14,7 +14,7 @@ function handler(event) {
 
 	let request = event.request;
 	let host = request.headers.host.value;
-	let path = request.uri.toLowerCase();
+	let path = request.uri = request.uri.toLowerCase();
 
 	if (host !== 'surrealdb.com') {
 		return redirect(`https://surrealdb.com${path}`);
