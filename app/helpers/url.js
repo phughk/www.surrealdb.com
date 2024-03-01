@@ -8,6 +8,8 @@ export function url([type]) {
 			return 'https://github.com/surrealdb/license';
 		case 'gitorg':
 			return 'https://github.com/surrealdb';
+		case 'store':
+			return 'https://surrealdb.store';
 		case 'github':
 			return 'https://github.com/surrealdb/surrealdb';
 		case 'issues':
