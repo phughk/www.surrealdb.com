@@ -3,7 +3,7 @@ import { helper } from '@ember/component/helper';
 export function url([type]) {
 	switch (type) {
 		case 'docs':
-			return 'https://docs.surrealdb.com/';
+			return '/docs/';
 		case 'license':
 			return 'https://github.com/surrealdb/license';
 		case 'gitorg':

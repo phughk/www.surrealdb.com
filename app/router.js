@@ -23,12 +23,6 @@ Router.map(function () {
 	this.route('team');
 	this.route('yaacomm');
 
-	// Redirect routes
-
-	this.route('discord');
-	this.route('github');
-	this.route('store');
-
 	// Products routes
 
 	this.route('products', function () {

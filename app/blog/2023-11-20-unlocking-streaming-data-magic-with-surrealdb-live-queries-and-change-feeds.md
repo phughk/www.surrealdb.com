@@ -24,7 +24,7 @@ Change Feeds are great for ensuring accurate order and consistent replication of
 
 You can transfer data from SurrealDB to a different database. This database is specifically designed for certain queries. You can also send data to a system for auditing. Additionally, you can use it for monitoring trigger conditions or replaying events for disaster recovery. Change Feeds ensure you capture these changes accurately and consistently.
 
-We first [`DEFINE`](https://docs.surrealdb.com/docs/surrealql/statements/define/table#example-usage) the Change Feed:
+We first [`DEFINE`](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/table#example-usage) the Change Feed:
 
 ```surql
 DEFINE TABLE reading CHANGEFEED 1d;

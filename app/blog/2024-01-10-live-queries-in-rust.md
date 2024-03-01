@@ -8,7 +8,7 @@ summary: "SurrealDB comes with a LIVE SELECT statement that allows you to listen
 
 by Rushmore Mushambi, 4 min read
 
-SurrealDB comes with a `LIVE SELECT` [statement](https://docs.surrealdb.com/docs/surrealql/statements/live-select/) that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables. While you could already take advantage of this powerful feature with our JavaScript SDK or WebSockets, the Rust SDK [added an API for it in v1.1.0](https://docs.rs/surrealdb-beta/1.1.0/surrealdb/method/struct.Select.html#method.live).
+SurrealDB comes with a `LIVE SELECT` [statement](https://surrealdb.com/docs/surrealdb/surrealql/statements/live-select/) that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables. While you could already take advantage of this powerful feature with our JavaScript SDK or WebSockets, the Rust SDK [added an API for it in v1.1.0](https://docs.rs/surrealdb-beta/1.1.0/surrealdb/method/struct.Select.html#method.live).
 
 The Rust API for live queries builds on top of the already existing `select` method by simply adding a `live` method which converts the select query into a live select one. It works seamlessly with our current API, so you can use it with single records, a range of records, or entire tables. Unlike the normal select method which returns either a single result or a vector of results, it returns a stream of notifications. This works for the WebSocket engine and the local ones (the key value stores you can embed in your app). The only engine not yet supported is the HTTP one.
 

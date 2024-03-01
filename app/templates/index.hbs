@@ -11,7 +11,7 @@
 		<Button white @link="features">
 			<i class="fal fa-list-check"></i> <span>View all features</span>
 		</Button>
-		<Button white @link="https://docs.surrealdb.com/docs/introduction/start/">
+		<Button white @link={{docs "/docs/surrealdb/introduction/start"}}>
 			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
 		</Button>
 	</Layout::Text>
@@ -28,7 +28,7 @@
 	<Layout::Gap small />
 
 	{{!-- <Layout::Boxes cols-3-to-2-to-1>
-		<Link @link="https://docs.surrealdb.com/docs/surrealql/overview" mini>
+		<Link @link={{docs "/docs/surrealdb/surrealql/overview"}} mini>
 			<Layout::Boxes::Item transparent @alt="SurrealQL" @image="/static/img/products/ql.png" @text="The query language in SurrealDB looks and works similarly to traditional-SQL, but allows for querying over time-series and connected graph data. SurrealQL is an advanced query language, with programming language functionality, that allows developers or data analysts to work with SurrealDB in the ways they choose." hover />
 		</Link>
 		<Link @link="products.lq" mini>
@@ -69,7 +69,7 @@
 	<Layout::Hero gettingstarted>
 		<Layout::Text text-middle>
 			<h5>SurrealDB makes building and scaling realtime apps dramatically quicker and easier. Get started by installing the server, and jump into our getting started guide to learn how to insert and query data in SurrealDB in minutes.</h5>
-			<Button @link="https://docs.surrealdb.com/docs/introduction/start/">
+			<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
 				<span>Get started</span> <i class="fas fa-arrow-right"></i>
 			</Button>
 		</Layout::Text>

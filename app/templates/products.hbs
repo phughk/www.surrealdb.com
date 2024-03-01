@@ -13,13 +13,13 @@
 			<Button white @link="features">
 				<i class="fal fa-list-check"></i> <span>View all features</span>
 			</Button>
-			<Button white @link="https://docs.surrealdb.com/docs/introduction/start/">
+			<Button white @link={{docs "/docs/surrealdb/introduction/start"}}>
 				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
 			</Button>
 		</Layout::Text>
 		<Layout::Boxes cols-3-to-2-to-1>
-			<Link @link="https://docs.surrealdb.com/docs/surrealql/overview" mini>
-				<Layout::Boxes::Item hero @image="/static/img/products/ql.png" @text="The query language in SurrealDB looks and works similarly to traditional-SQL, but allows for querying over time-series and connected graph data. SurrealQL is an advanced query language, with programming language functionality, that allows developers or data analysts to work with SurrealDB in the ways they choose." @buttontext="View all features" @url="https://docs.surrealdb.com/docs/surrealql/overview" hover />
+			<Link @link={{docs "/docs/surrealdb/surrealql/overview"}} mini>
+				<Layout::Boxes::Item hero @image="/static/img/products/ql.png" @text="The query language in SurrealDB looks and works similarly to traditional-SQL, but allows for querying over time-series and connected graph data. SurrealQL is an advanced query language, with programming language functionality, that allows developers or data analysts to work with SurrealDB in the ways they choose." @buttontext="View all features" @url={{docs "/docs/surrealdb/surrealql/overview"}} hover />
 			</Link>
 			<Link @link="products.lq" mini>
 				<Layout::Boxes::Item hero @image="/static/img/products/lq.png" @text="Live Queries in SurrealDB enable a simple yet seamless way of building modern, responsive applications, whether connecting to SurrealDB as a traditional backend database, or when connecting directly to the database from the frontend." @buttontext="View all features" @url="products.lq" hover />

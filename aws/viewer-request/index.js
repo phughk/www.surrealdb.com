@@ -49,51 +49,62 @@ function handler(event) {
 			return redirect('https://github.com/surrealdb/surrealdb');
 		// Redirect base docs page to intro page
 		case '/docs':
-			return redirect('https://docs.surrealdb.com/docs/intro');
+			return redirect('https://surrealdb.com/docs/surrealdb/intro');
 		// Redirect old websocket text protocol page
 		case '/docs/integration/websocket/text':
-			return redirect('https://docs.surrealdb.com/docs/integration/websocket');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/websocket');
 		// Redirect old websocket binary protocol page
 		case '/docs/integration/websocket/binary':
-			return redirect('https://docs.surrealdb.com/docs/integration/websocket');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/websocket');
 		// Redirect old DEFINE LOGIN statement page
 		case '/docs/surrealql/statements/define/login':
-			return redirect('https://docs.surrealdb.com/docs/surrealql/statements/define/user');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user');
 		// Redirect docs index pages to overview pages
 		case '/docs/cli':
-			return redirect('https://docs.surrealdb.com/docs/cli/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/cli/overview');
 		case '/docs/deployment':
-			return redirect('https://docs.surrealdb.com/docs/deployment/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/deployment/overview');
 		case '/docs/embedding':
-			return redirect('https://docs.surrealdb.com/docs/embedding/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/embedding/overview');
 		case '/docs/faqs':
-			return redirect('https://docs.surrealdb.com/docs/faqs/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/faqs/overview');
 		case '/docs/installation':
-			return redirect('https://docs.surrealdb.com/docs/installation/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/installation/overview');
 		case '/docs/integration':
-			return redirect('https://docs.surrealdb.com/docs/integration/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/overview');
 		case '/docs/integration/sdks':
-			return redirect('https://docs.surrealdb.com/docs/integration/sdks/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/sdks/overview');
 		case '/docs/introduction':
-			return redirect('https://docs.surrealdb.com/docs/introduction/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/introduction/overview');
 		case '/docs/surrealql':
-			return redirect('https://docs.surrealdb.com/docs/surrealql/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/overview');
 		case '/docs/surrealql/datamodel':
-			return redirect('https://docs.surrealdb.com/docs/surrealql/datamodel/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/datamodel/overview');
 		case '/docs/surrealql/functions':
-			return redirect('https://docs.surrealdb.com/docs/surrealql/functions/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/functions/overview');
 		case '/docs/surrealql/statements':
-			return redirect('https://docs.surrealdb.com/docs/surrealql/statements/overview');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/overview');
 	}
 
 	switch (true) {
 		// Redirect libraries pages to sdks
 		case path.startsWith('/docs/integration/libraries/'):
-			path = path.replace('libraries', 'sdks');
-			return redirect(`https://docs.surrealdb.com${path}/`);
+			path = '/docs/surrealdb/integration/sdks/' + path.slice(28);
+			return redirect(`https://surrealdb.com${path}`);
 		// Redirect all other docs pages
-		case path.startsWith('/docs/'):
-			return redirect(`https://docs.surrealdb.com${path}/`);
+		case path.startsWith('/docs/'): {
+			const second = path.split('/')[2];
+			switch (second) {
+				case 'surrealdb':
+				case 'surrealml':
+				case 'surrealist':
+				case 'surrealism':
+				case 'sdk':
+					break;
+				default:
+					return redirect(`https://surrealdb.com/docs/surrealdb/${path.slice(6)}`);
+			}
+		}
 	}
 
 	if (request.uri.endsWith('/') === true) {

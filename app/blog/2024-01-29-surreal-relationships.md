@@ -405,4 +405,4 @@ However, what if we want to make arbitrary relationships on the fly similar to r
 
 We have ways of doing that, but that is a topic for [another blog post](/blog/thinking-inside-the-box-relational-style-joins-in-surrealdb), so make sure you subscribe to get notified when that comes out.
 
-Also you can run the above queries and more using our [demo data, which you can find in our docs.](https://docs.surrealdb.com/docs/surrealql/demo/)
+Also you can run the above queries and more using our [demo data, which you can find in our docs.](https://surrealdb.com/docs/surrealdb/surrealql/demo/)

@@ -8,7 +8,7 @@ summary: "We are excited to announce the new SurrealDB documentation. At Surreal
 
 by Obinna Ekwuno, 4 min read
 
-We are excited to announce the new SurrealDB documentation - https://docs.surrealdb.com/.
+We are excited to announce the new SurrealDB documentation - https://surrealdb.com/docs/.
 
 At SurrealDB, we are constantly looking for ways to improve the experience of developers on our platform, which has led us to rethink our documentation platform.
 
@@ -50,7 +50,7 @@ We have done this by enabling direct linking between sections of documentation a
 
 The sidebar has also been updated to aid content discoverability. We have made the SurrealQL statement section alphabetical to allow you to find information intuitively.
 
-In addition to improving the structure, we have added a new 'How-to' section - https://docs.surrealdb.com/docs/how-to/integrate-auth0-as-authentication-provider/
+In addition to improving the structure, we have added a new 'How-to' section - https://surrealdb.com/docs/surrealdb/how-to/integrate-auth0-as-authentication-provider/
 
 ![HowTo](clnia1vu2vdc73d277sg)
 
@@ -90,4 +90,4 @@ The new SurrealDB documentation represents a significant step forward in our com
 
 We're excited about the new features and improvements that this transition brings, and we're looking forward to continuing to improve and expand our documentation.
 
-We appreciate the feedback and support from our users and community and are committed to continuing to serve you to the best of our ability. Please join [our community](https://surrealdb.com/community) to share your experience and check out the [Documentation GitHub repository](https://github.com/surrealdb/docs.surrealdb.com).
+We appreciate the feedback and support from our users and community and are committed to continuing to serve you to the best of our ability. Please join [our community](https://surrealdb.com/community) to share your experience and check out the [Documentation GitHub repository](https://github.com/surrealdb/surrealdb.com/docs).

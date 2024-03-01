@@ -137,11 +137,11 @@ module.exports = function (environment) {
 	}
 
 	if (environment === 'development') {
-		ENV.surreal.uri = 'https://surreal.io';
+		ENV.domain = 'https://surrealdb.dev';
 	}
 
 	if (environment === 'production') {
-		ENV.surreal.uri = 'https://surreal.io';
+		ENV.domain = 'https://surrealdb.com';
 	}
 
 	if (process.env.SURREAL) ENV.surreal.uri = process.env.SURREAL;

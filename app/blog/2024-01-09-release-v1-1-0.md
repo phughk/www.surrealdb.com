@@ -41,7 +41,7 @@ SELECT * FROM (
 WHERE price_prediction > 177206.21875;
 ```
 
-For more information regarding SurrealML, view the [documentation](https://docs.surrealdb.com) and read the [blog](/blog/what-is-surrealml-a-getting-started-guide) post.
+For more information regarding SurrealML, view the [documentation](https://surrealdb.com/docs) and read the [blog](/blog/what-is-surrealml-a-getting-started-guide) post.
 
 ## Use live queries in the Rust SDK
 

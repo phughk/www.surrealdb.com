@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@ascua/arrays": "^0.3.11",
+    "@ascua/config": "^0.3.11",
     "@ascua/core": "^0.3.11",
     "@ascua/day.js": "^0.3.11",
     "@ascua/decorators": "^0.3.11",
