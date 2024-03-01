@@ -100,6 +100,8 @@ function handler(event) {
 				case 'surrealist':
 				case 'surrealism':
 				case 'sdk':
+				case 'assets':
+				case 'img':
 					break;
 				default:
 					return redirect(`https://surrealdb.com/docs/surrealdb/${path.slice(6)}`);
