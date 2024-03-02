@@ -14,9 +14,15 @@ function handler(event) {
 
 	let request = event.request;
 	let host = request.headers.host.value;
-	let path = request.uri = request.uri.toLowerCase();
+	let path = request.uri.toLowerCase();
 
+	// Only use the base domain, not subdomains
 	if (host !== 'surrealdb.com') {
+		return redirect(`https://surrealdb.com${path}`);
+	}
+
+	// Redirect any capitalised paths to lowercase
+	if (path != request.uri) {
 		return redirect(`https://surrealdb.com${path}`);
 	}
 
