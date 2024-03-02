@@ -6,7 +6,8 @@ export default class extends Route {
 
 	@inject router;
 
-	@action error(error, transition) {
+	@action error(error) {
+		console.error(error);
 		return this.router.transitionTo('index');
 	}
 

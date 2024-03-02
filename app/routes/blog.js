@@ -1,13 +1,10 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
-import { action } from '@ember/object';
 import { slug } from 'surreal/utils/slug';
 
 export default class extends Route {
 
 	@inject mdfiles;
-
-	@inject router;
 
 	model() {
 		return this.mdfiles.folder('blog').then(files => {
@@ -16,10 +13,6 @@ export default class extends Route {
 				return v;
 			});
 		});
-	}
-
-	@action error() {
-		return this.router.transitionTo('blog');
 	}
 
 }

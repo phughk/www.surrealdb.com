@@ -1,10 +1,13 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
+import { action } from '@ember/object';
 import fetch from 'fetch';
 
 export default class extends Route {
 
 	@inject mdfiles;
+
+	@inject router;
 
 	model(params) {
 
@@ -23,6 +26,12 @@ export default class extends Route {
 		return fetch(path).then(data => {
 			return data.json();
 		});
+
+	}
+
+	@action error(error) {
+		console.error(error);
+		return this.router.transitionTo('blog');
 	}
 
 }
