@@ -1,8 +1,0 @@
-# Ignore all files
-/[!.]*
-/.?*
-
-# Enable fastboot files
-!/dist/**
-!/index.js
-!/package.json
