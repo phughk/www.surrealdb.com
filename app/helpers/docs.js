@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import config from '@ascua/config';
+import config from 'surreal/config/environment';
 
 export function docs([url]) {
 	return config.domain + url;

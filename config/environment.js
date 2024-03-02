@@ -16,16 +16,6 @@ module.exports = function (environment) {
 				/^localhost:\d+$/,
 			],
 		},
-
-		// Surreal configuration details for
-		// connecting to the correct namespace
-		// and database on SurrealDB.
-
-		surreal: {
-			ns: 'surreal',
-			db: 'surreal',
-		},
-
 		// Markdown file import details for
 		// generating a markdown file tree from
 		// a folder in the app workspace.
@@ -143,8 +133,6 @@ module.exports = function (environment) {
 	if (environment === 'production') {
 		ENV.domain = 'https://surrealdb.com';
 	}
-
-	if (process.env.SURREAL) ENV.surreal.uri = process.env.SURREAL;
 
 	return ENV;
 
