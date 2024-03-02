@@ -7,11 +7,19 @@ export default class extends Route {
 	@inject mdfiles;
 
 	model(params) {
-		//
-		let path = this.modelFor('blog').find(v => {
+
+		let post = this.modelFor('blog').find(v => {
 			return params.post_slug === v.attributes.slug;
-		}).path;
-		//
+		});
+
+		if (post === undefined) {
+			throw new Error(`The post '${params.post_slug}' was not found`);
+		}
+
+		if (post.path === undefined) {
+			throw new Error(`The post '${params.post_slug}' had an invalid path`);
+		}
+
 		return fetch(path).then(data => {
 			return data.json();
 		});
