@@ -5,8 +5,6 @@ export default class extends Route {
 
 	@inject mdfiles;
 
-	@inject router;
-
 	model() {
 		return this.mdfiles.folder('jobs');
 	}
