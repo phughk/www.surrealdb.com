@@ -1,0 +1,229 @@
+@font-face {
+	font-family: 'SF UI Display Semibold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('SF UI Display Semibold'), url('/static/font/sf-ui-display-semibold.woff') format('woff');
+  }
+
+@font-face {
+	font-family: 'SF UI Display Medium';
+	font-style: normal;
+	font-weight: normal;
+	src: local('SF UI Display Medium'), url('/static/font/sf-ui-display-medium.woff') format('woff');
+}
+
+.feedback {
+    margin: 0 0 0 30px;
+
+    @include media(max-width-1301) {
+        display: block;
+    }
+
+    @include media(max-width-750) {
+        display: none;
+    }
+}
+
+app-modal-front:has(.feedback-form) {
+	border-radius: 30px;
+	font-family: SF UI Display Semibold;
+    overflow: hidden;
+    width: 560px;
+	@include media(max-width-642) {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+sidebar {
+    .feedback {
+        display: block;
+        width: 100%;
+        margin: 20px 0 0 0;
+
+        .feedback-button {
+            width: 100%;
+            font-size: 18px;
+            height: auto;
+        }
+    }
+}
+
+.feedback-button {
+    height: 40px;
+    white-space: nowrap;
+    border-radius: 50px;
+}
+
+.feedback-form {
+    border-radius: 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    transform-origin: top center;
+
+	@include media(max-width-642) {
+		display: flex;
+	}
+
+    .title {
+		font-size: 1.25rem;
+		margin-top: 0;
+		min-width: 280px;
+		text-align: center;
+		font-family: SF UI Display Semibold;
+		letter-spacing: normal;
+    }
+
+	.feedback-categories {
+		align-items: center;
+		display: flex;
+		gap: 25px;
+		justify-content: space-between;
+		margin-bottom: 30px;
+
+		@include media(max-width-642) {
+			flex-direction: column;
+		}
+
+		.feedback-category-item {
+			background-color: #151517;
+			border: 3px solid #0000;
+			border-radius: 20px;
+			cursor: pointer;
+			flex: 1;
+			flex-direction: column;
+			justify-content: space-evenly;
+			font-size: 1.5rem;
+			height: 130px;
+			margin: 0;
+			padding: 1.5rem 0 1.39rem;
+			width: 140px;
+
+			h2 {
+				color: #fff;
+				font-size: 1rem;
+				font-weight: 600;
+				margin-bottom: 5px;
+			}
+
+			&:hover, &:focus, &.active-category {
+				overflow-wrap: anywhere;
+				background: linear-gradient(180deg, rgba(255, 0, 160, 0.2), rgba(150, 0, 255, 0.2));
+				background-clip: padding-box;
+				box-shadow: 0 0 0 3px #ff009e;
+				color: #fff;
+				transition: none;
+			  }
+		}
+	}
+
+	textarea {
+		color:var(--text-color);
+		font-family: SF UI Display Medium;
+		font-size: .875rem;
+		font-weight: 400;
+		width:100%;
+		height: 80px;
+		padding: 10px 50px 15px 10px;
+		border-radius: 12px;
+		overflow: hidden;
+		resize: none;
+		margin-bottom: 10px;
+		border: 1px solid #424243;
+		background-color:var(--input-color);
+
+		@include placeholder {
+			color:var(--faint-color);
+		}
+
+		&:focus {
+			border: 0;
+			outline: #ff009e solid 2px;
+		}
+	}
+
+	.feedback-controls {
+		align-items: center;
+		display: flex;
+		gap: 10px;
+		justify-content: space-between;
+		margin-bottom: 0px;
+
+		@include media(max-width-642) {
+			width: 100%;
+			height: 100%;
+			flex-direction: column;
+		}
+
+		.privacy-link {
+			color: gray;
+			font-family: SF UI Display Medium;
+			font-size: .875rem;
+			font-weight: 400;
+			text-decoration: underline;
+
+			&:hover {
+				color: #ff009e;
+			}
+		}
+
+		button {
+			background: linear-gradient(150deg,#ff00a0,#9600ff);
+			border: 0;
+			font-family: SF UI Display Semibold;
+			font-size: .875rem;
+			font-weight: 500;
+			height: 33px;
+			color: #fff;
+			word-wrap: break-word;
+
+			&:disabled {
+				border-radius: 40px;
+				cursor: not-allowed;
+			}
+
+			&:focus {
+				transition: none;
+				outline: #ff009e solid 2px;
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+			}
+		}
+	}
+
+    .feedback-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 263px;
+
+        .feedback-step {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+
+            .icon-success {
+                color: #ff009e;
+                padding-bottom: 10px;
+                font-size: x-large;
+            }
+
+            .icon-failure {
+                color: #c41221;
+                padding-bottom: 10px;
+                font-size: x-large;
+            }
+
+            button {
+                width: auto;
+                height: 30px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
