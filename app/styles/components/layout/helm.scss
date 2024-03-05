@@ -10,55 +10,6 @@ layout-helm {
 
 	}
 
-	&[docs] {
-
-		grid-template-columns:
-			[sidebar-l] 300px
-			[content] calc(100% - 300px)
-		;
-
-		@include media(max-width-1024) {
-			justify-content:center;
-			grid-template-columns:[content] 100%;
-		}
-
-		menu {
-			top:50px;
-			width:255px;
-			height:100vh;
-			max-height:100vh;
-			padding:50px 0 100px 0;
-
-			@include media(max-width-1301) {
-				top:90px;
-				max-height:calc(100vh - 90px);
-			}
-		}
-
-		main {
-			width:100%;
-			margin:0 auto;
-			padding:50px 0 100px 0;
-		}
-
-		main layout-helm main section:before {
-			left:calc(-185px - 10vw);
-			@include media(min-width-2000) {
-				left:calc( -300px - ( (100vw - 1600px) / 2) );
-			}
-			@include media(max-width-2000) {
-				left:calc( -300px - ( (100vw - 80vw) / 2) );
-			}
-			@include media(max-width-1200) {
-				left:calc( -300px - ( (100vw - 930px) / 2) );
-			}
-			@include media(max-width-1024) {
-				left:calc( 0vw - (100vw - 85vw) / 2 );
-			}
-		}
-
-	}
-
 	&[blog] {
 
 		grid-template-columns:
@@ -331,6 +282,10 @@ layout-helm {
 
 				display:none;
 
+				&[open] {
+					display:block;
+				}
+
 				> a {
 
 					display:block;
@@ -369,6 +324,15 @@ layout-helm {
 
 					}
 
+					&:first-child {
+
+						svg {
+							top:-50%;
+							height:150%;
+						}
+
+					}
+
 					&[selected] {
 
 						span {
@@ -380,8 +344,6 @@ layout-helm {
 						}
 
 					}
-
-
 
 				}
 

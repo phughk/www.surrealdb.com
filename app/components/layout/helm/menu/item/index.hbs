@@ -1,29 +1,6 @@
-{{~#if (or (begs-with @link "https://") (begs-with @link "http://") (begs-with @link "/"))~}}
-	<a href={{@link}} rel="noopener noreferrer" target="_blank" ...attributes>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none"><path d="M 8 0 v 0 16"></path></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
-		<span>{{@text}}</span>
-	</a>
-{{~else if (begs-with @link "#")~}}
-	<a {{on "click" (scroll-to-link @link smooth=true)}} ...attributes>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none"><path d="M 8 0 v 0 16"></path></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
-		<span>{{@text}}</span>
-	</a>
-{{~else if @link~}}
-	<LinkTo @route={{@link}} ...attributes>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none"><path d="M 8 0 v 0 16"></path></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
-		<span>{{@text}}</span>
-	</LinkTo>
-{{~else~}}
-	<a ...attributes>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none"><path d="M 8 0 v 0 16"></path></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
-		<span>{{@text}}</span>
-	</a>
-{{~/if~}}
+<a {{on "click" (scroll-to-link @link smooth=true)}} ...attributes>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none"><path d="M 8 0 v 0 16"></path></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
+	<span>{{plaintext @text}}</span>
+</a>

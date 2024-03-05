@@ -15,7 +15,7 @@
 		{{~else if (eq item.depth 2)~}}
 			<h2 {{waypoint item.link}}><Markup::Tokens @tokens={{item.tokens}} /></h2>
 		{{~else if (eq item.depth 3)~}}
-			<h3><Markup::Tokens @tokens={{item.tokens}} /></h3>
+			<h3 {{waypoint item.link}}><Markup::Tokens @tokens={{item.tokens}} /></h3>
 		{{~else if (eq item.depth 4)~}}
 			<h4><Markup::Tokens @tokens={{item.tokens}} /></h4>
 		{{~else if (eq item.depth 5)~}}

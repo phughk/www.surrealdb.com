@@ -9,14 +9,24 @@ export default class extends Controller {
 
 	@cache get headings() {
 		return marked.lexer(this.html).filter(section => {
-			return section.type === 'heading' && section.depth === 2;
+			return section.type === 'heading' && (section.depth === 2 || section.depth === 3);
 		}).map(heading => {
 			return {
 				text: heading.text,
+				depth: heading.depth,
 				id: slug(heading.text),
 				link: '#' + slug(heading.text),
+				children: [],
 			};
-		});
+		}).reduce((acc, val) => {
+			if (val.depth === 2) {
+				acc.push(val);
+			}
+			if (val.depth === 3) {
+				acc[acc.length - 1].children.push(val);
+			}
+			return acc;
+		}, []);
 	}
 
 	@cache get index() {
