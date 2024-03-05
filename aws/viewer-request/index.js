@@ -101,6 +101,7 @@ function handler(event) {
 		case path.startsWith('/docs/'): {
 			const second = path.split('/')[2];
 			switch (second) {
+				case 'sitemap.xml':
 				case 'surrealdb':
 				case 'surrealml':
 				case 'surrealist':
