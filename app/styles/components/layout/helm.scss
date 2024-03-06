@@ -243,7 +243,7 @@ layout-helm {
 
 				// The last hexagon point
 
-				&:last-of-type svg:nth-child(1) {
+				&:last-child svg:nth-child(1) {
 					bottom:50%;
 					height:50%;
 				}
