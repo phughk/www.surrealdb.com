@@ -18,9 +18,12 @@
 				</Link>
 			</div>
 			<nav>
-				<Layout::Helm::Menu::Item @text={{@model.attributes.title}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
 				{{#each this.headings as |heading|}}
-					<Layout::Helm::Menu::Item @text={{heading.text}} @link={{heading.link}} depth={{heading.depth}} selected={{is-waypoint heading.id}} />
+					{{#if (eq heading.depth 1)}}
+						<Layout::Helm::Menu::Item @text={{heading.text}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
+					{{else}}
+						<Layout::Helm::Menu::Item @text={{heading.text}} @link={{heading.link}} depth={{heading.depth}} selected={{is-waypoint heading.id}} />
+					{{/if}}
 					{{#if heading.children}}
 						<subs open>
 							{{#each heading.children as |heading|}}

@@ -8,9 +8,14 @@ export default class extends Controller {
 	@inject blog;
 
 	@cache get headings() {
-		return marked.lexer(this.html).filter(section => {
+		// Get the blog post title
+		let title = { type: 'heading', depth: 1, text: this.model.attributes.title };
+		// Get the blog body titles
+		let titles = marked.lexer(this.html).filter(section => {
 			return section.type === 'heading' && (section.depth === 2 || section.depth === 3);
-		}).map(heading => {
+		});
+		// Process all of the titles
+		return [title, ...titles].map(heading => {
 			return {
 				text: heading.text,
 				depth: heading.depth,
@@ -19,11 +24,13 @@ export default class extends Controller {
 				children: [],
 			};
 		}).reduce((acc, val) => {
-			if (val.depth === 2) {
-				acc.push(val);
-			}
-			if (val.depth === 3) {
-				acc[acc.length - 1].children.push(val);
+			switch (val.depth) {
+				case 3:
+					acc[acc.length - 1].children.push(val);
+					break;
+				default:
+					acc.push(val);
+					break;
 			}
 			return acc;
 		}, []);
