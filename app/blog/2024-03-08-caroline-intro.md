@@ -35,17 +35,14 @@ I went on and did GP training eventually, but always worked part-time as I alway
 
 ### How did you meet Max? 
 
-A coincidence really! I met Max 'cause he was speaking at a conference that happened to be hosted in the building where my office was. I wasn't meant to be at this conference but I just wandered down there because they had free food in the reception. 
-
-A couple of friends I worked with showed me the program and there was a session like "So you wanna learn how to program?" by Max. And I was like, oh this seems like a guy I should know. So then I went to his talk and introduced myself to him. 
+A coincidence really! Max was speaking at a conference that was hosted in my office and I just happened to be walking past. It was an introduction to programming, and I just thought, “he seems like a guy I should know”. I went to his talk and the rest is history!
 
 ### In terms of your path into Rust, how did you start that?
 
-Max and I were writing the medical education simulation software that our company makes ([Clinical Metrics](https://clinicalmetrics.co.uk/)). 
+Max and I were writing the medical education simulation software that our company makes ([Clinical Metrics](https://clinicalmetrics.co.uk/)). It was all written in Python and that seemed great, but when you actually had real users who all logged in at the same time, we had a lot of performance issues so we had to look at a more performant language. 
 
-It was all written in Python and that seemed great, but when you actually had real users who all logged in at the same time, we had a lot of performance issues so we had to look at a more performant language. 
 
-Max was already getting into Rust by then, eventually writing the book [Rust Web Programming](https://www.packtpub.com/product/rust-web-programming/9781800560819) so it was natural to move in that direction and it solved the performance problems we were having. 
+Max was already getting into Rust by then, eventually writing the book [Rust Web Programming](https://www.packtpub.com/product/rust-web-programming/9781800560819) so it was natural to move in that direction and it solved the performance problems we were having.
 
 ### Let's now dive into your PhD - what is it about, and why is it important?
 
@@ -125,13 +122,10 @@ Initiatives like [Women Who Code](https://womenwhocode.com/) or [One Health](htt
 
 ##  Announcing the launch of our new series: Women in Rust.
 
-As you've heard from Caroline,  community can make a big difference!
+As you've heard from Caroline, community and proactive action can make a big difference! That’s why we’re thrilled to be launching our new series Women in Rust, where women can come together to explore, learn, and share our passion for Rust programming language!
 
-That is why we are launching our new series: Women in rust.
+You can sign up here: https://www.meetup.com/women-in-rust/
 
-You can sign up here:
-[https://www.meetup.com/women-in-rust/](https://www.meetup.com/women-in-rust/)
+Our first hybrid event will be hosted at our London HQ and available to rewatch. This will be on Thursday 4 April, details via Meetup, we hope to see you there!
 
-Our first hybrid event will be hosted at our London HQ and available to rewatch. This will be on Thursday 4 April, details via Meetup!
-
-Hope to see you there!
+This International Womens’ Day we are also launching our new Discord channel on our SurrealDB server, [women-of-surrealdb](https://discord.com/channels/902568124350599239/1215623756303831092) a place for women within our SurrealDB community to come together, ask questions and connect, and also share ideas and inspiration from the wider tech ecosystem.
