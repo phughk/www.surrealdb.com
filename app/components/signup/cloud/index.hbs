@@ -10,7 +10,7 @@
 
 {{#if this.show}}
 
-	<Ascua::Modal @onClose={{fn (mut this.show) false}}>
+	<Ascua::Modal class="cloud-signup" @onClose={{fn (mut this.show) false}}>
 
 		<Modal::Close @close={{fn (mut this.show) false}} />
 
@@ -27,6 +27,8 @@
 				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />
 				<Input @value={{this.lastname}} name="lastname" label="Last name" placeholder="Enter your last name" />
 				<Input @value={{this.email}} @type="email" name="email" label="Email address" placeholder="Enter your email address" />
+				<Input @value={{this.jobtitle}} name="jobtitle" label="Job title" placeholder="Enter your job title" />
+				<Input @value={{this.companyname}} name="companyname" label="Company name" placeholder="Enter your company name" />
 				<Button Form type="submit" {{on "click" this.submit.run}}>
 					Join cloud waitlist
 				</Button>
