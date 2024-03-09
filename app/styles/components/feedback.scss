@@ -29,9 +29,12 @@ app-modal-front:has(.feedback-form) {
 	font-family: SF UI Display Semibold;
     overflow: hidden;
     width: 560px;
+
 	@include media(max-width-642) {
-		width: 100%;
-		height: 100%;
+		width: 90%;
+		height: 90vh;
+		border-radius: 30px;
+		margin: 5vh auto 0 auto;
 	}
 }
 
@@ -46,6 +49,13 @@ sidebar {
             font-size: 18px;
             height: auto;
         }
+
+		button[white] {
+			@include media(max-width-1301) {
+				color: var(--text-color);
+				border-color: var(--text-color);
+			}
+		}
     }
 }
 
@@ -65,6 +75,7 @@ sidebar {
 
 	@include media(max-width-642) {
 		display: flex;
+		align-items: normal;
 	}
 
     .title {
@@ -88,7 +99,7 @@ sidebar {
 		}
 
 		.feedback-category-item {
-			background-color: #151517;
+			background-color: var(--dark-color);
 			border: 3px solid #0000;
 			border-radius: 20px;
 			cursor: pointer;
@@ -101,11 +112,21 @@ sidebar {
 			padding: 1.5rem 0 1.39rem;
 			width: 140px;
 
+
+			@include media(max-width-642) {
+				width: 100%;
+				border-radius: 12px;
+			}
+
 			h2 {
-				color: #fff;
+				color:var(--text-color);
 				font-size: 1rem;
 				font-weight: 600;
 				margin-bottom: 5px;
+
+				@include media(max-width-642) {
+					margin-top: 8px;
+				}
 			}
 
 			&:hover, &:focus, &.active-category {
@@ -113,7 +134,7 @@ sidebar {
 				background: linear-gradient(180deg, rgba(255, 0, 160, 0.2), rgba(150, 0, 255, 0.2));
 				background-clip: padding-box;
 				box-shadow: 0 0 0 3px #ff009e;
-				color: #fff;
+				color:var(--text-color);
 				transition: none;
 			  }
 		}
@@ -130,9 +151,9 @@ sidebar {
 		border-radius: 12px;
 		overflow: hidden;
 		resize: none;
-		margin-bottom: 10px;
-		border: 1px solid #424243;
-		background-color:var(--input-color);
+		margin-bottom: 20px;
+		border: 1px solid #AAAAAA;
+		background-color: var(--dark-color);
 
 		@include placeholder {
 			color:var(--faint-color);
@@ -164,6 +185,10 @@ sidebar {
 			font-weight: 400;
 			text-decoration: underline;
 
+			@include media(max-width-642) {
+				order: 2;
+			}
+
 			&:hover {
 				color: #ff009e;
 			}
@@ -178,6 +203,11 @@ sidebar {
 			height: 33px;
 			color: #fff;
 			word-wrap: break-word;
+
+			@include media(max-width-642) {
+				order: 1;
+				height: 60px;
+			}
 
 			&:disabled {
 				border-radius: 40px;
