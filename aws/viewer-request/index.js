@@ -1,3 +1,18 @@
+const overviewBits = [
+	'cli',
+	'deployment',
+	'embedding',
+	'faqs',
+	'installation',
+	'integration',
+	'integration/sdks',
+	'introduction',
+	'surrealql',
+	'surrealql/datamodel',
+	'surrealql/functions',
+	'surrealql/statements',
+];
+
 function redirect(location) {
 	return {
 		statusCode: 301,
@@ -65,31 +80,6 @@ function handler(event) {
 		// Redirect old DEFINE LOGIN statement page
 		case '/docs/surrealql/statements/define/login':
 			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user');
-		// Redirect docs index pages to overview pages
-		case '/docs/cli':
-			return redirect('https://surrealdb.com/docs/surrealdb/cli/overview');
-		case '/docs/deployment':
-			return redirect('https://surrealdb.com/docs/surrealdb/deployment/overview');
-		case '/docs/embedding':
-			return redirect('https://surrealdb.com/docs/surrealdb/embedding/overview');
-		case '/docs/faqs':
-			return redirect('https://surrealdb.com/docs/surrealdb/faqs/overview');
-		case '/docs/installation':
-			return redirect('https://surrealdb.com/docs/surrealdb/installation/overview');
-		case '/docs/integration':
-			return redirect('https://surrealdb.com/docs/surrealdb/integration/overview');
-		case '/docs/integration/sdks':
-			return redirect('https://surrealdb.com/docs/surrealdb/integration/sdks/overview');
-		case '/docs/introduction':
-			return redirect('https://surrealdb.com/docs/surrealdb/introduction/overview');
-		case '/docs/surrealql':
-			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/overview');
-		case '/docs/surrealql/datamodel':
-			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/datamodel/overview');
-		case '/docs/surrealql/functions':
-			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/functions/overview');
-		case '/docs/surrealql/statements':
-			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/overview');
 	}
 
 	switch (true) {
@@ -99,10 +89,41 @@ function handler(event) {
 			return redirect(`https://surrealdb.com${path}`);
 		// Redirect all other docs pages
 		case path.startsWith('/docs/'): {
-			const second = path.split('/')[2];
+			const splitted = path.split('/').slice(1);
+			const second = splitted[1];
+			const third = splitted[2];
 			switch (second) {
+				case 'surrealdb': {
+					const base = 'https://surrealdb.com/docs/surrealdb/';
+					const unversioned = splitted
+						.slice(third && third.startsWith('1.') ? 3 : 2)
+						.join('/');
+
+					// Remove /overview suffix
+					if (
+						overviewBits.find((a) => unversioned == a + '/overview')
+					) {
+						return redirect(base + unversioned.slice(0, -9));
+					}
+
+					// Remove /intro suffix
+					if (unversioned == 'intro') {
+						return redirect(base + unversioned.slice(0, -6));
+					}
+
+					if (unversioned.startsWith('how-to/')) {
+						return redirect(
+							base + 'tutorials' + unversioned.slice(6),
+						);
+					}
+
+					// URL should already be good
+					if (!third.startsWith('1.')) break;
+
+					// Fix version in the URL
+					return redirect(base + unversioned);
+				}
 				case 'sitemap.xml':
-				case 'surrealdb':
 				case 'surrealml':
 				case 'surrealist':
 				case 'surrealism':
@@ -121,7 +142,9 @@ function handler(event) {
 		return request;
 	}
 
-	if (request.uri.includes('.') === false) {
+    const exts = ['html', 'js', 'css', 'png', 'webp', 'jpg', 'jpeg', 'xml', 'svg', 'json', 'ico', 'txt'];
+
+	if (!exts.find(a => request.uri.endsWith('.' + a))) {
 		request.uri = request.uri.concat('/index.html');
 		return request;
 	}
