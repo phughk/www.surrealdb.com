@@ -41,6 +41,7 @@ export default class extends Component {
 		this.email = null;
 		this.email = null;
 		this.jobtitle = null;
-		this.companyname = true;
+		this.companyname = null;
+		this.done = true;
 	}
 }
