@@ -1,3 +1,20 @@
+const exts = [
+	'html',
+	'js',
+	'css',
+	'png',
+	'webp',
+	'jpg',
+	'jpeg',
+	'xml',
+	'svg',
+	'json',
+	'ico',
+	'txt',
+	'woff2',
+	'ttf',
+];
+
 const overviewBits = [
 	'cli',
 	'deployment',
@@ -90,14 +107,14 @@ function handler(event) {
 		// Redirect all other docs pages
 		case path.startsWith('/docs/'): {
 			const splitted = path.split('/').slice(1);
-			const second = splitted[1];
-			const third = splitted[2];
+			const second = splitted[1] || '';
+			const third = splitted[2] || '';
 			switch (second) {
 				case 'surrealdb': {
 					const base = 'https://surrealdb.com/docs/surrealdb/';
 					const unversioned = splitted
 						.slice(third && third.startsWith('1.') ? 3 : 2)
-						.join('/');
+						.join('/') || '';
 
 					// Remove /overview suffix
 					if (
@@ -142,13 +159,10 @@ function handler(event) {
 		return request;
 	}
 
-    const exts = ['html', 'js', 'css', 'png', 'webp', 'jpg', 'jpeg', 'xml', 'svg', 'json', 'ico', 'txt'];
-
-	if (!exts.find(a => request.uri.endsWith('.' + a))) {
+	if (!exts.find((a) => request.uri.endsWith('.' + a))) {
 		request.uri = request.uri.concat('/index.html');
 		return request;
 	}
 
 	return request;
-
 }
