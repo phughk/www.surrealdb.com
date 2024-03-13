@@ -72,7 +72,7 @@ I first heard about SurrealDB when my good friend and business partner Max joine
 
 I thought it sounded like an interesting concept and I got really interested in using SurrealDB to solve some of the problems I saw. 
 
-Firstly, pretty much all the reference data that is needed to create synthetic data is arranged in a graph or a tree structure. I need a way to traverse that tree and send off queries, which eventually come back to form the synthetic data.It is difficult to do that in a traditional database, especially at scale. That's one aspect where I think SurrealDB is going to be huge. 
+Firstly, pretty much all the reference data that is needed to create synthetic data is arranged in a graph or a tree structure. I need a way to traverse that tree and send off queries, which eventually come back to form the synthetic data. It is difficult to do that in a traditional database, especially at scale. That's one aspect where I think SurrealDB is going to be huge. 
 
 The second is live querying. I want to be able to do complicated queries on the data without having to pull the data out of the database. 
 
