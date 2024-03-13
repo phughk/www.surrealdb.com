@@ -67,3 +67,5 @@ At SurrealDB we are passionate about building the future we want to see in the w
 If you want to be a part of building this future, you can [join our exceptional team of Rust engineers](http://surrealdb.com/careers/?utm_source=blog&utm_medium=post) and contribute to shaping the future of SurrealDB. 
 
 If you want to be a part of experiencing this future, [get started with SurrealDB](https://surrealdb.com/docs/surrealdb/introduction/start/?utm_source=blog&utm_medium=post).
+
+Part of the change we want to see in the world is making Rust more accessible, which is why we started the [Women in Rust meet-up](https://www.meetup.com/women-in-rust/), where women can come together to learn and build skills in Rust!
