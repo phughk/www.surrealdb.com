@@ -247,6 +247,34 @@ code.language-javascript {
 		.token.function { color:#ff9b67; }
 		.token.constant { color:#ff009e; }
 		.token.keyword { color:#ff009e; }
+
+		// Brute force, don't know which is correct
+		.token.boolean { color: #9d2fff; }
+		.token.bool { color: #9d2fff; }
+		.token.true { color: #9d2fff; }
+		.token.false { color: #9d2fff; }
+	}
+
+}
+
+code.language-json {
+
+	.token.string { color:#00ff6e; }
+	.token.property { color:#ff009e; }
+	.token.number { color: #00dbff; }
+	.token.null { color: #9d2fff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.string { color:#68DE74; }
+		.token.property { color:#ff009e; }
+		.token.number { color: #00dbff; }
+		.token.null { color: #9d2fff; }
+
+		// Brute force, don't know which is correct
+		.token.boolean { color: #9d2fff; }
+		.token.bool { color: #9d2fff; }
+		.token.true { color: #9d2fff; }
+		.token.false { color: #9d2fff; }
 	}
 
 }
