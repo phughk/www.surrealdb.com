@@ -15,27 +15,14 @@
 
 		<Modal::Close @close={{fn (mut this.show) false}} />
 
-		{{#if this.done}}
-			Thank you for registering for the <img inline src="/static/img/text.svg" alt="SurrealDB" /> newsletter! Check your email inbox for communications from us, and make sure to whitelist <code>surrealdb.com</code> in your email inbox.
-			<br><br>
-			The SurrealDB Team
-		{{else}}
-			Enter your email below to join the SurrealDB newsletter and stay updated on new product releases, features, and updates to our documentation. We promise we won't spam you!
+		<script>
+			hbspt.forms.create({
+				region: "na1",
+				portalId: "44363239",
+				formId: "91f5b2b7-783d-4027-885e-ff17e133a000"
+			});
+		</script>
 
-			<Layout::Gap tiny />
-
-			<form {{on "submit" this.submit.run}}>
-				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />
-				<Input @value={{this.lastname}} name="lastname" label="Last name" placeholder="Enter your last name" />
-				<Input @value={{this.email}} @type="email" name="email" label="Email address" placeholder="Enter your email address" />
-				<Button Form type="submit" {{on "click" this.submit.run}}>
-					Keep me updated
-				</Button>
-			</form>
-			{{#if this.submit.error}}
-				<text>Please enter an email address</text>
-			{{/if}}
-		{{/if}}
 	</Ascua::Modal>
 
 {{/if}}

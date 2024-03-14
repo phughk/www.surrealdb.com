@@ -21,7 +21,7 @@ body {
 	-webkit-font-smoothing:subpixel-antialiased !important;
 }
 
-input {
+input:not([type='checkbox']) {
 	width:100%;
 	padding:20px;
 	font-size:16px;
