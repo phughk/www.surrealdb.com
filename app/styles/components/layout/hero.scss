@@ -22,19 +22,19 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:url("/static/img/illustrations/hero.png"), radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background-image:url("/static/img/illustrations/hero.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-1301) {
-			background-image:url("/static/img/illustrations/hero1.png"), radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+			background-image:url("/static/img/illustrations/hero1.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+			background-color:#000000;
 		}
 
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
-			background:radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-			background-color:#110322;
+			background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+			background-color:#000000;
 		}
 
 		content {
@@ -62,8 +62,8 @@ layout-hero {
 	&[products] {
 		height:auto;
 		padding:120px 0 150px 0;
-		background:radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			height:auto;
@@ -75,8 +75,8 @@ layout-hero {
 	&[lq], &[cf], &[ix], &[ml] {
 		height:auto;
 		padding:120px 0 150px 0;
-		background:radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -89,8 +89,8 @@ layout-hero {
 	&[install], &[releases], &[license], &[security], &[features], &[opensource], &[media], &[giveaway] {
 		height:auto;
 		padding:120px 0 150px 0;
-		background:radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -104,8 +104,8 @@ layout-hero {
 		padding:0;
 		height:auto;
 		height:96px;
-		background:radial-gradient(circle at top left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at bottom right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
