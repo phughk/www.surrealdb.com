@@ -130,7 +130,7 @@ layout-hero {
 	&[casestudies] {
 		height:100%;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/jules.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/yaacomm.jpg");
 
 		@include media(max-width-960) {
 			top:0px;
@@ -225,7 +225,7 @@ layout-hero {
 	&[yaacomm] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("/static/img/jules.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("/static/img/yaacomm.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
