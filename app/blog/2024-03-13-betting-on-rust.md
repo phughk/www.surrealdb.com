@@ -1,9 +1,9 @@
 ---
 show: true
 date: 2024-03-13
-image: cno16mrac7ss73a8v4c0
+image: co0iidj61icc73eeql5g
 title: "Why we are betting on Rust"
-summary: "The best way to predict the future is to create it"
+summary: "The best way to predict the future is to create it."
 ---
 
 by Alexander Fridriksson

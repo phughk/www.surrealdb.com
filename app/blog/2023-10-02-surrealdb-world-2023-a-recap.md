@@ -60,7 +60,7 @@ The entire discussion is filled with interesting anecdotes from Tobie and Kelsey
 The community is at the heart of SurrealDB. We have experienced remarkable growth across all our community channels, starting from our initial outreach on platforms such as Hacker News, Indie Hackers, Reddit, and more. Our focus has always been on listening to the community. Our Developer Relations Manager, Naiyarah, and Data Evangelist, Alexander, from the Community team explain how the community has been instrumental in shaping SurrealDB right from its inception, and we’re taking this to the next level by expanding our community in-person and online!
 
 <vid>
-<iframe width='560' height='315' src='https://www.youtube.com/embed/nZVJJ2JTJzI?si=Ed4ARB1R1hNmPKqK' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4vhkiGrEOco?si=6AZnPocjoycvdWaR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </vid>
 
 ## SurrealDB - a superpower for your applications
@@ -74,7 +74,7 @@ They demonstrated how developers could utilize SurrealQL and the new Live Querie
 In case you missed it, the video below includes all the highlights. Our co-founders, Tobie and Jaime, also hosted an Ask-Me-Anything session with the attendees. They answered insightful questions such as 'Why is SurrealDB brilliant?' in the simplest terms possible. Be sure to watch until the end to catch a funny analogy that explains it all!
 
 <vid>
-<iframe width='560' height='315' src='https://www.youtube.com/embed/53rg48rxql8?si=tibFzMqn-adKrCOV' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rqIQDgPSBpU?si=taz3RkMyR3AD-Ubc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </vid>
 
 As discussed in the beginning, a user conference is also a place for networking and insightful discussions. In parallel to the main stage, had a [podcast studio](https://surrealdb.world/studio) where we hosted our amazing guests to cover topics like the [Impact of AI on Databases](https://vimeo.com/865684651), [evolution of Databases](https://vimeo.com/865589395), [Unlocking the potential of health data research](https://vimeo.com/865665735), and several Community spotlights including: [Surrealist App](https://vimeo.com/865699002) and becoming a [Code Contributor](https://vimeo.com/865670681). See all this and more at [surrealdb.world/studio](https://surrealdb.world/studio)!

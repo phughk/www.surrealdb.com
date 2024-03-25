@@ -3,7 +3,7 @@ show: true
 date: 2024-02-21
 image: cnarg9fu2otc73evhtd0
 title: "Thinking Inside The Box: Relational Style Joins in SurrealDB"
-summary: "SurrealDB's relational style joins exist in a superposition. The only way to know for sure is by looking at this blog post"
+summary: "SurrealDB's relational style joins exist in a superposition. The only way to know for sure is by looking at this blog post."
 ---
 
 by Alexander Fridriksson
