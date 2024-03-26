@@ -12,6 +12,7 @@ const exts = [
 	'ico',
 	'txt',
 	'woff2',
+	'woff',
 	'ttf',
 ];
 
@@ -85,9 +86,6 @@ function handler(event) {
 		// Redirect github url to GitHub
 		case '/github':
 			return redirect('https://github.com/surrealdb/surrealdb');
-		// Redirect base docs page to intro page
-		case '/docs':
-			return redirect('https://surrealdb.com/docs/surrealdb/intro');
 		// Redirect old websocket text protocol page
 		case '/docs/integration/websocket/text':
 			return redirect('https://surrealdb.com/docs/surrealdb/integration/websocket');
@@ -147,6 +145,7 @@ function handler(event) {
 				case 'sdk':
 				case 'assets':
 				case 'img':
+				case '':
 					break;
 				default:
 					return redirect(`https://surrealdb.com/docs/surrealdb/${path.slice(6)}`);
