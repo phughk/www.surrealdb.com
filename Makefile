@@ -49,6 +49,7 @@ stage:
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude ".DS_Store" ./dist/.well-known/ s3://www.surrealdb.dev/.well-known/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/assets s3://www.surrealdb.dev/assets/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/static s3://www.surrealdb.dev/static/
+	aws s3 sync --region eu-west-2 --cache-control "public, max-age=30" --exact-timestamps --delete --exclude "*" --include "*.rss" ./dist/feed s3://www.surrealdb.dev/feed/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/favicon.ico s3://www.surrealdb.dev/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/robots.txt s3://www.surrealdb.dev/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=30" --exact-timestamps --delete --exclude "*" --include "*.html" --exclude "docs/*.html" ./dist/ s3://www.surrealdb.dev/
@@ -60,6 +61,7 @@ deploy:
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude ".DS_Store" ./dist/.well-known/ s3://www.surrealdb.com/.well-known/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/assets s3://www.surrealdb.com/assets/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./dist/static s3://www.surrealdb.com/static/
+	aws s3 sync --region eu-west-2 --cache-control "public, max-age=30" --exact-timestamps --delete --exclude "*" --include "*.rss" ./dist/feed s3://www.surrealdb.com/feed/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/favicon.ico s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=86400" ./dist/robots.txt s3://www.surrealdb.com/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude "*" --include "*.html" --exclude "docs/*.html" ./dist/ s3://www.surrealdb.com/
