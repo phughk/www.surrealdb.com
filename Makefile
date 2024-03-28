@@ -40,6 +40,7 @@ serve:
 .PHONY: build
 build:
 	@echo "Build..."
+	node scripts/rss-feed.mjs
 	EXPERIMENTAL_RENDER_MODE_SERIALIZE=true npx ember build -prod
 
 .PHONY: stage
@@ -69,3 +70,8 @@ sitemap:
 	@echo "Generating sitemap..."
 	npx --yes sitemap-generator-cli --priority-map "1.0,0.9,0.8,0.7" https://surrealdb.com
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=30" ./sitemap.xml s3://www.surrealdb.com/
+
+.PHONY: rss-feed
+rss-feed:
+	@echo "Generating RSS feeds..."
+	node scripts/rss-feed.mjs
