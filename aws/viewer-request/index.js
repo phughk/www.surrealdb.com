@@ -14,6 +14,7 @@ const exts = [
 	'woff2',
 	'woff',
 	'ttf',
+	'rss',
 ];
 
 const overviewBits = [
