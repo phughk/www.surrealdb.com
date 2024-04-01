@@ -22,6 +22,7 @@ code, :not(pre) > code[class*="language-"] {
 	white-space:pre;
 	font-weight:400;
 	font-size:inherit;
+	color:var(--text-color);
 	font-family:var(--system-font-mono);
 	background-color:var(--dark-color);
 	border-radius:0;
