@@ -88,12 +88,14 @@ function handler(event) {
 		// Redirect github url to GitHub
 		case '/github':
 			return redirect('https://github.com/surrealdb/surrealdb');
+		case '/docs/surrealdb/integration/websocket':
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old websocket text protocol page
 		case '/docs/integration/websocket/text':
-			return redirect('https://surrealdb.com/docs/surrealdb/integration/websocket');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old websocket binary protocol page
 		case '/docs/integration/websocket/binary':
-			return redirect('https://surrealdb.com/docs/surrealdb/integration/websocket');
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old DEFINE LOGIN statement page
 		case '/docs/surrealql/statements/define/login':
 			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user');
