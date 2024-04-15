@@ -2,7 +2,7 @@
 show: true
 date: 2024-03-26
 image: co1bh3r61icc73eeqnf0
-title: "Expoloring the AI revolution"
+title: "Exploring the AI revolution"
 summary: "Looking to keep up-to-date with what's next in Generative AI and LLMs? We've got you covered."
 ---
 
