@@ -24,8 +24,20 @@ const metadata = {
 	link: "https://surrealdb.com",
 };
 
+function slug(value = '') {
+	return String(value)
+		.replace(/[\s.]/gi, '-')
+		.replace(/[^a-zA-Z0-9_-]+/g, '')
+		.replace(/--/, '-')
+		.toLowerCase();
+}
+
 export async function generateFeed(input, output, baseUrl) {
-	const files = fs.readdirSync(input).reverse();
+	const files = fs
+		.readdirSync(input)
+		.reverse()
+		.filter((file) => file !== ".gitkeep");
+
 	const read = await Promise.all(
 		files.map(async (file) => {
 			const content = fs.readFileSync(path.join(input, file));
@@ -39,7 +51,7 @@ export async function generateFeed(input, output, baseUrl) {
 			parsed.data.id = file.match(/^\d\d\d\d-\d\d-\d\d-/)
 				? file.slice(11, -3) // xxxx-xx-xx-SLICED_PART.md
 				: file.slice(0, -3); // SLICED_PART.md
-			parsed.data.url = `https://surrealdb.com${baseUrl}${parsed.data.id}`;
+			parsed.data.url = `https://surrealdb.com${baseUrl}${slug(parsed.data.title)}`;
 			if (parsed.data.image && parsed.data.image.length == 20)
 				parsed.data.image = `https://cdn.brandsafe.io/w(1600)q(80)/${parsed.data.image}.auto`;
 
@@ -76,7 +88,7 @@ export async function generateFeed(input, output, baseUrl) {
 		<title>${metadata.title}</title>
 		<description>${metadata.description}</description>
 		<link>${metadata.link}</link>
-		<lastBuildDate>${posts[0].data.date.toUTCString()}</lastBuildDate>
+		<lastBuildDate>${posts[0]?.data?.date?.toUTCString() ?? new Date().toUTCString()}</lastBuildDate>
 		${rssItems}
 	</channel>
 </rss>`;
