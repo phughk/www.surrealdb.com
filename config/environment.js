@@ -23,7 +23,7 @@ module.exports = function (environment) {
 		mdfiles: {
 			folders: {
 				blog: 'app/blog',
-				jobs: 'app/jobs',
+				jobs: 'app/content/jobs',
 				team: 'app/content/team',
 				projects: 'app/content/projects',
 				releases: 'app/content/releases',
