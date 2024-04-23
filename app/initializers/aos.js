@@ -13,9 +13,13 @@ export default {
 				anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 			});
 
-			window.addEventListener('load', () => {
+			if (document.readyState === 'complete') {
 				AOS.refreshHard();
-			});
+			} else {
+				window.addEventListener('load', () => {
+					AOS.refreshHard();
+				});
+			}
 
 		}
 	},
