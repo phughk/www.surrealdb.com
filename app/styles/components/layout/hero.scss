@@ -246,8 +246,8 @@ layout-hero {
 
 		height:auto;
 		padding:120px 0 150px 0;
-		background:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
+		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 45%);
+		background-color:var(dark);
 
 		@include media(max-width-960) {
 			top:0px;
