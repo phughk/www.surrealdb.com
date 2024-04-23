@@ -4,6 +4,8 @@ date: 2023-12-12
 image: clrmnc23j29s73b5n7q0
 title: "Release v1.1.0-beta"
 summary: "We're excited to announce SurrealDB v1.1.0-beta, with many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database."
+categories:
+  - surrealist
 ---
 
 Hello developers!

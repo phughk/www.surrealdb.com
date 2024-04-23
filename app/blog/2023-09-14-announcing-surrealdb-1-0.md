@@ -4,6 +4,8 @@ date: 2023-09-14
 image: cl91vsi03ggs73c8tqcg
 title: "Announcing SurrealDB 1.0"
 summary: "At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects."
+categories:
+  - surrealist
 ---
 
 At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.
