@@ -1,28 +1,28 @@
 layout-hire {
 
-	display: block;
+	display:block;
 
 	content {
 
-		display: grid;
-		grid-gap: 10px 10px;
-		grid-template-columns: repeat(12, 1fr);
+		display:grid;
+		grid-gap:16px 16px;
+		grid-template-columns:repeat(12, 1fr);
 
 		> a {
 
-			display: flex;
-			grid-column: auto / span 2;
+			display:flex;
+			grid-column:auto / span 2;
 
 			> layout-hire-item {
 
-				transition: box-shadow 0.3s;
+				transition:box-shadow 0.3s;
 
 				&:hover {
 
-					transform: translateZ(0);
+					transform:translateZ(0);
 
 					img {
-						transform: scale(1.05);
+						transform:scale(1.05);
 					}
 
 				}
@@ -33,92 +33,93 @@ layout-hire {
 
 		> a > layout-hire-item, > layout-hire-item {
 
-			z-index: 1;
-			width: 100%;
-			display: block;
-			overflow: hidden;
-			text-align: left;
-			position: relative;
-			grid-column: auto / span 2;
-			background-color: var(--dark-color);
+			z-index:1;
+			width:100%;
+			display:block;
+			overflow:hidden;
+			text-align:left;
+			position:relative;
+			border-radius:0px;
+			grid-column:auto / span 2;
+			background-color:var(--dark-color);
 
 			&:not(:hover) {
 				picture.default {
-					opacity: 0.5;
+					opacity:0.5;
 				}
 				picture.hover {
-					opacity: 0;
+					opacity:0;
 				}
 			}
 
 			&:hover {
 				picture {
-					transition: opacity .5s ease, transform .7s ease;
-					transform: translateX(32%) translateY(-32%) scale(1.1);
+					transition:opacity .5s ease, transform .7s ease;
+					transform:translateX(32%) translateY(-32%) scale(1.1);
 				}
 
 				picture.default {
-					opacity: 0;
+					opacity:0;
 				}
 				picture.hover {
-					opacity: 1;
+					opacity:1;
 				}
 			}
 
 			picture {
 
-				pointer-events: none;
+				pointer-events:none;
 
-				transition: opacity .4s ease, transform .3s ease;
-				position: absolute;
-				top: 0;
-				right: 0;
-				transform: translateX(32%) translateY(-32%);
+				transition:opacity .4s ease, transform .3s ease;
+				position:absolute;
+				top:0;
+				right:0;
+				transform:translateX(32%) translateY(-32%);
 
-				width: 80%;
-				display: inline-block;
+				width:80%;
+				display:inline-block;
 
 				img:not(.devicon) {
-					width: 100%;
-					height: 100%;
-					display: block;
-					max-width: 100%;
-					object-fit: cover;
-					transition: transform 0.3s;
+					width:100%;
+					height:100%;
+					display:block;
+					max-width:100%;
+					object-fit:cover;
+					transition:transform 0.3s;
 				}
 
 			}
 
 			> div .text-container {
-				padding: 0px !important;
+				padding:0px !important;
 			}
 
 			&[clear] {
 
-				background-color: transparent;
+				background-color:transparent;
 
 				div {
-					padding-left: 15%;
+					padding-left:15%;
 					padding-right:15%;
-					padding-bottom: 5%;
-					padding-top: 5%;
+					padding-bottom:5%;
+					padding-top:5%;
 
 					> h3 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 				}
 
@@ -146,7 +147,7 @@ layout-hire {
 
 			&[hiring] {
 
-				background-color:var(--light-color);
+				background-color:var(--dark-color);
 
 				> div {
 					padding-left:10%;
@@ -154,15 +155,15 @@ layout-hire {
 					padding-bottom:10%;
 					padding-top:10%;
 
-					height: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					align-items: flex-start;
-					gap: 30px;
+					height:100%;
+					display:flex;
+					flex-direction:column;
+					justify-content:space-between;
+					align-items:flex-start;
+					gap:30px;
 
 					.text-container {
-						max-width: 50%;
+						max-width:100%;
 					}
 
 					@include media(max-width-960) {
@@ -173,39 +174,39 @@ layout-hire {
 					}
 
 					> h3 {
-						font-size: 26px;
-						font-weight: 600;
-						line-height: 1.2;
-						color: var(--text-color);
+						font-size:26px;
+						font-weight:600;
+						line-height:1.2;
+						color:var(--text-color);
 
 						@include media(max-width-960) {
 							width:100%;
-							font-size: 24px;
+							font-size:24px;
 						}
 
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:600;
+						padding-bottom:60px;
 
 					}
 
 					> p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						padding-bottom:60px;
+						margin-bottom:5px;
+						display:inline-block;
+						color:var(--text-color);
 					}
 
 					a div {
-						display: block !important;
+						display:block !important;
 					}
 				}
 
@@ -215,35 +216,35 @@ layout-hire {
 				background-color:var(--same-color);
 
 				div {
-					padding-left: 15%;
+					padding-left:15%;
 					padding-right:15%;
-					padding-bottom: 5%;
-					padding-top: 5%;
+					padding-bottom:5%;
+					padding-top:5%;
 
 					> h3 {
-						font-size: 38px;
-						font-weight: 600;
-						line-height: 1.1;
-						color: var(--text-color);
+						font-size:38px;
+						font-weight:600;
+						line-height:1.1;
+						color:var(--text-color);
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:600;
+						padding-bottom:60px;
 
 					}
 
 					 p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						padding-bottom:60px;
+						margin-bottom:5px;
+						display:inline-block;
+						color:var(--text-color);
 					}
 				}
 
@@ -267,35 +268,35 @@ layout-hire {
 					}
 
 					> h3 {
-						font-size: 26px;
-						font-weight: 600;
-						line-height: 1.2;
-						color: var(--text-color);
+						font-size:26px;
+						font-weight:600;
+						line-height:1.2;
+						color:var(--text-color);
 
 						@include media(max-width-960) {
 							width:100%;
-							font-size: 24px;
+							font-size:24px;
 						}
 
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:600;
+						padding-bottom:60px;
 
 					}
 
 					> p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						padding-bottom:60px;
+						margin-bottom:5px;
+						display:inline-block;
+						color:var(--text-color);
 					}
 				}
 
@@ -304,35 +305,35 @@ layout-hire {
 			&[casestudies1] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/jules.jpg");
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -346,35 +347,35 @@ layout-hire {
 			&[casestudies2] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/nhs.jpg");
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -386,49 +387,49 @@ layout-hire {
 			}
 
 			&[pink] {
-				background: rgb(255,0,160);
-				background: -moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: -webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
+				background:rgb(255,0,160);
+				background:-moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background:-webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background:linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
 			}
 
 			&[photo1] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/casestudies/nhs.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/nhs.jpg");
 				}
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -442,39 +443,39 @@ layout-hire {
 			&[photo2] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/libertymutual.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/libertymutual.jpg");
 				}
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -487,38 +488,38 @@ layout-hire {
 			&[photo3] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/tesla.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/tesla.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -531,38 +532,38 @@ layout-hire {
 			&[photo4] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.png");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -576,36 +577,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/hero.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/hero.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -619,36 +620,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whatissurrealdb.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whatissurrealdb.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -662,36 +663,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/makinganimpact.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/makinganimpact.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -705,37 +706,37 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/careers7.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/careers7.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
 						width:75%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -749,36 +750,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
 						width:50%;
-						font-size: 62px;
-						font-weight: 600;
-						line-height: 1.1;
-						color: var(--same-color);
+						font-size:62px;
+						font-weight:600;
+						line-height:1.1;
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -792,29 +793,29 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 
 				div {
-					padding: 30px;
+					padding:30px;
 
 					>h3 {
-						font-size: 22px;
+						font-size:22px;
 						margin-bottom:0px;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--lighter-color);
+						color:var(--lighter-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--lighter-color);
+						color:var(--lighter-color);
 					}
 
 					p {
@@ -828,36 +829,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -872,36 +873,36 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/community/community.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/community/community.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					p {
@@ -916,31 +917,31 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 				}
 			}
@@ -949,63 +950,63 @@ layout-hire {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 				}
 			}
 
 			&[wider] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:var(--back-color);
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
+					padding:0px;
 
 					@include media(max-width-1200) {
 						width:100%;
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1014,30 +1015,30 @@ layout-hire {
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
 						}
 					}
 
-					@media (prefers-color-scheme: light) {
+					@media (prefers-color-scheme:light) {
 						>h3 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>h4 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>p:last-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 
 						>p:first-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 					}
 
@@ -1045,22 +1046,22 @@ layout-hire {
 
 				picture {
 
-					display: block;
-					width: 80px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					width:80px;
+					display:block;
+					overflow:hidden;
+					position:relative;
+					border-radius:0px;
+					padding-bottom:20px;
 					background-color:none;
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1068,17 +1069,17 @@ layout-hire {
 
 			&[transparent] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:transparent;
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
-					max-width: 100%;
+					padding:0px;
+					max-width:100%;
 
 					@include media(max-width-1200) {
 						width:930px;
@@ -1093,19 +1094,19 @@ layout-hire {
 					}
 
 					>h3 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 
-						@media (prefers-color-scheme: light) {
-							color: var(--faint-color);
+						@media (prefers-color-scheme:light) {
+							color:var(--faint-color);
 						}
 
 						@include media(max-width-768) {
@@ -1115,10 +1116,10 @@ layout-hire {
 
 					>p:first-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 
-						@media (prefers-color-scheme: light) {
-							color: var(--faint-color);
+						@media (prefers-color-scheme:light) {
+							color:var(--faint-color);
 						}
 
 						@include media(max-width-768) {
@@ -1130,22 +1131,22 @@ layout-hire {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					width:110px;
+					display:block;
+					overflow:hidden;
+					position:relative;
+					border-radius:0px;
+					padding-bottom:20px;
 					background-color:none
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1153,17 +1154,17 @@ layout-hire {
 
 			&[hero] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:transparent;
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
-					max-width: 100%;
+					padding:0px;
+					max-width:100%;
 
 					@include media(max-width-1200) {
 						width:930px;
@@ -1178,16 +1179,16 @@ layout-hire {
 					}
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1196,7 +1197,7 @@ layout-hire {
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1207,22 +1208,22 @@ layout-hire {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					width:110px;
+					display:block;
+					overflow:hidden;
+					position:relative;
+					border-radius:0px;
+					padding-bottom:20px;
 					background-color:none
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1230,48 +1231,48 @@ layout-hire {
 
 			&[products] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:var(--dark-color);
 
 				div {
-					padding: 0px;
+					padding:0px;
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
-					@media (prefers-color-scheme: light) {
+					@media (prefers-color-scheme:light) {
 						>h3 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>h4 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>p:last-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 
 						>p:first-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 					}
 
@@ -1279,22 +1280,22 @@ layout-hire {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
-					background-color:none;
+					width:110px;
+					display:block;
+					overflow:hidden;
+					position:relative;
+					border-radius:0px;
+					padding-bottom:20px;
+					background-color:none
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1302,29 +1303,29 @@ layout-hire {
 
 			&[hero] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
-				background-color: transparent;
+				border-radius:0px;
+				margin-bottom:100px;
+				background-color:transparent;
 
 				div {
-					padding: 0px;
+					padding:0px;
 
 					>h3 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>h4 {
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--same-color);
+						color:var(--same-color);
 					}
 
 				}
@@ -1333,78 +1334,78 @@ layout-hire {
 
 			div {
 
-				padding: 40px;
+				padding:40px;
 
 				@include media(max-width-1024) {
-					padding: 30px;
+					padding:30px;
 				}
 
 				>h3 {
-					font-size: 26px;
-					font-weight: 600;
-					line-height: 1.2;
+					font-size:26px;
+					font-weight:600;
+					line-height:1.2;
 				}
 
 				>h4 {
-					font-size: 20px;
-					font-weight: 600;
-					line-height: 1.5;
+					font-size:20px;
+					font-weight:600;
+					line-height:1.5;
 				}
 
 				>p:last-child {
-					font-size: 16px;
+					font-size:16px;
 				}
 
 				>p:first-child {
-					font-size: 17px;
-					padding-bottom: 0;
-					margin-bottom: 5px;
-					display: inline-block;
-					color: var(--faint-color);
+					font-size:17px;
+					padding-bottom:0;
+					margin-bottom:5px;
+					display:inline-block;
+					color:var(--faint-color);
 				}
 
 			}
 
 			&[centered] {
-				display: flex;
-				align-items: center;
-				justify-content: center;
+				display:flex;
+				align-items:center;
+				justify-content:center;
 
 				* {
-					color: var(--faint-color);
+					color:var(--faint-color);
 				}
 			}
 
 			&[careers] {
-				display: flex;
-				font-size: 16px;
-				align-items: center;
-				text-align: center;
-				justify-content: center;
+				display:flex;
+				font-size:16px;
+				align-items:center;
+				text-align:center;
+				justify-content:center;
 			}
 
 			&[hover]:hover {
 
 				h3,
 				h4 {
-					color: var(--hover-color);
+					color:var(--hover-color);
 				}
 			}
 
 			&[faded] {
-				opacity: 0.5;
+				opacity:0.5;
 			}
 
 			&[mini] div {
-				padding: 30px 40px;
+				padding:30px 40px;
 			}
 
 			&[tick] div h3 img {
-				margin: 0 10px 0 0;
+				margin:0 10px 0 0;
 			}
 
 			&[tick] div h4 img {
-				margin: 0 10px 0 0;
+				margin:0 10px 0 0;
 			}
 
 		}
@@ -1414,14 +1415,14 @@ layout-hire {
 	&[cols-4-to-2-to-1] content>a,
 	&[cols-4-to-2-to-1] content>layout-hire-item {
 
-		grid-column: auto / span 3;
+		grid-column:auto / span 3;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -1431,11 +1432,11 @@ layout-hire {
 				picture {
 
 					img {
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						position: absolute;
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
 					}
 
 				}
@@ -1450,20 +1451,20 @@ layout-hire {
 
 				picture {
 
-					float: left;
-					width: 67.7%;
-					min-height: 100%;
+					float:left;
+					width:67.7%;
+					min-height:100%;
 
 					&:only-child {
-						width: 100%;
+						width:100%;
 					}
 
 				}
 
 				div {
-					margin: 0;
-					width: 32.3%;
-					float: right;
+					margin:0;
+					width:32.3%;
+					float:right;
 				}
 
 			}
@@ -1472,28 +1473,28 @@ layout-hire {
 
 		@include media(max-width-1250) {
 
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 6;
+				grid-column:auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-768) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1503,14 +1504,14 @@ layout-hire {
 	&[cols-3-to-2-to-1] content>a,
 	&[cols-3-to-2-to-1] content>layout-hire-item {
 
-		grid-column: auto / span 4;
+		grid-column:auto / span 4;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -1520,11 +1521,11 @@ layout-hire {
 				picture {
 
 					img {
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						position: absolute;
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
 					}
 
 				}
@@ -1539,20 +1540,20 @@ layout-hire {
 
 				picture {
 
-					float: left;
-					width: 67.7%;
-					min-height: 100%;
+					float:left;
+					width:67.7%;
+					min-height:100%;
 
 					&:only-child {
-						width: 100%;
+						width:100%;
 					}
 
 				}
 
 				div {
-					margin: 0;
-					width: 32.3%;
-					float: right;
+					margin:0;
+					width:32.3%;
+					float:right;
 				}
 
 			}
@@ -1561,28 +1562,28 @@ layout-hire {
 
 		@include media(max-width-1650) {
 
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 6;
+				grid-column:auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-768) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1592,26 +1593,26 @@ layout-hire {
 	&[cols-3-to-1] content>a,
 	&[cols-3-to-1] content>layout-hire-item {
 
-		grid-column: auto / span 4;
+		grid-column:auto / span 4;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(max-width-1300) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1621,26 +1622,26 @@ layout-hire {
 	&[cols-2-to-1] content>a,
 	&[cols-2-to-1] content>layout-hire-item {
 
-		grid-column: auto / span 6;
+		grid-column:auto / span 6;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(max-width-1000) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1650,7 +1651,7 @@ layout-hire {
 	&[cols-1] content>a,
 	&[cols-1] content>layout-hire-item {
 
-		grid-column: auto / span 12;
+		grid-column:auto / span 12;
 
 	}
 

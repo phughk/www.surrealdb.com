@@ -5,41 +5,41 @@ import { service } from '@ember/service';
 import { drop } from '@ascua/tasks';
 
 export default class FeedbackComponent extends Component {
+
 	@service router;
 
 	@tracked selectedCategory;
 	@tracked isNewFeedBack = false;
 	@tracked hasSavedFeedback = false;
-	@tracked text;
 	@tracked show = false;
+	@tracked text;
 
 	get isEmptyForm() {
 		return !this.selectedCategory || !this.text;
 	}
 
-	@action
-	toggleFeedbackForm() {
+	@action toggleFeedbackForm() {
 		this.show = !this.show;
 		this.resetForm();
 	}
 
-	@action
-	resetForm() {
+	@action resetForm() {
 		this.isNewFeedBack = true;
 		this.hasSavedFeedback = false;
 		this.selectedCategory;
 		this.text = '';
 	}
 
-	@action
-	setCategory(category) {
+	@action setCategory(category) {
 		this.selectedCategory = category;
 	}
 
 	@drop *submitFeedback() {
+
 		if (!this.text) return;
 
 		try {
+
 			yield fetch('https://form.surrealdb.com/feedback', {
 				method: 'POST',
 				headers: {
@@ -56,8 +56,11 @@ export default class FeedbackComponent extends Component {
 
 			this.hasSavedFeedback = true;
 			this.isNewFeedBack = false;
+
 		} catch {
 			// catch error
 		}
+
 	}
+
 }

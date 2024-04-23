@@ -67,18 +67,32 @@ function handler(event) {
 
 	switch (path) {
 		// Redirect root product pages
+		case '/app':
+			return redirect('https://surrealdb.com/surrealist');
+		case '/products/surrealist':
+			return redirect('https://surrealdb.com/surrealist');
+		// Redirect root product pages
 		case '/cf':
-			return redirect('https://surrealdb.com/products/cf');
+			return redirect('https://surrealdb.com/products/change-data-capture');
 		case '/ix':
-			return redirect('https://surrealdb.com/products/ix');
-		case '/kv':
-			return redirect('https://surrealdb.com/products/kv');
+			return redirect('https://surrealdb.com/products/full-text-search');
 		case '/lq':
-			return redirect('https://surrealdb.com/products/lq');
+			return redirect('https://surrealdb.com/products/realtime-data-sync');
 		case '/ml':
-			return redirect('https://surrealdb.com/products/ml');
+			return redirect('https://surrealdb.com/products/machine-learning');
 		case '/ql':
-			return redirect('https://surrealdb.com/products/ql');
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql');
+		// Redirect older product pages
+		case '/products/cf':
+			return redirect('https://surrealdb.com/products/change-data-capture');
+		case '/products/ix':
+			return redirect('https://surrealdb.com/products/full-text-search');
+		case '/products/lq':
+			return redirect('https://surrealdb.com/products/realtime-data-sync');
+		case '/products/ml':
+			return redirect('https://surrealdb.com/products/machine-learning');
+		case '/products/ql':
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql');
 		// Redirect store url to Store
 		case '/store':
 			return redirect('https://surrealdb.store');
@@ -88,6 +102,7 @@ function handler(event) {
 		// Redirect github url to GitHub
 		case '/github':
 			return redirect('https://github.com/surrealdb/surrealdb');
+		// Redirect old websocket protocol page
 		case '/docs/surrealdb/integration/websocket':
 			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old websocket text protocol page

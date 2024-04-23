@@ -1,7 +1,6 @@
 {{#if (begs-with @link "https://")}}
 	<a href={{@link}} rel="noopener noreferrer" target="_blank" ...attributes>
 		<div>
-			{{!-- {{#if (has-block)}}<icon>{{yield}}</icon>{{/if}} --}}
 			{{#if @text}}<span>{{@text}}</span>{{/if}}
 		</div>
 		{{#if @desc}}<p>{{@desc}}</p>{{/if}}
@@ -9,7 +8,6 @@
 {{else}}
 	<LinkTo @route={{@link}} selected={{begs-with (route-name) @link}} ...attributes>
 		<div>
-			{{!-- {{#if (has-block)}}<icon>{{yield}}</icon>{{/if}} --}}
 			{{#if @text}}<span>{{@text}}</span>{{/if}}
 		</div>
 		{{#if @desc}}<p>{{@desc}}</p>{{/if}}

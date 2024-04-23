@@ -1,48 +1,24 @@
-<announcement>
-	<Signup::Cloud>
-		<h4>Click here to sign up to SurrealDB Cloud</h4>
-	</Signup::Cloud>
-</announcement>
-
 <header>
 
 	<content>
 
-		<div>
+		<nav>
+
 			<LinkTo @route="index" class="logo" aria-label="Home">
-				<img src="/static/img/logo.svg" alt="SurrealDB" width="200" height="40" />
+				<img src="/static/img/logo.svg" alt="SurrealDB" width="160" height="40" />
 			</LinkTo>
-		</div>
 
-		<space></space>
+			<Header::Dropdown />
 
-		<Header::Links>
+			<space></space>
 
-			<Header::Links::Item @link="index" @text="Home" />
-
-			<Header::Links::Item @link="products" @text="Products" />
-
-			<Header::Links::Item @link="community" @text="Community" />
-
-			<Header::Links::Item @link="careers" @text="Careers" />
-
-			<Header::Links::Item @link="features" @text="Features" />
-
-			<Header::Links::Item @link="releases" @text="Releases" />
-
-			<Header::Links::Item @link="install" @text="Install" />
-
-			<Header::Links::Item @link={{url "docs"}} @text="Docs" />
-
-			<Header::Links::Item @link="blog" @text="Blog" />
-
-			<Button white @link={{url "github"}}>
-				<i class="fas fa-star"></i> <span>GitHub</span>
+			<Button @link={{url "github"}}>
+				<i class="fas fa-star align-right"></i> <span>GitHub</span>
 			</Button>
 
 			<Feedback />
 
-		</Header::Links>
+		</nav>
 
 		<Sidebar::Menu @type="over" />
 

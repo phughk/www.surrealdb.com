@@ -3,7 +3,10 @@
 		{{#if (has-block)}}
 			{{yield}}
 		{{else}}
-			{{@text}}
+			<span>{{@text}}</span>
+		{{/if}}
+		{{#if @info}}
+			<info>{{@info}}</info>
 		{{/if}}
 	</a>
 {{else}}
@@ -11,7 +14,10 @@
 		{{#if (has-block)}}
 			{{yield}}
 		{{else}}
-			{{@text}}
+			<span>{{@text}}</span>
+		{{/if}}
+		{{#if @info}}
+			<info>{{@info}}</info>
 		{{/if}}
 	</LinkTo>
 {{/if}}

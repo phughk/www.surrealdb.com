@@ -4,12 +4,12 @@ layout-hero {
 	display:block;
 	position:relative;
 	background-size:cover;
+	background-position:center;
 	background-repeat:no-repeat;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	background-size:cover;
-	background-position:center;
 
 	@include media(max-width-960) {
 		height:auto;
@@ -22,19 +22,192 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:url("/static/img/illustrations/hero.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/home/hero.jpg");
 		background-color:#000000;
-
-		@include media(max-width-1301) {
-			background-image:url("/static/img/illustrations/hero1.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-			background-color:#000000;
-		}
 
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
-			background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-			background-color:#000000;
+		}
+
+		content {
+			margin-top:0px;
+			text-align:left;
+
+			@include media(max-width-960) {
+				text-align:left;
+				margin-top:50px;
+			}
+
+			a[button] {
+				font-size:18px;
+				padding:15px 40px;
+				margin:20px 10px 10px 0px;
+
+				@include media(max-width-960) {
+					margin:0 10px 10px 0;
+				}
+
+			}
+
+			h1[data-aos=fade-down] {
+				-webkit-transform: translate3d(0, -20px, 0);
+				transform: translate3d(0, -20px, 0);
+			}
+
+		}
+	}
+
+	&[cloud] {
+		height:100vh;
+		display:flex;
+		align-items:center;
+		flex-direction:column;
+		justify-content:center;
+		background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/cloud/hero.jpg");
+		background-color:#000000;
+
+		@include media(max-width-960) {
+			height:auto;
+			padding:50px 0 100px 0;
+		}
+
+		content {
+			margin-top:0px;
+			text-align:left;
+
+			@include media(max-width-960) {
+				text-align:left;
+				margin-top:50px;
+			}
+
+			a[button] {
+				font-size:18px;
+				padding:15px 40px;
+				margin:20px 10px 10px 0px;
+
+				@include media(max-width-960) {
+					margin:0 10px 10px 0;
+				}
+			}
+
+			h1[data-aos=fade-down] {
+				-webkit-transform: translate3d(0, -20px, 0);
+				transform: translate3d(0, -20px, 0);
+			}
+		}
+
+		h2 {
+
+			max-width:795px;
+			font-weight:600;
+			line-height:40px;
+			color:transparent;
+			margin-bottom:0.8em;
+			padding-bottom:0.1em;
+			-webkit-text-fill-color:transparent;
+			background:-webkit-linear-gradient(0deg, #ff00a0, #ff98d9, #ff00a0);
+			-webkit-background-clip:text;
+
+			@include media(max-width-1250) {
+				width:100%;
+			}
+
+			@include media(max-width-962) {
+				font-size:24px;
+			}
+
+			@include media(max-width-768) {
+				font-size:24px;
+			}
+
+		}
+
+		content {
+			margin-top:0px;
+			text-align:left;
+
+			@include media(max-width-960) {
+				text-align:left;
+				margin-top:50px;
+			}
+
+			a[button] {
+				font-size:18px;
+				padding:15px 40px;
+				margin:20px 0px 10px 0px;
+
+				@include media(max-width-960) {
+					margin:0 10px 10px 0;
+				}
+			}
+		}
+	}
+
+	&[surrealist] {
+		height:100vh;
+		display:flex;
+		align-items:center;
+		flex-direction:column;
+		justify-content:center;
+		background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 1) 100%), url("/static/img/surrealist/hero.jpg");
+		background-color:#000000;
+
+		content {
+			margin-top:0px;
+			text-align:left;
+
+			@include media(max-width-960) {
+				text-align:left;
+				margin-top:50px;
+			}
+
+			a[button] {
+				font-size:18px;
+				padding:15px 40px;
+				margin:20px 10px 10px 0px;
+
+				@include media(max-width-960) {
+					margin:0 10px 10px 0;
+				}
+
+				&:nth-of-type(2) {
+					margin-top:0;
+				}
+
+			}
+
+		}
+	}
+
+	&[hiring] {
+		height:100vh;
+		display:flex;
+		align-items:center;
+		flex-direction:column;
+		justify-content:center;
+		background-image:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
+		background-color:#110322;
+
+		.video-background {
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			z-index:-1;
+			position:fixed;
+			overflow:hidden;
+		}
+
+		#background-video {
+			top:50%;
+			left:50%;
+			width:auto;
+			height:auto;
+			min-width:100%;
+			min-height:100%;
+			position:absolute;
+			transform:translate(-50%, -50%);
 		}
 
 		content {
@@ -58,12 +231,9 @@ layout-hero {
 		}
 	}
 
-
 	&[products] {
 		height:auto;
 		padding:120px 0 150px 0;
-		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-		background-color:#000000;
 
 		@include media(max-width-960) {
 			height:auto;
@@ -73,10 +243,11 @@ layout-hero {
 	}
 
 	&[lq], &[cf], &[ix], &[ml] {
+
 		height:auto;
 		padding:120px 0 150px 0;
-		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-		background-color:#000000;
+		background:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
+		background-color:#110322;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -84,13 +255,16 @@ layout-hero {
 			padding:120px 0 50px 0;
 		}
 
+		h1 {
+			font-size:70px;
+			line-height:70px;
+		}
+
 	}
 
 	&[install], &[releases], &[license], &[security], &[features], &[opensource], &[media], &[giveaway] {
 		height:auto;
 		padding:120px 0 150px 0;
-		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -103,14 +277,12 @@ layout-hero {
 	&[docs], &[blog-article] {
 		padding:0;
 		height:auto;
-		height:96px;
-		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-		background-color:#000000;
+		height:50px;
 
 		@include media(max-width-960) {
 			top:0px;
 			padding:0;
-			height:96px;
+			height:50px;
 		}
 
 	}
@@ -118,7 +290,8 @@ layout-hero {
 	&[careers] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("/static/img/careers/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/img/careers/hero.jpg");
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -131,6 +304,7 @@ layout-hero {
 		height:100%;
 		padding:350px 0 150px 0;
 		background-image:linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/yaacomm.jpg");
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -144,8 +318,9 @@ layout-hero {
 		height:auto;
 		padding:350px 60px 150px 60px;
 		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/surreal1.0.jpg");
+		background-color:#000000;
 
-		@media (prefers-color-scheme: light) {
+		@media (prefers-color-scheme:light) {
 			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/surreal1.0.jpg");
 		}
 
@@ -161,7 +336,7 @@ layout-hero {
 		padding:350px 60px 150px 60px;
 		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/community/techandtunes.jpg");
 
-		@media (prefers-color-scheme: light) {
+		@media (prefers-color-scheme:light) {
 			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/community/techandtunes.jpg");
 		}
 
@@ -176,6 +351,7 @@ layout-hero {
 		height:auto;
 		padding:350px 0 150px 0;
 		background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/img/team/hero.jpg");
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -187,7 +363,8 @@ layout-hero {
 	&[community] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/community/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/img/community/hero.jpg");
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -199,9 +376,10 @@ layout-hero {
 	&[gettingstarted] {
 		height:auto;
 		padding:250px 80px 250px 80px;
-		background-image:url("/static/img/illustrations/dark/gettingstarted.png");
+		background-image:radial-gradient(circle at bottom left, rgba(255, 244, 244, 0.1), transparent 50%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
 
-		@media (prefers-color-scheme: light) {
+
+		@media (prefers-color-scheme:light) {
 			background-image:url("/static/img/illustrations/light/gettingstarted.png");
 		}
 
@@ -213,7 +391,8 @@ layout-hero {
 	&[blog] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/blog/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/img/blog/hero.jpg");
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -280,24 +459,11 @@ layout-hero {
 
 			width:80%;
 			line-height:1;
-			font-size:90px;
+			font-size:56px;
+    		line-height:60px;
 			margin:0 0 10px 0;
+    		letter-spacing:-.03em;
 			color:var(--white-color);
-
-			img {
-				height:45px;
-			}
-
-			span[underline] {
-
-				background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
-				background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
-				background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
-				-webkit-background-clip:text;
-				background-clip:text;
-				-webkit-text-fill-color:transparent;
-
-			}
 
 			@include media(max-width-1250) {
 				width:90%;
@@ -317,7 +483,11 @@ layout-hero {
 		h2 {
 
 			width:80%;
-			font-size:28px;
+			font-size:24px;
+			font-weight:500;
+			margin-top:24px;
+			line-height:32px;
+			letter-spacing:-.03em;
 			color:var(--white-color);
 
 			@include media(max-width-1250) {

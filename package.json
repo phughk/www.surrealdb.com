@@ -24,6 +24,7 @@
     "test:ember": "ember test"
   },
   "devDependencies": {
+    "@ascua/aos.js": "^0.3.11",
     "@ascua/arrays": "^0.3.11",
     "@ascua/core": "^0.3.11",
     "@ascua/day.js": "^0.3.11",

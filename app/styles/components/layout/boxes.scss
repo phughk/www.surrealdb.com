@@ -1,28 +1,32 @@
 layout-boxes {
 
-	display: block;
+	display:block;
 
 	content {
 
-		display: grid;
-		grid-gap: 10px 10px;
-		grid-template-columns: repeat(12, 1fr);
+		display:grid;
+		grid-gap:30px 30px;
+		grid-template-columns:repeat(12, 1fr);
+
+		&[home] {
+			grid-gap:20px 20px;
+		}
 
 		> a {
 
-			display: flex;
-			grid-column: auto / span 2;
-
+			display:flex;
+			grid-column:auto / span 2;
+			
 			> layout-boxes-item {
 
-				transition: box-shadow 0.3s;
+				transition:box-shadow 0.3s;
 
 				&:hover {
 
-					transform: translateZ(0);
+					transform:translateZ(0);
 
 					img {
-						transform: scale(1.05);
+						transform:scale(1.05);
 					}
 
 				}
@@ -33,59 +37,63 @@ layout-boxes {
 
 		> a > layout-boxes-item, > layout-boxes-item {
 
-			z-index: 1;
-			width: 100%;
-			display: block;
-			overflow: hidden;
-			text-align: left;
-			position: relative;
-			grid-column: auto / span 2;
-			background-color: var(--dark-color);
+			z-index:1;
+			width:100%;
+			display:block;
+			overflow:hidden;
+			text-align:left;
+			overflow:visible;
+			position:relative;
+			border-radius:18px;
+			grid-column:auto / span 2;
+			background-color:var(--dark-color);
 
 			picture {
 
-				max-width: 100%;
-				position: relative;
-				display: inline-block;
+				max-width:100%;
+				overflow:hidden;
+				position:relative;
+				display:inline-block;
 
 				img:not(.devicon) {
-					width: 100%;
-					height: 100%;
-					display: block;
-					max-width: 100%;
-					object-fit: cover;
-					transition: transform 0.3s;
+					width:100%;
+					height:100%;
+					display:block;
+					max-width:100%;
+					object-fit:cover;
+					transition:transform 0.3s;
 				}
 
 			}
 
 			&[clear] {
 
-				background-color: transparent;
+				background-color:transparent;
 
 				div {
-					padding-left: 15%;
+					padding-top:5%;
+					padding-left:15%;
 					padding-right:15%;
-					padding-bottom: 5%;
-					padding-top: 5%;
+					padding-bottom:5%;
 
 					> h3 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
+
 				}
 
 			}
@@ -100,12 +108,112 @@ layout-boxes {
 
 			}
 
+			&[blog] {
+
+				border-radius:20px;
+
+			}
+
+			&[social] {
+
+				border-radius:0px;
+
+			}
+
 			&[opensource] {
 
+				border-radius:0px;
 				background-color:var(--darker-color);
 
 				div {
 					padding:60px;
+				}
+
+			}
+
+			&[home] {
+
+				background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.05), transparent 40%);
+
+				picture {
+
+					display:block;
+					max-width:100%;
+
+					img:not(.devicon) {
+						width:100%;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
+						border-top-right-radius:16px;
+					}
+
+				}
+
+				div {
+					padding-top:0%;
+					padding-left:10%;
+					padding-right:10%;
+					padding-bottom:10%;
+
+					> h3 {
+						font-size:28px;
+						font-weight:600;
+						line-height:1.2;
+
+						@include media(max-width-768) {
+							width:100%;
+							font-size:24px;
+						}
+
+					}
+
+					> h4 {
+						color:var(--text-color);
+					}
+
+					> p:last-child {
+						font-size:16px;
+						font-weight:400;
+						line-height:24px;
+						padding-bottom:20px;
+						letter-spacing:-.02em;
+						color:var(--faint-color);
+					}
+
+					> p:first-child {
+						font-size:17px;
+						padding-bottom:60px;
+						margin-bottom:5px;
+						display:inline-block;
+					}
+				}
+
+			}
+
+			&[surrealist] {
+
+				border-radius:0px;
+
+				picture {
+
+					display:block;
+					max-width:100%;
+					position:relative;
+					background:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.3), transparent 60%);
+					background-color:#110322;
+
+					img:not(.devicon) {
+						width:100%;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
+					}
+
 				}
 
 			}
@@ -115,51 +223,51 @@ layout-boxes {
 
 				picture {
 
-					max-width: 100%;
-					position: relative;
 					display:block;
+					max-width:100%;
+					position:relative;
 
 					img:not(.devicon) {
-						width: 100%;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
 
 				div {
-					padding-left: 15%;
+					padding-top:5%;
+					padding-left:15%;
 					padding-right:15%;
-					padding-bottom: 5%;
-					padding-top: 5%;
+					padding-bottom:5%;
 
 					> h3 {
-						font-size: 38px;
-						font-weight: 600;
-						line-height: 1.1;
-						color: var(--text-color);
+						font-size:38px;
+						font-weight:600;
+						line-height:1.1;
+						color:var(--text-color);
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:600;
+						padding-bottom:0px;
 
 					}
 
 					 p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						padding-bottom:0px;
+						margin-bottom:5px;
+						display:inline-block;
+						color:var(--text-color);
 					}
 				}
 
@@ -169,35 +277,35 @@ layout-boxes {
 				background-color:var(--white-color);
 
 				div {
-					padding-left: 15%;
+					padding-top:5%;
+					padding-left:15%;
 					padding-right:15%;
-					padding-bottom: 5%;
-					padding-top: 5%;
+					padding-bottom:5%;
 
 					> h3 {
-						font-size: 38px;
-						font-weight: 600;
-						line-height: 1.1;
-						color: var(--text-color);
+						font-size:38px;
+						font-weight:600;
+						line-height:1.1;
+						color:var(--text-color);
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:600;
+						padding-bottom:60px;
 
 					}
 
 					 p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						margin-bottom:5px;
+						padding-bottom:60px;
+						display:inline-block;
+						color:var(--text-color);
 					}
 				}
 
@@ -205,51 +313,113 @@ layout-boxes {
 
 			&[light] {
 
-				background-color:var(--light-color);
+				inset:1px;
+				background-color:#151517;
+
+
 
 				div {
+					padding-top:10%;
 					padding-left:15%;
 					padding-right:15%;
-					padding-bottom:10%;
-					padding-top:10%;
+					padding-bottom:0%;
 
 					@include media(max-width-960) {
+						padding-top:5%;
 						padding-left:10%;
 						padding-right:10%;
 						padding-bottom:15%;
-						padding-top:5%;
 					}
 
 					> h3 {
-						font-size: 32px;
-						font-weight: 600;
-						line-height: 1.2;
-						color: var(--text-color);
+						font-size:28px;
+						font-weight:600;
+						line-height:1.2;
+						color:var(--text-color);
 
 						@include media(max-width-768) {
 							width:100%;
-							font-size: 24px;
+							font-size:24px;
 						}
 
 					}
 
 					> h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					> p:last-child {
-						font-size: 17px;
-						font-weight: 600;
-						padding-bottom: 60px;
+						font-size:17px;
+						font-weight:500;
+						padding-bottom:20px;
 
 					}
 
 					> p:first-child {
-						font-size: 17px;
-						padding-bottom: 60px;
-						margin-bottom: 5px;
-						display: inline-block;
-						color: var(--text-color);
+						font-size:17px;
+						padding-bottom:60px;
+						margin-bottom:5px;
+						display:inline-block;
+						color:var(--text-color);
+					}
+				}
+
+			}
+
+			&[cloud] {
+
+				background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.05), transparent 40%);
+
+				picture {
+
+					display:block;
+					max-width:100%;
+
+					img:not(.devicon) {
+						width:100%;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
+						border-top-right-radius:0px;
+					}
+
+				}
+
+				div {
+					padding-top:0%;
+					padding-left:10%;
+					padding-right:10%;
+					padding-bottom:10%;
+
+					> h3 {
+						font-size:28px;
+						font-weight:600;
+						line-height:1.2;
+
+						@include media(max-width-768) {
+							width:100%;
+							font-size:24px;
+						}
+
+					}
+
+					> h4 {
+						color:var(--text-color);
+					}
+
+					> p:last-child {
+						font-size:17px;
+						font-weight:500;
+						padding-bottom:20px;
+					}
+
+					> p:first-child {
+						font-size:17px;
+						margin-bottom:5px;
+						padding-bottom:60px;
+						display:inline-block;
 					}
 				}
 
@@ -258,35 +428,35 @@ layout-boxes {
 			&[casestudies1] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/jules.jpg");
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -300,35 +470,35 @@ layout-boxes {
 			&[casestudies2] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/nhs.jpg");
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -340,49 +510,49 @@ layout-boxes {
 			}
 
 			&[pink] {
-				background: rgb(255,0,160);
-				background: -moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: -webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
+				background:rgb(255,0,160);
+				background:-moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background:-webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background:linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
 			}
 
 			&[photo1] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/casestudies/nhs.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/nhs.jpg");
 				}
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					> h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					> p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -396,39 +566,39 @@ layout-boxes {
 			&[photo2] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/libertymutual.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/libertymutual.jpg");
 				}
 
 				div {
 
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -441,38 +611,38 @@ layout-boxes {
 			&[photo3] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/tesla.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/tesla.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -485,38 +655,38 @@ layout-boxes {
 			&[photo4] {
 
 				height:auto;
-				border-radius: 0px;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.png");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -530,36 +700,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/hero.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/hero.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -573,36 +743,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whatissurrealdb.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whatissurrealdb.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -616,36 +786,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/makinganimpact.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/makinganimpact.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -659,37 +829,37 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/careers7.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/careers7.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
 						width:75%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -703,36 +873,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
 						width:50%;
-						font-size: 62px;
-						font-weight: 600;
-						line-height: 1.1;
-						color: var(--white-color);
+						font-size:62px;
+						font-weight:600;
+						line-height:1.1;
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -745,30 +915,31 @@ layout-boxes {
 			&[team] {
 
 				height:auto;
+				border-radius:0px;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 
 				div {
-					padding: 30px;
+					padding:30px;
 
 					>h3 {
-						font-size: 22px;
+						font-size:22px;
 						margin-bottom:0px;
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--faint-color);
+						color:var(--faint-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--faint-color);
+						color:var(--faint-color);
 					}
 
 					p {
@@ -782,36 +953,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -826,36 +997,36 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/community/community.jpg");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/community/community.jpg");
 				}
 
 				div {
-					padding: 60px;
+					padding:60px;
 
 					@include media(max-width-960) {
-						padding: 40px;
+						padding:40px;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					p {
@@ -870,31 +1041,31 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 				}
 			}
@@ -903,63 +1074,63 @@ layout-boxes {
 
 				height:auto;
 				background-size:cover;
-  				background-position: center;
+  				background-position:center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
-				@media (prefers-color-scheme: light) {
+				@media (prefers-color-scheme:light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
-					padding: 60px;
+					padding:60px;
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 				}
 			}
 
 			&[wider] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:var(--back-color);
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
+					padding:0px;
 
 					@include media(max-width-1200) {
 						width:100%;
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
@@ -968,30 +1139,30 @@ layout-boxes {
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 
 						@include media(max-width-768) {
 							width:100%;
 						}
 					}
 
-					@media (prefers-color-scheme: light) {
+					@media (prefers-color-scheme:light) {
 						>h3 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>h4 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>p:last-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 
 						>p:first-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 					}
 
@@ -999,22 +1170,22 @@ layout-boxes {
 
 				picture {
 
-					display: block;
-					width: 80px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					width:80px;
+					display:block;
+					overflow:hidden;
+					border-radius:0px;
+					position:relative;
+					padding-bottom:20px;
 					background-color:none;
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1022,17 +1193,17 @@ layout-boxes {
 
 			&[transparent] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:transparent;
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
-					max-width: 100%;
+					padding:0px;
+					max-width:100%;
 
 					@include media(max-width-1200) {
 						width:930px;
@@ -1047,19 +1218,19 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>h4 {
-						color: var(--text-color);
+						color:var(--text-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 
-						@media (prefers-color-scheme: light) {
-							color: var(--faint-color);
+						@media (prefers-color-scheme:light) {
+							color:var(--faint-color);
 						}
 
 						@include media(max-width-768) {
@@ -1069,10 +1240,10 @@ layout-boxes {
 
 					>p:first-child {
 						width:95%;
-						color: var(--text-color);
+						color:var(--text-color);
 
-						@media (prefers-color-scheme: light) {
-							color: var(--faint-color);
+						@media (prefers-color-scheme:light) {
+							color:var(--faint-color);
 						}
 
 						@include media(max-width-768) {
@@ -1084,22 +1255,22 @@ layout-boxes {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					display:block;
+					width:110px;
+					overflow:hidden;
+					position:relative;
+					padding-bottom:20px;
+					border-radius:0px;
 					background-color:none
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1107,17 +1278,17 @@ layout-boxes {
 
 			&[hero] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:transparent;
 
 				@include media(max-width-960) {
-					margin-bottom: 50px;
+					margin-bottom:50px;
 				}
 
 				div {
-					padding: 0px;
-					max-width: 100%;
+					padding:0px;
+					max-width:100%;
 
 					@include media(max-width-1200) {
 						width:930px;
@@ -1132,17 +1303,17 @@ layout-boxes {
 					}
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
-						margin-bottom: 30px;
+						color:var(--white-color);
+						margin-bottom:30px;
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1151,8 +1322,8 @@ layout-boxes {
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
-						margin-bottom: 30px;
+						color:var(--white-color);
+						margin-bottom:30px;
 
 						@include media(max-width-768) {
 							width:100%;
@@ -1163,22 +1334,22 @@ layout-boxes {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					display:block;
+					width:110px;
+					overflow:hidden;
+					position:relative;
+					padding-bottom:20px;
+					border-radius:0px;
 					background-color:none
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1186,48 +1357,48 @@ layout-boxes {
 
 			&[products] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
+				border-radius:0px;
+				margin-bottom:100px;
 				background-color:var(--dark-color);
 
 				div {
-					padding: 0px;
+					padding:0px;
 
 					>h3 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>h4 {
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:last-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
 					>p:first-child {
 						width:95%;
-						color: var(--white-color);
+						color:var(--white-color);
 					}
 
-					@media (prefers-color-scheme: light) {
+					@media (prefers-color-scheme:light) {
 						>h3 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>h4 {
-							color: var(--text-color);
+							color:var(--text-color);
 						}
 
 						>p:last-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 
 						>p:first-child {
 							width:95%;
-							color: var(--faint-color);
+							color:var(--faint-color);
 						}
 					}
 
@@ -1235,22 +1406,22 @@ layout-boxes {
 
 				picture {
 
-					display: block;
-					width: 110px;
-					overflow: hidden;
-					position: relative;
-					padding-bottom: 20px;
-					border-radius: 0px;
+					display:block;
+					width:110px;
+					overflow:hidden;
+					position:relative;
+					padding-bottom:20px;
+					border-radius:0px;
 					background-color:none;
 
 					img {
-						width: 100%;
-						margin: auto;
-						height: 100%;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
+						width:100%;
+						margin:auto;
+						height:100%;
+						display:block;
+						max-width:100%;
+						object-fit:cover;
+						transition:transform 0.3s;
 					}
 
 				}
@@ -1258,44 +1429,44 @@ layout-boxes {
 
 			&[hero] {
 
-				border-radius: 0px;
-				margin-bottom: 100px;
-				background-color: transparent;
+				border-radius:0px;
+				margin-bottom:100px;
+				background-color:transparent;
 
-				display: flex;
-				flex-direction: column;
+				display:flex;
+				flex-direction:column;
 
 				> div {
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					flex: 1;
+					display:flex;
+					flex-direction:column;
+					justify-content:space-between;
+					flex:1;
 
 					> div {
-						padding: 0px;
+						padding:0px;
 
 						>h3 {
-							color: var(--white-color);
+							color:var(--white-color);
 						}
 
 						>h4 {
-							color: var(--white-color);
+							color:var(--white-color);
 						}
 
 						>p:last-child {
 							width:95%;
-							color: var(--white-color);
+							color:var(--white-color);
 						}
 
 						>p:first-child {
 							width:95%;
-							color: var(--white-color);
+							color:var(--white-color);
 						}
 
 					}
 
 					a {
-						align-self: start;
+						align-self:start;
 					}
 				}
 
@@ -1303,78 +1474,78 @@ layout-boxes {
 
 			div {
 
-				padding: 40px;
+				padding:40px;
 
 				@include media(max-width-1024) {
-					padding: 30px;
+					padding:30px;
 				}
 
 				>h3 {
-					font-size: 26px;
-					font-weight: 600;
-					line-height: 1.2;
+					font-size:26px;
+					font-weight:600;
+					line-height:1.2;
 				}
 
 				>h4 {
-					font-size: 20px;
-					font-weight: 600;
-					line-height: 1.5;
+					font-size:20px;
+					font-weight:600;
+					line-height:1.5;
 				}
 
 				>p:last-child {
-					font-size: 16px;
+					font-size:16px;
 				}
 
 				>p:first-child {
-					font-size: 17px;
-					padding-bottom: 0;
-					margin-bottom: 5px;
-					display: inline-block;
-					color: var(--faint-color);
+					font-size:17px;
+					padding-bottom:0;
+					margin-bottom:5px;
+					display:inline-block;
+					color:var(--faint-color);
 				}
 
 			}
 
 			&[centered] {
-				display: flex;
-				align-items: center;
-				justify-content: center;
+				display:flex;
+				align-items:center;
+				justify-content:center;
 
 				* {
-					color: var(--faint-color);
+					color:var(--faint-color);
 				}
 			}
 
 			&[careers] {
-				display: flex;
-				font-size: 16px;
-				align-items: center;
-				text-align: center;
-				justify-content: center;
+				display:flex;
+				font-size:16px;
+				align-items:center;
+				text-align:center;
+				justify-content:center;
 			}
 
 			&[hover]:hover {
 
 				h3,
 				h4 {
-					color: var(--hover-color);
+					color:var(--hover-color);
 				}
 			}
 
 			&[faded] {
-				opacity: 0.5;
+				opacity:0.5;
 			}
 
 			&[mini] div {
-				padding: 30px 40px;
+				padding:30px 40px;
 			}
 
 			&[tick] div h3 img {
-				margin: 0 10px 0 0;
+				margin:0 10px 0 0;
 			}
 
 			&[tick] div h4 img {
-				margin: 0 10px 0 0;
+				margin:0 10px 0 0;
 			}
 
 		}
@@ -1384,14 +1555,14 @@ layout-boxes {
 	&[cols-4-to-2-to-1] content>a,
 	&[cols-4-to-2-to-1] content>layout-boxes-item {
 
-		grid-column: auto / span 3;
+		grid-column:auto / span 3;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -1401,11 +1572,11 @@ layout-boxes {
 				picture {
 
 					img {
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						position: absolute;
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
 					}
 
 				}
@@ -1420,20 +1591,20 @@ layout-boxes {
 
 				picture {
 
-					float: left;
-					width: 67.7%;
-					min-height: 100%;
+					float:left;
+					width:67.7%;
+					min-height:100%;
 
 					&:only-child {
-						width: 100%;
+						width:100%;
 					}
 
 				}
 
 				div {
-					margin: 0;
-					width: 32.3%;
-					float: right;
+					margin:0;
+					width:32.3%;
+					float:right;
 				}
 
 			}
@@ -1442,28 +1613,28 @@ layout-boxes {
 
 		@include media(max-width-1250) {
 
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 6;
+				grid-column:auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-768) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1473,14 +1644,14 @@ layout-boxes {
 	&[cols-3-to-2-to-1] content>a,
 	&[cols-3-to-2-to-1] content>layout-boxes-item {
 
-		grid-column: auto / span 4;
+		grid-column:auto / span 4;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -1490,11 +1661,11 @@ layout-boxes {
 				picture {
 
 					img {
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						position: absolute;
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
 					}
 
 				}
@@ -1509,20 +1680,20 @@ layout-boxes {
 
 				picture {
 
-					float: left;
-					width: 67.7%;
-					min-height: 100%;
+					float:left;
+					width:67.7%;
+					min-height:100%;
 
 					&:only-child {
-						width: 100%;
+						width:100%;
 					}
 
 				}
 
 				div {
-					margin: 0;
-					width: 32.3%;
-					float: right;
+					margin:0;
+					width:32.3%;
+					float:right;
 				}
 
 			}
@@ -1531,28 +1702,28 @@ layout-boxes {
 
 		@include media(max-width-1650) {
 
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 6;
+				grid-column:auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-768) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1562,26 +1733,26 @@ layout-boxes {
 	&[cols-3-to-1] content>a,
 	&[cols-3-to-1] content>layout-boxes-item {
 
-		grid-column: auto / span 4;
+		grid-column:auto / span 4;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(max-width-1300) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1591,26 +1762,26 @@ layout-boxes {
 	&[cols-2-to-1] content>a,
 	&[cols-2-to-1] content>layout-boxes-item {
 
-		grid-column: auto / span 6;
+		grid-column:auto / span 6;
 
 		&[full] {
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 		}
 
 		&[half] {
-			grid-column: auto / span 6;
+			grid-column:auto / span 6;
 		}
 
 		@include media(max-width-1000) {
 
-			grid-column: auto / span 12;
+			grid-column:auto / span 12;
 
 			&[full] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 			&[half] {
-				grid-column: auto / span 12;
+				grid-column:auto / span 12;
 			}
 
 		}
@@ -1620,7 +1791,7 @@ layout-boxes {
 	&[cols-1] content>a,
 	&[cols-1] content>layout-boxes-item {
 
-		grid-column: auto / span 12;
+		grid-column:auto / span 12;
 
 	}
 

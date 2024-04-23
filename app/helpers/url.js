@@ -18,10 +18,10 @@ export function url([type]) {
 			return 'https://github.com/surrealdb/surrealdb/releases';
 		case 'discussions':
 			return 'https://github.com/surrealdb/surrealdb/discussions';
-		case 'surrealdbworld':
-			return 'https://surrealdb.world/';
-		case 'surrealdbevents':
-			return 'https://surrealdb.world/events';
+		case 'surrealist':
+			return 'https://surrealist.app';
+		case 'download':
+			return 'https://github.com/surrealdb/surrealist/releases';
 		//
 		case 'twitter':
 			return 'https://twitter.com/surrealdb';

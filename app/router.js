@@ -10,9 +10,10 @@ Router.map(function () {
 
 	// Base routes
 
-	this.route('app');
 	this.route('careers');
+	this.route('cloud');
 	this.route('community');
+	this.route('events');
 	this.route('features');
 	this.route('install');
 	this.route('license');
@@ -20,18 +21,19 @@ Router.map(function () {
 	this.route('opensource');
 	this.route('releases');
 	this.route('snippet');
+	this.route('studio');
+	this.route('surrealist');
 	this.route('team');
 	this.route('yaacomm');
 
 	// Products routes
 
 	this.route('products', function () {
-		this.route('cf');
-		this.route('ix');
-		this.route('kv');
-		this.route('lq');
-		this.route('ml');
-		this.route('ql');
+		this.route('full-text-search');
+		this.route('vector-search');
+		this.route('machine-learning');
+		this.route('realtime-data-sync');
+		this.route('change-data-capture');
 	});
 
 	// Legal routes

@@ -7,75 +7,67 @@
 <Layout::Hero install>
 	<Layout::Text text-l>
 		<h1>How to install</h1>
-		<h2>There are a number of ways of running SurrealDB. It can either be installed from a binary image, or it can be run from within Docker. Once installed, the <Ascua::Prism::Inline @language="bash" @code="surreal" /> command is a single executable which can be used to backup, interact with, and run SurrealDB server instances.</h2>
-		<h2>The latest version of SurrealDB is <Version />.</h2>
-		<Button white @link="features">
+		<h5 header>There are a number of ways of running SurrealDB. It can either be installed from a binary image, or it can be run from within Docker. Once installed, the <Ascua::Prism::Inline @language="bash" @code="surreal" /> command is a single executable which can be used to backup, interact with, and run SurrealDB server instances.</h5>
+		<h5 header>The latest version of SurrealDB is <Version />.</h5>
+		<Button @link="features">
 			<i class="fal fa-list-check"></i> <span>View all features</span>
 		</Button>
-		<Button white @link={{docs "/docs/surrealdb/introduction/start"}}>
+		<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
 			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
 		</Button>
 	</Layout::Text>
 </Layout::Hero>
 
-<section>
-
-	<Layout::Gap large />
-
-	<Layout::Blocks main-l as |block|>
-		<block>
-			<h4>
-				<Devicon @size="45" @type="apple" /> Install on macOS
-			</h4>
-			<p>The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools, and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to install SurrealDB. View the <Link @link={{docs "/docs/surrealdb/installation/macos"}}>documentation</Link> for more information.</p>
-			<Code @name="install-macos.bash">
-				brew install surrealdb/tap/surreal
-			</Code>
-		</block>
-		<block>
-			<h4>
-				<Devicon @size="45" @type="linux" /> Install on Linux
-			</h4>
-			<p>The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link={{docs "/docs/surrealdb/installation/linux"}}>documentation</Link> for more information.</p>
-			<Code @name="install-linux.bash">
-				curl -sSf https://install.surrealdb.com | sh
-			</Code>
-		</block>
-	</Layout::Blocks>
-
-	<Layout::Gap mini />
-
-	<Layout::Blocks main-l as |block|>
+<Layout::Blocks main-l as |block|>
 	<block>
 		<h4>
-			<Devicon @size="45" @type="windows" /> Install on Windows
+			<Devicon @size="45" @type="apple" /> Install on macOS
 		</h4>
-		<p>The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link={{docs "/docs/surrealdb/installation/windows"}}>documentation</Link> for more information.</p>
-		<Code @name="install-windows.bash">
-			iwr https://windows.surrealdb.com -useb | iex
-		</Code>
-		<p>Alternatively SurrealDB is available for installation, on Windows, via the <Link @link="https://community.chocolatey.org/packages/surreal">Chocolatey</Link> package manager, from an administrative shell - enabling easy installation and upgrading.</p>
-		<Code @name="install-choco.bash">
-			choco install surreal
-		</Code>
-		<p>Alternatively SurrealDB is available for installation, on Windows, via the <Link @link="https://scoop.sh">Scoop</Link> package manager, from an administrative shell - enabling easy installation and upgrading.</p>
-		<Code @name="install-scoop.bash">
-			scoop install surreal
+		<p>The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools, and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to install SurrealDB. View the <Link @link={{docs "/docs/surrealdb/installation/macos"}}>documentation</Link> for more information.</p>
+		<Code @name="install-macos.bash">
+			brew install surrealdb/tap/surreal
 		</Code>
 	</block>
 	<block>
 		<h4>
-			<Devicon @size="45" @type="docker" /> Run using Docker
+			<Devicon @size="45" @type="linux" /> Install on Linux
 		</h4>
-		<p>Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The <Link @link={{url "docker"}}>SurrealDB docker container</Link> contains the full command-line tools for importing and exporting data from a running server, or for running a server itself. View the <Link @link={{docs "/docs/surrealdb/installation/running/docker"}}>documentation</Link> for more information.</p>
-		<Code @name="install-docker.bash">
-			docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start
+		<p>The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link={{docs "/docs/surrealdb/installation/linux"}}>documentation</Link> for more information.</p>
+		<Code @name="install-linux.bash">
+			curl -sSf https://install.surrealdb.com | sh
 		</Code>
 	</block>
-	</Layout::Blocks>
+</Layout::Blocks>
 
-	<Layout::Gap large />
+<Layout::Gap mini />
 
-</section>
+<Layout::Blocks main-l as |block|>
+<block>
+	<h4>
+		<Devicon @size="45" @type="windows" /> Install on Windows
+	</h4>
+	<p>The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the <Link @link={{docs "/docs/surrealdb/installation/windows"}}>documentation</Link> for more information.</p>
+	<Code @name="install-windows.bash">
+		iwr https://windows.surrealdb.com -useb | iex
+	</Code>
+	<p>Alternatively SurrealDB is available for installation, on Windows, via the <Link @link="https://community.chocolatey.org/packages/surreal">Chocolatey</Link> package manager, from an administrative shell - enabling easy installation and upgrading.</p>
+	<Code @name="install-choco.bash">
+		choco install surreal
+	</Code>
+	<p>Alternatively SurrealDB is available for installation, on Windows, via the <Link @link="https://scoop.sh">Scoop</Link> package manager, from an administrative shell - enabling easy installation and upgrading.</p>
+	<Code @name="install-scoop.bash">
+		scoop install surreal
+	</Code>
+</block>
+<block>
+	<h4>
+		<Devicon @size="45" @type="docker" /> Run using Docker
+	</h4>
+	<p>Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The <Link @link={{url "docker"}}>SurrealDB docker container</Link> contains the full command-line tools for importing and exporting data from a running server, or for running a server itself. View the <Link @link={{docs "/docs/surrealdb/installation/running/docker"}}>documentation</Link> for more information.</p>
+	<Code @name="install-docker.bash">
+		docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start
+	</Code>
+</block>
+</Layout::Blocks>
 
-<Layout::Newsletter />
+<Layout::Gap large />

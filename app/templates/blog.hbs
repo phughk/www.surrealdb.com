@@ -1,3 +1,5 @@
+<section>
+
 {{#if (is-route "blog.index")}}
 
 	<Meta::Tags @type="blog">
@@ -12,20 +14,21 @@
 			<h1>SurrealDB Blog</h1>
 			<h2>To stay up-to-date with new blog articles, future product releases, documentation updates, and access to SurrealDB Cloud, subscribe to our email newsletter below, or follow us on our socials.</h2>
 			<Signup::Newsletter white />
-		</Layout::Text>
+		</Layout::Text
+		>
 	</Layout::Hero>
 
-	<Layout::Gap large />
+	<Layout::Gap medium />
 
 	{{#if this.posts.length}}
-
-		<Layout::Boxes cols-3-to-2-to-1>
+	
+		<Layout::Blog cols-3-to-2-to-1>
 			{{#each this.posts as |post|}}
 				<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
-					<Layout::Boxes::Item @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+					<Layout::Blog::Item blog @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
 				</LinkTo>
 			{{/each}}
-		</Layout::Boxes>
+		</Layout::Blog>
 
 		<Layout::Gap large />
 
@@ -38,3 +41,5 @@
 	{{outlet}}
 
 {{/if}}
+
+</section>

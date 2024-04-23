@@ -2,7 +2,7 @@ export default {
 	name: 'prism',
 
 	initialize(instance) {
-		if (Prism) {
+		if (typeof Prism !== 'undefined') {
 			Prism.languages.surql = {
 				comment: {
 					pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|(?:--|\/\/|#).*)/,

@@ -5,10 +5,9 @@ header {
 	right:0;
 	z-index:50;
 	width:100%;
-	height:6rem;
 	display:block;
-	position: absolute;
-	background:transparent;
+	position:absolute;
+	background: var(--dropdown-background);
 
 	announcement + & {
 		top:60px;
@@ -16,37 +15,43 @@ header {
 
 	content {
 
+		width: 80%;
 		display: flex;
 		padding: 0px 0;
 		flex-direction: row;
-		justify-content: space-between;
+		margin: 0 auto 0 auto;
+		align-items:center;
+		justify-content:center;
 
-		@include media(max-width-1301) {
-			padding-top:10px;
+		space {
+			margin-left: auto;
 		}
 
-		> div {
+		a[button], button {
 
-			height:30px;
+			height:40px;
 			display:flex;
-			margin:30px 0;
+			margin:24px 0;
 			align-items:center;
 			justify-content:center;
 
-			@include media(max-width-1301) {
-				margin:20px 0;
+			@include media(max-width-768) {
+				display:none;
 			}
 
-			.logo {
-				width:200px;
-				height:40px;
-				display:block;
+			&:last-of-type {
+				margin-left:20px;
+			}
+
+			&[thinner] {
+				border-radius:50px;
+				background-color:var(--popup-color);
 			}
 
 		}
 
 		> space {
-			margin-left:auto;
+			margin-left: auto;
 		}
 
 		> sidebar-menu {
@@ -64,7 +69,7 @@ header {
 				cursor:pointer;
 			}
 
-			@include media(max-width-1301) {
+			@include media(max-width-1251) {
 				display:flex;
 			}
 
@@ -76,8 +81,8 @@ header {
 
 		> nav {
 
-			margin:0;
 			padding:0;
+			width:100%;
 			display:flex;
 			align-items:center;
 			flex-direction:row;
@@ -86,18 +91,24 @@ header {
 			> a {
 
 				display:block;
-				font-size:14px;
+				font-size:13px;
 				cursor:pointer;
-				margin:0 0 0 30px;
-				padding:9px 0 9px 0;
+				padding:12px 0 12px 0;
 				color:var(--white-color);
-				transition:color 0.5s, border 0.5s;
-				border-bottom:3px solid transparent;
+				transition:color 0.5s, border 0.5s, opacity 0.5s;
 
-				@include faded;
+				&:first-of-type {
+					z-index:1000;
+					margin-left:0;
+				}
+
+				&:last-of-type {
+					margin-right:0;
+				}
 
 				&[button] {
 
+					z-index:1;
 					height:40px;
 					display:flex;
 					white-space:nowrap;
@@ -114,23 +125,6 @@ header {
 
 				}
 
-				&:not([button]) {
-
-					@include media(max-width-1301) {
-						display:none;
-					}
-
-					&[selected] {
-						color:var(--white-color);
-						border-bottom:3px solid var(--hover-color);
-					}
-
-					&:hover {
-						border-bottom:3px solid var(--hover-color);
-					}
-
-				}
-
 			}
 
 			> div {
@@ -138,14 +132,12 @@ header {
 				display:block;
 				font-size:14px;
 				cursor:pointer;
-				position:relative;
 				margin:0 0 0 30px;
 				padding:9px 0 9px 0;
 				color:var(--white-color);
 				transition:color 0.5s, border 0.5s;
-				border-bottom:3px solid transparent;
 
-				@include media(max-width-1301) {
+				@include media(max-width-1251) {
 					display:none;
 				}
 

@@ -6,8 +6,6 @@
 
 <section blog>
 
-	<Layout::Gap blog />
-
 	<Layout::Helm blog>
 
 		<Layout::Helm::Menu>
@@ -50,13 +48,8 @@
 				<Layout::Blocks::Image @image={{blog-image this.model.attributes.image}} />
 
 				<Layout::Blocks::Block>
-					<p hide mobile tablet>
-						<Link @link="blog.index" faint>
-							<i class="fas fa-arrow-left"></i> <span>Show all posts</span>
-						</Link>
-					</p>
 					<p>{{date-format this.model.attributes.date "LL"}}</p>
-					<h1>{{this.model.attributes.title}}</h1>
+					<h2>{{this.model.attributes.title}}</h2>
 					<h4>{{this.model.attributes.label}}</h4>
 					<Markup @html={{this.model.body}} />
 				</Layout::Blocks::Block>
@@ -73,15 +66,8 @@
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Share on X
 						</Ascua::Tooltip>
-						<i large class="fab fa-twitter"></i>
+						<i large class="fab fa-x-twitter"></i>
 					</Ascua::Social::Twitter>
-					&nbsp;
-					<Ascua::Social::Whatsapp @url="https://surrealdb.com/blog/{{this.model.attributes.slug}}" @text={{@model.attributes.title}}>
-						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
-							Share on WhatsApp
-						</Ascua::Tooltip>
-						<i large class="fab fa-whatsapp"></i>
-					</Ascua::Social::Whatsapp>
 					&nbsp;
 					<Ascua::Social::Email @subject={{@model.attributes.title}} @body="https://surrealdb.com/blog/{{this.model.attributes.slug}}">
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
@@ -103,22 +89,22 @@
 
 		<Layout::Gap small />
 
-		<Layout::Boxes cols-2-to-1>
+		<Layout::Blog cols-2-to-1>
 			{{#if this.prev}}
 				<LinkTo @route="blog.post" @model={{this.prev.attributes.slug}}>
-					<Layout::Boxes::Item @image={{blog-image this.prev.attributes.image}} @stamp={{date-format this.prev.attributes.date "LL"}} @title={{this.prev.attributes.title}} @label={{this.prev.attributes.label}} @text={{this.prev.attributes.summary}} />
+					<Layout::Blog::Item @image={{blog-image this.prev.attributes.image}} @stamp={{date-format this.prev.attributes.date "LL"}} @title={{this.prev.attributes.title}} @label={{this.prev.attributes.label}} @text={{this.prev.attributes.summary}} />
 				</LinkTo>
 			{{else}}
-				<Layout::Boxes::Item @label="No older posts" centered />
+				<Layout::Blog::Item @label="No older posts" centered />
 			{{/if}}
 			{{#if this.next}}
 				<LinkTo @route="blog.post" @model={{this.next.attributes.slug}}>
-					<Layout::Boxes::Item @image={{blog-image this.next.attributes.image}} @stamp={{date-format this.next.attributes.date "LL"}} @title={{this.next.attributes.title}} @label={{this.next.attributes.label}} @text={{this.next.attributes.summary}} />
+					<Layout::Blog::Item @image={{blog-image this.next.attributes.image}} @stamp={{date-format this.next.attributes.date "LL"}} @title={{this.next.attributes.title}} @label={{this.next.attributes.label}} @text={{this.next.attributes.summary}} />
 				</LinkTo>
 			{{else}}
-				<Layout::Boxes::Item @label="No newer posts" centered />
+				<Layout::Blog::Item @label="No newer posts" centered />
 			{{/if}}
-		</Layout::Boxes>
+		</Layout::Blog>
 
 		<Layout::Gap mini />
 

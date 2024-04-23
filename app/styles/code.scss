@@ -17,14 +17,14 @@ code[text] {
 // ----------------------------------------
 
 code, :not(pre) > code[class*="language-"] {
-
+	
 	padding:2px 8px;
 	white-space:pre;
 	font-weight:400;
 	font-size:inherit;
 	color:var(--text-color);
 	font-family:var(--system-font-mono);
-	background-color:var(--dark-color);
+	background-color:var(--coder-color);
 	border-radius:0;
 
 	a:hover & {
@@ -32,7 +32,7 @@ code, :not(pre) > code[class*="language-"] {
 		color:var(--text-color);
 		background-color:var(--hover-color);
 
-		@media (prefers-color-scheme: light) {
+		@media (prefers-color-scheme:light) {
 			color:var(--white-color);
 			transition:all .4s ease-in-out;
 			background-color:var(--hover-color);
@@ -64,7 +64,7 @@ pre[class*="language-"] {
 	text-shadow:none;
 	word-break:normal;
 	word-spacing:normal;
-	background-color:var(--dark-color);
+	background-color:var(--coder-color);
 }
 
 pre[class*="language-"],
@@ -93,6 +93,7 @@ pre[class*="language-"] {
 	-moz-tab-size:4;
 	-o-tab-size:4;
 	tab-size:4;
+	border-radius:10px;
 }
 
 pre[class*="language-"]::selection,
@@ -175,7 +176,7 @@ codes {
 code {
 	.token.operator { color:#ffffff; }
 	.token.punctuation { color:#ffffff; }
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		.token.operator { color:#000000; }
 		.token.punctuation { color:#000000; }
 	}
@@ -201,7 +202,7 @@ code.language-surql {
 	.token.record { color:#0084ff; }
 	.token.range { color:#0084ff; }
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		.token.operator { background:none; }
 		.token.comment { color:#737e98; }
 		.token.punctuation { color:#000000; }
@@ -229,7 +230,7 @@ code.language-shell, code.language-bash {
 	.token.command { color:#ff009e; }
 	.token.parameter.variable { color:#ffffff; }
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		.token.prompt { color:#636a75; }
 		.token.command { color:#ff009e; }
 		.token.parameter.variable { color:#000000; }
@@ -243,17 +244,17 @@ code.language-javascript {
 	.token.constant { color:#ff009e; }
 	.token.keyword { color:#ff009e; }
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		.token.string { color:#68DE74; }
 		.token.function { color:#ff9b67; }
 		.token.constant { color:#ff009e; }
 		.token.keyword { color:#ff009e; }
 
 		// Brute force, don't know which is correct
-		.token.boolean { color: #9d2fff; }
-		.token.bool { color: #9d2fff; }
-		.token.true { color: #9d2fff; }
-		.token.false { color: #9d2fff; }
+		.token.boolean { color:#9d2fff; }
+		.token.bool { color:#9d2fff; }
+		.token.true { color:#9d2fff; }
+		.token.false { color:#9d2fff; }
 	}
 
 }
@@ -262,20 +263,20 @@ code.language-json {
 
 	.token.string { color:#00ff6e; }
 	.token.property { color:#ff009e; }
-	.token.number { color: #00dbff; }
-	.token.null { color: #9d2fff; }
+	.token.number { color:#00dbff; }
+	.token.null { color:#9d2fff; }
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		.token.string { color:#68DE74; }
 		.token.property { color:#ff009e; }
-		.token.number { color: #00dbff; }
-		.token.null { color: #9d2fff; }
+		.token.number { color:#00dbff; }
+		.token.null { color:#9d2fff; }
 
 		// Brute force, don't know which is correct
-		.token.boolean { color: #9d2fff; }
-		.token.bool { color: #9d2fff; }
-		.token.true { color: #9d2fff; }
-		.token.false { color: #9d2fff; }
+		.token.boolean { color:#9d2fff; }
+		.token.bool { color:#9d2fff; }
+		.token.true { color:#9d2fff; }
+		.token.false { color:#9d2fff; }
 	}
 
 }
@@ -283,7 +284,7 @@ code.language-json {
 code.language-txt {
 	color:#aeb8ca;
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme:light) {
 		color:#aeb8ca;
 	}
 }

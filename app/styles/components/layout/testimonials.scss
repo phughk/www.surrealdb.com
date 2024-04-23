@@ -6,8 +6,6 @@ layout-testimonials {
 	padding:0px 0 0px 0;
 	background-position: right;
 	background-repeat:no-repeat;
-	background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-	background-color:#000000;
 
 	content {
 
@@ -78,9 +76,9 @@ layout-testimonials {
 							overflow:hidden;
 							text-align:left;
 							position:relative;
-							margin:0px 0 30px 0;
 							border-radius:0px;
-							background-color:rgba(0, 0, 0, 0.1);
+							margin:0px 0 30px 0;
+							background-color:rgba(0, 0, 0, 0.2);
 
 							> div {
 
@@ -103,11 +101,15 @@ layout-testimonials {
 										flex-wrap:wrap;
 
 										text {
-											font-size:24px;
+											font-size:20px;
 											line-height:1.2;
-											font-weight:500;
+											font-weight:400;
 											transition:color 0.3s;
 											color:var(--white-color);
+
+											@include media(max-width-960) {
+												font-size:18px;
+											}
 										}
 
 									}
@@ -121,6 +123,10 @@ layout-testimonials {
 											display:block;
 											font-size:19px;
 											color:#ffffff;
+
+											@include media(max-width-960) {
+												font-size:18px;
+											}
 										}
 
 									}
@@ -150,7 +156,6 @@ layout-testimonials {
 										img {
 											right:0;
 											height:40px;
-
 											position:absolute;
 										}
 

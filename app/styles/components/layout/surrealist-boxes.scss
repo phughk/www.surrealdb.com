@@ -1,0 +1,374 @@
+layout-surrealist-boxes {
+
+	display:block;
+
+	content {
+
+		display:grid;
+		grid-gap:30px 30px;
+		grid-template-columns:repeat(12, 1fr);
+
+		> a {
+
+			display:flex;
+			grid-column:auto / span 2;
+
+			> layout-surrealist-boxes-item {
+
+				transition:box-shadow 0.3s;
+
+				&:hover {
+
+					transform:translateZ(0);
+
+					img {
+						transform:scale(1.05);
+					}
+
+				}
+
+			}
+
+		}
+
+		> a > layout-surrealist-boxes-item, > layout-surrealist-boxes-item {
+
+			z-index:1;
+			width:100%;
+			height:100%;
+			display:flex;
+			flex-flow:wrap;
+			overflow:hidden;
+			text-align:left;
+			position:relative;
+			border-radius:18px;
+			grid-column:auto / span 2;
+			background-image:radial-gradient(circle at top left, #19191d, transparent 100%);
+			background-color:#0F0F12;
+
+			div {
+				padding-top:10%;
+				padding-left:10%;
+				padding-right:10%;
+				padding-bottom:10%;
+
+				> h3 {
+					font-size:28px;
+					font-weight:600;
+					line-height:1.2;
+					color:var(--text-color);
+
+					@include media(max-width-768) {
+						width:100%;
+						font-size:24px;
+					}
+
+				}
+
+				> h4 {
+					color:var(--text-color);
+				}
+
+				> p:last-child {
+					width:100%;
+					font-size:17px;
+					font-weight:500;
+					line-height:1.5;
+					letter-spacing:-0.5px;
+					background-image:var(--faint-color);
+
+				}
+
+				> p:first-child {
+					font-size:17px;
+					margin-bottom:5px;
+					padding-bottom:60px;
+					display:inline-block;
+					color:var(--text-color);
+				}
+			}
+
+			picture {
+
+				display:block;
+				max-width:100%;
+				position:relative;
+
+				img:not(.devicon) {
+					width:100%;
+					height:100%;
+					display:block;
+					max-width:100%;
+					transition:transform 0.3s;
+				}
+
+			}
+
+			&[colour] {
+				background-image:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
+				background-color:#110322;
+			}
+
+		}
+
+	}
+
+	&[cols-4-to-2-to-1] content>a,
+	&[cols-4-to-2-to-1] content>layout-surrealist-boxes-item {
+
+		grid-column:auto / span 3;
+
+		&[full] {
+			grid-column:auto / span 12;
+		}
+
+		&[half] {
+			grid-column:auto / span 6;
+		}
+
+		@include media(min-width-1050 max-width-1200) {
+
+			&[full][side] {
+
+				picture {
+
+					img {
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
+					}
+
+				}
+
+			}
+
+		}
+
+		@include media(min-width-1050) {
+
+			&[full][side] {
+
+				picture {
+
+					float:left;
+					width:67.7%;
+					min-height:100%;
+
+					&:only-child {
+						width:100%;
+					}
+
+				}
+
+				div {
+					margin:0;
+					width:32.3%;
+					float:right;
+				}
+
+			}
+
+		}
+
+		@include media(max-width-1250) {
+
+			grid-column:auto / span 6;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 6;
+			}
+
+		}
+
+		@include media(max-width-768) {
+
+			grid-column:auto / span 12;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 12;
+			}
+
+		}
+
+	}
+
+	&[cols-3-to-2-to-1] content>a,
+	&[cols-3-to-2-to-1] content>layout-surrealist-boxes-item {
+
+		grid-column:auto / span 4;
+
+		&[full] {
+			grid-column:auto / span 12;
+		}
+
+		&[half] {
+			grid-column:auto / span 6;
+		}
+
+		@include media(min-width-1050 max-width-1200) {
+
+			&[full][side] {
+
+				picture {
+
+					img {
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+						position:absolute;
+					}
+
+				}
+
+			}
+
+		}
+
+		@include media(min-width-1050) {
+
+			&[full][side] {
+
+				picture {
+
+					float:left;
+					width:67.7%;
+					min-height:100%;
+
+					&:only-child {
+						width:100%;
+					}
+
+				}
+
+				div {
+					margin:0;
+					width:32.3%;
+					float:right;
+				}
+
+			}
+
+		}
+
+		@include media(max-width-1650) {
+
+			grid-column:auto / span 6;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 6;
+			}
+
+		}
+
+		@include media(max-width-768) {
+
+			grid-column:auto / span 12;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 12;
+			}
+
+		}
+
+	}
+
+	&[cols-3-to-1] content>a,
+	&[cols-3-to-1] content>layout-surrealist-boxes-item {
+
+		grid-column:auto / span 4;
+
+		&[full] {
+			grid-column:auto / span 12;
+		}
+
+		&[half] {
+			grid-column:auto / span 6;
+		}
+
+		@include media(max-width-1300) {
+
+			grid-column:auto / span 12;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 12;
+			}
+
+		}
+
+	}
+
+	&[cols-2-to-1] content>a,
+	&[cols-2-to-1] content>layout-surrealist-boxes-item {
+
+		grid-column:auto / span 6;
+
+		&[full] {
+			grid-column:auto / span 12;
+		}
+
+		&[half] {
+			grid-column:auto / span 6;
+		}
+
+		@include media(max-width-1000) {
+
+			grid-column:auto / span 12;
+
+			&[full] {
+				grid-column:auto / span 12;
+			}
+
+			&[half] {
+				grid-column:auto / span 12;
+			}
+
+		}
+
+	}
+
+	&[cols-1] content>a,
+	&[cols-1] content>layout-surrealist-boxes-item {
+
+		grid-column:auto / span 12;
+
+		div {
+			padding-left:3.5%;
+			padding-right:3.5%;
+			padding-bottom:10%;
+			padding-top:5%;
+
+			@include media(max-width-960) {
+				padding-left:7%;
+				padding-right:7%;
+				padding-bottom:10%;
+				padding-top:10%;
+			}
+
+		}
+
+	}
+
+}

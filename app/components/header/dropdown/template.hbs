@@ -1,0 +1,91 @@
+<div class="nav-dropdown">
+
+	<div class="dropdown-background"></div>
+
+	<div class="nav-item">Products</div>
+	<div class="dropdown">
+		<div class="dropdown-menu">
+			<div class="dropdown-content">
+				<div class="content-section">
+					<p class="caption">Platform</p>
+					<div class="featured-item">
+						<div><img src="/static/img/header/cloud.svg" alt="Surreal Cloud Logo"></div>
+						<Header::Links::Item @link="cloud" @text="Surreal Cloud" @info="Use SurrealDB in the cloud and forget about managing infrastructure" />
+					</div>
+					<div class="featured-item">
+						<div><img src="/static/img/header/haticon.png" alt="Surrealist Logo"></div>
+						<Header::Links::Item @link="surrealist" @text="Surrealist" @info="Use the Surrealist management application to manage your schema and data in SurrealDB" />
+					</div>
+				</div>
+				<div class="content-section">
+					<p class="caption">Services</p>
+					<Header::Links::Item @link="features" @text="Database" @info="Deploy a moden, scalable database" />
+					<Header::Links::Item @link="products.full-text-search" @text="Search" @info="Deliver scalable and simplified realtime search experiences" />
+					<Header::Links::Item @link="products.vector-search" @text="Vector search" @info="Power next generation AI applications with similarity search" />
+				</div>
+				<div class="content-section">
+					<p class="caption"></p>
+					<Header::Links::Item @link="products.realtime-data-sync" @text="Real-time data sync" @info="Build modern, responsive, and collaborative applications" />
+					<Header::Links::Item @link="products.machine-learning" @text="Artificial intelligence" @info="Bring simplified and scalable machine learning model inference to your data" />
+				</div>
+				<div class="content-section">
+					<p class="caption">Tools</p>
+					<Header::Links::Item @link="surrealist" @text="Database management interface" @info="Use the Surrealist desktop application to manage your schema and data in SurrealDB" />
+					<Header::Links::Item @link="license" @text="License FAQs" @info="SurrealDB is free to use for production applications in any environment" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-item">Resources</div>
+	<div class="dropdown">
+		<div class="dropdown-menu">
+			<div class="dropdown-content">
+				<div class="content-section">
+					<p class="caption">Database</p>
+					<Header::Links::Item @link="install" @text="Install" @info="Learn how to install SurrealDB" />
+					<Header::Links::Item @link="releases" @text="Releases" @info="View all of the latest software versions and product release notes" />
+					<Header::Links::Item @link="features" @text="Features" @info="See the complete feature set for the Surreal data platform" />
+				</div>
+				<div class="content-section">
+					<p class="caption">Documentation</p>
+					<Header::Links::Item @link={{docs "/docs/surrealdb"}} @text="SurrealDB documentation" @info="Get started with the SurrealDB database" />
+					<Header::Links::Item @link={{docs "/docs/surrealml"}} @text="SurrealML documentation" @info="Get started with machine learning in SurrealDB" />
+					<Header::Links::Item @link={{docs "/docs/surrealist"}} @text="Surrealist documentation" @info="Use the Surrealist desktop application to manage your schema and data in SurrealDB" />
+				</div>
+				<div class="content-section">
+					<p class="caption"></p>
+					<Header::Links::Item @link={{docs "/docs/surrealdb/integration/sdks"}} @text="SurrealDB drivers" @info="Learn how to build and connect your application to SurrealDB" />
+					<Header::Links::Item @link={{docs "/docs/surrealdb/cli"}} @text="Command-line tool" @info="Learn how to connect your application to SurrealDB" />
+				</div>
+				<div class="content-section">
+					<p class="caption">Connect</p>
+					<Header::Links::Item @link={{url "docs"}} @text="Developer Centre" />
+					<Header::Links::Item @link="studio" @text="Studio" />
+					<Header::Links::Item @link="blog" @text="Blog" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-item">Company</div>
+	<div class="dropdown">
+		<div class="dropdown-menu">
+			<div class="dropdown-content">
+				<div class="content-section">
+					<Header::Links::Item @link="team" @text="Team" @info="Meet the talented team that are building the database and data platform of the future" />
+					<Header::Links::Item @link="careers" @text="Careers" @info="Join the exceptional team at the fastest-growing database company of all time" />
+					<Header::Links::Item @link={{url "store"}} @text="Store" @info="Join the exceptional team at the fastest-growing database company of all time" />
+				</div>
+				<div class="content-section">
+					<Header::Links::Item @link="opensource" @text="Open source" @info="See all of the open source projects that make up the Surreal data platform" />
+					<Header::Links::Item @link="media" @text="Media" @info="For media inquires and more information, email us at info@surrealdb.com." />
+					<Header::Links::Item @link="blog" @text="Blog" @info="Stay up-to-date with blog articles, product releases, and documentation updates" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<Header::Links::Item @link="blog" @text="Blog" class="nav-item" />

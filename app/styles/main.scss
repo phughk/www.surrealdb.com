@@ -16,7 +16,7 @@ body {
 	background-size:250px, 250px;
 	justify-content:space-between;
 	font-family:var(--system-font-app);
-	background-color:var(--back-color);
+	background-color:var(--dark-color);
 	text-rendering:optimizeLegibility !important;
 	-webkit-font-smoothing:subpixel-antialiased !important;
 }
@@ -34,15 +34,50 @@ input:not([type='checkbox']) {
 
 section {
 
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	&[dark] {
 		width:100%;
 		background-color:var(--dark-color);
 	}
 
+	&[darker] {
+		width:100%;
+		background-color:var(--darker-color);
+	}
+
+	&[black] {
+		width:100%;
+		background-color:var(--black-color);
+	}
+
+	&[white] {
+		width:100%;
+		background-color:#ffffff;
+	}
+
 	&[pink] {
 		width:100%;
-		background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
+		background-color:#110322;
+	}
+
+	&[surrealist] {
+		width:100%;
 		background-color:#000000;
+
+		img {
+			width:100%;
+		}
+	}
+
+	&[testimonials] {
+		background-image:radial-gradient(circle at top center, rgba(255, 255, 255, 0.05), transparent 50%), radial-gradient(circle at top center, rgba(255, 255, 255, 0.1), transparent 30%);
+		background-color:var(--dark-color);
 	}
 
 }
@@ -51,8 +86,7 @@ content {
 
 	width:80%;
 	display:block;
-	max-width:1270px;
-	position:relative;
+	max-width:1200px;
 	margin:0 auto 0 auto;
 	transition:width 0.5s, max-width 0.5s;
 
@@ -62,6 +96,19 @@ content {
 
 	@include media(max-width-1024) {
 		width:85%;
+	}
+
+	img {
+
+		&[logos] {
+			width:80%;
+
+			@include media(max-width-960) {
+			width:100%;
+		}
+
+		}
+
 	}
 
 	content {
@@ -79,4 +126,17 @@ content {
 
 	}
 
+}
+
+html:not(.no-js) {
+	h1, h2, h3, h4, h5, img, a, button {
+		&[data-aos='fade-up'] {
+			-webkit-transform: translate3d(0, 20px, 0);
+			transform: translate3d(0, 20px, 0);
+		}
+		&[data-aos='fade-down'] {
+			-webkit-transform: translate3d(0, -20px, 0);
+			transform: translate3d(0, -20px, 0);
+		}
+	}
 }
