@@ -37,11 +37,11 @@ layout-surrealist-boxes {
 			width:100%;
 			height:100%;
 			display:flex;
-			flex-flow:wrap;
 			overflow:hidden;
 			text-align:left;
 			position:relative;
 			border-radius:18px;
+			flex-direction:column;
 			grid-column:auto / span 2;
 			background-image:radial-gradient(circle at top left, #19191d, transparent 100%);
 			background-color:#0F0F12;
@@ -92,6 +92,7 @@ layout-surrealist-boxes {
 
 				display:block;
 				max-width:100%;
+				margin-top:auto;
 				position:relative;
 
 				img:not(.devicon) {
