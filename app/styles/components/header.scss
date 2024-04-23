@@ -22,6 +22,10 @@ header {
 		align-items:center;
 		justify-content:center;
 
+		@include media(max-width-1024) {
+			width:85%;
+		}
+
 		space {
 			margin-left: auto;
 		}
