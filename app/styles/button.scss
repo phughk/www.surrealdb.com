@@ -13,10 +13,10 @@ button, a[button], div[button] {
 	letter-spacing:0.005em;
 	background:transparent;
 	color:var(--text-color);
-	border:1.5px solid #606060;
 	transition:all .4s ease-in-out;
 	-webkit-backdrop-filter:blur(15px);
 	backdrop-filter:blur(15px);
+	border:1.5px solid rgba(255,255,255,0.3);
 
 	@include media(max-width-1024) {
 		-webkit-backdrop-filter:blur(15px);
