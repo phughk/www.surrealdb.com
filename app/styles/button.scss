@@ -24,15 +24,34 @@ button, a[button], div[button] {
 	}
 
 	@include media(max-width-642) {
-		width:100%;
+		width:90%;
 	}
+
 
 	i {
 		transition:all .4s ease-in-out;
 	}
 
+	span {
+		font-size:20px;
+
+		@include media(max-width-962) {
+			font-size:16px;
+		}
+
+		@include media(max-width-768) {
+			font-size:14px;
+		}
+	}
+
 	span + i {
+		font-size:20px;
 		padding-left:10px;
+
+		@include media(max-width-400) {
+			display:none;
+		}
+
 	}
 
 	i + span {
