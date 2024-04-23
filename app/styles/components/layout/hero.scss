@@ -173,7 +173,18 @@ layout-hero {
 				margin:20px 10px 10px 0px;
 
 				@include media(max-width-960) {
+					text-align:center;
 					margin:0 10px 10px 0;
+				}
+
+				@include media(max-width-642) {
+					width:100%;
+				}
+
+				span + i {
+					@include media(max-width-400) {
+						display:none;
+					}
 				}
 
 				&:nth-of-type(2) {

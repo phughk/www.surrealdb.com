@@ -74,6 +74,18 @@ gap {
 
 	}
 
+	&[studio] {
+
+		width:100%;
+		height:150px;
+		display:block;
+
+		@include media(max-width-768) {
+			height:100px;
+		}
+
+	}
+
 	&[large] {
 
 		width:100%;
@@ -81,7 +93,7 @@ gap {
 		display:block;
 
 		@include media(max-width-768) {
-			height:100px;
+			height:50px;
 		}
 
 	}
@@ -104,6 +116,16 @@ gap {
 		height:30px;
 		display:block;
 
+	}
+
+	&[logos] {
+		width:100%;
+		height:50px;
+		display:block;
+
+		@include media(max-width-768) {
+			height:20px;
+		}
 	}
 
 }

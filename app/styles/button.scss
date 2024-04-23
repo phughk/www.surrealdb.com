@@ -47,11 +47,6 @@ button, a[button], div[button] {
 	span + i {
 		font-size:20px;
 		padding-left:10px;
-
-		@include media(max-width-400) {
-			display:none;
-		}
-
 	}
 
 	i + span {
@@ -87,6 +82,12 @@ button, a[button], div[button] {
 	&[form] {
 		width:100%;
 		border-radius:0px;
+	}
+
+	&[surrealist] {
+		@include media(max-width-1024) {
+			display:none;
+		}
 	}
 
 	&[white] {

@@ -43,6 +43,12 @@ h1 {
 		}
 	}
 
+	&[middle] {
+		@include media(max-width-768) {
+			text-align:center;
+		}
+	}
+
 	&[light] {
 		color:var(--text-color);
 	}
