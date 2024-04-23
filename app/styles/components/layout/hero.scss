@@ -252,12 +252,7 @@ layout-hero {
 		@include media(max-width-960) {
 			top:0px;
 			height:auto;
-			padding:120px 0 50px 0;
-		}
-
-		h1 {
-			font-size:70px;
-			line-height:70px;
+			padding:50px 0 50px 0;
 		}
 
 	}
@@ -269,7 +264,7 @@ layout-hero {
 		@include media(max-width-960) {
 			top:0px;
 			height:auto;
-			padding:120px 0 50px 0;
+			padding:50px 0 50px 0;
 		}
 
 	}
@@ -296,7 +291,7 @@ layout-hero {
 		@include media(max-width-960) {
 			top:0px;
 			height:auto;
-			padding:120px 0 50px 0;
+			padding:50px 0 50px 0;
 		}
 	}
 
@@ -350,7 +345,7 @@ layout-hero {
 	&[team] {
 		height:auto;
 		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/img/team/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("/static/img/team/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
@@ -442,7 +437,6 @@ layout-hero {
 
 		margin-top:100px;
 
-
 		@include media(max-width-768) {
 			margin-top:50px;
 		}
@@ -453,123 +447,6 @@ layout-hero {
 			padding:15px 40px;
 			margin:0 10px 10px 0px;
 
-		}
-
-		h1 {
-
-			width:80%;
-			line-height:1;
-			font-size:56px;
-    		line-height:60px;
-			margin:0 0 10px 0;
-    		letter-spacing:-.03em;
-			color:var(--white-color);
-
-			@include media(max-width-1250) {
-				width:90%;
-			}
-
-			@include media(max-width-962) {
-				width:100%;
-				font-size:70px;
-			}
-
-			@include media(max-width-768) {
-				font-size:52px;
-			}
-
-		}
-
-		h2 {
-
-			width:80%;
-			font-size:24px;
-			font-weight:500;
-			margin-top:24px;
-			line-height:32px;
-			letter-spacing:-.03em;
-			color:var(--white-color);
-
-			@include media(max-width-1250) {
-				width:100%;
-			}
-
-			@include media(max-width-962) {
-				font-size:24px;
-			}
-
-			@include media(max-width-768) {
-				font-size:24px;
-			}
-
-		}
-
-		h3 {
-
-			width:80%;
-			font-size:24px;
-			color:var(--white-color);
-
-			@include media(max-width-1250) {
-				width:100%;
-			}
-
-		}
-
-		h4 {
-
-			font-size:22px;
-			font-weight:600;
-			line-height:1.2;
-			transition:color 0.3s;
-			color:var(--white-color);
-			text-rendering:optimizeLegibility;
-			-webkit-font-smoothing:antialiased;
-
-			img[inline] {
-				height:16px;
-			}
-
-			i {
-				vertical-align:middle;
-			}
-
-			span[faint] {
-				color:var(--faint-color);
-			}
-
-			&[nhs] {
-				width:100%;
-				color:var(--faint-color);
-			}
-
-			@include media(max-width-768) {
-				font-size:20px;
-
-				img[inline] {
-					height:12px;
-				}
-			}
-
-		}
-
-		p {
-
-			width:100%;
-			font-size:18px;
-			margin-bottom:30px;
-			color:var(--faint-color);
-
-		}
-
-		a {
-
-			color:var(--white-color);
-
-		}
-
-		e {
-			padding-right:10px;
 		}
 
 	}
