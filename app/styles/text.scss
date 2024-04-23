@@ -2,7 +2,7 @@ h1 {
 
 	display:block;
 	font-size:60px;
-	line-height:1.1;
+	line-height:1;
 	font-weight:500;
 	letter-spacing:-1px;
 	transition:color 0.3s;
@@ -26,8 +26,8 @@ h1 {
 		vertical-align:middle;
 	}
 
-	@include media(max-width-1449) {
-		font-size:46px;
+	@include media(max-width-962) {
+		font-size:40px;
 
 		img[inline] {
 			height:34px;
@@ -36,8 +36,7 @@ h1 {
 
 	@include media(max-width-600) {
 		width:100%;
-		font-size:38px;
-		margin-bottom:0px;
+		font-size:32px;
 
 		img[inline] {
 			height:28px;
@@ -245,7 +244,7 @@ h5 {
 	width:70%;
 	font-size:24px;
 	font-weight:500;
-	line-height: 28px;
+	line-height:1.3;
 	letter-spacing:-.01em;
 	transition:color 0.3s;
 	color:var(--faint-color);
@@ -259,10 +258,11 @@ h5 {
 
 	@include media(max-width-1449) {
 		width:100%;
+		font-size:20px;
 	}
 
-	@include media(max-width-600) {
-		font-size:24px;
+	@include media(max-width-962) {
+		font-size:16px;
 
 		img[inline] {
 			height:28px;
@@ -272,18 +272,6 @@ h5 {
 	&[data-aos=fade-down] {
 		-webkit-transform: translate3d(0, -20px, 0);
 		transform: translate3d(0, -20px, 0);
-	}
-
-	&[header] {
-		width:100%;
-
-		@include media(max-width-960) {
-			font-size:20px;
-
-			img[inline] {
-				height:28px;
-			}
-		}
 	}
 
 	&[light] {
@@ -327,6 +315,7 @@ h5 {
 
 	&[careers] {
 		width:85%;
+		color:var(--white-color);
 	}
 
 	&[surrealist] {
