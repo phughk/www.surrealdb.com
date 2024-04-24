@@ -98,6 +98,18 @@ gap {
 
 	}
 
+	&[illustrations] {
+
+		width:100%;
+		height:150px;
+		display:block;
+
+		@include media(max-width-768) {
+			height:100px;
+		}
+
+	}
+
 	&[dji] {
 
 		width:100%;
