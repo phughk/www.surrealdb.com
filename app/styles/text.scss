@@ -303,7 +303,12 @@ h5 {
 	}
 
 	&[home] {
+		width:70%;
 		color:var(--text-color);
+
+		@include media(max-width-960) {
+			width:90%;
+		}
 	}
 
 	&[same] {
