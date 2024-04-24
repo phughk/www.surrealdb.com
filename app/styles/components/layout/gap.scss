@@ -104,8 +104,12 @@ gap {
 		height:150px;
 		display:block;
 
-		@include media(max-width-768) {
+		@include media(max-width-962) {
 			height:100px;
+		}
+
+		@include media(max-width-642) {
+			height:150px;
 		}
 
 	}
