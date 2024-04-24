@@ -11,12 +11,10 @@ Router.map(function () {
 
 	this.route('careers');
 	this.route('cloud');
-	this.route('community');
 	this.route('events');
 	this.route('features');
 	this.route('install');
 	this.route('license');
-	this.route('media');
 	this.route('opensource');
 	this.route('releases');
 	this.route('snippet');
