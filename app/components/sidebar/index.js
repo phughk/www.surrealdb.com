@@ -3,7 +3,6 @@ import { inject } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class extends Component {
-
 	@inject artist;
 
 	@inject surreal;
@@ -13,5 +12,4 @@ export default class extends Component {
 			document.body.removeAttribute('sidebar');
 		}
 	}
-
 }

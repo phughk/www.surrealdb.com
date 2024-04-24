@@ -3,14 +3,12 @@ import { inject } from '@ember/service';
 import fetch from 'fetch';
 
 export default class extends Route {
-
 	@inject mdfiles;
 
 	@inject router;
 
 	model(params) {
-
-		let post = this.modelFor('blog').find(v => {
+		let post = this.modelFor('blog').find((v) => {
 			return params.post_slug === v.attributes.slug;
 		});
 
@@ -19,13 +17,13 @@ export default class extends Route {
 		}
 
 		if (post.path === undefined) {
-			throw new Error(`The post '${params.post_slug}' had an invalid path`);
+			throw new Error(
+				`The post '${params.post_slug}' had an invalid path`,
+			);
 		}
 
-		return fetch(post.path).then(data => {
+		return fetch(post.path).then((data) => {
 			return data.json();
 		});
-
 	}
-
 }

@@ -13,12 +13,16 @@ module.exports = function (defaults) {
 		},
 		prember: {
 			urls: async function ({ visit }) {
-				return ['/404'].concat(await crawl({
-					visit,
-					startingFrom: ['/'],
-					selector: 'a',
-					exclude: new RegExp(/^.*((#.*)|(\.(txt|svg|png|jpg|jpeg|webp|mov|mp4)))$/),
-				}))
+				return ['/404'].concat(
+					await crawl({
+						visit,
+						startingFrom: ['/'],
+						selector: 'a',
+						exclude: new RegExp(
+							/^.*((#.*)|(\.(txt|svg|png|jpg|jpeg|webp|mov|mp4)))$/,
+						),
+					}),
+				);
 			},
 		},
 		prism: {
@@ -47,7 +51,7 @@ module.exports = function (defaults) {
 
 	// Import the Sentry replay worker
 	app.import('vendor/replay-worker.min.js', {
-		outputFile: 'assets/replay-worker.js'
+		outputFile: 'assets/replay-worker.js',
 	});
 
 	return app.toTree();

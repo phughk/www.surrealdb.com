@@ -2,7 +2,6 @@ import Helper from '@ember/component/helper';
 import { inject } from '@ember/service';
 
 export default class extends Helper {
-
 	@inject version;
 
 	compute(args, opts) {
@@ -17,5 +16,4 @@ export default class extends Helper {
 				return this.version.latest;
 		}
 	}
-
 }

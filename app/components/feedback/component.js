@@ -5,7 +5,6 @@ import { service } from '@ember/service';
 import { drop } from '@ascua/tasks';
 
 export default class FeedbackComponent extends Component {
-
 	@service router;
 
 	@tracked selectedCategory;
@@ -35,11 +34,9 @@ export default class FeedbackComponent extends Component {
 	}
 
 	@drop *submitFeedback() {
-
 		if (!this.text) return;
 
 		try {
-
 			yield fetch('https://form.surrealdb.com/feedback', {
 				method: 'POST',
 				headers: {
@@ -56,11 +53,8 @@ export default class FeedbackComponent extends Component {
 
 			this.hasSavedFeedback = true;
 			this.isNewFeedBack = false;
-
 		} catch {
 			// catch error
 		}
-
 	}
-
 }

@@ -2,11 +2,10 @@ import Controller from '@ember/controller';
 import { cache } from '@ascua/decorators';
 
 export default class extends Controller {
-
 	@cache get jobs() {
 		return this.model
 			.filter(Boolean)
-			.filter(v => v.attributes.show)
+			.filter((v) => v.attributes.show)
 			.sort((a, b) => {
 				if (a.name < b.name) {
 					return -1;
@@ -15,8 +14,6 @@ export default class extends Controller {
 				} else {
 					return 0;
 				}
-			})
-			;
+			});
 	}
-
 }

@@ -8,7 +8,6 @@ const viewport = Viewport.Instance;
 
 export default setModifierManager(
 	(owner) => ({
-
 		capabilities: capabilities('3.22', { disableAutoTracking: false }),
 
 		createModifier(modifier, args) {
@@ -25,11 +24,9 @@ export default setModifierManager(
 
 		destroyModifier(instance) {
 			instance.remove();
-		}
-
+		},
 	}),
 	class WaypointModifier {
-
 		@inject waypoints;
 
 		constructor(owner, args) {
@@ -37,7 +34,6 @@ export default setModifierManager(
 		}
 
 		install(element, { positional: [name] }) {
-
 			this.element = element;
 
 			element.id = name;
@@ -47,8 +43,12 @@ export default setModifierManager(
 			if (enabled()) {
 				viewport.observe(
 					element,
-					() => { this.waypoints.add(this.name); },
-					() => { this.waypoints.del(this.name); },
+					() => {
+						this.waypoints.add(this.name);
+					},
+					() => {
+						this.waypoints.del(this.name);
+					},
 					{ threshold: 0, rootMargin: '0px 0px -75% 0px' },
 				);
 			}
@@ -64,5 +64,5 @@ export default setModifierManager(
 				viewport.unobserve(this.element);
 			}
 		}
-	}
+	},
 );

@@ -3,7 +3,6 @@ import { tracked } from '@glimmer/tracking';
 import { cache } from '@ascua/decorators';
 
 export default class Version extends Service {
-
 	@tracked latest;
 
 	@cache get hash() {
@@ -19,29 +18,20 @@ export default class Version extends Service {
 	}
 
 	constructor() {
-
 		super(...arguments);
 
 		this.load();
-
 	}
 
 	async load() {
-
 		try {
-
 			let res = await fetch('https://version.surrealdb.com');
 
 			let txt = await res.text();
 
 			this.latest = txt.trim();
-
-		} catch(e) {
-
+		} catch (e) {
 			// Continue
-
 		}
-
 	}
-
 }

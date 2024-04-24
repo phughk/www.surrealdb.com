@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = function (environment) {
-
 	var ENV = {
-
 		environment,
 		rootURL: '/',
 		locationType: 'history',
@@ -117,7 +115,6 @@ module.exports = function (environment) {
 		// canary builds
 
 		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: { Date: false } },
-
 	};
 
 	if (environment === 'test') {
@@ -135,5 +132,4 @@ module.exports = function (environment) {
 	}
 
 	return ENV;
-
 };

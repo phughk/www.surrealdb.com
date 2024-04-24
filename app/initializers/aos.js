@@ -2,7 +2,6 @@ export default {
 	name: 'aos',
 	initialize(instance) {
 		if (typeof AOS !== 'undefined') {
-
 			AOS.init({
 				delay: 50, // values from 0 to 3000, with step 50ms
 				offset: 150, // offset (in px) from the original trigger point
@@ -20,7 +19,6 @@ export default {
 					AOS.refreshHard();
 				});
 			}
-
 		}
 	},
 };

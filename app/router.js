@@ -7,7 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-
 	// Base routes
 
 	this.route('careers');
@@ -58,5 +57,4 @@ Router.map(function () {
 	this.route('404', {
 		path: '*path',
 	});
-
 });
