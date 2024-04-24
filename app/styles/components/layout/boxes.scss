@@ -5,12 +5,8 @@ layout-boxes {
 	content {
 
 		display:grid;
-		grid-gap:50px 30px;
+		grid-gap:30px 30px;
 		grid-template-columns:repeat(12, 1fr);
-
-		&[home] {
-			grid-gap:20px 20px;
-		}
 
 		> a {
 
@@ -140,7 +136,11 @@ layout-boxes {
 					display:block;
 					max-width:100%;
 					overflow:visible;
-					margin-top:-150px;
+					margin-top:-120px;
+
+					@include media(max-width-960) {
+						margin-top:-80px;
+					}
 
 					img:not(.devicon) {
 						width:100%;
