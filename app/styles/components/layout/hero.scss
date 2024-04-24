@@ -28,6 +28,7 @@ layout-hero {
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
+			background-position: center -100px;
 		}
 
 		content {
@@ -37,6 +38,12 @@ layout-hero {
 			@include media(max-width-960) {
 				text-align:left;
 				margin-top:50px;
+			}
+
+			@include media(max-width-960) {
+				.buttons {
+					margin-top:150px;
+				}
 			}
 
 			a[button] {
@@ -85,6 +92,7 @@ layout-hero {
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
+			background-position: center -100px;
 		}
 
 		content {
@@ -94,6 +102,12 @@ layout-hero {
 			@include media(max-width-960) {
 				text-align:left;
 				margin-top:50px;
+			}
+
+			@include media(max-width-960) {
+				.buttons {
+					margin-top:150px;
+				}
 			}
 
 			a[button] {
@@ -181,8 +195,7 @@ layout-hero {
 				margin-top:50px;
 			}
 
-
-			@include media(max-width-768) {
+			@include media(max-width-960) {
 				.buttons {
 					margin-top:200px;
 				}
