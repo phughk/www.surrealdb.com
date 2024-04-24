@@ -138,19 +138,19 @@ layout-hero {
 				-webkit-text-fill-color:transparent;
 				background:-webkit-linear-gradient(0deg, #ff00a0, #ff98d9, #ff00a0);
 				-webkit-background-clip:text;
-	
+
 				@include media(max-width-1250) {
 					width:100%;
 				}
-	
+
 				@include media(max-width-962) {
 					font-size:24px;
 				}
-	
+
 				@include media(max-width-768) {
 					font-size:24px;
 				}
-	
+
 			}
 
 		}
@@ -169,6 +169,7 @@ layout-hero {
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
+			background-position: center -150px;
 		}
 
 		content {
@@ -178,6 +179,13 @@ layout-hero {
 			@include media(max-width-960) {
 				text-align:left;
 				margin-top:50px;
+			}
+
+
+			@include media(max-width-768) {
+				.buttons {
+					margin-top:200px;
+				}
 			}
 
 			a[button] {
@@ -217,6 +225,10 @@ layout-hero {
 
 				@include media(max-width-768) {
 					width:50%;
+				}
+
+				@include media(max-width-400) {
+					width:70%;
 				}
 
 			}
