@@ -22,7 +22,7 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/home/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/home/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
@@ -64,7 +64,7 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/cloud/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/cloud/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
@@ -150,7 +150,7 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:radial-gradient(circle at top left, rgba(255, 244, 244, 0.15), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 1) 100%), url("/static/img/surrealist/hero.jpg");
+		background-image:linear-gradient(rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 1) 100%), url("/static/img/surrealist/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
@@ -211,68 +211,6 @@ layout-hero {
 		}
 	}
 
-	&[hiring] {
-		height:100vh;
-		display:flex;
-		align-items:center;
-		flex-direction:column;
-		justify-content:center;
-		background-image:radial-gradient(circle at bottom left, rgba(255, 0, 160, 0.6), transparent 40%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
-		background-color:#110322;
-
-		.video-background {
-			top:0;
-			left:0;
-			right:0;
-			bottom:0;
-			z-index:-1;
-			position:fixed;
-			overflow:hidden;
-		}
-
-		#background-video {
-			top:50%;
-			left:50%;
-			width:auto;
-			height:auto;
-			min-width:100%;
-			min-height:100%;
-			position:absolute;
-			transform:translate(-50%, -50%);
-		}
-
-		content {
-			margin-top:0px;
-			text-align:center;
-
-			@include media(max-width-960) {
-				text-align:left;
-				margin-top:50px;
-			}
-
-			a[button] {
-				font-size:18px;
-				padding:15px 40px;
-				margin:0 10px 10px 10px;
-
-				@include media(max-width-960) {
-					margin:0 10px 10px 0;
-				}
-			}
-		}
-	}
-
-	&[products] {
-		height:auto;
-		padding:120px 0 150px 0;
-
-		@include media(max-width-960) {
-			height:auto;
-			padding:120px 0 50px 0;
-		}
-
-	}
-
 	&[lq], &[cf], &[ix], &[ml] {
 
 		height:auto;
@@ -326,53 +264,6 @@ layout-hero {
 		}
 	}
 
-	&[casestudies] {
-		height:100%;
-		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/yaacomm.jpg");
-		background-color:#000000;
-
-		@include media(max-width-960) {
-			top:0px;
-			height:auto;
-			padding:120px 0 50px 0;
-		}
-
-	}
-
-	&[world] {
-		height:auto;
-		padding:350px 60px 150px 60px;
-		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/surreal1.0.jpg");
-		background-color:#000000;
-
-		@media (prefers-color-scheme:light) {
-			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/surreal1.0.jpg");
-		}
-
-		@include media(max-width-960) {
-			top:0px;
-			height:auto;
-			padding:120px 40px 25px 40px;
-		}
-	}
-
-	&[events] {
-		height:auto;
-		padding:350px 60px 150px 60px;
-		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/community/techandtunes.jpg");
-
-		@media (prefers-color-scheme:light) {
-			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/community/techandtunes.jpg");
-		}
-
-		@include media(max-width-960) {
-			top:0px;
-			height:auto;
-			padding:120px 40px 25px 40px;
-		}
-	}
-
 	&[team] {
 		height:auto;
 		padding:350px 0 150px 0;
@@ -396,21 +287,6 @@ layout-hero {
 			top:0px;
 			height:auto;
 			padding:120px 0 50px 0;
-		}
-	}
-
-	&[gettingstarted] {
-		height:auto;
-		padding:250px 80px 250px 80px;
-		background-image:radial-gradient(circle at bottom left, rgba(255, 244, 244, 0.1), transparent 50%), radial-gradient(circle at top right, rgba(89, 4, 153, 1), transparent 40%);
-
-
-		@media (prefers-color-scheme:light) {
-			background-image:url("/static/img/illustrations/light/gettingstarted.png");
-		}
-
-		@include media(max-width-960) {
-			padding:250px 40px 250px 40px;
 		}
 	}
 
@@ -444,18 +320,6 @@ layout-hero {
 		height:auto;
 		padding:350px 60px 100px 60px;
 		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/studio.jpg");
-
-		@include media(max-width-960) {
-			top:0px;
-			height:auto;
-			padding:120px 40px 25px 40px;
-		}
-	}
-
-	&[stories] {
-		height:auto;
-		padding:350px 60px 50px 60px;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/stories.jpg");
 
 		@include media(max-width-960) {
 			top:0px;
