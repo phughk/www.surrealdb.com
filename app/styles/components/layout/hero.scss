@@ -45,7 +45,22 @@ layout-hero {
 				margin:20px 10px 10px 0px;
 
 				@include media(max-width-960) {
+					text-align:center;
 					margin:0 10px 10px 0;
+				}
+
+				@include media(max-width-642) {
+					width:100%;
+				}
+
+				span + i {
+					@include media(max-width-400) {
+						display:none;
+					}
+				}
+
+				&:nth-of-type(2) {
+					margin-top:0;
 				}
 
 			}
@@ -87,61 +102,59 @@ layout-hero {
 				margin:20px 10px 10px 0px;
 
 				@include media(max-width-960) {
+					text-align:center;
 					margin:0 10px 10px 0;
 				}
+
+				@include media(max-width-642) {
+					width:100%;
+				}
+
+				span + i {
+					@include media(max-width-400) {
+						display:none;
+					}
+				}
+
+				&:nth-of-type(2) {
+					margin-top:0;
+				}
+
 			}
 
 			h1[data-aos=fade-down] {
 				-webkit-transform: translate3d(0, -20px, 0);
 				transform: translate3d(0, -20px, 0);
 			}
-		}
 
-		h2 {
+			h2 {
 
-			max-width:795px;
-			font-weight:600;
-			line-height:40px;
-			color:transparent;
-			margin-bottom:0.8em;
-			padding-bottom:0.1em;
-			-webkit-text-fill-color:transparent;
-			background:-webkit-linear-gradient(0deg, #ff00a0, #ff98d9, #ff00a0);
-			-webkit-background-clip:text;
-
-			@include media(max-width-1250) {
-				width:100%;
-			}
-
-			@include media(max-width-962) {
-				font-size:24px;
-			}
-
-			@include media(max-width-768) {
-				font-size:24px;
-			}
-
-		}
-
-		content {
-			margin-top:0px;
-			text-align:left;
-
-			@include media(max-width-960) {
-				text-align:left;
-				margin-top:50px;
-			}
-
-			a[button] {
-				font-size:18px;
-				padding:15px 40px;
-				margin:20px 0px 10px 0px;
-
-				@include media(max-width-960) {
-					margin:0 10px 10px 0;
+				max-width:795px;
+				font-weight:600;
+				line-height:40px;
+				color:transparent;
+				margin-bottom:0.8em;
+				padding-bottom:0.1em;
+				-webkit-text-fill-color:transparent;
+				background:-webkit-linear-gradient(0deg, #ff00a0, #ff98d9, #ff00a0);
+				-webkit-background-clip:text;
+	
+				@include media(max-width-1250) {
+					width:100%;
 				}
+	
+				@include media(max-width-962) {
+					font-size:24px;
+				}
+	
+				@include media(max-width-768) {
+					font-size:24px;
+				}
+	
 			}
+
 		}
+
 	}
 
 	&[surrealist] {
