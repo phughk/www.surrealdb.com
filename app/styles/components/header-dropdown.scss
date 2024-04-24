@@ -75,10 +75,8 @@
 			opacity: 0;
 			visibility: hidden;
 			transition:opacity 0.25s ease-in 100ms;
-			margin: 0 auto;
 			padding-top: 100px;
-			width: 80%;
-			max-width: 1200px;
+			width: 100%;
 			font-weight:600;
 			font-size: 16px;
 			line-height: 19px;
@@ -117,7 +115,9 @@
 
 				display: grid;
 				column-gap: 40px;
-				width: 100%;
+				margin: 0 auto;
+				width: 80%;
+				max-width: 1200px;
 				visibility: visible;
 				pointer-events: none;
 				grid-template-columns: 1fr 1fr 1fr minmax(10px, 1fr);
