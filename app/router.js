@@ -11,7 +11,6 @@ Router.map(function () {
 
 	this.route('careers');
 	this.route('cloud');
-	this.route('events');
 	this.route('features');
 	this.route('install');
 	this.route('license');
