@@ -75,6 +75,117 @@ section {
 		}
 	}
 
+	&[surrealist-footer] {
+		width: 100%;
+		height: 700px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		overflow: hidden;
+		background-color: black;
+
+		.background {
+			position: absolute;
+			width: 1500px;
+			height: 1500px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			bottom: -1200px;
+
+			background: linear-gradient(136.44deg, #FF00A0 36.59%, #9600FF 56.49%);
+			box-shadow: inset 0px 0.786632px 1.57326px rgba(255, 255, 255, 0.95);
+			filter: blur(279.454px);
+			border-radius: 100vw;
+			transform: rotate(120deg);
+			z-index: 1;
+		}
+
+		.content {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			bottom: 0;
+			z-index: 2;
+			height: 100%;
+			width: 80%;
+			max-width: 1200px;
+			display: block;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 30px;
+			flex-direction: column;
+			margin-bottom: 50px;
+
+			a[button] {
+				padding: 20px 30px;
+				span {
+					font-size: 30px;
+				}
+
+				@include media(max-width-960) {
+					padding: 15px 20px;
+					span {
+						font-size: 25px;
+					}
+				}
+
+				@include media(max-width-600) {
+					display: none;
+				}
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		@include media(max-width-1200) {
+			height: 550px;
+
+			.background {
+				bottom: -1300px;
+			}
+
+			.content {
+				margin-bottom: 40px;
+			}
+		}
+
+		@include media(max-width-960) {
+			height: 500px;
+
+			.background {
+				width: 1000px;
+				height: 1000px;
+				bottom: -800px;
+				filter: blur(150px);
+			}
+
+			.content {
+				margin-bottom: 25px;
+			}
+		}
+
+		@include media(max-width-600) {
+			height: 200px;
+
+			.background {
+				width: 400px;
+				height: 400px;
+				filter: blur(100px);
+				bottom: -300px;
+			}
+
+			.content {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
 	&[testimonials] {
 		background-image:radial-gradient(circle at top center, rgba(255, 255, 255, 0.1), transparent 50%);
 		background-color:var(--dark-color);
