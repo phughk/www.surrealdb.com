@@ -39,13 +39,14 @@ function redirect(location) {
 		statusDescription: 'Moved Permanently',
 		headers: {
 			location: {
-				value: location,
-			},
+				value: location
+			}
 		},
 	};
 }
 
 function handler(event) {
+
 	let request = event.request;
 	let host = request.headers.host.value;
 	let path = request.uri.toLowerCase();
@@ -65,6 +66,9 @@ function handler(event) {
 	}
 
 	switch (path) {
+		// Redirect old products page to cloud
+		case '/products':
+			return redirect('https://surrealdb.com/cloud');
 		// Redirect root product pages
 		case '/app':
 			return redirect('https://surrealdb.com/surrealist');
@@ -72,30 +76,22 @@ function handler(event) {
 			return redirect('https://surrealdb.com/surrealist');
 		// Redirect root product pages
 		case '/cf':
-			return redirect(
-				'https://surrealdb.com/products/change-data-capture',
-			);
+			return redirect('https://surrealdb.com/products/change-data-capture');
 		case '/ix':
 			return redirect('https://surrealdb.com/products/full-text-search');
 		case '/lq':
-			return redirect(
-				'https://surrealdb.com/products/realtime-data-sync',
-			);
+			return redirect('https://surrealdb.com/products/realtime-data-sync');
 		case '/ml':
 			return redirect('https://surrealdb.com/products/machine-learning');
 		case '/ql':
 			return redirect('https://surrealdb.com/docs/surrealdb/surrealql');
 		// Redirect older product pages
 		case '/products/cf':
-			return redirect(
-				'https://surrealdb.com/products/change-data-capture',
-			);
+			return redirect('https://surrealdb.com/products/change-data-capture');
 		case '/products/ix':
 			return redirect('https://surrealdb.com/products/full-text-search');
 		case '/products/lq':
-			return redirect(
-				'https://surrealdb.com/products/realtime-data-sync',
-			);
+			return redirect('https://surrealdb.com/products/realtime-data-sync');
 		case '/products/ml':
 			return redirect('https://surrealdb.com/products/machine-learning');
 		case '/products/ql':
@@ -111,24 +107,16 @@ function handler(event) {
 			return redirect('https://github.com/surrealdb/surrealdb');
 		// Redirect old websocket protocol page
 		case '/docs/surrealdb/integration/websocket':
-			return redirect(
-				'https://surrealdb.com/docs/surrealdb/integration/rpc',
-			);
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old websocket text protocol page
 		case '/docs/integration/websocket/text':
-			return redirect(
-				'https://surrealdb.com/docs/surrealdb/integration/rpc',
-			);
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old websocket binary protocol page
 		case '/docs/integration/websocket/binary':
-			return redirect(
-				'https://surrealdb.com/docs/surrealdb/integration/rpc',
-			);
+			return redirect('https://surrealdb.com/docs/surrealdb/integration/rpc');
 		// Redirect old DEFINE LOGIN statement page
 		case '/docs/surrealql/statements/define/login':
-			return redirect(
-				'https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user',
-			);
+			return redirect('https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user');
 	}
 
 	switch (true) {
@@ -144,10 +132,9 @@ function handler(event) {
 			switch (second) {
 				case 'surrealdb': {
 					const base = 'https://surrealdb.com/docs/surrealdb/';
-					const unversioned =
-						splitted
-							.slice(third && third.startsWith('1.') ? 3 : 2)
-							.join('/') || '';
+					const unversioned = splitted
+						.slice(third && third.startsWith('1.') ? 3 : 2)
+						.join('/') || '';
 
 					// Remove /overview suffix
 					if (
@@ -183,9 +170,7 @@ function handler(event) {
 				case '':
 					break;
 				default:
-					return redirect(
-						`https://surrealdb.com/docs/surrealdb/${path.slice(6)}`,
-					);
+					return redirect(`https://surrealdb.com/docs/surrealdb/${path.slice(6)}`);
 			}
 		}
 	}
