@@ -7,26 +7,30 @@
 <Layout::Hero lq>
 	<Layout::Text text-l>
 		<h1>Build modern, responsive, and collaborative applications.</h1>
-		<h5>Live Queries in SurrealDB enable a simple yet seamless way of building modern, responsive applications, whether connecting to SurrealDB as a traditional backend database, or when connecting directly to the database from the frontend.</h5>
-		<Button @link="features">
-			<i class="fal fa-list-check"></i> <span>View all features</span>
-		</Button>
-		<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Button>
+		<h5 home>Live Queries in SurrealDB enable a simple yet seamless way of building modern, responsive applications, whether connecting to SurrealDB as a traditional backend database, or when connecting directly to the database from the frontend.</h5>
+		<div class="buttons">
+			<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Button>
+			<br>
+			<Button @link="features">
+				<i class="fal fa-list-check"></i> <span>View all features</span>
+			</Button>
+			<br>
+		</div>
 	</Layout::Text>
 </Layout::Hero>
 
 <section black>
 
-	<Layout::Gap large />
+	<Layout::Gap small />
 
-	<Layout::Boxes cols-2-to-1>
-		<Layout::Boxes::Item text-l straight @title="Simplify the way you build modern applications" @image="/static/img/products/icons/light/sdbdevices.jpg" @imagedark="/static/img/products/icons/dark/sdbdevices.jpg" @text="Live Queries in SurrealDB enable a simple yet seamless way of building modern, responsive applications, whether connecting to SurrealDB as a traditional backend database, or when connecting directly to the database from the frontend. Live queries give developers the ability to receive real-time change notifications to data as it is happening, without the ability to subscribe to historic changes." />
-		<Layout::Boxes::Item text-l straight @title="Backed and powered by powerful database permissions" @image="/static/img/products/icons/light/apisecurity.jpg" @imagedark="/static/img/products/icons/dark/apisecurity.jpg" @text="integrated directly within the table, row, and field level permissions of SurrealDB, each live query notification is unique and tailored to the authentication of the user who issued the query. Regardless of what a user has subscribed to, notifications will only be delivered based on the authenticated session of that user." />
-		<Layout::Boxes::Item text-l straight @title="Subscribe to all data or partial and patch changes" @image="/static/img/products/icons/light/recordsyncing.jpg" @imagedark="/static/img/products/icons/dark/recordsyncing.jpg" @text="Live queries support subscribing to full record data, receiving only partial record updates with specific projected fields, or by using a native JSON-patch and diff-patch-match implementation - even the exact concise document changes as they occur, whenever a document is modified." />
-		<Layout::Boxes::Item text-l straight @title="Combine Live Queries with other powerful SurrealQL functionality" @image="/static/img/products/icons/light/computedviews.jpg" @imagedark="/static/img/products/icons/dark/computedviews.jpg" @text="By bringing the simplicity of Live Queries alongside the advanced nature of pre-defined aggregate views, you can now build powerful dashboards that rely on aggregate data queries, computationally expensive analytics queries, and filtered collections of massive data sets - that update in real time as your data in the database changes."/>
-	</Layout::Boxes>
+	<Layout::Box cols-2-to-1>
+		<Layout::Box::Item text-l careersnew @title="Simplify the way you build modern applications" @image="/static/img/products/icons/light/sdbdevices.jpg" @imagedark="/static/img/products/icons/dark/sdbdevices.jpg" @text="Live Queries in SurrealDB enable a simple yet seamless way of building modern, responsive applications, whether connecting to SurrealDB as a traditional backend database, or when connecting directly to the database from the frontend. Live queries give developers the ability to receive real-time change notifications to data as it is happening, without the ability to subscribe to historic changes." />
+		<Layout::Box::Item text-l careersnew @title="Backed and powered by powerful database permissions" @image="/static/img/products/icons/light/apisecurity.jpg" @imagedark="/static/img/products/icons/dark/apisecurity.jpg" @text="integrated directly within the table, row, and field level permissions of SurrealDB, each live query notification is unique and tailored to the authentication of the user who issued the query. Regardless of what a user has subscribed to, notifications will only be delivered based on the authenticated session of that user." />
+		<Layout::Box::Item text-l careersnew @title="Subscribe to all data or partial and patch changes" @image="/static/img/products/icons/light/recordsyncing.jpg" @imagedark="/static/img/products/icons/dark/recordsyncing.jpg" @text="Live queries support subscribing to full record data, receiving only partial record updates with specific projected fields, or by using a native JSON-patch and diff-patch-match implementation - even the exact concise document changes as they occur, whenever a document is modified." />
+		<Layout::Box::Item text-l careersnew @title="Combine Live Queries with other powerful SurrealQL functionality" @image="/static/img/products/icons/light/computedviews.jpg" @imagedark="/static/img/products/icons/dark/computedviews.jpg" @text="By bringing the simplicity of Live Queries alongside the advanced nature of pre-defined aggregate views, you can now build powerful dashboards that rely on aggregate data queries, computationally expensive analytics queries, and filtered collections of massive data sets - that update in real time as your data in the database changes."/>
+	</Layout::Box>
 
 	<Layout::Gap large />
 

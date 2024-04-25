@@ -7,28 +7,32 @@
 <Layout::Hero ix>
 	<Layout::Text text-l>
 		<h1>Power next generation intelligent applications with scalable, vector similarity search.</h1>
-		<h5 faint>SurrealDB is designed for building applications of any size - and for that, query performance, and improved data analysis workloads are key. With SurrealDB secondary indexes, you can now index data using traditional indexes, full-text search indexing, and vector-embedding search for artificial intelligence use cases.</h5>
-		<Button @link="features">
-			<i class="fal fa-list-check"></i> <span>View all features</span>
-		</Button>
-		<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Button>
+		<h5 home>SurrealDB is designed for building applications of any size - and for that, query performance, and improved data analysis workloads are key. With SurrealDB secondary indexes, you can now index data using traditional indexes, full-text search indexing, and vector-embedding search for artificial intelligence use cases.</h5>
+		<div class="buttons">
+			<Button @link={{docs "/docs/surrealdb/introduction/start"}}>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Button>
+			<br>
+			<Button @link="features">
+				<i class="fal fa-list-check"></i> <span>View all features</span>
+			</Button>
+			<br>
+		</div>
 	</Layout::Text>
 </Layout::Hero>
 
 <section black>
 
-	<Layout::Gap large />
+	<Layout::Gap small />
 
-	<Layout::Boxes cols-2-to-1>
-		<Layout::Boxes::Item text-l straight @title="Support for multiple index types" @image="/static/img/products/icons/light/traditional-indexing.jpg"  @imagedark="/static/img/products/icons/dark/traditional-indexing.jpg" @text="SurrealDB has support for traditional <a href='https://surrealdb.com/docs/surrealdb/surrealql/statements/define/indexes'>indexing</a>, unique indexes and constraints, full-text search indexes, and vector-embedding indexing. We reimagined how indexing might be implemented - opting for a completely custom-built indexing engine, which sits within the SurrealDB core itself." />
-		<Layout::Boxes::Item text-l straight @title="Indexing support regardless of deployment environment" @image="/static/img/products/icons/light/ix-embedded.jpg" @imagedark="/static/img/products/icons/dark/ix-embedded.jpg" @text="The indexing engine is agnostic to its deployment environment - whether running on top of IndexedDB in the browser, an embedded run-time in Rust or Python, or distributed over multiple nodes in a highly-scalable cluster. The indexing engine is integrated with the SurrealQL query language natively, without the need for an additional external query language, or for indexing-specific functions or plugins" />
-		<Layout::Boxes::Item text-l straight @title="Built within the ACID transaction model of the database" @image="/static/img/products/icons/light/acid.jpg" @imagedark="/static/img/products/icons/dark/acid.jpg" @text="The indexing logic is handled directly within the ACID transaction model of the database. For a developer using SurrealDB, this means that any indexed data is consistent and in-sync with the data in the database." />
-		<Layout::Boxes::Item text-l straight @title="Index any of your data, however it is structured" @image="/static/img/products/icons/light/unique-indexing.jpg" @imagedark="/static/img/products/icons/dark/unique-indexing.jpg" @text="For traditional and unique indexes, SurrealDB supports simple single-field indexes, multi-field compound indexes, nested object and array fields, and also has support for flattened indexing of array data." />
-		<Layout::Boxes::Item text-l straight @title="Full-featured full-text search built in to the core" @image="/static/img/products/icons/light/full-text-search.jpg" @imagedark="/static/img/products/icons/dark/full-text-search.jpg" @text="Using the <a href='https://surrealdb.com/docs/surrealdb/reference-guide/full-text-search'>full-text search</a> indexing engine, SurrealDB allows developers to define custom analysers which specify exactly how their text data should be processed, with support for multiple tokenizers, advanced filters including Ngram, EdgeNGram, and Snowball, and support for 17 languages from English to Arabic." />
-		<Layout::Boxes::Item text-l straight @title="Integrate with ML and AI workflows with vector search" @image="/static/img/products/icons/light/permissions.jpg" @imagedark="/static/img/products/icons/dark/permissions.jpg" @text="With vector-embedding indexing, our initial implementation supports exact nearest neighbour retrieval for vectors of arbitrary size using Metric Trees, with support for HNSW-based approximate nearest neighbours retrieval coming in the future." />
-	</Layout::Boxes>
+	<Layout::Box cols-2-to-1>
+		<Layout::Box::Item text-l careersnew @title="Support for multiple index types" @text="SurrealDB has support for traditional <a href='https://surrealdb.com/docs/surrealdb/surrealql/statements/define/indexes'>indexing</a>, unique indexes and constraints, full-text search indexes, and vector-embedding indexing. We reimagined how indexing might be implemented - opting for a completely custom-built indexing engine, which sits within the SurrealDB core itself." />
+		<Layout::Box::Item text-l careersnew @title="Indexing support regardless of deployment environment" @text="The indexing engine is agnostic to its deployment environment - whether running on top of IndexedDB in the browser, an embedded run-time in Rust or Python, or distributed over multiple nodes in a highly-scalable cluster. The indexing engine is integrated with the SurrealQL query language natively, without the need for an additional external query language, or for indexing-specific functions or plugins" />
+		<Layout::Box::Item text-l careersnew @title="Built within the ACID transaction model of the database" @image="/static/img/products/icons/light/acid.jpg" @imagedark="/static/img/products/icons/dark/acid.jpg" @text="The indexing logic is handled directly within the ACID transaction model of the database. For a developer using SurrealDB, this means that any indexed data is consistent and in-sync with the data in the database." />
+		<Layout::Box::Item text-l careersnew @title="Index any of your data, however it is structured" @image="/static/img/products/icons/light/unique-indexing.jpg" @imagedark="/static/img/products/icons/dark/unique-indexing.jpg" @text="For traditional and unique indexes, SurrealDB supports simple single-field indexes, multi-field compound indexes, nested object and array fields, and also has support for flattened indexing of array data." />
+		<Layout::Box::Item text-l careersnew @title="Full-featured full-text search built in to the core" @image="/static/img/products/icons/light/full-text-search.jpg" @imagedark="/static/img/products/icons/dark/full-text-search.jpg" @text="Using the <a href='https://surrealdb.com/docs/surrealdb/reference-guide/full-text-search'>full-text search</a> indexing engine, SurrealDB allows developers to define custom analysers which specify exactly how their text data should be processed, with support for multiple tokenizers, advanced filters including Ngram, EdgeNGram, and Snowball, and support for 17 languages from English to Arabic." />
+		<Layout::Box::Item text-l careersnew @title="Integrate with ML and AI workflows with vector search" @image="/static/img/products/icons/light/permissions.jpg" @imagedark="/static/img/products/icons/dark/permissions.jpg" @text="With vector-embedding indexing, our initial implementation supports exact nearest neighbour retrieval for vectors of arbitrary size using Metric Trees, with support for HNSW-based approximate nearest neighbours retrieval coming in the future." />
+	</Layout::Box>
 
 	<Layout::Gap large />
 
