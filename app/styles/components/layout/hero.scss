@@ -80,6 +80,12 @@ layout-hero {
 		}
 	}
 
+	&[black] {
+		height:auto;
+		padding:120px 0 150px 0;
+		background-color:#000000;
+	}
+
 	&[cloud] {
 		height:100vh;
 		display:flex;
