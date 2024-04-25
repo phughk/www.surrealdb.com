@@ -2,11 +2,33 @@
 	<content route={{route-name}}>
 		<links>
 			<Footer::Links>
-				<Footer::Links::Name @text="Product" />
-				<Footer::Links::Item @link={{url "docs"}} @text="Documentation" />
+				<Footer::Links::Name @text="Resources"/>
 				<Footer::Links::Item @link="install" @text="Install" />
-				<Footer::Links::Item @link="features" @text="Features" />
 				<Footer::Links::Item @link="releases" @text="Releases" />
+				<Footer::Links::Item @link="features" @text="Features" />
+				<br>
+				<Footer::Links::Name @text="Documentation"/>
+				<Footer::Links::Item @link={{docs "/docs/surrealdb"}} @text="SurrealDB" />
+				<Footer::Links::Item @link={{docs "/docs/surrealml"}} @text="SurrealML" />
+				<Footer::Links::Item @link={{docs "/docs/surrealist"}} @text="Surrealist" />
+				<Footer::Links::Item @link={{docs "/docs/surrealdb/integration/sdks"}} @text="SurrealDB drivers" />
+				<Footer::Links::Item @link={{docs "/docs/surrealdb/cli"}} @text="Command-line tool" />
+				<br>
+				<Footer::Links::Name @text="Connect"/>
+				<Footer::Links::Item @link={{url "docs"}} @text="Developer Centre" />
+				<Footer::Links::Item @link="studio" @text="Studio" />
+				<Footer::Links::Item @link="blog" @text="Blog" />
+			</Footer::Links>
+			<Footer::Links>
+				<Footer::Links::Name @text="Products"/>
+				<Footer::Links::Item @link="cloud" @text="Surreal Cloud" />
+				<Footer::Links::Item @link="surrealist" @text="Surrealist" />
+				<Footer::Links::Item @link="features" @text="Database" />
+				<Footer::Links::Item @link="products.full-text-search" @text="Search" />
+				<Footer::Links::Item @link="products.vector-search" @text="Vector search" />
+				<Footer::Links::Item @link="products.change-data-capture" @text="Change Data Capture" />
+				<Footer::Links::Item @link="products.realtime-data-sync" @text="Real-time data sync" />
+				<Footer::Links::Item @link="products.machine-learning" @text="Artificial intelligence" />
 				<Footer::Links::Status @text="Status" />
 			</Footer::Links>
 			<Footer::Links>
@@ -42,6 +64,14 @@
 					<i class="fab fa-dev"></i> <span>Dev</span>
 				</Footer::Links::Item>
 			</Footer::Links>
+				<Footer::Links>
+				<Footer::Links::Name @text="Company"/>
+				<Footer::Links::Item @link="team" @text="Team" />
+				<Footer::Links::Item @link="careers" @text="Careers" />
+				<Footer::Links::Item @link={{url "store"}} @text="Store" />
+				<Footer::Links::Item @link="opensource" @text="Open source" />
+				<Footer::Links::Item @link="blog" @text="Blog" />
+			</Footer::Links>
 			<Footer::Links>
 				<Footer::Links::Name @text="Legal" />
 				<Footer::Links::Item @link="legal.privacy" @text="Privacy policy" />
@@ -50,14 +80,6 @@
 				<Footer::Links::Item @link="legal.security" @text="Security policy" />
 				<Footer::Links::Item @link="license" @text="License FAQs" />
 				<Footer::Links::Item @link="/.well-known/security.txt" @text="security.txt" />
-			</Footer::Links>
-			<Footer::Links>
-				<Footer::Links::Name @text="About" />
-				<Footer::Links::Item @link="careers" @text="Careers" />
-				<Footer::Links::Item @link="team" @text="Meet the team" />
-				<Footer::Links::Item @link="opensource" @text="Open source" />
-				<Footer::Links::Item @link="blog" @text="Blog" />
-				<Footer::Links::Item @link={{url "store"}} @text="Store" />
 			</Footer::Links>
 		</links>
 		<lower>
