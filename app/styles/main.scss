@@ -84,6 +84,10 @@ section {
 		overflow: hidden;
 		background-color: black;
 
+		&:has(h1) {
+			height: 900px;
+		}
+
 		.background {
 			position: absolute;
 			width: 1500px;
@@ -146,6 +150,11 @@ section {
 		@include media(max-width-1200) {
 			height: 550px;
 
+
+			&:has(h1) {
+				height: 750px;
+			}
+
 			.background {
 				bottom: -1300px;
 			}
@@ -157,6 +166,10 @@ section {
 
 		@include media(max-width-960) {
 			height: 500px;
+
+			&:has(h1) {
+				height: 600px;
+			}
 
 			.background {
 				width: 1000px;
@@ -172,6 +185,10 @@ section {
 
 		@include media(max-width-600) {
 			height: 200px;
+
+			&:has(h1) {
+				height: 325px;
+			}
 
 			.background {
 				width: 400px;
