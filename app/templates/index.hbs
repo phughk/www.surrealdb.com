@@ -54,21 +54,17 @@
 
 </section>
 
-<section surrealist>
-
-	<Layout::Text>
-		<h1 middle>The ultimate dashboard<br>for the ultimate database</h1>
-		<Button @link="surrealist">
+<section surrealist-footer>
+	<div class="content">
+		<Layout::Text>
+			<h1 middle>The ultimate dashboard<br>for the ultimate database</h1>
+		</Layout::Text>
+		<Button @link={{url "download"}}>
 			<span>Get started with Surrealist</span> <i class="fas fa-arrow-right"></i>
 		</Button>
-	</Layout::Text>
-
-	<Layout::Gap small />
-
-		<img src="/static/img/surrealist/ui.jpg" class="center" />
-
-	<Layout::Gap medium />
-
+		<img src="/static/img/surrealist/dock.png" class="center" />
+	</div>
+	<div class="background"></div>
 </section>
 
 <section testimonials>
