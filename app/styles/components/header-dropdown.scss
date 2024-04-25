@@ -220,3 +220,43 @@
 	}
 
 }
+
+.logo:hover + .nav-dropdown {
+	.dropdown-background {
+		height: 425px;
+		transition: height 250ms ease-in-out 0s;
+		
+		+ .nav-item {
+			opacity: 1 !important;
+
+			+ .dropdown .dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				.dropdown-content {
+					pointer-events: initial;
+				}
+			}
+		}
+	}
+
+	+ .dropdown-backdrop {
+		opacity: 1;
+		transition: opacity 150ms ease-in-out 0s;
+	}
+
+	~ .nav-item {
+		opacity: 0.6;
+	}
+
+	&:has(+ .nav-item:hover) .nav-item {
+		opacity: 0.6;
+	}
+
+	> .nav-item:not(:hover) {
+		opacity: 0.6;
+	}
+}
+
+.logo:hover + .nav-dropdown > .nav-item:not(:hover) {
+	opacity: 0.6;
+}
