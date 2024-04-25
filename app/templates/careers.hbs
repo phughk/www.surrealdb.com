@@ -24,7 +24,7 @@
 
 	<Layout::Gap small />
 
-	<Layout::Hire cols-2-to-1>
+	<Layout::Hire cols-3-to-2-to-1>
 		{{#each this.jobs as |job|}}
 			<Layout::Hire::Item text-l hiring @title={{job.attributes.title}} @buttontext="Click here to apply" @text={{job.attributes.location}} @url={{job.attributes.url}} @image={{job.attributes.image}} @imagehover={{job.attributes.imagehover}} />
 		{{/each}}
