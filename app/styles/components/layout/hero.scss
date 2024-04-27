@@ -92,7 +92,7 @@ layout-hero {
 		align-items:center;
 		flex-direction:column;
 		justify-content:center;
-		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%), url("/static/img/cloud/hero.jpg");
+		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 1) 100%), url("/static/img/cloud/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
