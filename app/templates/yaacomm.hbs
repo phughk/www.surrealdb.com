@@ -17,18 +17,18 @@
 	<Layout::Gap large />
 
 	<Layout::Text text-full>
-		<h5 yaacomm>Yaacomm, a mobile software development company based in the Netherlands and founded in 2006, has spent the past decade building high quality innovative communication solutions for a wide range of customers in the Netherlands, including companies, organisations and funds in diverse sectors including health care, aviation, and the metal industry.</h5>
-		<h4 yaacomm>Their mission is to build accessible and intuitive apps that bring information closer to the people. Yaacomm view innovation as the keystone in the development of effective and modern apps. As they continuously improve their products to stay competitive, Yaacomm can continue to take on more challenging projects. Because of this, they need a database which is flexible and can handle the requirements of a diverse group of customers, while also allowing them to build performant and powerful applications on top of it. This is why they chose SurrealDB as their database.</h4>
+		<h5 white>Yaacomm, a mobile software development company based in the Netherlands and founded in 2006, has spent the past decade building high quality innovative communication solutions for a wide range of customers in the Netherlands, including companies, organisations and funds in diverse sectors including health care, aviation, and the metal industry.</h5>
+		<h5 yaacomm>Their mission is to build accessible and intuitive apps that bring information closer to the people. Yaacomm view innovation as the keystone in the development of effective and modern apps. As they continuously improve their products to stay competitive, Yaacomm can continue to take on more challenging projects. Because of this, they need a database which is flexible and can handle the requirements of a diverse group of customers, while also allowing them to build performant and powerful applications on top of it. This is why they chose SurrealDB as their database.</h5>
 	</Layout::Text>
 
 	<Layout::Gap small />
 
 	<Layout::Text text-full>
-		<h1>
+		<h2>
 			The transition
-		</h1>
-		<h5 yaacomm>Yaacomm has consistently shown a preference for modern NoSQL solutions over traditional SQL databases, primarily driven by the modular nature of their applications. Over the years, they have relied on Firebase as the backend for their apps, specifically utilising the Realtime Database for data storage. However, this choice presented certain limitations, including the absence of data relations, inefficient querying mechanisms, and an inability to filter data before retrieval.</h5>
-		<h4 yaacomm>In 2019, the organisation initiated efforts to partially migrate their database to PostgreSQL. This transition allowed them to overcome the limitations of Firebase and perform more effective data querying and filtering. Despite the initial appearance of a seamless transition, significant challenges emerged. Yaacomm’s apps are structured in a modularised manner, making it arduous to maintain a single database schema that caters to all their applications. Conversely, maintaining a separate schema for each app would have consumed a substantial amount of development time. Realistically, they needed a database solution that combined the flexibility of Firebase with the feature set of PostgreSQL.</h4>
+		</h2>
+		<h5 white>Yaacomm has consistently shown a preference for modern NoSQL solutions over traditional SQL databases, primarily driven by the modular nature of their applications. Over the years, they have relied on Firebase as the backend for their apps, specifically utilising the Realtime Database for data storage. However, this choice presented certain limitations, including the absence of data relations, inefficient querying mechanisms, and an inability to filter data before retrieval.</h5>
+		<h5 yaacomm>In 2019, the organisation initiated efforts to partially migrate their database to PostgreSQL. This transition allowed them to overcome the limitations of Firebase and perform more effective data querying and filtering. Despite the initial appearance of a seamless transition, significant challenges emerged. Yaacomm’s apps are structured in a modularised manner, making it arduous to maintain a single database schema that caters to all their applications. Conversely, maintaining a separate schema for each app would have consumed a substantial amount of development time. Realistically, they needed a database solution that combined the flexibility of Firebase with the feature set of PostgreSQL.</h5>
 	</Layout::Text>
 
 	<Layout::Gap small />
@@ -37,7 +37,7 @@
 
 		<Layout::Hero julian>
 			<Layout::Text text-l>
-				<h2>"This is when I made the decision to implement SurrealDB at Yaacomm. Since then, we've been able to iterate much faster as we no longer need to maintain a complex rigid schema, while still being able to query our data in a relational way."</h2>
+				<h5 white>"This is when I made the decision to implement SurrealDB at Yaacomm. Since then, we've been able to iterate much faster as we no longer need to maintain a complex rigid schema, while still being able to query our data in a relational way."</h5>
 			</Layout::Text>
 		</Layout::Hero>
 
@@ -46,24 +46,24 @@
 	<Layout::Gap small />
 
 	<Layout::Text text-full>
-		<h1>
+		<h2>
 			The features
-		</h1>
-		<h5 yaacomm>Yaacomm currently employs edges and relations extensively within its database. Roughly half of the tables are designated as edge tables, affording multiple advantages over the mere use of record IDs. This approach allows for the maintenance of compact and optimised queries. Moreover, these edge tables automatically undergo cleanup when a record on either side of the relation is removed, thereby preserving the cleanliness and ease of navigation within the database.</h5>
-		<h4 yaacomm>Another noteworthy feature for the organisation pertains to access roles. Given their extensive reliance on Surrealist for database interaction, they adhere to viewer access as the primary mode of access. This decision is driven by the desire to preclude inadvertent or unintended modifications to the database. In instances where manual data rectification is required, they utilise the editor role to effect the desired changes. It is worth noting that while live select queries are not yet integrated into their applications, they have already proven beneficial in diagnosing complex issues stemming from improper database modifications.</h4>
-		<h4 yaacomm>In Yaacomm's perspective, the most vital feature lies in the support for schemaless tables. Having previously stored their data in Firebase, their data possesses a loose structure and undergoes validation externally from the database. This approach facilitated a seamless migration of their data to SurrealDB, eliminating the need to define a rigid database schema and mitigating issues previously encountered with PostgresQL.</h4>
-		<h4 yaacomm>Furthermore, the compatibility of indexes, relations, and other features with schemaless data ensures the ability to optimize queries, maintaining the performance and potency of their applications. Looking ahead, Yaacomm are presently engaged in research aimed at integrating full-text searching into their workflow. Given their frequent handling of articles, documents, and other extensive text-based content, the adoption of full-text searching holds the potential to enhance their existing search capabilities and offer users improved search results.</h4>
+		</h2>
+		<h5 white>Yaacomm currently employs edges and relations extensively within its database. Roughly half of the tables are designated as edge tables, affording multiple advantages over the mere use of record IDs. This approach allows for the maintenance of compact and optimised queries. Moreover, these edge tables automatically undergo cleanup when a record on either side of the relation is removed, thereby preserving the cleanliness and ease of navigation within the database.</h5>
+		<h5 yaacomm>Another noteworthy feature for the organisation pertains to access roles. Given their extensive reliance on Surrealist for database interaction, they adhere to viewer access as the primary mode of access. This decision is driven by the desire to preclude inadvertent or unintended modifications to the database. In instances where manual data rectification is required, they utilise the editor role to effect the desired changes. It is worth noting that while live select queries are not yet integrated into their applications, they have already proven beneficial in diagnosing complex issues stemming from improper database modifications.</h5>
+		<h5 yaacomm>In Yaacomm's perspective, the most vital feature lies in the support for schemaless tables. Having previously stored their data in Firebase, their data possesses a loose structure and undergoes validation externally from the database. This approach facilitated a seamless migration of their data to SurrealDB, eliminating the need to define a rigid database schema and mitigating issues previously encountered with PostgresQL.</h5>
+		<h5 yaacomm>Furthermore, the compatibility of indexes, relations, and other features with schemaless data ensures the ability to optimize queries, maintaining the performance and potency of their applications. Looking ahead, Yaacomm are presently engaged in research aimed at integrating full-text searching into their workflow. Given their frequent handling of articles, documents, and other extensive text-based content, the adoption of full-text searching holds the potential to enhance their existing search capabilities and offer users improved search results.</h5>
 	</Layout::Text>
 
 	<Layout::Gap small />
 
 	<Layout::Text text-full>
-		<h1>
+		<h2>
 			The impact
-		</h1>
-		<h5 yaacomm>Fundamentally, Yaacomm can now offer their customers functionality that was not feasible for them to implement before. Since their top priority is developing leading applications within the field, they require a database that can suit a broad spectrum of use-cases.</h5>
-		<h4 yaacomm>Additionally, using Surrealist, they can now easily and effortlessly analyse their data visually and compose rich analytic reports for their customers. Besides having full transparency in their data, due to the ease of use of SurrealQL, their team has been able to use Surrealist to troubleshoot database-related errors and identify problems more quickly.</h4>
-		<h4 yaacomm>"Since we have migrated our backend infrastructure from PostgresQL to SurrealDB we've found many new ways we can work with our data, for example in the field of audience targeting. Due to the graph nature of SurrealDB we can effortlessly track and analyse relations between app users and the content they interact with, allowing us to send push messages, news posts, and other forms of communication to just those users for whom it is relevant. Previously using PostgresQL we struggled with this functionality as it caused significant performance spikes depending on how complex the query was, in addition to queries themselves becoming large, complex, and difficult to maintain. Using SurrealDB however all these concerns have disappeared, as we have been able to significantly decrease the complexity of our queries and overcome the performance issues we struggled with before."</h4>
+		</h2>
+		<h5 white>Fundamentally, Yaacomm can now offer their customers functionality that was not feasible for them to implement before. Since their top priority is developing leading applications within the field, they require a database that can suit a broad spectrum of use-cases.</h5>
+		<h5 yaacomm>Additionally, using Surrealist, they can now easily and effortlessly analyse their data visually and compose rich analytic reports for their customers. Besides having full transparency in their data, due to the ease of use of SurrealQL, their team has been able to use Surrealist to troubleshoot database-related errors and identify problems more quickly.</h5>
+		<h5 yaacomm>"Since we have migrated our backend infrastructure from PostgresQL to SurrealDB we've found many new ways we can work with our data, for example in the field of audience targeting. Due to the graph nature of SurrealDB we can effortlessly track and analyse relations between app users and the content they interact with, allowing us to send push messages, news posts, and other forms of communication to just those users for whom it is relevant. Previously using PostgresQL we struggled with this functionality as it caused significant performance spikes depending on how complex the query was, in addition to queries themselves becoming large, complex, and difficult to maintain. Using SurrealDB however all these concerns have disappeared, as we have been able to significantly decrease the complexity of our queries and overcome the performance issues we struggled with before."</h5>
 	</Layout::Text>
 
 	<Layout::Gap large />

@@ -322,6 +322,14 @@ h5 {
 
 	&[white] {
 		color:var(--white-color);
+
+		@include media(max-width-962) {
+			font-size:16px;
+	
+			img[inline] {
+				height:28px;
+			}
+		}
 	}
 
 	&[surrealist] {
@@ -340,6 +348,22 @@ h5 {
 
 		@include media(max-width-960) {
 			font-size:20px;
+		}
+	}
+
+	&[yaacomm] {
+		width:100%;
+		font-size:19px;
+		font-weight:500;
+		line-height:1.5;
+		color:var(--faint-color);
+
+		@include media(max-width-962) {
+			font-size:16px;
+	
+			img[inline] {
+				height:28px;
+			}
 		}
 	}
 
