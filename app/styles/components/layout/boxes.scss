@@ -16,7 +16,6 @@ layout-boxes {
 			grid-gap:30px 30px;
 		}
 
-
 		> a {
 
 			display:flex;
@@ -36,6 +35,18 @@ layout-boxes {
 
 				}
 
+			}
+
+		}
+
+		> a > layout-boxes-item, > layout-boxes-item:nth-child(even) {
+
+			&[illustrated] {
+				top:150px;
+
+				@include media(max-width-960) {
+					top:0px;
+				}
 			}
 
 		}

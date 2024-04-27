@@ -8,10 +8,6 @@ layout-surrealist-boxes {
 		grid-gap:30px 30px;
 		grid-template-columns:repeat(12, 1fr);
 
-		@include media(max-width-960) {
-			grid-gap:15px 15px;
-		}
-
 		> a {
 
 			display:flex;
@@ -338,12 +334,11 @@ layout-surrealist-boxes {
 			grid-column:auto / span 6;
 		}
 
-		@include media(max-width-760) {
-			
+		@include media(max-width-1000) {
+
 			grid-column:auto / span 12;
 
 			&[full] {
-				
 				grid-column:auto / span 12;
 			}
 

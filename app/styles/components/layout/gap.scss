@@ -182,4 +182,16 @@ gap {
 
 	}
 
+	&[surrealistfooter] {
+
+		width:100%;
+		height:150px;
+		display:block;
+
+		@include media(max-width-960) {
+			height:0px;
+		}
+
+	}
+
 }
