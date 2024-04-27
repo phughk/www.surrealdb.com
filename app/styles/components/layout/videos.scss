@@ -41,8 +41,8 @@ layout-videos {
 			text-align:left;
 			position:relative;
 			border-radius:12px;
+			background:transparent;
 			grid-column:auto / span 2;
-			background-color:var(--dark-color);
 
 			pic {
 
@@ -82,7 +82,7 @@ layout-videos {
 				}
 
 			}
-
+			
 			&[clear] {
 
 				background-color:transparent;
