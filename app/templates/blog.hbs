@@ -1,45 +1,60 @@
 <section>
 
-{{#if (is-route "blog.index")}}
+	{{#if (is-route "blog.index")}}
 
-	<Meta::Tags @type="blog">
-		<title>SurrealDB | Blog | The ultimate multi-model database</title>
-		<meta name="title" property="og:title" content="SurrealDB | Blog">
-		<meta name="description" content="To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below.">
-		<link rel="alternate" type="application/atom+xml" title="SurrealDB Blog" href="/feed/blog.rss" />
-	</Meta::Tags>
+		<Meta::Tags @type="blog">
+			<title>SurrealDB | Blog | The ultimate multi-model database</title>
+			<meta name="title" property="og:title" content="SurrealDB | Blog">
+			<meta name="description" content="To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below.">
+			<link rel="alternate" type="application/atom+xml" title="SurrealDB Blog" href="/feed/blog.rss" />
+		</Meta::Tags>
 
-	<Layout::Hero blog>
-		<Layout::Text text-l>
-			<h1>SurrealDB Blog</h1>
-			<h5 white>To stay up-to-date with new blog articles, future product releases, documentation updates, and access to SurrealDB Cloud, subscribe to our email newsletter below, or follow us on our socials.</h5>
-			<Signup::Newsletter white />
-		</Layout::Text
-		>
-	</Layout::Hero>
+		<Layout::Gap blog />
 
-	<Layout::Gap medium />
+		{{#if this.posts.length}}
 
-	{{#if this.posts.length}}
-	
-		<Layout::Blog cols-3-to-2-to-1>
-			{{#each this.posts as |post|}}
-				<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
-					<Layout::Blog::Item blog @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
-				</LinkTo>
-			{{/each}}
-		</Layout::Blog>
+		<Layout::Blog cols-1>
+				{{#with (get this.posts 0) as |post|}}
+					<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
+						<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+					</LinkTo>
+				{{/with}}
+			</Layout::Blog>
 
-		<Layout::Gap large />
+			<Layout::Gap bloggap />
+
+			<Layout::Blog cols-2-to-1>
+				{{#each this.posts as |post index|}}
+					{{#if (and (gte index 1) (lt index 3))}}
+						<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
+							<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+						</LinkTo>
+					{{/if}}
+				{{/each}}
+			</Layout::Blog>
+
+			<Layout::Gap bloggap />
+		
+			<Layout::Blog cols-3-to-2-to-1>
+				{{#each this.posts as |post index|}}
+					{{#if (gte index 3)}}
+						<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
+							<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+						</LinkTo>
+					{{/if}}
+				{{/each}}
+			</Layout::Blog>
+
+			<Layout::Gap large />
+
+		{{/if}}
+
+	{{else}}
+
+		<Layout::Hero blog-article></Layout::Hero>
+
+		{{outlet}}
 
 	{{/if}}
-
-{{else}}
-
-	<Layout::Hero blog-article></Layout::Hero>
-
-	{{outlet}}
-
-{{/if}}
 
 </section>

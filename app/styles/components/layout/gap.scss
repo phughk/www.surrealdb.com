@@ -53,12 +53,20 @@ gap {
 	&[blog] {
 
 		width:100%;
-		height:100px;
+		height:125px;
 		display:block;
 
 		@include media(max-width-768) {
 			height:100px;
 		}
+
+	}
+	
+	&[bloggap] {
+
+		width:100%;
+		height:16px;
+		display:block;
 
 	}
 
