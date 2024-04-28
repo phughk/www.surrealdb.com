@@ -320,6 +320,15 @@ h5 {
 		color:var(--text-color);
 	}
 
+	&[events] {
+		width:60%;
+		color:var(--text-color);
+
+		@include media(max-width-960) {
+			width:90%;
+		}
+	}
+
 	&[white] {
 		color:var(--white-color);
 

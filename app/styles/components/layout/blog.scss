@@ -956,14 +956,14 @@ layout-blog {
 
 			div {
 
-				padding:20px 0px 0px 0px;
+				padding:10px 0px 0px 0px;
 
 				@include media(max-width-1024) {
 					padding:10px 0px 0px 0px;
 				}
 
 				>h3 {
-					font-size:26px;
+					font-size:22px;
 					font-weight:600;
 					line-height:1.2;
 					margin-bottom:10px;
@@ -1183,7 +1183,7 @@ layout-blog {
 
 		}
 
-		@include media(max-width-1650) {
+		@include media(max-width-960) {
 
 			grid-column:auto / span 6;
 
@@ -1226,7 +1226,7 @@ layout-blog {
 			grid-column:auto / span 6;
 		}
 
-		@include media(max-width-1300) {
+		@include media(max-width-960) {
 
 			grid-column:auto / span 12;
 
@@ -1255,7 +1255,7 @@ layout-blog {
 			grid-column:auto / span 6;
 		}
 
-		@include media(max-width-1000) {
+		@include media(max-width-760) {
 
 			grid-column:auto / span 12;
 
