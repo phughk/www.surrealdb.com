@@ -68,8 +68,8 @@ layout-videos {
 
 				cover {
 					z-index:1;
-					width:100px;
-					height:100px;
+					width:70px;
+					height:70px;
 					display:block;
 					position:absolute;
 					border-radius:100%;
@@ -481,7 +481,7 @@ layout-videos {
 
 		}
 
-		@include media(max-width-1650) {
+		@include media(max-width-960) {
 
 			grid-column:auto / span 6;
 
