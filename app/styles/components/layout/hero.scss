@@ -801,15 +801,45 @@ layout-hero {
 	}
 
 	&[yaacomm] {
-		height:auto;
-		padding:350px 0 150px 0;
-		background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("/static/img/yaacomm/hero.jpg");
+		height:100vh;
+		display:flex;
+		align-items:center;
+		flex-direction:column;
+		justify-content:center;
+		padding:0px 0 100px 0;
+		background-image:radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 45%), linear-gradient(rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 1) 100%), url("/static/img/yaacomm/hero.jpg");
 		background-color:#000000;
 
 		@include media(max-width-960) {
-			top:0px;
 			height:auto;
-			padding:120px 0 50px 0;
+			justify-content:top;
+			padding:0px 0 100px 0;
+			background-position: center 0px;
+		}
+
+		content {
+			margin-top:0px;
+			text-align:left;
+
+			@include media(max-width-960) {
+				text-align:left;
+				margin-top:50px;
+			}
+
+			@include media(max-width-960) {
+				.buttons {
+					margin-top:150px;
+				}
+			}
+
+			h1 {
+				width:50%;
+
+				@include media(max-width-600) {
+					width:60%;
+				}
+			}
+
 		}
 	}
 
