@@ -16,7 +16,7 @@
 		<Layout::Blog cols-1>
 				{{#with (get this.posts 0) as |post|}}
 					<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
-						<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+						<Layout::Blog::Item hover @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
 					</LinkTo>
 				{{/with}}
 			</Layout::Blog>
@@ -27,7 +27,7 @@
 				{{#each this.posts as |post index|}}
 					{{#if (and (gte index 1) (lt index 3))}}
 						<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
-							<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+							<Layout::Blog::Item hover @blog @image={{blog-image post.attributes.image "large"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
 						</LinkTo>
 					{{/if}}
 				{{/each}}
@@ -39,7 +39,7 @@
 				{{#each this.posts as |post index|}}
 					{{#if (gte index 3)}}
 						<LinkTo @route="blog.post" @model={{post.attributes.slug}}>
-							<Layout::Blog::Item @blog @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
+							<Layout::Blog::Item hover @blog @image={{blog-image post.attributes.image "small"}} @stamp={{date-format post.attributes.date "LL"}} @title={{post.attributes.title}} @label={{post.attributes.label}} @text={{markdown post.attributes.summary inline=true}} />
 						</LinkTo>
 					{{/if}}
 				{{/each}}
