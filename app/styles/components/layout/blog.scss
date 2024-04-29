@@ -52,6 +52,7 @@ layout-blog {
 				max-width:100%;
 				overflow:hidden;
 				position:relative;
+				border-radius:10px;
 				display:inline-block;
 
 				img:not(.devicon) {
@@ -94,6 +95,16 @@ layout-blog {
 						color:var(--text-color);
 					}
 
+				}
+
+			}
+
+			&[events] {
+
+				picture {
+
+					border-radius:10px;
+	
 				}
 
 			}
