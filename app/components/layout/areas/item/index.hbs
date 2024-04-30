@@ -1,0 +1,15 @@
+<layout-areas-item ...attributes src={{@url}}>
+
+	{{#if @image}}
+	 	<a href={{@url}}>
+			<picture>
+				<source
+					srcset={{@imagedark}}
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img loading="lazy" src={{@image}} alt={{or @alt @title}} >
+			</picture>
+		</a>
+	{{/if}}
+
+</layout-areas-item>
