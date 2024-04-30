@@ -32,16 +32,16 @@
 	<Layout::Gap home />
 
 	<Layout::Areas cols-2-to-1>
-		<Layout::Areas::Item @image="/static/img/home/cloud.jpg" @url="https://surrealdb.com/cloud" />
-		<Layout::Areas::Item @image="/static/img/home/surrealist.jpg" @url="https://surrealdb.com/surrealist" />
+		<Layout::Areas::Item @image="/static/img/home/cloud.jpg" @link="cloud" />
+		<Layout::Areas::Item @image="/static/img/home/surrealist.jpg"@link="surrealist" />
 	</Layout::Areas>
 
 	<Layout::Gap areas />
 
 	<Layout::Areas cols-3-to-1>
-		<Layout::Areas::Item @image="/static/img/home/docs.jpg" @url="https://surrealdb.com/docs/surrealdb"/>
-		<Layout::Areas::Item @image="/static/img/home/ml.jpg" @url="https://surrealdb.com/products/machine-learning" />
-		<Layout::Areas::Item @image="/static/img/home/features.jpg" @url="https://surrealdb.com/features" />
+		<Layout::Areas::Item @image="/static/img/home/docs.jpg" @link={{docs "/docs/surrealdb"}} />
+		<Layout::Areas::Item @image="/static/img/home/ml.jpg" @link="products/machine-learning" />
+		<Layout::Areas::Item @image="/static/img/home/features.jpg" @link="features" />
 	</Layout::Areas>
 
 	<Layout::Gap home />
