@@ -136,6 +136,50 @@ layout-boxes {
 
 			}
 
+			&[socials] {
+
+				border-radius:0px;
+
+				div {
+					padding-top:0%;
+					padding-left:15%;
+					padding-right:15%;
+					padding-bottom:15%;
+
+					@include media(max-width-960) {
+						padding-top:0%;
+						padding-left:12%;
+						padding-right:12%;
+						padding-bottom:12%;
+					}
+
+					> h3 {
+						color:var(--faint-color);
+					}
+
+					> h4 {
+						color:var(--faint-color);
+					}
+
+					> p:last-child {
+						width:95%;
+						color:var(--faint-color);
+					}
+
+					> p:first-child {
+						width:95%;
+						color:var(--faint-color);
+
+						@include media(max-width-960) {
+							font-size:14px;
+							line-height:1.2;
+						}
+					}
+
+				}
+
+			}
+
 			&[opensource] {
 
 				border-radius:0px;
@@ -1157,7 +1201,7 @@ layout-boxes {
 
 		}
 
-		@include media(max-width-1250) {
+		@include media(max-width-960) {
 
 			grid-column:auto / span 6;
 
@@ -1167,20 +1211,6 @@ layout-boxes {
 
 			&[half] {
 				grid-column:auto / span 6;
-			}
-
-		}
-
-		@include media(max-width-768) {
-
-			grid-column:auto / span 12;
-
-			&[full] {
-				grid-column:auto / span 12;
-			}
-
-			&[half] {
-				grid-column:auto / span 12;
 			}
 
 		}
