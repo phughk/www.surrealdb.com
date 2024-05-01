@@ -1,7 +1,7 @@
 ---
 show: true
-date: 2024-04-30
-image: coobcbj61icc73ees5jg
+date: 2024-05-01
+image: cop68k361icc73ees5t0
 title: "Surrealist 2.0"
 summary: "An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface."
 categories:
