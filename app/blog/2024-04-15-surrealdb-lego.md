@@ -2,7 +2,7 @@
 show: true
 date: 2024-04-15
 image: co7vrfr61icc73eer4q0
-title: "Eli5 - Why SurrealDB, explained through building with LEGO"
+title: "ELI5 - Why SurrealDB, explained through building with LEGO"
 summary: "Can databases inspire a sense of child-like play?"
 ---
 
