@@ -219,7 +219,7 @@ content {
 	transition:width 0.5s, max-width 0.5s;
 
 	@include media(max-width-1200) {
-		width:930px;
+		width:80%;
 	}
 
 	@include media(max-width-1024) {
