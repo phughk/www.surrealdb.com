@@ -401,7 +401,7 @@ As seeing is believing, you can check out the same SurrealDB that runs distribut
 
 With unparalleled deployment flexibility, you naturally also need flexibility in how you connect to the database. That is why we offer [SDKs for various languages](https://surrealdb.com/docs/surrealdb/integration/sdks/) such as Rust, JavaScript, Python, Golang, Java, and more!
 
-You can also connect directly to the database using our [RESTful HTTP endpoints](https://surrealdb.com/docs/surrealdb/integration/http/?utm_source=blog&utm_medium=post) or our unified [RPC protocol](https://surrealdb.com/docs/surrealdb/integration/rpc/?utm_source=blog&utm_medium=post), supporting both WebSockets and using HTTP to `POST` to the `\rpc` endpoint.
+You can also connect directly to the database using our [RESTful HTTP endpoints](https://surrealdb.com/docs/surrealdb/integration/http/?utm_source=blog&utm_medium=post) or our unified [RPC protocol](https://surrealdb.com/docs/surrealdb/integration/rpc/?utm_source=blog&utm_medium=post), supporting both WebSockets and using HTTP to `POST` to the `/rpc` endpoint.
 
 
 ## Stepping into the future
