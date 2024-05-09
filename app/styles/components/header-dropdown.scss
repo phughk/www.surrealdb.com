@@ -91,6 +91,7 @@
 				margin-bottom:22px;
 				text-rendering:optimizeLegibility;
 				-webkit-font-smoothing:antialiased;
+				display: inline-block;
 
 				span {
 					opacity:0.9;
@@ -225,7 +226,7 @@
 	.dropdown-background {
 		height:425px;
 		transition:height 250ms ease-in-out 0s;
-		
+
 		+ .nav-item {
 			opacity:1 !important;
 
