@@ -410,4 +410,4 @@ You can also connect directly to the database using our [RESTful HTTP endpoin
 
 As we have seen, the change SurrealDB wants to see is to enable the world to access data in the most powerful way while simultaneously reducing your total system complexity, by offering a coherent data platform where everything works seamlessly together.
 
-Help us push the database industry forward by taking a step ahead into the future with us by signing up for the [SurrealDB cloud waitlist](https://surrealdb.com/cloud/?utm_source=blog&utm_medium=post) or exploring [SurrealDB](https://surrealdb.com/install/?utm_source=blog&utm_medium=post) right in your browser using [Surrealist.](https://surrealist.app/)
+Help us push the database industry forward by taking a step ahead into the future with us by signing up for the [SurrealDB cloud waitlist](https://surrealdb.com/cloud/?utm_source=blog&utm_medium=post) or exploring [SurrealDB](https://github.com/surrealdb/surrealdb) right in your browser using [Surrealist.](https://surrealist.app/)
