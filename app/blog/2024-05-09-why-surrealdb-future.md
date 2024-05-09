@@ -163,7 +163,7 @@ This goes well beyond the simple time travel or temporal tables you might be fam
 
 To achieve this we needed to design a new data structure, [an Immutable Versioned Adaptive Radix Trie (VART)](https://surrealdb.com/blog/vart-a-persistent-data-structure-for-snapshot-isolation/?utm_source=blog&utm_medium=post).
 
-> The term "Versioned" in VART signifies the use of versioning, indicating a chronological record of every modification made to the tree.
+> The term "**Versioned**" in VART signifies the use of versioning, indicating a chronological record of every modification made to the tree.
 >
 > The "**Adaptive**" attribute refers to the dynamic node sizes and the path compression technique, aimed at optimizing space utilization and enhancing overall performance.
 >
@@ -304,13 +304,13 @@ Live Queries give developers the ability to receive real-time change notificatio
 
 Regardless of what a user has subscribed to, notifications will only be delivered based on the authenticated session of that user.
 
-To make a query like this one a Live Query
+To make a query like this one a Live Query...
 
 ```surql
 SELECT message FROM the_future;
 ```
 
-All it takes is one magic word to [unlock streaming data magic](https://surrealdb.com/blog/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds/?utm_source=blog&utm_medium=post)
+...all it takes is one magic word to [unlock streaming data magic](https://surrealdb.com/blog/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds/?utm_source=blog&utm_medium=post)
 
 ```surql
 LIVE SELECT message FROM the_future;
@@ -363,7 +363,7 @@ With [vector-embedding indexing](https://surrealdb.com/docs/surrealdb/surrealql/
 DEFINE INDEX mt_pt ON pts FIELDS point MTREE DIMENSION 4;
 ```
 
-[In the example below](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/indexes#m-tree-index/?utm_source=blog&utm_medium=post), the query searches for points closest to the vector `[2,3,4,5]` and uses [vector functions](https://surrealdb.com/docs/surrealdb/surrealql/functions/vector/?utm_source=blog&utm_medium=post) to calculate the distance between two points, indicated by `<|2|>`.
+[In the example below](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/indexes/?utm_source=blog&utm_medium=post#brute-force-method), the query searches for points closest to the vector `[2,3,4,5]` and uses the [vector::distance::euclidean](https://surrealdb.com/docs/surrealdb/surrealql/functions/vector/?utm_source=blog&utm_medium=post#vectordistanceeuclidean) function to calculate the distance between two points, indicated by `<|2|>`.
 
 ```surql
 LET $pt = [2,3,4,5];
