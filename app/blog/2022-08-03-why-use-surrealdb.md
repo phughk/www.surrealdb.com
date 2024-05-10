@@ -66,6 +66,6 @@ Built entirely in Rust as a single library, SurrealDB is designed to be used as 
 
 ![Embedded or distributed](cbkn9u7a0mfc738mplk0)
 
-SurrealDB's vision is to be the world’s go-to database for building applications, a platform where developers don’t have to think about their backend architecture, when what they really want is to focus on their apps, simplifying the landscape for developers and ensuring that the world’s data can be accessed in even more simple ways.
+[SurrealDB's vision is to be the world’s go-to database for building applications](https://surrealdb.com/blog/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look), a platform where developers don’t have to think about their backend architecture, when what they really want is to focus on their apps, simplifying the landscape for developers and ensuring that the world’s data can be accessed in even more simple ways.
 
 Please give SurrealDB a follow on [Linkedin](https://www.linkedin.com/company/surrealdb/), star us on [GitHub](https://github.com/surrealdb/surrealdb), follow us on [Twitter](https://twitter.com/SurrealDB), join us on [Discord](https://surrealdb.com/discord), and check out our [website](https://surrealdb.com/). If you have any questions about installing, starting or using SurrealDB, or you have an idea for a feature you would love to see in SurrealDB, let us know on [GitHub Discussions](https://github.com/surrealdb/surrealdb/discussions) and [GitHub issues](https://github.com/surrealdb/surrealdb/issues). We shall appreciate it immensely.
